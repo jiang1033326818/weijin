@@ -1,0 +1,101 @@
+<view class="page">
+  <view class="navbar">
+    <!-- <block wx:for="{{tabs}}" wx:key="tabs">
+      <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+        <view class="navbar__title">{{item.name}}</view>
+      </view>
+    </block> -->
+    <!-- <view class="navbar__slider" style="width: {{sliderWidth}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view> -->
+
+  </view>
+  <view style="width: 100%;height:5000rpx;">
+    <!-- <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange"  > -->
+      <!-- 销售转化率 -->
+      <!-- <swiper-item> -->
+       <scroll-view scroll-y   bindscroll="scroll"  scroll-top="{{scrollTop}}" style='margin-top:50rpx'>
+        <view style='width:90%;margin-left:5%'>
+          <view class="weui-flex">
+            <view class="weui-flex__item">
+              <view class="placeholder">
+                <text class="dealCountTitle">线索总数</text>
+              </view>
+            </view>
+            <view class="weui-flex__item">
+              <view class="placeholder">
+                <text class="dealCountTitle">已沟通</text>
+              </view>
+            </view>
+            <view class="weui-flex__item">
+              <view class="placeholder">
+                <text class="dealCountTitle">未确认</text>
+              </view>
+            </view>
+            <view class="weui-flex__item">
+              <view class="placeholder">
+                <text class="dealCountTitle">合同成交</text>
+              </view>
+            </view>
+          </view>
+          <view class="weui-flex">
+            <view class="weui-flex__item">
+              <view class="placeholder">
+                <text class="dealCountContentOne">{{totalClue}}</text>
+              </view>
+            </view>
+            <view class="weui-flex__item">
+              <view class="placeholder">
+                <text class="dealCountContentTwo">{{connected}}</text>
+              </view>
+            </view>
+            <view class="weui-flex__item">
+              <view class="placeholder">
+                <text class="dealCountContentThree">{{weiqueren}}</text>
+              </view>
+            </view>
+            <view class="weui-flex__item">
+              <view class="placeholder">
+                <text class="dealCountContentThree">{{contractDeal}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="weui-cells__title">销售转化率分析</view>
+             <view style='z-index:100'>
+          <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}" style='height:1000rpx'></ec-canvas>
+            </view>
+          <view class='border_chart'>
+            <view class="weui-cells__title">电量统计</view>
+            <view style='z-index:100'>
+            <ec-canvas id="mychart-dom-bar" canvas-id="mychart-clu" ec="{{ barbar }}" style='height:1000rpx'></ec-canvas>
+          </view>
+          <view class='border_chart'>
+            <view class="weui-cells__title">用电分析</view>
+            <view style='z-index:100'>
+             <ec-canvas id="mychart-dom-bar" canvas-id="mychart-pie" ec="{{ piepie }}" style='height:1000rpx'></ec-canvas>
+              </view>
+            </view>
+          </view>
+           <view class='border_chart'>
+            <view class="weui-cells__title">负荷预测</view>
+            <view style='z-index:100'>
+             <ec-canvas id="mychart-dom-bar" canvas-id="mychart-line" ec="{{ cast }}" style='height:1000rpx'></ec-canvas>
+            </view>
+          </view>
+          </view>
+        </scroll-view>
+      <!-- </swiper-item>  -->
+
+
+
+      <!-- 线索追踪 -->
+      <!-- <swiper-item style='margin-top:40rpx'>
+        <scroll-view scroll-y  bindscroll="scroll"  scroll-top="{{scrollTop}}" >
+            <view style='width:90%;margin-left:5%'>
+          <view class="weui-cells__title">负荷预测</view>
+          <ec-canvas id="mychart-dom-bar" canvas-id="mychart-line" ec="{{ cast }}" style='height:1000rpx'></ec-canvas>
+          </view>
+        </scroll-view>
+      
+      </swiper-item> -->
+    <!-- </swiper> -->
+  </view>
+</view>

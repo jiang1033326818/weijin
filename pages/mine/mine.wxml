@@ -1,0 +1,41 @@
+<!--pages/mine/mine.wxml-->
+
+<view class='container'>
+
+  <view class='loginout'>
+    <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+      <!-- <button
+      bindtap='loginout' 
+      class='btn-class'
+      >退出登录</button> -->
+  </view>
+
+ <view class='item0'>
+
+  </view>
+  <view class='item'>
+    <view class='left'>消息通知</view>
+    <view class='right'>
+      <image src='../../images/to_right.png'></image>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>团队协作</view>
+    <view class='right'>
+    <image src='../../images/to_right.png'></image>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>客户留言</view>
+    <view class='right'>
+   <image src='../../images/to_right.png'></image>
+ 
+    </view>
+  </view>
+</view>

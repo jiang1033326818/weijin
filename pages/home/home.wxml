@@ -1,0 +1,109 @@
+<!--pages/home/home.wxml-->
+<view>
+ 
+   <swiper indicator-dots="{{indicatorDots}}"  
+           autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">  
+         <block wx:for="{{imgUrls}}">  
+           <swiper-item>  
+              <navigator url="{{item.link}}" hover-class="navigator-hover">  
+               <image src="{{item.url}}" class="slide-image" width="355" height="150"/>  
+              </navigator>  
+           </swiper-item>  
+         </block>  
+ </swiper>
+
+  <view class="customer-name font30">
+            <image
+              src="../../images/tel.png"
+              data-phone="{{item.contactMobile}}"
+              data-id="{{item.id}}"
+              data-index="{{index}}"
+              bindtap="phoneCall"
+              class="customer-item-btn"
+            ></image>
+            <view class='borderphone'>
+              <view>快捷电话</view>
+              <view>贷款问题,一个电话就搞定</view>
+            </view>
+    </view>
+
+     <view class="customer-name font30">
+            <image
+              src="../../images/tel.png"
+              data-phone="{{item.contactMobile}}"
+              data-id="{{item.id}}"
+              data-index="{{index}}"
+              bindtap="phoneCall"
+              class="customer-item-btn"
+            ></image>
+            <view class='borderphone'>
+              <view>本地专家服务</view>
+              <view>本地贷款顾问,更专心,更贴心</view>
+            </view>
+    </view>
+
+       <view class="customer-name font30">
+            <image
+              src="../../images/tel.png"
+              data-phone="{{item.contactMobile}}"
+              data-id="{{item.id}}"
+              data-index="{{index}}"
+              bindtap="phoneCall"
+              class="customer-item-btn"
+            ></image>
+            <view class='borderphone'>
+              <view>微金专家服务</view>
+              <view>微金专家,每天上万个贷款问题被解答</view>
+            </view>
+    </view>
+
+    
+
+
+
+
+  <view class="tap-container">
+    <view class="tap-item">
+      <text>销售线索</text>
+      <text class="tap-num">{{clueNum}}</text>
+    </view>
+    <view class="tap-item">
+      <text>客户数量</text>
+      <text class="tap-num">{{customerNum}}</text>
+    </view>
+    <view class="tap-item">
+      <text>申报任务</text>
+      <text class="tap-num">{{taskNum}}</text>
+    </view>
+    <!-- <view class="tap-item">
+      <text>累计申报总量</text>
+      <text class="tap-num">{{powerTotal}}</text>
+    </view> -->
+  </view>
+  <view class="navigator-container">
+    <navigator
+      class="navigator-btn  btn-class"
+      url="../clues/clues"
+    >
+      websocket聊天
+    </navigator>
+    <button
+      class="navigator-btn share-btn btn-class"
+      open-type="share"
+    >
+      试算方案
+    </button>
+    <navigator
+      class="navigator-btn  btn-class"
+      url="../customers/customers"
+    >
+      客户管理
+    </navigator>
+    <navigator
+      url="../knowledgebase/knowledgebase"
+      class="navigator-btn  btn-class"
+    >
+      知识库
+    </navigator>
+  </view>
+</view>

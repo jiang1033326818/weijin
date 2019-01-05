@@ -1,0 +1,24 @@
+<!--pages/bespeak/bespeak.wxml-->
+<view class="main">
+  <view class="head-container">
+    <image src="../../images/head.png"></image>
+    <text>{{param.name}}</text>
+    <text>很荣幸为您服务，有任何需求请告诉我</text>
+  </view>
+  <view class="input-container">
+    <view class="ele-input">
+      <input bindblur="companyChange" value="{{param.company}}" type="text" placeholder="请输入公司名称"></input>
+      <view class="ele-num">
+        <input bindblur="powerChange" type="number" value="{{param.powerNum}}" ></input>
+        <text>万千瓦时</text>
+      </view>
+    </view>
+    <view>
+      <text class="contact-input-title">预约信息</text>
+      <input bindblur="nameChange" placeholder="*请输入您的姓名" ></input>
+      <input bindblur="mobileChange" maxlength="11" placeholder="*请输入您的电话"></input>
+      <input bindblur="suggestChange" placeholder="请输入意见及建议"></input>
+    </view>
+    <button bindtap="submit" class="btn-class bespeak-btn">预约</button>
+  </view>
+</view>

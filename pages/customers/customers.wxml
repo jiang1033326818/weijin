@@ -1,0 +1,74 @@
+<!--pages/customers/customers.wxml-->
+<view class="customers-container">
+  <!-- <view class="customers-num-show">
+    <view class="customers-total width35">
+      <text>销售线索(公/私)</text>
+      <text class="customers-detail-num blue">80/15</text>
+    </view>
+    <view class="customers-total width32">
+      <text>沟通过</text>
+      <text class="customers-detail-num green">20</text>
+    </view>
+    <view class="customers-total width32">
+      <text>已成交客户</text>
+      <text class="customers-detail-num">15</text>
+    </view>
+  </view> -->
+  <view class="customers-filter">
+    <view class="customers-search">
+      <input
+        type="text"
+        placeholder-class="customers-filter-placeholder"
+        bindinput="searchCustomer"
+        placeholder="搜索，客户总数{{customerTotal || 0}}家公司"
+      ></input>
+    </view>
+    <!-- <view class="status-picker">
+      <text>客户状态：</text>
+      <picker
+        mode="selector"
+        range="{{customerStatus}}"
+        range-key="label"
+        bindchange="statusChange"
+      >
+        <text class="blue">{{customerStatus[statusFilter].label}}</text>
+        <text class="bolder">  ﹀</text>
+      </picker>
+    </view> -->
+  </view>
+  <scroll-view
+    bindscrolltolower="getCustomerList"
+    scroll-y
+    class="customer-list"
+  >
+    <view wx:for="{{list}}" bindtap="goDetail" data-customer="{{cpy}}" wx:for-item="cpy" class="customer-company">
+      <view class="customer-company-info">
+        <text>{{cpy.name}}</text>
+        <view class="company-address downText">
+          <text>{{cpy.registeredAddress || ''}}</text>
+        </view>
+      </view>
+      <view class="customer-item-num">
+        <image
+          src="../../images/icon-user.png"
+          class="num-icon"
+        ></image>
+        <text class="downText">{{cpy.contactNum || 0}}</text>
+      </view>
+      <!-- <view class="customer-item-num">
+        <image
+          src="../../images/icon-paper.png"
+          class="num-icon"
+        ></image>
+        <text class="downText">{{cpy.contractNum}}</text>
+      </view> -->
+      <view class="customer-item-num">
+        <image
+          src="../../images/icon-bolt.png"
+          class="num-icon"
+        ></image>
+        <text class="downText">{{cpy.bilateralPower || 0}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

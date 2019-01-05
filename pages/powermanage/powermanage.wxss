@@ -1,0 +1,51 @@
+/* pages/home/home.wxss */
+.home-banner {
+  width: 100%;
+  height: 300rpx;
+}
+
+.header-text {
+  position: absolute;
+  color: white;
+  font-size: 46rpx;
+  font-weight: bolder;
+  top: 200rpx;
+  width: 100%;
+  text-align: center;
+}
+.middle-area {
+  margin-top: -10rpx;
+}
+.image-count {
+  padding-left: 20rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.fromCountText {
+  color: #009DFF;
+  font-size: 35rpx;
+  padding-left: 5rpx;
+}
+.tap-container {
+  margin-top: -20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 30rpx;
+}
+
+.tap-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  padding: 30rpx 0;
+}
+
+.tap-num {
+  font-size: 50rpx;
+}
+
+.header-area {
+  margin-top: -20rpx;
+}

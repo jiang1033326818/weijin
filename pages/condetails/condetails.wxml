@@ -1,0 +1,76 @@
+<!--pages/condetails/condetails.wxml-->
+<view class="customers-container">
+  <view class='divno1'>
+    <view class="customer-company-name">{{list.name}}</view>
+    <view class='zzz'>
+    <view class='textmsg'>
+      <text class="customer-company-type"> 甲方: {{list.partyAName}}</text>
+       <text class="customer-company-type"> 乙方: {{list.partyBName}}</text>
+      <text class="customer-company-type" decode="{{true}}">合同电量: {{list.power===null?"0":list.power}} 万千瓦时 </text>
+    </view>
+    <view class='textmsg2'>
+      <text class="customer-company-type"> 合同编号: {{list.partyACode===null?"":list.partyACode}} </text>
+      <text class="customer-company-type" decode="{{true}}"> 合同类型: {{typedata===0?"长协":"竞价"}} </text>
+      <text class="customer-company-type" decode="{{true}}"> 合同价格: {{list.price===null?"0":list.price}} </text>
+    </view>
+    </view>
+    <view class='status_button' style='background:{{list.status==="UNCONFIRMED"?"red":list.status==="PENDING"?"#73D13D":list.status==="APPROVED"?"#009DFF":"#999"}}'>{{list.status==="UNCONFIRMED"?"待确认":list.status==="PENDING"?"待审批":list.status==="APPROVED"?"已成交":"已取消"}}</view>
+  </view>
+
+
+  <view class='divno2'>
+      <view style='width:600rpx'>
+       <text class="phonecome">  {{list.partyAContactName}}</text>
+      <text class="phonecome" style='margin-left:30rpx'>  {{list.partyAContactMobile}}</text>
+      </view>
+     
+      <image src="{{phoneimg}}" mode="cover" class="phoneimg" bindtap='phoneCall' id="{{list.partyAContactMobile}}"></image>
+  </view>
+
+
+  <view class='divno3' style='display:{{no3dis}}'>
+      <view class='table1' style='display:{{chartdis}}' >
+        <image src='{{chartimg2}}' bindtap='checktable'></image>
+         <image src='{{tableimg}}' bindtap='checkchart'></image>
+         <view class='status_button2' style='background:#009DFF'>万千瓦时</view>
+         <view>
+         <ec-canvas id="mychart-dom-bar" canvas-id="mychart-clu" ec="{{ barbar }}"></ec-canvas>
+         </view>
+      </view>
+       <view class='table1' style='display:{{tabledis}}' >
+        <image src='{{chartimg}}' bindtap='checktable'></image>
+         <image src='{{tableimg2}}' bindtap='checkchart'></image>
+         <view class='status_button2' style='background:#009DFF'>万千瓦时</view>
+         <view class='month_all'>
+         <view wx:for="{{list3}}">
+            <view class='month_a'>
+            <text style='border-bottom:1px solid #009DFF;font-size:28rpx;color:#999999'>{{item.month}}</text>
+            <text>{{item.value}}</text>
+            </view>
+         </view>
+         </view>
+      </view>
+  </view>
+
+  <view class='divno4'>
+      <scroll-view scroll-y class="customer-list">
+         <view wx:for="{{list2}}" class="customer-item">
+            <text>{{item.name}}</text>
+            <view  decode="{{true}}">
+            {{item.time}}
+            {{item.compony}}
+               {{item.paple}}
+            </view>
+            <image class='cular' src='{{cular}}'></image>
+         </view>
+      </scroll-view>
+  </view>
+
+  <view class='bottom_button'>
+    <picker mode="selector"  range="{{customerStatus2}}" range-key="label" catchchange="getContractsStatus" id="{{item.id}}">
+
+          <view class='button1'>修改合同状态</view>
+        </picker>
+      <button disabled class='button2'>合同下载</button>
+  </view>
+</view>

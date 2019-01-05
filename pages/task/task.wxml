@@ -1,0 +1,59 @@
+<!--pages/task/task.wxml-->
+<view class="main">
+  <view class="blank"></view>
+  <view wx:if="{{status === 'todo'}}" class="company-info">
+    <view class="company-name">
+      {{task.customerName}}
+    </view>
+    <view class="company-contact-list">
+      <view wx:for="{{contacts}}" 
+        class="company-contact"
+        data-index="{{index}}"
+        bindtap="changeContact"  
+      >
+        <image class="width20" src="../../images/radio{{selectContact == index ? '-on' : ''}}.png"></image>
+        <text class="width30">{{item.name}}</text>
+        <text class="width40">{{item.mobile}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="task-info">
+    <view class="task-info-card">
+      <image
+        src="../../images/head.png"
+        mode="cover"
+        class="card-img"
+      ></image>
+      <view class="task-company">
+        <view class="title">
+          <text>{{task.name}}</text>
+          <view class="type-icon-box"><text class="type-icon {{task.type === MONTH ? 'month-color' : 'year-color'}}">{{task.type === MONTH ? '月度' : '年度'}}</text></view>  
+        </view>
+        <view class="task-info-detail">
+          <text>剩余时间:　{{task.leaveDays}}天</text>
+          <text>用电公司:　{{task.customerName}}</text>
+          <text>联系人　:　{{contact.name}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="task-ele-container">
+      <view class="task-electric">
+        <text class="title">{{task.type === MONTH ? '月度用电总量' : ('年度用电总量:' + yearPower + '万千瓦时')}}</text>
+        <text>{{task.type === MONTH ? '月度总量=月度竞价电量+年度交易电量(长协)' : '年度总量=分月电量之和' }}</text>
+        <text>最小申报电量单位: 0.0001万千瓦时</text>
+        <text>单位: 万千瓦时</text>
+        <input wx:if="{{task.type === MONTH}}" value="{{totalPower}}" bindblur="totalPowerChange" class="task-input" type="number" placeholder="请输入电量"></input>
+        <view wx:else class="month-power-list">
+          <view wx:for="{{monthPower}}" class="month-power-item">
+            <text>{{index < 9 ? '0' : ''}}{{index + 1}}月</text>
+            <input type="number" value="{{item}}" data-index="{{index}}" bindblur="changeMonthPower"></input>
+          </view>
+        </view>
+        <view wx:if="{{status !== 'done'}}" class="check-code"><input bindblur="checkCodeChange" type="number" placeholder="请输入联系人手机后四位" class="task-input"></input>
+        </view>
+      </view>
+      <button wx:if="{{status === 'todo'}}" open-type="share" class="btn-class share-btn">发送给微信好友</button>
+      <button bindtap="submit" wx:if="{{status === 'doing'}}" class="btn-class share-btn">提交</button>
+    </view>
+  </view>
+</view>

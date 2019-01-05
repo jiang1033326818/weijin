@@ -1,0 +1,56 @@
+.section {
+  background-color: #eeeeee;
+}
+.weui-cells__title {
+  background-color: #ffffff;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 25rpx;
+}
+.weui-cells_after-title {
+  margin-top: -10rpx;
+}
+.weui-label {
+  width: 210rpx;
+}
+.customerInfo {
+  margin-top: -15rpx;
+}
+.weui-cells {
+  font-size: 30rpx;
+}
+.resetBtn {
+  width: 200rpx;
+}
+.submitBtn {
+  width: 550rpx;
+}
+.globalTips {
+  font-size: 25rpx;
+  padding-left: 26rpx;
+}
+.error-tip {
+  font-size: 25rpx;
+  color: red;
+  padding: 0rpx 40rpx 10rpx;
+}
+.btnArea {
+  width: 100%;
+  position: fixed;
+  bottom: 5rpx;
+}
+.weui-btn {
+  font-size: 30rpx;
+}
+.btnArea .btn-class {
+  background-color: #009DFF;
+}
+.header-text {
+  position: absolute;
+  color: white;
+  font-size: 46rpx;
+  font-weight: bolder;
+  top: 170rpx;
+  width: 100%;
+  text-align: center;
+}

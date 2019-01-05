@@ -1,0 +1,61 @@
+<!--pages/schedule/schedule.wxml-->
+<view class="schedule-container">
+  <view class="tab-head">
+    <view
+      class="{{tabIndex === 0 ? 'active' : ''}}"
+      data-id="0"
+      bindtap="tabClick"
+    >待办事项（{{todoTotal}}）</view>
+    <view
+      data-id="1"
+      bindtap="tabClick"
+      class="{{tabIndex === 1 ? 'active' : ''}}"
+    >已完成（{{doneTotal}}）</view>
+  </view>
+  <swiper
+    current="{{tabIndex}}"
+    bindchange="tabChange"
+  >
+    <swiper-item >
+      <scroll-view class="swiper-item" scroll-y>
+        <view bindtap="toDetail" data-item="{{item}}" data-status="todo" wx:for="{{todoList}}" wx:for-index="index" class="list-item">
+          <image
+            src="../../images/head.png"
+            mode="cover"
+            class="item-header"
+          ></image>
+          <view class="item-detail">
+            <view class="item-detail-title">
+              <text>{{item.name}}</text>
+              <view class="type-icon-box"><text class="type-icon {{item.type === MONTH ? 'month-color' : 'year-color'}}">{{item.type === MONTH ? '月度' : '年度'}}</text></view>
+            </view>
+            <view class="item-detail-info">
+              <text>{{item.customerName}}</text>
+              <text>剩余时间 {{item.leaveDays}}天</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view class="swiper-item" scroll-y>
+        <view bindtap="toDetail" data-item="{{item}}" wx:for="{{doneList}}" data-status="done" wx:for-index="index" class="list-item">
+          <image
+            src="../../images/head.png"
+            mode="cover"
+            class="item-header"
+          ></image>
+          <view class="item-detail">
+            <view class="item-detail-title">
+              <text>{{item.name}}</text>
+              <view class="type-icon-box"><text class="type-icon {{item.type === MONTH ? 'month-color' : 'year-color'}}">{{item.type === MONTH ? '月度' : '年度'}}</text></view>
+            </view>
+            <view class="item-detail-info">
+              <text>{{item.customerName}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper> 
+</view>

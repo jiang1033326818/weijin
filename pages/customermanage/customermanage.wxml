@@ -1,0 +1,70 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">{{customer.name}}</view>
+  </view>
+	<view class="weui-flex topArea">
+	 	<view>
+		 	<view class="placeholder">公司地址 :</view>
+		</view>
+	 	<view class="weui-flex__item">
+		 	<view class="placeholder companyAddress">{{customer.registeredAddress || ''}}</view>
+		</view>
+	</view>
+	<view class="weui-flex industryArea">
+	 	<view class="weui-flex__item">
+			<view class="weui-flex">
+				<view>
+					<view class="placeholder">年用电量 :</view>
+				</view>
+				<view class="weui-flex__item">
+					<view class="placeholder companyAddress">{{customer.bilateralPower}}</view>
+				</view>
+			</view>
+		</view>
+    <!-- <view class="weui-flex__item powerArea">
+			<view class="weui-flex">
+				<view>
+					<view class="placeholder">年用电量 :</view>
+				</view>
+				<view class="weui-flex__item">
+					<view class="placeholder companyAddress">{{yearPower}}</view>
+				</view>
+			</view>
+		</view> -->
+	</view>
+	<view class="weui-flex linkMan">
+	 	<view>
+		 	<view class="placeholder">联系人</view>
+		</view>
+	</view>
+	<view wx:for="{{contactList}}" wx:key="index">
+		<view class="contact-container">
+      <view class="placeholders linkName">{{item.name}}</view>
+      <view class="placeholders linkMobile">{{item.mobile}}</view>
+      <!-- <view>
+				<view class="placeholders itemCount">{{item.count}}次</view>
+			</view> -->
+			<view class="call-icon">
+        <image class="phone-icon" mode="aspectFit" src="{{src}}" data-phone="{{item.mobile}}" data-index="{{index}}" data-id="{{item.id}}" bindtap="phoneCall"></image>
+      </view>
+    </view>
+	</view>
+	<view class="table">
+		<view class="tr">
+			<view class="th one">序号</view>
+			<view class="th two">申报任务名称</view>
+			<view class="th three">申报电量</view>
+			<view class="th four">申报状态</view>
+		</view>
+		<scroll-view scroll-y="{{true}}" style="height: 540rpx;">
+			<block wx:for="{{taskList}}" wx:key="{{index}}">
+				<view class="tr">
+					<view class="td one">{{item.id}}</view>
+					<view class="td two">{{item.monthStr + (item.type === 'BIDDING' ? '月度' : '年度') + '用电申报'}}</view>
+					<view class="td three">{{item.reportPower || 0}}</view>
+					<view class="td four">{{item.isDone ? '已完成' : '未完成'}}</view>
+				</view>
+			</block>
+		</scroll-view>
+	</view>
+</view>

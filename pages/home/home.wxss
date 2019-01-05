@@ -1,0 +1,77 @@
+/* pages/home/home.wxss */
+.home-banner {
+  width: 100%;
+  height: 300rpx;
+}
+
+.tap-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 30rpx;
+}
+
+.tap-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  padding: 30rpx 0;
+}
+
+.tap-num {
+  font-size: 50rpx;
+}
+
+.navigator-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 30rpx;
+}
+
+.navigator-btn {
+  width: 48%;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  padding: 45rpx 0;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 1rpx 1rpx grey;
+}
+
+.header-text {
+  position: absolute;
+  color: white;
+  font-size: 46rpx;
+  font-weight: bolder;
+  top: 200rpx;
+  width: 100%;
+  text-align: center;
+}
+
+.share-btn {
+  margin: 20rpx 0 0;
+  line-height: normal;
+}
+
+.font30 {
+  font-size: 30rpx;
+  color: gray;
+  display: flex;
+  padding: 20rpx 1%;
+}
+
+.customer-item-btn {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.borderphone {
+  width: 75%;
+  height: 100rpx;
+  border: 1rpx solid #ddd;
+}
+
+.slide-image{
+  width: 100%;
+}

@@ -1,0 +1,88 @@
+<!--pages/contracts/contracts.wxml-->
+<view class="customers-container">
+  <view class="customers-num-show">
+    <view class="customers-total width35">
+      <text>待审核</text>
+      <text class="customers-detail-num blue">{{msg.pendingTotal}}</text>
+    </view>
+    <view class="customers-total width32">
+      <text>已成交</text>
+      <text class="customers-detail-num green">{{msg.approvedTotal}}</text>
+    </view>
+    <view class="customers-total width32">
+      <text>已取消</text>
+      <text class="customers-detail-num">{{msg.unapprovedTotal}}</text>
+    </view>
+  </view>
+  <view class="customers-filter">
+    <view class="customers-search">
+      <input type="text" placeholder-class="customers-filter-placeholder" placeholder="搜索"></input>
+    </view>
+    <view class='select0'>
+      <view class="status-picker">
+        <text>合同类型: </text>
+        <picker mode="selector" range="{{customerType}}" range-key="label" bindchange="typeChange">
+          <text class="blue">{{customerType[typeFilter].label}}</text>
+          <text class="bolder">  ﹀</text>
+        </picker>
+      </view>
+      <view class="status-picker">
+        <text decode="{{true}}"> &nbsp; &nbsp; &nbsp; 合同状态： &nbsp; </text>
+        <picker mode="selector" range="{{customerStatus}}" range-key="label" bindchange="statusChange">
+          <text class="blue">{{statusFilter===0?"全部":statusFilter==='UNCONFIRMED'?"待确认":statusFilter==="PENDING"?"待审批":statusFilter==="APPROVED"?"已成交":"已取消"}}</text>
+          <text class="bolder">  ﹀</text>
+        </picker>
+      </view>
+
+    </view>
+  </view>
+
+
+  <scroll-view scroll-y class="customer-list">
+    <view wx:for="{{list}}" class="customer-item" wx:for-index='key' >
+    <view id='{{item.id}}' bindtap='returnid' style='width:100%' data-id='{{typeFilter}}'>
+     <view class='customer-itemsun  zzz0'>
+        <image src="{{contractimg}}" mode="cover" class="customer-header"></image>
+      </view>
+      <view class='customer-itemsun  zzz1'>
+        <text class="customer-company-name">{{item.name}}</text>
+        <view class='textmsg'>
+          <text class="customer-company-type"> 合同类型: {{typeFilter===0?"长协":"竞价"}}</text>
+          <text class="customer-company-type" decode="{{true}}">合同电量: {{item.power===null?"0":item.power}} 万千瓦时 </text>
+
+        </view>
+        <view class='textmsg2'>
+          <text class="customer-company-type"> 价差: {{item.spread===null?"":item.spread}} 元</text>
+          <text class="customer-company-type" decode="{{true}}"> 合同编号: {{item.contactCode}} </text>
+        </view>
+        <view style='width:100%;clear:both;'>
+          <text class="customer-company-type" decode="{{true}}"> 联系人: {{item.contact===null?"":item.contact}} </text>
+        </view>
+      </view>
+    </view>
+     
+
+
+      <view class='share_button'>
+        <image src="{{shareimg}}" mode="cover" class="shareimg"></image>
+      </view>
+
+      <view class='status_button' style='background:{{item.status==="UNCONFIRMED"?"red":item.status==="PENDING"?"#73D13D":item.status==="APPROVED"?"#009DFF":"#999"}}'>{{item.status==="UNCONFIRMED"?"待确认":item.status==="PENDING"?"待审批":item.status==="APPROVED"?"已成交":"已取消"}}</view>
+      <view class='bottome_button'>
+
+
+        <picker mode="selector" range="{{customerStatus2}}" range-key="label" catchchange="getContractsStatus" id="{{item.id}}">
+
+          <view>修改合同状态</view>
+        </picker>
+        <view class='borlef' catchtap="phoneCall" id="{{item.mobile}}">拨打联系人</view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view>
+    <navigator url="../contract/contract" class='bottome_button2'>
+      <view>+新创建合同</view>
+    </navigator>
+  </view>
+</view>

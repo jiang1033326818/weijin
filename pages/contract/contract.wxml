@@ -1,0 +1,720 @@
+<view class="page">
+  <view class="navbar">
+    <block wx:for="{{tabs}}" wx:key="tabs">
+      <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+        <view class="navbar__title">{{item.name}}</view>
+      </view>
+    </block>
+    <view class="navbar__slider" style="width: {{sliderWidth}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+  </view>
+  <view style="position: absolute;top: 68rpx;width: 100%;height:{{contentHeight}}px">
+    <form bindsubmit="formSubmit">
+      <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange">
+        <swiper-item catchtouchmove='catchTouchMove'>
+        <form bindsubmit="handleFirstNext">
+          <scroll-view scroll-y style="height: 1000rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+          <view class="weui-cells__title">甲方公司基本信息</view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">
+                <icon type="warn" size="5" color="red" />
+                公司名称
+              </view>
+            </view>
+            <view class="weui-cell__bd">
+              <!-- <input class="weui-input" name="companyA" placeholder="请输入甲方公司名称" bindblur="companyAChangeOver" /> -->
+              <editableSelect name="companyA" place-holder="请输入甲方公司名称" select-list="{{companyList}}" input-val="{{companyA}}" select-key="companyName" bind:selectinputchange="companyAChangeOver" bind:select="selectComapnyA" bind:selectinputblur="companyABlur" bind:selectinputfocus="companyAFocus"></editableSelect>
+            </view>
+          </view>
+          <view wx:if="{{companyACheckMsg}}" class="error-tip">
+            <icon type="warn" size="5" />
+            {{companyACheckMsg}}
+          </view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">
+                <icon type="warn" size="5" color="red" />
+                公司法人
+              </view>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="managerA" placeholder="请输入甲方法人名称" bindblur="managerAChangeOver" value="{{companyALegalPerson}}" />
+            </view>
+          </view>
+          <view wx:if="{{managerACheckMsg}}" class="error-tip">
+            <icon type="warn" size="5" />
+            {{managerACheckMsg}}
+          </view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">
+                <icon type="warn" size="5" color="red" />
+                合同编号
+              </view>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="contractCodeA" placeholder="请输入甲方合同编号" bindblur="contractCodeAChangeOver" />
+            </view>
+          </view>
+          <view wx:if="{{contractCodeACheckMsg}}" class="error-tip">
+            <icon type="warn" size="5" />
+            {{contractCodeACheckMsg}}
+          </view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">
+                <icon type="warn" size="5" color="red" />
+                电压等级
+              </view>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="voltage" placeholder="请输入用电压等级(千伏)" type="number" bindchange="voltageChange" />
+            </view>
+          </view>
+          <view wx:if="{{voltageCheckMsg}}" class="error-tip">
+            <icon type="warn" size="5" />
+            {{voltageCheckMsg}}
+          </view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">
+                <icon type="warn" size="5" color="red" />
+                变压器容量
+              </view>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="transformerCapacity" placeholder="请输入变压器容量(千伏安)" type="number" />
+            </view>
+          </view>
+          <view wx:if="{{transformerCheckMsg}}" class="error-tip">
+            <icon type="warn" size="5" />
+            {{transformerCheckMsg}}
+          </view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">
+                <icon type="warn" size="5" color="red" />
+                公司地址
+              </view>
+            </view>
+            <view class="weui-cell__bd">
+              <picker class="weui-btn" mode="region" value="{{companyAAdress}}" bindchange="bindCompanyARegionChange" name="companyAAdress" placeholder="请选择公司地址">
+                <view class="picker">
+                  <text>省:    {{companyAAdress[0]}}\n 市:    {{companyAAdress[1]}}\n县:    {{companyAAdress[2]}}</text>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class="weui-cells__title">乙方公司基本信息</view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">
+                <icon type="warn" size="5" color="red" />
+                公司名称
+              </view>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="companyB" placeholder="请输入乙方公司名称" bindblur="companyBChangeOver" value="{{companyBName}}" />
+            </view>
+          </view>
+          <view wx:if="{{companyBCheckMsg}}" class="error-tip">
+            <icon type="warn" size="5" />
+            {{companyBCheckMsg}}
+          </view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">
+                <icon type="warn" size="5" color="red" />
+                公司法人
+              </view>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="managerB" placeholder="请输入乙方法人名称" bindblur="managerBChangeOver" value="{{legalPersonB}}" />
+            </view>
+          </view>
+          <view wx:if="{{managerBCheckMsg}}" class="error-tip">
+            <icon type="warn" size="5" />
+            {{managerBCheckMsg}}
+          </view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">
+                <icon type="warn" size="5" color="red" />
+                合同编号
+              </view>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="contractCodeB" placeholder="请输入乙方合同编号" bindblur="contractCodeBChangeOver" />
+            </view>
+          </view>
+          <view wx:if="{{contractCodeBCheckMsg}}" class="error-tip">
+            <icon type="warn" size="5" />
+            {{contractCodeBCheckMsg}}
+          </view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">
+                <icon type="warn" size="5" color="red" />
+                公司地址
+              </view>
+            </view>
+            <view class="weui-cell__bd">
+              <picker class="weui-btn" mode="region" value="{{companyBAdress}}" bindchange="bindCompanyBRegionChange" name="companyBAdress" placeholder="请选择公司地址">
+                <view class="picker">
+                  <text>省:    {{companyBAdress[0]}}\n 市:    {{companyBAdress[1]}}\n县:    {{companyBAdress[2]}}</text>
+                </view>
+              </picker>
+            </view>
+          </view>
+          </scroll-view>
+          <view class="weui-flex btnArea">
+            <view class="weui-flex__item">
+              <button class="weui-btn" type="default" bindtap="handleExit">取消</button>
+            </view>
+            <view class="weui-flex__item">
+              <button class="weui-btn btn-class" type="primary" formType="submit">下一步</button>
+            </view>
+          </view>
+        </form>
+        </swiper-item>
+        <swiper-item catchtouchmove='catchTouchMove'>
+          <form bindsubmit="handleSecondNext">
+            <scroll-view scroll-y style="height: 1000rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+              <view class="weui-cells__title">甲方联系人基本信息</view>
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                  <view class="weui-label">
+                    <icon type="warn" size="5" color="red" />
+                    联系人
+                  </view>
+                </view>
+                <view class="weui-cell__bd">
+                  <!-- <input class="weui-input" name="managerA" placeholder="请输入联系人名称" bindblur="linkmanAChangeOver" /> -->
+                  <editableSelect name="managerA" place-holder="请输入联系人名称" select-list="{{companyAlinkmanList}}" select-key="contactName" bind:selectinputchange="linkmanAChangeOver" bind:select="selectLinkmanA" bind:selectinputblur="linkmanABlur" bind:selectinputfocus="linkmanAFocus"></editableSelect>
+                </view>
+              </view>
+              <view wx:if="{{linkmanACheckMsg}}" class="error-tip">
+                <icon type="warn" size="5" />
+                {{linkmanACheckMsg}}
+              </view>
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                  <view class="weui-label">
+                    <icon type="warn" size="5" color="red" />
+                    手机号
+                  </view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" placeholder="请输入联系人手机号码" type="number" name="mobileA" maxlength="11" bindblur="mobileAChangeOver" value="{{contactAMobile}}" />
+                </view>
+              </view>
+              <view wx:if="{{mobileACheckMsg}}" class="error-tip">
+                <icon type="warn" size="5" />
+                {{mobileACheckMsg}}
+              </view>
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                  <view class="weui-label">
+                    <icon type="warn" size="5" color="red" />
+                    邮箱
+                  </view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" placeholder="请输入联系人邮箱" name="emailA" bindblur="emailAChangeOver" />
+                </view>
+              </view>
+              <view wx:if="{{emailACheckMsg}}" class="error-tip">
+                <icon type="warn" size="5" />
+                {{emailACheckMsg}}
+              </view>
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                  <view class="weui-label">
+                    <icon type="warn" size="5" color="red" />
+                    办公电话
+                  </view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" placeholder="请输入联系人办公电话" name="phoneA" bindblur="phoneBChangeOver" value="{{contactAPhone}}" />
+                </view>
+              </view>
+              <view wx:if="{{phoneACheckMsg}}" class="error-tip">
+                <icon type="warn" size="5" />
+                {{phoneACheckMsg}}
+              </view>
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                  <view class="weui-label">
+                    <icon type="warn" size="5" color="red" />
+                    地址
+                  </view>
+                </view>
+                <view class="weui-cell__bd">
+                  <picker class="weui-btn" mode="region" value="{{linkmanAAdress}}" bindchange="bindLinkmanARegionChange" name="linkmanAAdress" placeholder="请选择联系人地址">
+                    <view class="picker">
+                      <text>
+                        省:    {{linkmanAAdress[0]}}\n 市:    {{linkmanAAdress[1]}}\n县:    {{linkmanAAdress[2]}}
+                      </text>
+                    </view>
+                  </picker>
+                </view>
+              </view>
+              <view class="weui-cells__title">乙方联系人基本信息</view>
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                  <view class="weui-label">
+                    <icon type="warn" size="5" color="red" />
+                    联系人
+                  </view>
+                </view>
+                <view class="weui-cell__bd">
+                  <!-- <input class="weui-input" name="managerA" placeholder="请输入联系人名称" bindblur="linkmanBChangeOver" /> -->
+                  <editableSelect name="managerB" place-holder="请输入联系人名称" select-list="{{companyBlinkmanList}}" select-key="contactName" bind:selectinputchange="linkmanBChangeOver" bind:select="selectLinkmanB" bind:selectinputblur="linkmanBBlur" bind:selectinputfocus="linkmanBFocus"></editableSelect>
+                </view>
+              </view>
+              <view wx:if="{{linkmanBCheckMsg}}" class="error-tip">
+                <icon type="warn" size="5" />
+                {{linkmanBCheckMsg}}
+              </view>
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                  <view class="weui-label">
+                    <icon type="warn" size="5" color="red" />
+                    手机号
+                  </view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" placeholder="请输入联系人手机号码" type="number" name="mobileB" maxlength="11" bindblur="mobileBChangeOver" value="{{contactBMobile}}" />
+                </view>
+              </view>
+              <view wx:if="{{mobileBCheckMsg}}" class="error-tip">
+                <icon type="warn" size="5" />
+                {{mobileBCheckMsg}}
+              </view>
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                  <view class="weui-label">
+                    <icon type="warn" size="5" color="red" />
+                    邮箱
+                  </view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" placeholder="请输入联系人邮箱" name="emailB" bindblur="emailBChangeOver" />
+                </view>
+              </view>
+              <view wx:if="{{emailBCheckMsg}}" class="error-tip">
+                <icon type="warn" size="5" />
+                {{emailBCheckMsg}}
+              </view>
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                  <view class="weui-label">
+                    <icon type="warn" size="5" color="red" />
+                    办公电话
+                  </view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" placeholder="请输入联系人办公电话" name="phoneB" bindblur="phoneAChangeOver" value="{{contactBPhone}}" />
+                </view>
+              </view>
+              <view wx:if="{{phoneBCheckMsg}}" class="error-tip">
+                <icon type="warn" size="5" />
+                {{phoneBCheckMsg}}
+              </view>
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                  <view class="weui-label">
+                    <icon type="warn" size="5" color="red" />
+                    地址
+                  </view>
+                </view>
+                <view class="weui-cell__bd">
+                  <picker class="weui-btn" mode="region" value="{{linkmanBAdress}}" bindchange="bindLinkmanBRegionChange" name="linkmanBAdress" placeholder="请选择联系人地址">
+                    <view class="picker">
+                      <text>
+                        省:    {{linkmanBAdress[0]}}\n 市:    {{linkmanBAdress[1]}}\n县:    {{linkmanBAdress[2]}}
+                      </text>
+                    </view>
+                  </picker>
+                </view>
+              </view>
+            </scroll-view>
+            <view class="weui-flex btnArea">
+              <view class="weui-flex__item">
+                <button class="weui-btn btn-class" type="primary" bindtap="handlePre">上一步</button>
+              </view>
+              <view class="weui-flex__item">
+                <button class="weui-btn btn-class" type="primary" formType="submit">下一步</button>
+              </view>
+            </view>
+          </form>
+        </swiper-item>
+        <swiper-item catchtouchmove='catchTouchMove'>
+          <form bindsubmit="handleThirdNext">
+            <!-- 合同基本信息 -->
+            <view class="weui-cells__title">合同信息</view>
+            <!-- 合同名称 -->
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="weui-label">
+                  <icon type="warn" size="5" color="red" />
+                  合同名称
+                </view>
+              </view>
+              <view class="weui-cell__bd">
+                <input class="weui-input" name="contract" placeholder="请输入合同名称" bindblur="contractChangeOver" />
+              </view>
+            </view>
+            <view wx:if="{{contractCheckMsg}}" class="error-tip">
+              <icon type="warn" size="5" />
+              {{contractCheckMsg}}
+            </view>
+            <!-- 合同类型 -->
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="weui-label">
+                  <icon type="warn" size="5" color="red" />
+                  合同类型
+                </view>
+              </view>
+              <view class="weui-cell__bd">
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" placeholder="请选择合同类型" name="contractType">
+                  <view class="picker">
+                    <text>{{array[index]}}</text>
+                  </view>
+                </picker>
+              </view>
+            </view>
+            <!-- 合同生效日期   effectiveTime -->
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="weui-label">
+                  <icon type="warn" size="5" color="red" />
+                  生效日期
+                </view>
+              </view>
+              <view class="weui-cell__bd">
+                <picker bindchange="bindEffectiveTimeChange" mode="date" value="{{start}}" start="{{start}}" name="effectiveTime">
+                  <view class="picker">{{effectiveTime}}</view>
+                </picker>
+              </view>
+            </view>
+            <!-- 合同截止时间 expiryDate -->
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="weui-label">
+                  <icon type="warn" size="5" color="red" />
+                  截止日期
+                </view>
+              </view>
+              <view class="weui-cell__bd">
+                <picker bindchange="bindBiddingChange" mode="date" value="{{end}}" start="{{end}}" name="expiryDate">
+                  <view class="picker">{{expiryDate}}</view>
+                </picker>
+              </view>
+            </view>
+            <!-- 下一步按钮 -->
+            <view class="weui-flex btnArea">
+              <view class="weui-flex__item">
+                <button class="weui-btn btn-class" type="primary" bindtap="handlePre">上一步</button>
+              </view>
+              <view class="weui-flex__item">
+                <button class="weui-btn btn-class" type="primary" formType="submit">下一步</button>
+              </view>
+            </view>
+          </form>
+        </swiper-item>
+        <swiper-item catchtouchmove='catchTouchMove'>
+          <scroll-view scroll-y style="height: 1000rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+            <!-- 月竞合同电量 -->
+            <view wx:if="{{index>0}}">
+              <view class="weui-cells__title">月竞合同</view>
+              <!-- 月竞电量 -->
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                  <view class="weui-label">
+                    <icon type="warn" size="5" color="red" />
+                    月竞电量
+                  </view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" name="biddingPower" placeholder="请输入月竞电量" type="digit" bindchange="biddingChange" />
+                </view>
+              </view>
+              <view wx:if="{{biddingCheckMsg}}" class="error-tip">
+                <icon type="warn" size="5" />
+                {{biddingCheckMsg}}
+              </view>
+              <!-- 月份 -->
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                  <view class="weui-label">
+                    <icon type="warn" size="5" color="red" />
+                    合同月份
+                  </view>
+                </view>
+                <view class="weui-cell__bd">
+                  <picker bindchange="bindMonthChange" value="{{currentMonth}}" range="{{month}}" placeholder="请选择合同月份" name="contractMonth" disabled="{{true}}">
+                    <view class="picker">
+                      <text>{{month[currentMonth]}}</text>
+                    </view>
+                  </picker>
+                </view>
+              </view>
+              <!-- 价差 -->
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                  <view class="weui-label">
+                    <icon type="warn" size="5" color="red" />
+                    价差
+                  </view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" name="spread" placeholder="请输入价差(元)" type="digit" bindchange="spreadChange" />
+                </view>
+              </view>
+              <view wx:if="{{spreadCheckMsg}}" class="error-tip">
+                <icon type="warn" size="5" />
+                {{spreadCheckMsg}}
+              </view>
+            </view>
+            <!-- 双边合同电量 -->
+            <view wx:else>
+              <view>
+                <view class="weui-cells__title">双边合同</view>
+                <!-- 双边总电量 -->
+                <!-- <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">
+                      <icon type="warn" size="5" color="red" />
+                      总电量
+                    </view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" name="bilateralCount" placeholder="双边总电量" type="number" value="{{count}}" disabled="{{true}}" />
+                  </view>
+                </view> -->
+                <!-- 双边电价 -->
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">
+                      <icon type="warn" size="5" color="red" />
+                      双边电价
+                    </view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" name="bilateral" placeholder="请输入双边电价" type="digit" bindchange="bilateralChange" />
+                  </view>
+                </view>
+                <view wx:if="{{bilateralCheckMsg}}" class="error-tip">
+                  <icon type="warn" size="5" />
+                  {{bilateralCheckMsg}}
+                </view>
+                <!-- 一月份电量 -->
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">
+                      <icon type="warn" size="5" color="red" />
+                      一月电量
+                    </view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" name="Jan" placeholder="请输入一月份电量" type="digit" bindchange="janChange" />
+                  </view>
+                </view>
+                <view wx:if="{{janCheckMsg}}" class="error-tip">
+                  <icon type="warn" size="5" />
+                  {{janCheckMsg}}
+                </view>
+                <!-- 二月份电量 -->
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">
+                      <icon type="warn" size="5" color="red" />
+                      二月电量
+                    </view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" name="Feb" placeholder="请输入二月份电量" type="digit" bindchange="febChange" />
+                  </view>
+                </view>
+                <view wx:if="{{febCheckMsg}}" class="error-tip">
+                  <icon type="warn" size="5" />
+                  {{febCheckMsg}}
+                </view>
+                <!-- 三月份电量 -->
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">
+                      <icon type="warn" size="5" color="red" />
+                      三月电量
+                    </view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" name="Mar" placeholder="请输入三月份电量" type="digit" bindchange="marChange" />
+                  </view>
+                </view>
+                <view wx:if="{{marCheckMsg}}" class="error-tip">
+                  <icon type="warn" size="5" />
+                  {{marCheckMsg}}
+                </view>
+                <!-- 四月份电量 -->
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">
+                      <icon type="warn" size="5" color="red" />
+                      四月电量
+                    </view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" name="Apr" placeholder="请输入四月份电量" type="digit" bindchange="aprChange" />
+                  </view>
+                </view>
+                <view wx:if="{{aprCheckMsg}}" class="error-tip">
+                  <icon type="warn" size="5" />
+                  {{aprCheckMsg}}
+                </view>
+                <!-- 五月份电量 -->
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">
+                      <icon type="warn" size="5" color="red" />
+                      五月电量
+                    </view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" name="May" placeholder="请输入五月份电量" type="digit" bindchange="mayChange" />
+                  </view>
+                </view>
+                <view wx:if="{{mayCheckMsg}}" class="error-tip">
+                  <icon type="warn" size="5" />
+                  {{mayCheckMsg}}
+                </view>
+                <!-- 六月份电量 -->
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">
+                      <icon type="warn" size="5" color="red" />
+                      六月电量
+                    </view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" name="Jun" placeholder="请输入六月份电量" type="digit" bindchange="junChange" />
+                  </view>
+                </view>
+                <view wx:if="{{junCheckMsg}}" class="error-tip">
+                  <icon type="warn" size="5" />
+                  {{junCheckMsg}}
+                </view>
+                <!-- 七月份电量 -->
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">
+                      <icon type="warn" size="5" color="red" />
+                      七月电量
+                    </view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" name="Jul" placeholder="请输入七月份电量" type="digit" bindchange="julChange" />
+                  </view>
+                </view>
+                <view wx:if="{{julCheckMsg}}" class="error-tip">
+                  <icon type="warn" size="5" />
+                  {{julCheckMsg}}
+                </view>
+                <!-- 八月份电量 -->
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">
+                      <icon type="warn" size="5" color="red" />
+                      八月电量
+                    </view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" name="Aug" placeholder="请输入八月份电量" type="digit" bindchange="augChange" />
+                  </view>
+                </view>
+                <view wx:if="{{augCheckMsg}}" class="error-tip">
+                  <icon type="warn" size="5" />
+                  {{augCheckMsg}}
+                </view>
+                <!-- 九月份电量 -->
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">
+                      <icon type="warn" size="5" color="red" />
+                      九月电量
+                    </view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" name="Sep" placeholder="请输入九月份电量" type="digit" bindchange="sepChange" />
+                  </view>
+                </view>
+                <view wx:if="{{sepCheckMsg}}" class="error-tip">
+                  <icon type="warn" size="5" />
+                  {{sepCheckMsg}}
+                </view>
+                <!-- 十月份电量 -->
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">
+                      <icon type="warn" size="5" color="red" />
+                      十月电量
+                    </view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" name="Oct" placeholder="请输入十月份电量" type="digit" bindchange="octChange" />
+                  </view>
+                </view>
+                <view wx:if="{{octCheckMsg}}" class="error-tip">
+                  <icon type="warn" size="5" />
+                  {{octCheckMsg}}
+                </view>
+                <!-- 十一月份电量 -->
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">
+                      <icon type="warn" size="5" color="red" />
+                      十一月电量
+                    </view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" name="Nov" placeholder="请输入十一月份电量" type="digit" bindchange="novChange" />
+                  </view>
+                </view>
+                <view wx:if="{{novCheckMsg}}" class="error-tip">
+                  <icon type="warn" size="5" />
+                  {{novCheckMsg}}
+                </view>
+                <!-- 十二月份电量 -->
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">
+                      <icon type="warn" size="5" color="red" />
+                      十二月电量
+                    </view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" name="Dec" placeholder="请输入十二月份电量" type="digit" bindchange="decChange" />
+                  </view>
+                </view>
+                <view wx:if="{{decCheckMsg}}" class="error-tip">
+                  <icon type="warn" size="5" />
+                  {{decCheckMsg}}
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+          <view class="weui-flex btnArea">
+            <view class="weui-flex__item">
+              <button class="weui-btn btn-class" type="primary" bindtap="handlePre">上一步</button>
+            </view>
+            <view class="weui-flex__item">
+              <button class="weui-btn btn-class" type="primary" formType="submit">提交合同</button>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </form>
+  </view>
+</view>

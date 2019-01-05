@@ -1,0 +1,49 @@
+<!--pages/home/home.wxml-->
+<view>
+  <image
+    src="../../images/sdjylq.png"
+    class="home-banner"
+  ></image>
+  <view class="header-text">{{companyName}}</view>
+  <view class="middle-area">
+    <view>
+      <image mode="aspectFit" src="../../images/count.png" class="image-count"></image>
+      <text class="fromCountText">总体情况</text>
+    </view>
+    <view class="tap-container">
+      <view class="tap-item">
+        <text>合同电量 (兆千瓦时)</text>
+        <text class="tap-num">{{number1}}</text>
+      </view>
+      <view class="tap-item">
+        <text>结算电量 (兆千瓦时)</text>
+        <text class="tap-num">{{number2}}</text>
+      </view>
+      <view class="tap-item">
+        <text>执行率</text>
+        <text class="tap-num">{{number3}}</text>
+      </view>
+      <view class="tap-item">
+        <text>节省电费（万元）</text>
+        <text class="tap-num">{{number4}}</text>
+      </view>
+      <view class="tap-item">
+        <text>年度合同电费（万元）</text>
+        <text class="tap-num">{{number5}}</text>
+      </view>
+      <view class="tap-item">
+        <text>代理费（含税）</text>
+        <text class="tap-num">{{number6}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="header-area">
+    <view>
+      <image mode="aspectFit" src="../../images/month.png" class="image-count"></image>
+      <text class="fromCountText">分月数据</text>
+    </view>
+    <view>
+      <ec-canvas id="mychart-dom-bar" canvas-id="mychart-clu" ec="{{ barbar }}" style='height:1000rpx'></ec-canvas>
+    </view>
+  </view>
+</view>

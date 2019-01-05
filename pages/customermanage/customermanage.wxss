@@ -1,0 +1,133 @@
+.page__hd {
+	text-align: center;
+	font-weight: bold;
+	font-size: 35rpx;
+}
+
+.topArea {
+  padding-top: 30rpx;
+}
+
+.industryArea {
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.placeholder{
+	margin: 5rpx;
+	padding: 0 20rpx;
+	font-size: 30rpx;
+}
+
+.linkName {
+  width: 20%;
+  text-align: right;
+}
+
+.linkMobile {
+  width: 50%;
+  text-align: left;
+}
+
+.companyAddress {
+	margin-left: -40rpx;
+}
+
+.powerArea {
+  margin-left: -150rpx;
+}
+
+.linkMan {
+	background-color: #eeeeee;
+  height: 2rem;
+  line-height: 2rem;
+  margin-left: -10rpx;
+}
+
+.placeholders {
+	margin: 5rpx;
+	padding: 0 20rpx;
+	font-size: 40rpx;
+}
+
+.itemCount {
+  color: #c3c4c5;
+}
+
+.bottome_button2{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  background:#009DFF;
+}
+
+.bottome_button2 view{
+  float: left;
+  width: 100%;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 35rpx;
+  color: #ffffff;
+}
+
+.table {
+  border: 0px solid darkgray;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 2rem;
+  align-items: center;
+}
+.td {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+  justify-content: center;
+  text-align: center;
+  font-size: 25rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  line-height: 2rem;
+}
+.one {
+  width: 10%;
+}
+.two {
+  width: 50%;
+}
+.three {
+  width: 20%;
+}
+.four {
+  width: 20%;
+}
+.five {
+  width: 15%;
+  color: #009DFF;
+  cursor: pointer;
+}
+.th {
+  font-size: 25rpx;
+  background-color: #eeeeee;
+  justify-content: center;
+  display: flex;
+  height: 2rem;
+  align-items: center;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.call-icon {
+  width: 20%;
+}
+
+.phone-icon {
+  width: 100rpx;
+  height: 100rpx;
+}
