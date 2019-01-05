@@ -87,7 +87,7 @@
     >
       websocket聊天
     </navigator>
-    <button
+    <!-- <button
       class="navigator-btn share-btn btn-class"
       open-type="share"
     >
@@ -98,7 +98,7 @@
       url="../customers/customers"
     >
       客户管理
-    </navigator>
+    </navigator> -->
     <navigator
       url="../knowledgebase/knowledgebase"
       class="navigator-btn  btn-class"
