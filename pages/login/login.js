@@ -5,7 +5,6 @@ import request from '../../utils/request.js';
 import urls from '../../common/urls.js';
 const MAXTIMECOUNT = 60;
 const app = getApp();
-
 Page({
   data: {
     phone: '17777777777', // 手机号
@@ -92,8 +91,9 @@ Page({
       urlParams: params
     });
     if (app.globalData.userInfo) {
+      console.log(app.globalData.userInfo)
       this.setData({
-        userInfo: app.globalData.userInfo,
+        //userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
     } else if (this.data.canIUse){
@@ -102,9 +102,12 @@ Page({
       app.userInfoReadyCallback = res => {
         this.setData({
           userInfo: res.userInfo,
-          hasUserInfo: true
+          hasUserInfo: true,
+          jscode:app.globalData.jscode
         })
+        
       }
+      console.log(app.globalData)
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
@@ -119,37 +122,39 @@ Page({
     }
     const _ = this;
     // 登录
+ 
+
     wx.login({
-      success: res => {
-        // 登录成功向后台发送临时登录凭证code,并记录登录凭证
-        if (res.errMsg === 'login:ok') {
-          app.globalData.jscode = res.code;
-          request(urls.sendLoginCode, {
+      success(res) {
+        let that = this;
+        if (res.code) {
+          //发起网络请求
+          wx.request({
+            url: 'https://test.com/onLogin',
             data: {
-              jscode: res.code
-            },
-            success: function (res) {
-              console.log(res);
-              if (res.code === 0) { // 取数成功过
-                // if (res.content.companyType !== 'SELLER') {
-                //   wx.showToast({
-                //     icon: 'none',
-                //     title: '非售电方用户无法登陆售电易',
-                //   });
-                //   return;
-                // }
-                if (params && params.noAuthority) {
-                  wx.navigateBack({
-                    delta: 1,
-                  });
-                } else {
-                  wx.switchTab({
-                    url: '../home/home'
-                  });
-                }
-              }
+              code: res.code
             }
-          });
+            
+          })
+          console.log(333,res)
+          wx.request( {
+            url: 'https://api.weixin.qq.com/sns/jscode2session',
+            method: 'GET',
+            data: {
+              appid: "wxbab0181e9d19cac6",
+              secret: "7cf95420d7d15e30adcf449785344b8e",
+              js_code: res.code,
+              grant_type:"authorization_code",
+            },
+            success: function (response)  {
+              console.log(4444,response)
+            },
+            fail: function(response)  {
+              console.log(response, '失败了');
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
         }
       }
     })
@@ -187,7 +192,7 @@ Page({
                 // if (res.content.companyType !== 'SELLER') {
                 //   wx.showToast({
                 //     icon: 'none',
-                //     title: '非售电方用户无法登陆售电易',
+                //     title: '非售电方用户无法登陆微金网',
                 //   });
                 //   return;
                 // }

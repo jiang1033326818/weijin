@@ -2,7 +2,7 @@
 var app = getApp();
 var socketOpen = false;
 var frameBuffer_Data, session, SocketTask;
-var url = 'ws://请填写您的长链接接口地址';
+var url = 'wss://zadai.net:8000/ws/im?uid=1';
 var upload_url = '请填写您的图片上传接口地址'
 Page({
   data: {

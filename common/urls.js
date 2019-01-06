@@ -34,5 +34,6 @@ export default {
   // getClueNum: '/api/clue/count', // 获取线索数量
   // getTaskNum: '/api/gather/todo/count', // 获取申报任务数量
   // getUserInfo: '/api/login/info', // 获取登录用户信息
+  getopenId:'https://api.weixin.qq.com/sns/jscode2session',
   
 }
