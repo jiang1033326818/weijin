@@ -65,6 +65,14 @@ Page({
     });
   },
 
+  // 跳转页面
+  toexpert: function () {
+    wx.navigateTo({
+      url: '../expert/expert'
+    });
+    console.log(6565656)
+  },
+
   // 获取登录用户信息
   getUserInfo: function() {
     request(urls.getUserInfo, {
@@ -79,6 +87,8 @@ Page({
       }
     });
   },
+
+ 
 
   /**
    * 生命周期函数--监听页面加载

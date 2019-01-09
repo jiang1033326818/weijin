@@ -4,7 +4,7 @@
     <view class="no-user" wx:if="{{!hasUserInfo && canIUse}}">
       <image class="logo" src="../../images/logo.jpg"></image>
       <text class="summary">
-        　　售电交易CRM，专业于微信移动办公场景设计的销售顾问客户端工具，主要功能包含商机录入、客户线索分发、售电合同管理、数据分析、销售日历等。
+        　一站式智能金融服务平台
       </text>
       <button
         class="btn-class try-btn"

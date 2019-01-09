@@ -1,0 +1,59 @@
+<view class="page">
+  <view class="navbar">
+    <block wx:for="{{tabs}}" wx:key="tabs">
+      <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+        <view class="navbar__title">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+  <view class='swiper'>
+    <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" class='swiper'>
+      <swiper-item style='margin-top:80rpx' class='swiper-item'>
+        <view class='allOfpeople'>
+          <scroll-view class="icon-list">
+            <view wx:for="{{typeList}}" class="row-flex list-item">
+              <view class='toplist'>
+                <view class='leftlist'>
+                  <image src="../../images//header/{{item.value}}.jpg" class="item-header"></image>
+                </view>
+                <view class='rightlist'>
+                  <text class='item-text' decode="{{true}}" space="{{true}}">{{item.name}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.label}}</text>
+
+                  <view class='pink'>
+                    <text>{{item.from}}</text>
+                  </view>
+                   <view class='blue'>
+                    <text>{{item.belong}}</text>
+                  </view>
+                </view>
+
+              </view>
+              <view class='bottomlist'>
+                  <view class='people'>
+                    <text>{{item.people}}人咨询过</text>
+                  </view>
+
+                  <view class='peoplebutton1'>
+                  电话咨询
+                  </view>
+                   <view class='peoplebutton2'>
+                  在线咨询
+                  </view>
+              </view>
+
+            </view>
+          </scroll-view>
+        </view>
+      </swiper-item>
+      <swiper-item style='margin-top:80rpx'>
+        222
+      </swiper-item>
+      <swiper-item style='margin-top:80rpx'>
+        333
+      </swiper-item>
+      <swiper-item style='margin-top:80rpx'>
+        444
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

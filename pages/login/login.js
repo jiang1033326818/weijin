@@ -141,8 +141,8 @@ Page({
             url: 'https://api.weixin.qq.com/sns/jscode2session',
             method: 'GET',
             data: {
-              appid: "wxbab0181e9d19cac6",
-              secret: "7cf95420d7d15e30adcf449785344b8e",
+              appid: "wx0f95ffcd25a151de",
+              secret: "bdb031b55a2eac8ddef19cecb9eadedb",
               js_code: res.code,
               grant_type:"authorization_code",
             },
@@ -174,50 +174,50 @@ Page({
   },
   // 登录
   login: function() {
-    const { phone, pwd, urlParams } = this.data;
-    if (this.inputChange(phone, 'phone', regs.PHONE) &&
-      this.inputChange(pwd, 'pwd', regs.NOTNONE)
-    ) {
-      wx.login({
-        success: function(res) {
-          request(urls.loginUrl, {
-            method: 'POST',
-            data: {
-              jscode: res.code,
-              password: pwd,
-              username: phone,
-            },
-            success: (res) => {
-              if (res.code === 0) {
-                // if (res.content.companyType !== 'SELLER') {
-                //   wx.showToast({
-                //     icon: 'none',
-                //     title: '非售电方用户无法登陆微金网',
-                //   });
-                //   return;
-                // }
-                // 记录登录手机,测试账号的特殊处理
-                app.globalData.phone = phone;
-                if (urlParams && urlParams.noAuthority) {
-                  wx.navigateBack({
-                    delta: 1,
-                  });
-                } else {
+  //   const { phone, pwd, urlParams } = this.data;
+  //   if (this.inputChange(phone, 'phone', regs.PHONE) &&
+  //     this.inputChange(pwd, 'pwd', regs.NOTNONE)
+  //   ) {
+  //     wx.login({
+  //       success: function(res) {
+  //         request(urls.loginUrl, {
+  //           method: 'POST',
+  //           data: {
+  //             jscode: res.code,
+  //             password: pwd,
+  //             username: phone,
+  //           },
+  //           success: (res) => {
+  //             if (res.code === 0) {
+  //               // if (res.content.companyType !== 'SELLER') {
+  //               //   wx.showToast({
+  //               //     icon: 'none',
+  //               //     title: '非售电方用户无法登陆微金网',
+  //               //   });
+  //               //   return;
+  //               // }
+  //               // 记录登录手机,测试账号的特殊处理
+  //               app.globalData.phone = phone;
+  //               if (urlParams && urlParams.noAuthority) {
+  //                 wx.navigateBack({
+  //                   delta: 1,
+  //                 });
+  //               } else {
                   wx.switchTab({
                     url: '../home/home'
                   });
-                }
-              } else {
-                wx.showToast({
-                  icon: 'none',
-                  title: res.message,
-                })
-              }
-            }
-          })
-        }
-      });
-    }
+  //               }
+  //             } else {
+  //               wx.showToast({
+  //                 icon: 'none',
+  //                 title: res.message,
+  //               })
+  //             }
+  //           }
+  //         })
+  //       }
+  //     });
+  //   }
   },
   getUserInfo: function(e) {
     if (e.detail.userInfo) {

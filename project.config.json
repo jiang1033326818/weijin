@@ -13,9 +13,9 @@
 		"uglifyFileName": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.2",
-	"appid": "wxbab0181e9d19cac6",
-	"projectname": "WeijinWxApp",
+	"libVersion": "2.4.4",
+	"appid": "wx0f95ffcd25a151de",
+	"projectname": "%E5%BE%AE%E9%87%91%E7%BD%91",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

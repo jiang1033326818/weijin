@@ -27,7 +27,8 @@
             </view>
     </view>
 
-     <view class="customer-name font30">
+     <view class="customer-name font30" bindtap='toexpert'
+     >
             <image
               src="../../images/tel.png"
               data-phone="{{item.contactMobile}}"

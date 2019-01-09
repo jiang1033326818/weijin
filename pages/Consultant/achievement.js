@@ -3,10 +3,16 @@ import * as echarts from '../../ec-canvas/echarts';
 
 const tabs = [
   {
-    name: "销售详情"
+    name: "抵押贷款"
   },
   {
-    name: "负荷预测"
+    name: "信用贷款"
+  },
+  {
+    name: "极速贷款"
+  },
+  {
+    name: "信用卡"
   },
 ];
 
@@ -17,24 +23,29 @@ Page({
     activeIndex: 0,//当前展示的Tab项索引
     sliderWidth: 96,//指示器的宽度,计算得到
     contentHeight: 0,//页面除去头部Tabbar后，内容区的总高度，计算得到
-    totalClue: 100,
-    connected: 35,
-    weiqueren: 50,
-    scrollTop: 0,
-    contractDeal: 15,
-    chartTitle: '总成交量',
-    ec: {
-      onInit: initChart
-    },
-    cast: {
-      onInit: initcast
-    },
-     barbar: {
-      onInit: initbar
-    },
-     piepie: {
-      onInit: initpie
-    }
+    typeList: [{
+      name:"杨经理",
+      label: '高级融资顾问',
+      value: 'head0',
+      from:"微金网",
+      belong:"擅长:房产抵押贷款",
+      people:"44646",
+    }, {
+        name: "杨经理",
+        label: '高级融资顾问',
+        value: 'head1',
+        from: "微金网",
+        belong: "擅长:房产抵押贷款",
+        people: "44646",
+      }, {
+        name: "杨经理",
+        label: '高级融资顾问',
+        value: 'head2',
+        from: "微金网",
+        belong: "擅长:房产抵押贷款",
+        people: "44646",
+      },
+    ]
 
   },
   // 滑动事件
@@ -78,6 +89,7 @@ Page({
   },
 	// 导航点击事件
   navTabClick: function (e) {
+    console.log(e.currentTarget.id)
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
