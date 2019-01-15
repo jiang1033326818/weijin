@@ -1,91 +1,128 @@
 <!--pages/home/home.wxml-->
-<view>
- 
-   <swiper indicator-dots="{{indicatorDots}}"  
-           autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">  
-         <block wx:for="{{imgUrls}}">  
-           <swiper-item>  
-              <navigator url="{{item.link}}" hover-class="navigator-hover">  
-               <image src="{{item.url}}" class="slide-image" width="355" height="150"/>  
-              </navigator>  
-           </swiper-item>  
-         </block>  
- </swiper>
+<view class='homepage'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <navigator url="{{item.link}}" hover-class="navigator-hover">
+          <image src="{{item.url}}" class="slide-image" width="355" height="150" />
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
 
-  <view class="customer-name font30">
-            <image
-              src="../../images/tel.png"
-              data-phone="{{item.contactMobile}}"
-              data-id="{{item.id}}"
-              data-index="{{index}}"
-              bindtap="phoneCall"
-              class="customer-item-btn"
-            ></image>
-            <view class='borderphone'>
-              <view>快捷电话</view>
-              <view>贷款问题,一个电话就搞定</view>
-            </view>
+
+  <view class='gradual'>
+    <view class='itemleft' bindtap='tophonetel'>
+      <image class='phonequick' src='../../images/tel2.png'>
+      </image>
+      <view style='font-size:35rpx' class='ffffff'>
+        快捷电话
+      </view>
+      <view style='font-size:25rpx' class='ffffff'>
+        贷款问题
+      </view>
+      <view style='font-size:25rpx' class='ffffff'>
+        一个电话全搞定
+      </view>
     </view>
 
-     <view class="customer-name font30" bindtap='toexpert'
-     >
-            <image
-              src="../../images/tel.png"
-              data-phone="{{item.contactMobile}}"
-              data-id="{{item.id}}"
-              data-index="{{index}}"
-              bindtap="phoneCall"
-              class="customer-item-btn"
-            ></image>
-            <view class='borderphone'>
-              <view>本地专家服务</view>
-              <view>本地贷款顾问,更专心,更贴心</view>
-            </view>
+    <view class='itemright'>
+      <view class='itemrtop' bindtap='toexpert'>
+        <view style='font-size:35rpx' class='ffffff'>
+          本地专家服务
+        </view>
+        <view style='font-size:25rpx' class='ffffff'>
+          本地贷款顾问 更专业 更贴心
+        </view>
+      </view>
+
+      <view class='itemrbottom' bindtap='toconsultant'>
+        <view style='font-size:35rpx' class='ffffff'>
+          微金专家服务
+        </view>
+        <view style='font-size:25rpx' class='ffffff'>
+          微金专家 每天解决上万个贷款问题
+        </view>
+      </view>
     </view>
-
-       <view class="customer-name font30">
-            <image
-              src="../../images/tel.png"
-              data-phone="{{item.contactMobile}}"
-              data-id="{{item.id}}"
-              data-index="{{index}}"
-              bindtap="phoneCall"
-              class="customer-item-btn"
-            ></image>
-            <view class='borderphone'>
-              <view>微金专家服务</view>
-              <view>微金专家,每天上万个贷款问题被解答</view>
-            </view>
-    </view>
-
-    
-
-
-
-
-  <view class="tap-container">
-    <view class="tap-item">
-      <text>销售线索</text>
-      <text class="tap-num">{{clueNum}}</text>
-    </view>
-    <view class="tap-item">
-      <text>客户数量</text>
-      <text class="tap-num">{{customerNum}}</text>
-    </view>
-    <view class="tap-item">
-      <text>申报任务</text>
-      <text class="tap-num">{{taskNum}}</text>
-    </view>
-    <!-- <view class="tap-item">
-      <text>累计申报总量</text>
-      <text class="tap-num">{{powerTotal}}</text>
-    </view> -->
   </view>
+
+  <view class='bottommap'>
+    <view>
+      <image src='../../images/icon-user.png'></image>
+    </view>
+    <text>没有稳定工作如何网上快速贷款10万</text>
+  </view>
+
+  <view class='maplist'>
+    <view class="navbar">
+      <block wx:for="{{tabs}}" wx:key="tabs">
+        <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+          <view class="navbar__title">{{item.name}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" class='swiper'>
+    <swiper-item class='swiper-item'>
+      <view class='allOfpeople'>
+        <scroll-view class="icon-list">
+          <view wx:for="{{typeList}}" class="row-flex list-item">
+            <view class='toplist'>
+              <view class='toptitle'>
+                <view class='toptitle1' style='font-size:30rpx'>
+                  <image src='../../images/oneicon.png'>
+                  </image>
+                  {{item.name}}
+                   <view class='toptitle2'>
+                  {{item.label}}
+                </view>
+                </view>
+               
+                <view class='clear'></view>
+              </view>
+              <view class='listitem'>
+                <view class='itemmuch'>
+                  <view class='itemrate'>{{item.value}}</view>
+                  <view class='itemrate2'>贷款金额</view>
+
+                </view>
+                <view class='itemmuch'>
+                  <view class='itemrate'>{{item.from}}</view>
+                  <view class='itemrate2'>贷款利率</view>
+                </view>
+              </view>
+              
+                <view class='maptitle0'>
+                  <view class='maptitle pink'>
+                    {{item.belong[0]}}
+                  </view>
+                  <view class='maptitle green'>
+                    {{item.belong[1]}}
+                  </view>
+                  <view class='maptitle yellow'>
+                    {{item.belong[2]}}
+                  </view>
+                </view>
+            
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </swiper-item>
+    <swiper-item style='margin-top:80rpx'>
+      222
+    </swiper-item>
+    <swiper-item style='margin-top:80rpx'>
+      333
+    </swiper-item>
+    <swiper-item style='margin-top:80rpx'>
+      444
+    </swiper-item>
+  </swiper>
+
   <view class="navigator-container">
-    <navigator
-      class="navigator-btn  btn-class"
-      url="../clues/clues"
-    >
+    <navigator class="navigator-btn  btn-class" url="../clues/clues">
       websocket聊天
     </navigator>
     <!-- <button
@@ -100,10 +137,7 @@
     >
       客户管理
     </navigator> -->
-    <navigator
-      url="../knowledgebase/knowledgebase"
-      class="navigator-btn  btn-class"
-    >
+    <navigator url="../knowledgebase/knowledgebase" class="navigator-btn  btn-class">
       知识库
     </navigator>
   </view>

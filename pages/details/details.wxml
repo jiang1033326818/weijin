@@ -1,0 +1,95 @@
+<!--pages/details/details.wxml
+姜海鹏 1.12
+-->
+<view class='detailspage'>
+  <view class='detailscard'>
+    <view class='cardtop'>
+
+      <view class='circle'>
+        <image src='../../images/header/head0.jpg'></image>
+      </view>
+      <view class='headbs'>
+        <view class='headb'>{{name}}</view>
+        <view class='heads'>{{type}}</view>
+      </view>
+      <view class='headbs'>
+        <view class='headb'>{{name2}}</view>
+        <view class='heads'>{{type2}}</view>
+      </view>
+
+
+    </view>
+    <view class='cardbottom'>
+      <view class='handbs2'>
+        <view class='headb2'>{{name}}</view>
+        <view class='heads2'>{{type}}</view>
+      </view>
+      <view class='handbs2'>
+        <view class='headb'>{{name2}}</view>
+        <view class='heads'>{{type2}}</view>
+      </view>
+      <view class='handbs2'>
+        <view class='headb'>{{name2}}</view>
+        <view class='heads'>{{type2}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='belong'>
+    <view class='belongb'>顾问擅长</view>
+    <view class='belongs'>{{belong}}</view>
+  </view>
+
+
+  <view class='comment'>
+    <view class='belongc'>客户评价</view>
+    <view wx:for="{{tabs}}" wx:key="tabs">
+      <view id="{{index}}" class="comment-item {{ activeIndex== index?'comment-item2':''}}" bindtap='navTabClick'>{{item.name}}{{item.value}}</view>
+    </view>
+
+    <view style='clear:both'></view>
+
+    <view class='maplist'>
+      <view wx:for="{{typeList}}" class="row-flex list-item">
+        <view class='toplist'>
+          <view class='toptitle'>
+            <view class='toptitle1' style='font-size:30rpx'>
+              <view class='circul'>
+                <image src='../../images/icon-user.png'>
+                </image>
+              </view>
+              {{item.name}}
+              <view class='rightmap'>{{item.result}}</view>
+            </view>
+            <view class='toptitle2'>
+              {{item.label}}
+            </view>
+            <view class='clear'></view>
+          </view>
+
+          <view class='context'>
+            {{item.text}}
+          </view>
+          <view class='context2'>
+            {{item.from}}
+          </view>
+        </view>
+      </view>
+    </view>
+
+<!-- 底部的按钮 -->
+    <view class='bottomthree'>
+        <view class='bottomthree1' bindtap='allstar'>
+          <image src='{{star===0?subscribe:subscribe2}}'></image>
+
+          <view style='color:{{star===0?"#666666":"#FFB900"}};font-size:25rpx'>{{star===0?message:message2}}</view>
+        </view>
+        <view  class='bottomthree2' bindtap='callphone'>电话咨询
+        </view>
+        <view  class='bottomthree3'>
+            在线咨询
+        </view>
+    </view>
+  </view>
+
+</view>

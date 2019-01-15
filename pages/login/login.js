@@ -1,5 +1,6 @@
 //login.js
 //获取应用实例
+var WXBizDataCrypt = require('../../utils/cryptojs/RdWXBizDataCrypt.js');
 import regs from '../../common/regs.js';
 import request from '../../utils/request.js';
 import urls from '../../common/urls.js';
@@ -148,6 +149,20 @@ Page({
             },
             success: function (response)  {
               console.log(4444,response)
+              var pc = new WXBizDataCrypt("wx0f95ffcd25a151de", response.data.session_key)
+              wx.getUserInfo({
+                success: function (res) {
+                  //拿到getUserInfo（）取得的res.encryptedData, res.iv，调用decryptData（）解密
+                  var data = pc.decryptData(res.encryptedData, res.iv)
+                  // data.unionId就是咱们要的东西了
+                  app.globalData.unionid = data.unionId
+                  console.log('解密后 unionid: ', app.globalData.unionid)
+                },
+                fail: function (res) {
+                  console.log(res)
+                }
+              })
+
             },
             fail: function(response)  {
               console.log(response, '失败了');

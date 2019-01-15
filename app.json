@@ -1,24 +1,17 @@
 {
   "pages": [
-    "pages/Consultant/achievement",
+      "pages/schedule/schedule",
+    "pages/detailso/detailso",
+    "pages/details/details",
     "pages/login/login",
-    "pages/expert/expert",
-   
     "pages/home/home",
+    "pages/phonetel/phonetel",
+    "pages/Consultant/achievement",
+    "pages/expert/expert",
     "pages/mine/mine",
-    "pages/clues/clues",
-    "pages/knowledgebase/knowledgebase",
-    "pages/schedule/schedule",
+    "pages/clues/clues"
+  
    
-    "pages/newclue/newclue",
-    "pages/contract/contract",
-    "pages/eleplan/eleplan",
-    "pages/bespeak/bespeak",
-    "pages/contracts/contracts",
-    "pages/powermanage/powermanage",
-    "pages/customermanage/customermanage",
-    "pages/task/task",
-    "pages/condetails/condetails"
   ],
   "window": {
     "backgroundTextStyle": "light",

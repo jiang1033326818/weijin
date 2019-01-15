@@ -4,7 +4,7 @@
     <scroll-view class="icon-list">
     <view wx:for="{{typeList}}"  class="row-flex list-item">
       <image
-        src="../../images//expert/{{item.value}}.png"
+        src="../../images/expert/{{item.value}}.png"
         class="item-header"
       ></image>
       <view class='item-text'>{{item.label}}</view>

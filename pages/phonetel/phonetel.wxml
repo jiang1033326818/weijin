@@ -1,0 +1,77 @@
+<!--pages/phonetel/phonetel.wxml
+  姜海鵬 2019.1月11
+-->
+<view class='phonepage'>
+  <view class='imagehigh'>
+    <image src='../../images/phonetitle.jpg'></image>
+  </view>
+
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+    <block wx:for-items="{{actionSheetItems}}">
+      <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+  </action-sheet>
+
+
+  <view class='choice'>
+    <text class='phonetime'>服务时间:9:00~21:00</text>
+    <view class='typephone'>
+      <text class='phonetime2'>服务类型:</text>
+      <view class="login-input-phone" bindtap='actionSheetTap'>
+        <input value="{{menu}}" type="text" placeholder="请选择服务类型"></input>
+        <image src='../../images/right.png'></image>
+      </view>
+    </view>
+
+    <view class='typephone'>
+      <text class='phonetime2'>接听手机:</text>
+      <view class="login-input-phone">
+        <input type="phone" placeholder="请输入手机号码"></input>
+      </view>
+    </view>
+
+    <button class="btn-class login-btn" bindtap="gogogo">
+      提交
+    </button>
+
+    <modal hidden="{{hidden}}" title="" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{nocancel}}">
+
+      <view class='newmodal'>
+        <image src='../../images/formok.png'></image>
+        <view>提交成功</view>
+        <text>顾问助理会在10分钟内联系您,请保持电话通畅</text>
+      </view>
+    </modal>
+  </view>
+
+
+  <view class='maplist'>
+    <view wx:for="{{typeList}}" class="row-flex list-item">
+      <view class='toplist'>
+        <view class='toptitle'>
+          <view class='toptitle1' style='font-size:30rpx'>
+            <view class='circul'>
+              <image src='../../images/icon-user.png'>
+              </image>
+            </view>
+            {{item.name}}
+            <view class='rightmap'>{{item.result}}</view>
+          </view>
+          <view class='toptitle2'>
+            {{item.label}}
+          </view>
+          <view class='clear'></view>
+        </view>
+
+        <view class='context'>
+          {{item.text}}
+        </view>
+        <view class='context2'>
+          服务顾问: {{item.from}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -33,13 +33,6 @@ Page({
     }, {
         name: "杨经理",
         label: '高级融资顾问',
-        value: 'head1',
-        from: "微金网",
-        belong: "擅长:房产抵押贷款",
-        people: "44646",
-      }, {
-        name: "杨经理",
-        label: '高级融资顾问',
         value: 'head2',
         from: "微金网",
         belong: "擅长:房产抵押贷款",
@@ -70,7 +63,6 @@ Page({
   },
   // 导航点击滑动
   tapMove: function(e) {
-  
     this.setData({
       scrollTop: this.data.scrollTop + 10
     })

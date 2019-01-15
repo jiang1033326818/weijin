@@ -14,7 +14,7 @@
             <view wx:for="{{typeList}}" class="row-flex list-item">
               <view class='toplist'>
                 <view class='leftlist'>
-                  <image src="../../images//header/{{item.value}}.jpg" class="item-header"></image>
+                  <image src="../../images/header/{{item.value}}.jpg" class="item-header"></image>
                 </view>
                 <view class='rightlist'>
                   <text class='item-text' decode="{{true}}" space="{{true}}">{{item.name}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.label}}</text>
