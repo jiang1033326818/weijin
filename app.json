@@ -1,17 +1,16 @@
 {
   "pages": [
-      "pages/schedule/schedule",
+  "pages/login/login",
+      "pages/clues/clues",
+   
+        "pages/schedule/schedule",
     "pages/detailso/detailso",
     "pages/details/details",
-    "pages/login/login",
     "pages/home/home",
     "pages/phonetel/phonetel",
     "pages/Consultant/achievement",
     "pages/expert/expert",
-    "pages/mine/mine",
-    "pages/clues/clues"
-  
-   
+    "pages/mine/mine" 
   ],
   "window": {
     "backgroundTextStyle": "light",

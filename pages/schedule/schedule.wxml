@@ -1,3 +1,26 @@
-<view>
+<view class='chat'>
+  <view class='char-w'>
 
+  </view>
+
+  <view wx:for="{{typeList}}" class="row-flex list-item">
+    <view class='personchat' bindtap='toclues'>
+      <view class='chatimg'>
+        <image src='{{item.img}}'></image>
+      </view>
+      <view class='charcon'>
+       <view class='chattop'>
+        <view class='chatname'>{{item.name}}</view>
+        <view class='chattime'>{{item.time}}</view>
+      </view>
+      <view style='clear:both'></view>
+      <view class='chatbottom'>
+        <view class='chatcontent'>{{item.content}}</view>
+      </view>
+      </view>
+     
+
+      <view class='chatred'>{{item.num}}</view>
+    </view>
+  </view>
 </view>

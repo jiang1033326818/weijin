@@ -3,12 +3,62 @@ import regs from '../../common/regs.js';
 import request from '../../utils/request.js';
 import urls from '../../common/urls.js';
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-   
+    typeList: [
+      {
+      name: '张雄辉',
+      time: '5分钟前',
+      content:"呵呵",
+      num:"5",
+      img:"../../images/header/head0.jpg"
+    },
+      {
+        name: '李易峰',
+        time: '5分钟前',
+        content: "reuiytdsfsldf!",
+        num: "5",
+        img: "../../images/header/head2.jpg"
+      },
+      {
+        name: '恩柔',
+        time: '5分钟前',
+        content: "你麻sdfsdf!",
+        num: "5",
+        img: "../../images/header/head0.jpg"
+      },
+      {
+        name: '张雄辉',
+        time: '5分钟前',
+        content: "呵呵",
+        num: "5",
+        img: "../../images/header/head0.jpg"
+      },
+      {
+        name: '张雄辉',
+        time: '5分钟前',
+        content: "呵呵",
+        num: "5",
+        img: "../../images/header/head0.jpg"
+      },
+      {
+        name: '张雄辉',
+        time: '5分钟前',
+        content: "呵呵",
+        num: "5",
+        img: "../../images/header/head0.jpg"
+      },
+     ]
+  },
+
+
+  //跳转到聊天
+  toclues:function(e){
+    wx.navigateTo({
+      url: '../clues/clues'
+    });
   },
 
   /**

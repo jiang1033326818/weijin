@@ -20,7 +20,7 @@ function reGetAuth(callback) {
 }
 let isGoing = false;
 // const domain = 'https://www.powerchainshop.com';
-const domain = 'https://www.zhaoenergy.cn';
+var domain = 'https://zadai.net';
 export default function request(url, options) {
   const app = getApp();
   const header = {};

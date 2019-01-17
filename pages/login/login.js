@@ -130,13 +130,6 @@ Page({
         let that = this;
         if (res.code) {
           //发起网络请求
-          wx.request({
-            url: 'https://test.com/onLogin',
-            data: {
-              code: res.code
-            }
-            
-          })
           console.log(333,res)
           wx.request( {
             url: 'https://api.weixin.qq.com/sns/jscode2session',
@@ -157,6 +150,36 @@ Page({
                   // data.unionId就是咱们要的东西了
                   app.globalData.unionid = data.unionId
                   console.log('解密后 unionid: ', app.globalData.unionid)
+                  wx.request({
+                    url: urls.mainurl+urls.loginUrl,
+                    method: 'POST',
+                    data: JSON.stringify({
+                      area: "string",
+                      avatarUrl: "string",
+                      business: "string",
+                      city: "string",
+                      company: "string",
+                      companyImage: "string",
+                      country: "string",
+                      employment: "string",
+                      gender: 0,
+                      hashCode: "string",
+                      image: "string",
+                      language: "string",
+                      mobile: "string",
+                      name: "string",
+                      nikeName: "string",
+                      openid: "string",
+                      personImage: "string",
+                      province: "string",
+                      unionid: app.globalData.unionid,
+                    }),
+                    success: function (response){
+                      console.log(response)
+                      wx.setStorageSync("uid", response.data.data.id)
+                      wx.setStorageSync("sessionid", response.data.data.sessionid)
+                    }
+                  })
                 },
                 fail: function (res) {
                   console.log(res)

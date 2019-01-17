@@ -104,7 +104,6 @@ Page({
     wx.navigateTo({
       url: '../phonetel/phonetel'
     });
-    console.log(6565656)
   },
 
   toexpert: function () {

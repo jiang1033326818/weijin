@@ -1,6 +1,6 @@
 export default {
-  // sendCodeUrl: '', // 发送验证码接口
-  // loginUrl: '/api/login/binding', // 登录接口
+  mainurl: 'https://zadai.net', // 全局接口地址
+   loginUrl: '/login', // 登录接口
   // sendLoginCode: '/api/login/binding', // 向后台服务器发送临时登录凭证code，以获得openid
   // getClueSummary: '/api/clue/summary', // 获取线索总量数据
   // getClueList: '/api/clue/list', // 获取线索列表数据

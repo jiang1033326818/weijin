@@ -1,8 +1,12 @@
+import regs from '../../common/regs.js';
+import request from '../../utils/request.js';
+import urls from '../../common/urls.js';
 
 var app = getApp();
 var socketOpen = false;
 var frameBuffer_Data, session, SocketTask;
-var url = 'wss://zadai.net:8000/ws/im?uid=1';
+var url = 'wss://yindw.top/ws/im?uid=';
+// console.log(wx.getStorageSync("uid"))
 var upload_url = '请填写您的图片上传接口地址'
 Page({
   data: {
@@ -12,19 +16,27 @@ Page({
     addImg: false,
     //格式示例数据，可为空
     allContentList: [],
-    num: 0
+    num: 0,
+    uid:''
   },
   // 页面加载
   onLoad: function () {
+    this.setData({
+      uid: wx.getStorageSync("uid")
+    })
+    console.log(111,wx.getStorageSync("uid"))
     this.bottom();
   },
   onShow: function (e) {
+    console.log(222, wx.getStorageSync("uid"))
     if (!socketOpen) {
       this.webSocket()
     }
+   
   },
   // 页面加载完成
   onReady: function () {
+
     var that = this;
     SocketTask.onOpen(res => {
       socketOpen = true;
@@ -66,12 +78,12 @@ Page({
   webSocket: function () {
     // 创建Socket
     SocketTask = wx.connectSocket({
-      url: url,
-      data: 'data',
-      header: {
-        'content-type': 'application/json'
+      header:{
+        "Cookie":'JSESSIONID='+wx.getStorageSync("sessionid")
       },
-      method: 'post',
+      url: url+this.data.uid,
+      data: this.data.uid,
+      method: 'get',
       success: function (res) {
         console.log('WebSocket连接创建', res)
       },
