@@ -3,8 +3,8 @@
 
   </view>
 
-  <view wx:for="{{typeList}}" class="row-flex list-item">
-    <view class='personchat' bindtap='toclues'>
+  <view wx:for="{{typeList}}" class="row-flex list-item"  >
+    <view class='personchat' bindtap='toclues' id='{{item.id}}'>
       <view class='chatimg'>
         <image src='{{item.img}}'></image>
       </view>

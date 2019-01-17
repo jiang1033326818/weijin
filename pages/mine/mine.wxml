@@ -2,40 +2,67 @@
 
 <view class='container'>
 
-  <view class='loginout'>
+  <!-- <view class='loginout'>
     <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view> -->
+
+  <view class='mytop'>
+    <view class='mytop1'>
+      <view>{{userInfo.nickName}}</view>
+    </view>
+    <view class='mytop2'>
+      您好,尊敬给的会员
+    </view>
+
+    <view class='head'>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+    </view>
   </view>
-      <!-- <button
+
+
+  <!-- <button
       bindtap='loginout' 
       class='btn-class'
       >退出登录</button> -->
-  </view>
 
- <view class='item0'>
 
+<view class='item0'>
+
+</view>
+<view class='item'>
+  <view class='left'>我的顾问</view>
+  <view class='right'>
+    <image src='../../images/right.png'></image>
   </view>
-  <view class='item'>
-    <view class='left'>消息通知</view>
-    <view class='right'>
-      <image src='../../images/to_right.png'></image>
-    </view>
+</view>
+<view class='item'>
+  <view class='left'>顾问入口</view>
+  <view class='right'>
+    <image src='../../images/right.png'></image>
   </view>
-  <view class='item'>
-    <view class='left'>团队协作</view>
-    <view class='right'>
-    <image src='../../images/to_right.png'></image>
-    </view>
+</view>
+<view class='item'>
+  <view class='left'>商务合作</view>
+  <view class='right'>
+    <image src='../../images/right.png'></image>
   </view>
-  <view class='item'>
-    <view class='left'>客户留言</view>
-    <view class='right'>
-   <image src='../../images/to_right.png'></image>
- 
-    </view>
+</view>
+
+<view class='item'>
+  <view class='left'>联系客服</view>
+  <view class='right'>
+    <image src='../../images/right.png'></image>
   </view>
+</view>
+<view class='item'>
+  <view class='left'>关于我们</view>
+  <view class='right'>
+    <image src='../../images/right.png'></image>
+  </view>
+</view>
 </view>

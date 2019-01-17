@@ -17,12 +17,23 @@ Page({
     //格式示例数据，可为空
     allContentList: [],
     num: 0,
-    uid:''
+    uid:'',
+    userInfo:{},
   },
   // 页面加载
   onLoad: function () {
+    wx.getUserInfo({
+      success: res => {
+        app.globalData.userInfo = res.userInfo
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    })
     this.setData({
-      uid: wx.getStorageSync("uid")
+      uid: wx.getStorageSync("uid"),
+      toId: wx.getStorageSync("tootherId")
     })
     console.log(111,wx.getStorageSync("uid"))
     this.bottom();
@@ -99,13 +110,17 @@ Page({
   // 提交文字
   submitTo: function (e) {
     let that = this;
+    
     var data = {
-      body: that.data.inputValue,
+      text: that.data.inputValue,
+      fromId: that.data.uid,
+      fromName: that.data.userInfo.nickName,
+      toId:that.data.toId,
     }
     console.log(that.data.inputValue)
   
       // 如果打开了socket就发送数据给服务器
-      sendSocketMessage(data)
+      sendSocketMessage(JSON.stringify(data))
       this.data.allContentList.push({ is_my: { text: this.data.inputValue+"\n" } });
       this.setData({
         allContentList: this.data.allContentList,

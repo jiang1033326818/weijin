@@ -13,7 +13,7 @@ Page({
       time: '5分钟前',
       content:"呵呵",
       num:"5",
-      img:"../../images/header/head0.jpg"
+      img:"../../images/header/head0.jpg",
     },
       {
         name: '李易峰',
@@ -59,6 +59,8 @@ Page({
     wx.navigateTo({
       url: '../clues/clues'
     });
+    console.log(e)
+    wx.setStorageSync("tootherId", e.currentTarget.id)
   },
 
   /**
@@ -72,7 +74,24 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    let that=this;
+    //获取在线联系人
+    wx.request({
+      url: urls.mainurl + urls.localExpert,
+      method: 'GET',
+      data: JSON.stringify({
+        
+      }),
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      success: function (response) {
+        console.log(1111,response.data.data)
+        that.setData({
+          typeList: response.data.data
+        })
+      }
+    })
   },
 
   /**
