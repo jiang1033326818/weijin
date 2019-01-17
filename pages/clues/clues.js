@@ -120,7 +120,7 @@ Page({
     console.log(that.data.inputValue)
   
       // 如果打开了socket就发送数据给服务器
-      sendSocketMessage(JSON.stringify(data))
+      sendSocketMessage(data)
       this.data.allContentList.push({ is_my: { text: this.data.inputValue+"\n" } });
       this.setData({
         allContentList: this.data.allContentList,
