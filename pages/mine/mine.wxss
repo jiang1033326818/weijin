@@ -6,8 +6,42 @@
 }
 
 .mytop{
-  height: 300rpx;
+  height: 380rpx;
   width: 100%;
+  position: relative;
+}
+.mytop1{
+  height: 300rpx;
+  background-size: 300rpx 100%;
+}
+.mytop1 view{
+  padding-top: 250rpx;
+  margin-left: 300rpx;
+  font-size: 35rpx;
+  color: #ffffff;
+}
+.mytop2{
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #ffffff;
+  font-size: 25rpx;
+  margin-left: 300rpx
+}
+.head{
+  position: absolute;
+  left: 3%;
+  top: 150rpx;
+  height: 250rpx;
+  width: 250rpx;
+  background: #ffffff;
+  border-radius: 100%;
+  text-align: center;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.head image{
+  height: 210rpx;
+  width: 210rpx;
 }
 
 

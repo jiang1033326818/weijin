@@ -145,7 +145,8 @@ Page({
               var pc = new WXBizDataCrypt("wx0f95ffcd25a151de", response.data.session_key)
               wx.getUserInfo({
                 success: function (res) {
-                  //拿到getUserInfo（）取得的res.encryptedData, res.iv，调用decryptData（）解密
+                  console.log(555, res.userInfo)
+                  //拿到getUserInfo（）取得的res.encryptedData, res.iv，调用decryptData（）解密              
                   var data = pc.decryptData(res.encryptedData, res.iv)
                   // data.unionId就是咱们要的东西了
                   app.globalData.unionid = data.unionId
@@ -155,20 +156,20 @@ Page({
                     method: 'POST',
                     data: JSON.stringify({
                       area: "string",
-                      avatarUrl: "string",
+                      avatarUrl: res.userInfo.avatarUrl,
                       business: "string",
-                      city: "string",
+                      city: res.userInfo.city,
                       company: "string",
                       companyImage: "string",
-                      country: "string",
+                      country: res.userInfo.country,
                       employment: "string",
-                      gender: 0,
+                      gender: res.userInfo.gender.toString(),
                       hashCode: "string",
-                      image: "string",
+                      image: res.userInfo.avatarUrl,
                       language: "string",
-                      mobile: "string",
+                      mobile: "",
+                      nikeName: res.userInfo.nickName,
                       name: "string",
-                      nikeName: "string",
                       openid: "string",
                       personImage: "string",
                       province: "string",
@@ -178,6 +179,7 @@ Page({
                       console.log(response)
                       wx.setStorageSync("uid", response.data.data.id)
                       wx.setStorageSync("sessionid", response.data.data.sessionid)
+                      wx.setStorageSync("phone", response.data.data.mobile)
                     }
                   })
                 },
@@ -212,50 +214,11 @@ Page({
   },
   // 登录
   login: function() {
-  //   const { phone, pwd, urlParams } = this.data;
-  //   if (this.inputChange(phone, 'phone', regs.PHONE) &&
-  //     this.inputChange(pwd, 'pwd', regs.NOTNONE)
-  //   ) {
-  //     wx.login({
-  //       success: function(res) {
-  //         request(urls.loginUrl, {
-  //           method: 'POST',
-  //           data: {
-  //             jscode: res.code,
-  //             password: pwd,
-  //             username: phone,
-  //           },
-  //           success: (res) => {
-  //             if (res.code === 0) {
-  //               // if (res.content.companyType !== 'SELLER') {
-  //               //   wx.showToast({
-  //               //     icon: 'none',
-  //               //     title: '非售电方用户无法登陆微金网',
-  //               //   });
-  //               //   return;
-  //               // }
-  //               // 记录登录手机,测试账号的特殊处理
-  //               app.globalData.phone = phone;
-  //               if (urlParams && urlParams.noAuthority) {
-  //                 wx.navigateBack({
-  //                   delta: 1,
-  //                 });
-  //               } else {
+ 
                   wx.switchTab({
                     url: '../home/home'
                   });
-  //               }
-  //             } else {
-  //               wx.showToast({
-  //                 icon: 'none',
-  //                 title: res.message,
-  //               })
-  //             }
-  //           }
-  //         })
-  //       }
-  //     });
-  //   }
+
   },
   getUserInfo: function(e) {
     if (e.detail.userInfo) {

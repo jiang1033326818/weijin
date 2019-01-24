@@ -1,13 +1,13 @@
 export default {
-  mainurl: 'https://yindw.top', // 全局接口地址
-   loginUrl: '/login', // 登录接口
-   localExpert: '/websocket/localExpert', // 向后台服务器发送临时登录凭证code，以获得openid
-  // getClueSummary: '/api/clue/summary', // 获取线索总量数据
-  // getClueList: '/api/clue/list', // 获取线索列表数据
-  // getCommunicateClueList: '/api/clue/communicated/list', // 获取已沟通线索列表
-  // addCallNum: '/api/clue/${param}/call', // 增加打电话次数
-  // markClue: '/api/clue/${param}/mark', // 标记或取消客户为重要客户
-  // getCustomerNum: '/api/customer/num', // 获取公司总数和客户总数
+  mainurl: 'http://yindw.top:8000', // 全局接口地址
+  loginUrl: '/login', // 登录接口
+  localExpert: '/websocket/localExpert', // 聊天获取当前在线用户
+  useradd: '/user/add', // 顾问申请
+  londadd: '/loan/add', // 贷款申请,添加贷款信息
+  getcode: '/user/sendSmsCheckCode/', // 获取验证码
+  checkmessagecode: '/user/checkMessageCode/', // 验证验证码
+  getHistoryMessage: '/websocket/getHistoryMessage', // 聊天记录   get
+  bindphone: '/user/bondMobile/', // 绑定手机号
   // getCustomerList: '/api/customer/list', // 获取客户列表
   // getTotalNum: '/api/dashboard/summary', // 首页获取总量数据
   // submitClueUrl: '/api/clue/create', // 新增线索

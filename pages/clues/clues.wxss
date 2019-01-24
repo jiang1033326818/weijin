@@ -64,7 +64,7 @@ page {
   
 .new_img {  
   width: 100rpx;  
-  height: 100rpx;  
+  height: 20rpx;  
   border-radius: 50%;  
 }  
   

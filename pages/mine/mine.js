@@ -114,4 +114,11 @@ Page({
        url: '../login/login'
      })
   },
+
+  toadviser:function(){
+    console.log(444)
+    wx.navigateTo({
+      url: '../adviser/adviser'
+    });
+  }
 })

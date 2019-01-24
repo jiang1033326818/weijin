@@ -1,0 +1,116 @@
+<!--pages/adviser/adviser.wxml
+  顾问申请
+  2019-01-19
+-->
+<view class='adviser'>
+
+ 
+ <view class='item'>
+  <view class='left'>所在地区</view>
+  <view class='right'>
+   <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <text>{{region[0]}}，{{region[1]}}，{{region[2]}}</text>
+    <image src='../../images/right.png'></image>
+        </picker>
+  </view>
+</view>
+ 
+
+<view class='item'>
+  <view class='left'>单位名称</view>
+  <view class='right'>
+    <input placeholder='请填写真实有效的单位' bindblur='danwei'></input>
+  </view>
+</view>
+
+ <view class='item'>
+  <view class='left'>主做业务</view>
+  <view class='right'>
+   <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <text style='color:#437EF8'>{{array[index]}}</text>
+    <image src='../../images/right.png'></image>
+        </picker>
+  </view>
+</view>
+
+ <view class='item'>
+  <view class='left'>入职时间</view>
+  <view class='right'>
+   <picker  mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <text>{{date}}</text>
+    <image src='../../images/right.png'></image>
+        </picker>
+  </view>
+</view>
+
+
+
+<view class="weui-cell"> 
+    <view class="weui-cell__bd"> 
+     <view class="weui-uploader"> 
+      <view class="weui-uploader__hd"> 
+       <view class="weui-uploader__title">个人照片</view> 
+       <!-- <view class="weui-uploader__info">{{imageList.length}}/{{count[countIndex]}}</view>  -->
+      </view> 
+      <view class="weui-uploader__bd"> 
+       <view class="weui-uploader__files"> 
+        <block wx:for="{{imageList}}" wx:for-item="image"> 
+         <view class="weui-uploader__file"> 
+          <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image> 
+         </view> 
+        </block> 
+       </view> 
+       <br/>
+       <view class="weui-uploader__input-box"> 
+        <view class="weui-uploader__input" bindtap="chooseImage"></view> 
+       </view> 
+      </view> 
+     </view> 
+  </view> 
+</view>
+
+
+
+
+<view class="weui-cell"> 
+    <view class="weui-cell__bd"> 
+     <view class="weui-uploader"> 
+      <view class="weui-uploader__hd"> 
+       <view class="weui-uploader__title">工作证明</view> 
+       <!-- <view class="weui-uploader__info">{{imageList.length}}/{{count[countIndex]}}</view>  -->
+      </view> 
+      <view class="weui-uploader__bd"> 
+       <view class="weui-uploader__files"> 
+        <block wx:for="{{imageList2}}" wx:for-item="image"> 
+         <view class="weui-uploader__file"> 
+          <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage2"></image> 
+         </view> 
+        </block> 
+       </view> 
+       <br/>
+       <view class="weui-uploader__input-box"> 
+        <view class="weui-uploader__input" bindtap="chooseImage2"></view> 
+       </view> 
+      </view> 
+     </view> 
+  </view> 
+</view>
+
+
+<view class='small'>
+  <view>1.个人照片尽量上传工作照,不限背景颜色,如果没有工作照,请上传个人近期半身照片,照片大小不要超过2M。</view>
+  <view>2、工作证明请上传加盖公司公章的个人证明</view>
+</view>
+
+
+<view class='yesyes'>
+<checkbox-group  bindchange='checked'>
+<checkbox value="" checked="{{checked}}"  />
+   
+</checkbox-group>
+<view>我已同意微金网  <text style='color:#236AF6'>《微金顾问入驻协议》</text></view>
+</view>
+
+<view class='queding' bindtap='subme'>确定</view>
+  
+</view>

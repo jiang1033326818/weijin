@@ -12,11 +12,12 @@
     </view> -->
 
   <view class='mytop'>
-    <view class='mytop1'>
+    <view class='mytop1' style='background-image:url("../../images/mybg.png")'>
       <view>{{userInfo.nickName}}</view>
     </view>
     <view class='mytop2'>
       您好,尊敬给的会员
+     
     </view>
 
     <view class='head'>
@@ -40,8 +41,8 @@
     <image src='../../images/right.png'></image>
   </view>
 </view>
-<view class='item'>
-  <view class='left'>顾问入口</view>
+<view class='item' bindtap='toadviser'>
+  <view class='left' >顾问入口</view>
   <view class='right'>
     <image src='../../images/right.png'></image>
   </view>

@@ -1,15 +1,20 @@
 {
   "pages": [
-    
-  "pages/login/login",
-      "pages/clues/clues",
-   "pages/mine/mine",
-        "pages/schedule/schedule",
-    "pages/detailso/detailso",
-    "pages/details/details",
+      "pages/login/login",
+    "pages/cooperation/cooperation",
     "pages/home/home",
-    "pages/phonetel/phonetel",
+    "pages/success2/success2",
+    "pages/success/success",
+    "pages/details/details",
     "pages/Consultant/achievement",
+  
+    "pages/apply/apply",
+    "pages/adviser/adviser",
+    "pages/mine/mine",
+    "pages/clues/clues",
+    "pages/schedule/schedule",
+    "pages/detailso/detailso",
+    "pages/phonetel/phonetel",
     "pages/expert/expert"
     
   ],

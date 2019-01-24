@@ -49,7 +49,7 @@
 
   <view class='bottommap'>
     <view>
-      <image src='../../images/icon-user.png'></image>
+      <image src='../../images/toutiao.png'></image>
     </view>
     <text>没有稳定工作如何网上快速贷款10万</text>
   </view>
@@ -63,22 +63,32 @@
       </block>
     </view>
   </view>
-  <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" class='swiper'>
+
+
+
+
+
+  <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" class='swiper' style='height:{{height}}rpx' scroll-y>
     <swiper-item class='swiper-item'>
       <view class='allOfpeople'>
+        <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+          <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+            <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">{{navItem.text}}</view>
+          </block>
+        </scroll-view>
         <scroll-view class="icon-list">
           <view wx:for="{{typeList}}" class="row-flex list-item">
-            <view class='toplist'>
+            <view class='toplist' bindtap='toapply'>
               <view class='toptitle'>
                 <view class='toptitle1' style='font-size:30rpx'>
                   <image src='../../images/oneicon.png'>
                   </image>
                   {{item.name}}
-                   <view class='toptitle2'>
-                  {{item.label}}
+                  <view class='toptitle2'>
+                    {{item.label}}
+                  </view>
                 </view>
-                </view>
-               
+
                 <view class='clear'></view>
               </view>
               <view class='listitem'>
@@ -92,53 +102,97 @@
                   <view class='itemrate2'>贷款利率</view>
                 </view>
               </view>
-              
-                <view class='maptitle0'>
-                  <view class='maptitle pink'>
-                    {{item.belong[0]}}
-                  </view>
-                  <view class='maptitle green'>
-                    {{item.belong[1]}}
-                  </view>
-                  <view class='maptitle yellow'>
-                    {{item.belong[2]}}
-                  </view>
+
+              <view class='maptitle0'>
+                <view class='maptitle pink'>
+                  {{item.belong[0]}}
                 </view>
-            
+                <view class='maptitle green'>
+                  {{item.belong[1]}}
+                </view>
+                <view class='maptitle yellow'>
+                  {{item.belong[2]}}
+                </view>
+              </view>
+
             </view>
           </view>
         </scroll-view>
       </view>
     </swiper-item>
-    <swiper-item style='margin-top:80rpx'>
-      222
+
+
+
+    <swiper-item class='swiper-item'>
+      <view class='allOfpeople'>
+        <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+          <block wx:for="{{navData2}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+            <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav2">{{navItem.text}}</view>
+          </block>
+        </scroll-view>
+        <scroll-view class="icon-list">
+          <view wx:for="{{typeList2}}" class="row-flex list-item">
+            <view class='toplist2' bindtap='toapply2'>
+              <view class='knowledge'>
+                <image src='{{item.image}}'></image>
+              </view>
+
+              <view class='knowledge_r'>
+                <view class='knowledge_rt'>{{item.title}}</view>
+
+                <view class='knowledge_rb'>
+                  <view class='knowledge_rbl'>{{item.type}} </view>
+                  <view class='knowledge_rbr'>{{item.time}} </view>
+                </view>
+
+              </view>
+
+            </view>
+          </view>
+        </scroll-view>
+      </view>
     </swiper-item>
-    <swiper-item style='margin-top:80rpx'>
-      333
-    </swiper-item>
-    <swiper-item style='margin-top:80rpx'>
-      444
-    </swiper-item>
+
   </swiper>
 
-  <view class="navigator-container">
+  <!-- <view class="navigator-container">
     <navigator class="navigator-btn  btn-class" url="../clues/clues">
       websocket聊天
     </navigator>
-    <!-- <button
-      class="navigator-btn share-btn btn-class"
-      open-type="share"
-    >
-      试算方案
-    </button>
-    <navigator
-      class="navigator-btn  btn-class"
-      url="../customers/customers"
-    >
-      客户管理
-    </navigator> -->
+  
     <navigator url="../knowledgebase/knowledgebase" class="navigator-btn  btn-class">
       知识库
     </navigator>
+  </view> -->
+
+
+  <!-- 绑定手机号码 -->
+  <view class='bindphone' style='display:{{display}}'>
   </view>
+  <view class='bindphone_p' style='display:{{display}};background-image:url(../../images/bindphone.png) '>
+    <view class='white'>
+      <view class='whiteinput'>
+        <text>手机号:</text>
+        <input placeholder='请输入您的手机号'  value='{{phone}}' bindchange='phone' maxlength='11' type='text'></input>
+      </view>
+       <view class='whiteinput2'>
+        <text>验证码:</text>
+        <view class='yanzhengma'>
+        <input placeholder=''  value='{{phonecode}}' bindchange='phonecode' maxlength='11' type='text'></input>
+        <view bindtap='getVerificationCode'>{{time}}</view>
+        </view>
+        
+      </view>
+    </view>
+
+    <view class='whitebutton' bindtap='semb'>提交</view>
+
+  </view>
+  <view class='bindphone_x' bindtap='closeshow'  style='display:{{display}}'>
+    <image src='../../images/close.png'></image>
+  </view>
+
+
+
+
 </view>

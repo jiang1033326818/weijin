@@ -5,7 +5,7 @@ import urls from '../../common/urls.js';
 var app = getApp();
 var socketOpen = false;
 var frameBuffer_Data, session, SocketTask;
-var url = 'wss://yindw.top/ws/im?uid=';
+var url = 'wss://zadai.net/ws/im?uid=';
 // console.log(wx.getStorageSync("uid"))
 var upload_url = '请填写您的图片上传接口地址'
 Page({
@@ -22,6 +22,24 @@ Page({
   },
   // 页面加载
   onLoad: function () {
+
+    wx.request({
+      url: urls.mainurl + urls.getHistoryMessage,
+      method: 'GET',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+        pageNum:0,
+        pageSize:10,
+        uid: wx.getStorageSync("uid")
+      },
+      success: function (response) {
+        console.log(response)
+      }
+    })
+
+
     wx.getUserInfo({
       success: res => {
         app.globalData.userInfo = res.userInfo
@@ -65,22 +83,22 @@ Page({
     SocketTask.onMessage(onMessage => {
       console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
       var onMessage_data = JSON.parse(onMessage.data)
-      if (onMessage_data.cmd == 1) {
-        that.setData({
-          link_list: text
-        })
-        console.log(text, text instanceof Array)
-        // 是否为数组
-        if (text instanceof Array) {
-          for (var i = 0; i < text.length; i++) {
-            text[i]
-          }
-        } else {
+      if (onMessage_data.toId == 11) {
+        // that.setData({
+        //   link_list: text
+        // })
+        // console.log(text, text instanceof Array)
+        // // 是否为数组
+        // if (text instanceof Array) {
+        //   for (var i = 0; i < text.length; i++) {
+        //     text[i]
+        //   }
+        // } else {
 
-        }
-        that.data.allContentList.push({ is_ai: true, text: onMessage_data.body });
+        // }
+        that.data.allContentList.push({ is_ai: true, is_two: onMessage_data.text });
         that.setData({
-          allContentList: that.data.allContentList
+          allContentList: that.data.allContentList,
         })
         that.bottom()
       }
@@ -150,18 +168,34 @@ Page({
         that.setData({
           img: res.tempFilePaths
         })
-        wx.uploadFile({
-          url: upload_url,
-          filePath: res.tempFilePaths,
-          name: 'img',
-          success: function (res) {
-            console.log(res)
-            wx.showToast({
-              title: '图片发送成功！',
-              duration: 3000
-            });
+        var data = {
+          text: that.data.inputValue,
+          fromId: that.data.uid,
+          fromName: that.data.userInfo.nickName,
+          toId: that.data.toId,
+        }
+        //console.log(111,res.tempFilePaths)
+        wx.getFileSystemManager().readFile({
+          filePath: res.tempFilePaths[0], //选择图片返回的相对路径
+          encoding: 'base64', //编码格式
+          success: res2 => { //成功的回调
+            data.text = 'data:image/png;base64,' + res2.data
+            //console.log(444444,'data:image/png;base64,' + res2.data)
           }
         })
+        sendSocketMessage(data)
+        // wx.uploadFile({
+        //   url: upload_url,
+        //   filePath: res.tempFilePaths,
+        //   name: 'img',
+        //   success: function (res) {
+        //     console.log(res)
+        //     wx.showToast({
+        //       title: '图片发送成功！',
+        //       duration: 3000
+        //     });
+        //   }
+        // })
         that.data.allContentList.push({ is_my: { img: res.tempFilePaths } });
         that.setData({
           allContentList: that.data.allContentList,

@@ -28,13 +28,13 @@
     <!-- <view class='you_left' id='id_{{allContentList.length}}'> -->
     <view class='you_left' id='id_{{allContentList.length}}' wx:key="{{index}}" wx:if="{{item.is_ai}}">
       <view class='p_r'>
-        <image class='new_img' src='/images/chac.jpg'></image>
+        <image class='new_img' src='/images/test.jpg'></image>
         <view class='sanjiao you'></view>
         <view class='new_txt'>
           <view class='new_txt_ai'>
             <!-- {{item.text}} -->
             <block wx:for='{{item.is_two}}' wx:key='index'>
-              <text wx:if='{{item.text}}'>{{item.text}}</text>
+              <text wx:if='{{item}}'>{{item}}</text>
               <text wx:if='{{item.a.title}}' style='color:#0000EE' bindtap='link' id='{{item.a.link}}'>{{item.a.title}}</text>
             </block>
           </view>
