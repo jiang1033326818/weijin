@@ -28,7 +28,7 @@
     <!-- <view class='you_left' id='id_{{allContentList.length}}'> -->
     <view class='you_left' id='id_{{allContentList.length}}' wx:key="{{index}}" wx:if="{{item.is_ai}}">
       <view class='p_r'>
-        <image class='new_img' src='/images/test.jpg'></image>
+        <image class='new_img' src='http://zadai.net:8000/uploads/test.jpg'></image>
         <view class='sanjiao you'></view>
         <view class='new_txt'>
           <view class='new_txt_ai'>
