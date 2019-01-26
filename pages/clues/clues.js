@@ -67,15 +67,15 @@ Page({
       socketOpen = true;
       console.log('监听 WebSocket 连接打开事件。', res)
     })
-    // SocketTask.onClose(onClose => {
-    //   console.log('监听 WebSocket 连接关闭事件。', onClose)
-    //   socketOpen = false;
-    //   this.webSocket()
-    // })
-    // SocketTask.onError(onError => {
-    //   console.log('监听 WebSocket 错误。错误信息', onError)
-    //   socketOpen = false
-    // })
+    SocketTask.onClose(onClose => {
+      console.log('监听 WebSocket 连接关闭事件。', onClose)
+      socketOpen = false;
+      this.webSocket()
+    })
+    SocketTask.onError(onError => {
+      console.log('监听 WebSocket 错误。错误信息', onError)
+      socketOpen = false
+    })
     SocketTask.onMessage(onMessage => {
       console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
       var onMessage_data = JSON.parse(onMessage.data)
@@ -92,10 +92,19 @@ Page({
         // } else {
 
         // }
-        that.data.allContentList.push({ is_ai: true, is_two: onMessage_data.text });
-        that.setData({
-          allContentList: that.data.allContentList,
-        })
+        if (onMessage_data.text.slice(0, 9) =="/uploads/"){
+          that.data.allContentList.push({ is_ai: true, is_twoimg: urls.mainurl +onMessage_data.text });
+          that.setData({
+            allContentList: that.data.allContentList,
+          })
+        }else{
+          that.data.allContentList.push({ is_ai: true, is_two: onMessage_data.text });
+          that.setData({
+            allContentList: that.data.allContentList,
+          })
+        }
+
+      
         that.bottom()
       }
     })
@@ -192,17 +201,40 @@ Page({
               fromName: that.data.userInfo.nickName,
               toId: that.data.toId,
             }
-            
+
             setTimeout(function () {
               sendSocketMessage(data)
             }, 1000);
-          
-            
+
+
             that.data.allContentList.push({ is_my: { img: res.tempFilePaths } });
             that.setData({
               allContentList: that.data.allContentList,
             })
             that.bottom();
+            SocketTask.onMessage(onMessage => {
+              console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
+              var onMessage_data = JSON.parse(onMessage.data)
+              if (onMessage_data) {
+               
+                if (onMessage_data.text.slice(0, 9) == "/uploads/") {
+                  that.data.allContentList.push({ is_ai: true, is_twoimg: urls.mainurl + onMessage_data.text });
+                  that.setData({
+                    allContentList: that.data.allContentList,
+                  })
+                } else {
+                  that.data.allContentList.push({ is_ai: true, is_two: onMessage_data.text });
+                  that.setData({
+                    allContentList: that.data.allContentList,
+                  })
+                }
+                that.bottom()
+              }else{
+                console.log("接收失败")
+              }
+            })
+
+            
           }
         })
        

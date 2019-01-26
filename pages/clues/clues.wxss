@@ -55,6 +55,14 @@ page {
   background: white;
   top: 20rpx;
 }
+.you_img_bg{
+  height: 150rpx;
+  width: 400rpx;
+  position: relative;
+  left: 0;
+  background: white;
+  top: 20rpx;
+}
 .you_left {  
   margin-top: 30rpx;
   float: left;  
