@@ -80,18 +80,7 @@ Page({
       console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
       var onMessage_data = JSON.parse(onMessage.data)
       if (onMessage_data.toId == this.data.uid) {
-        // that.setData({
-        //   link_list: text
-        // })
-        // console.log(text, text instanceof Array)
-        // // 是否为数组
-        // if (text instanceof Array) {
-        //   for (var i = 0; i < text.length; i++) {
-        //     text[i]
-        //   }
-        // } else {
-
-        // }
+      
         if (onMessage_data.text.slice(0, 9) =="/uploads/"){
           that.data.allContentList.push({ is_ai: true, is_twoimg: urls.mainurl +onMessage_data.text });
           that.setData({
@@ -140,7 +129,7 @@ Page({
   // 提交文字
   submitTo: function (e) {
     let that = this;
-    
+    console.log(that.data)
     var data = {
       text: that.data.inputValue,
       fromId: that.data.uid,
@@ -180,9 +169,7 @@ Page({
       sourceType: ['album', 'camera'],
       success: function (res) {
         console.log(res)
-        that.setData({
-          img: res.tempFilePaths
-        })
+        
 
         wx.uploadFile({
           url: urls.mainurl + urls.uploadimg, // 仅为示例，非真实的接口地址
@@ -206,7 +193,9 @@ Page({
               sendSocketMessage(data)
             }, 1000);
 
+          
 
+          
             that.data.allContentList.push({ is_my: { img: res.tempFilePaths } });
             that.setData({
               allContentList: that.data.allContentList,
@@ -272,6 +261,7 @@ Page({
 function sendSocketMessage(msg) {
   var that = this;
   console.log('通过 WebSocket 连接发送数据', JSON.stringify(msg))
+  
   SocketTask.send({
     data: JSON.stringify(msg)
   }, function (res) {
