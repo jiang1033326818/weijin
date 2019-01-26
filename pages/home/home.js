@@ -35,66 +35,48 @@ Page({
     imgUrls: [
       {
         link: '/pages/index/index',
-        url: '../../images/image001.jpg'
+        url: 'http://zadai.net:8000/uploads/image001.jpg'
       }, {
         link: '/pages/logs/logs',
-        url: '../../images/image002.jpg'
+        url: 'http://zadai.net:8000/uploads/image002.jpg'
       }, {
         link: '/pages/index/index',
-        url: '../../images/image003.jpg'
+        url: 'http://zadai.net:8000/uploads/image003.jpg'
       }
     ],
     typeList: [
       {
       name: "微金二号",
       label: '123人申请',
-      value: '10-100万',
+      amount: '10-100万',
       from: "0.89%",
       belong: [
         "房产抵押",
          "先息后本"
       ],
-    }, {
-        name: "微金一号",
-        label: '123人申请',
-        value: '10-100万',
-        from: "0.89%",
-        belong: [
-          "房产抵押",
-          "先息后本"
-        ],
-      }, {
-        name: "微金一号",
-        label: '123人申请',
-        value: '10-100万',
-        from: "0.89%",
-        belong: [
-          "房产抵押",
-          "先息后本"
-        ],
-      },
+    },
     ],
     typeList2:[
       {
-        image:"../../images/logo.jpg",
+        image:"http://zadai.net:8000/uploads/logo.jpg",
         title:"微金网:让人们生活更美好是市场的责任",
         type:"信用防护",
         time:"刚刚",
       },
       {
-        image: "../../images/logo.jpg",
+        image: "http://zadai.net:8000/uploads/logo.jpg",
         title: "微金网:让人们生活更美好是市场的责任",
         type: "信用防护",
         time: "刚刚",
       },
       {
-        image: "../../images/logo.jpg",
+        image: "http://zadai.net:8000/uploads/logo.jpg",
         title: "微金网:让人们生活更美好是市场的责任",
         type: "信用防护",
         time: "刚刚",
       },
       {
-        image: "../../images/logo.jpg",
+        image: "http://zadai.net:8000/uploads/logo.jpg",
         title: "微金网:让人们生活更美好是市场的责任",
         type: "信用防护",
         time: "刚刚",
@@ -107,6 +89,7 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     currentTab: 0,
+    currentTab2: 0,
     navScrollLeft: 0,
     navData: [
       {
@@ -170,7 +153,17 @@ Page({
   // 导航点击滑动
 
   bindChange: function (e) {
-    //console.log(this.data.scrollTop)
+   
+    if (e.currentTarget.dataset.index === 1) {
+      this.setData({
+        height: this.data.typeList.length * 450 + 50
+      })
+    } else {
+      this.setData({
+        height: this.data.typeList2.length * 300 + 80
+      })
+    }
+    //console.log(e.currentTarget.dataset.index)
     var current = e.detail.current;
     wx.pageScrollTo({
       scrollTop: 0
@@ -185,16 +178,16 @@ Page({
   navTabClick: function (e) {
     console.log(this.data.height)
     console.log(e.currentTarget.id)
-  
-    if (e.currentTarget.id==="0"){
+    if (e.currentTarget.id === "0") {
       this.setData({
         height: this.data.typeList.length * 450 + 50
       })
-    }else{
+    } else {
       this.setData({
         height: this.data.typeList2.length * 300 + 80
       })
     }
+  
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
@@ -215,6 +208,25 @@ Page({
     } else {
       this.setData({
         currentTab: cur
+      })
+    }
+  },
+
+
+  switchNav2(event) {
+    var cur = event.currentTarget.dataset.current;
+    console.log(event)
+    //每个tab选项宽度占1/5
+    var singleNavWidth = this.data.windowWidth / 5;
+    //tab选项居中                            
+    // this.setData({
+    //   navScrollLeft: (cur - 2) * singleNavWidth
+    // })
+    if (this.data.currentTab2 == cur) {
+      return false;
+    } else {
+      this.setData({
+        currentTab2: cur
       })
     }
   },
@@ -293,35 +305,52 @@ Page({
 
   semb:function(){
     let that =this;
-    wx.request({
-      url: urls.mainurl + urls.bindphone + that.data.phonecode+"/"+that.data.phone,
-      method: 'GET',
-      header: {
-        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
-      },
-      data: {
-
-      },
-      success: function (response) {
-        console.log(response)
+    if (that.data.phone === '' || that.data.phone.length <11){
+      wx.showToast({
+        title: '请输入正确的手机号',
+        icon: 'none',
+        duration: 2000
+      })
+    }else{
+      if (that.data.phonecode === '' ) {
         wx.showToast({
-          title: '绑定成功',
-          icon: 'success',
-          duration: 2000
-        })
-        that.setData({
-          display: "none"
-        })
-      },
-      fail: function (err) {
-        console.log(err)
-        wx.showToast({
-          title: '验证码错误',
+          title: '请输入验证码',
           icon: 'none',
           duration: 2000
         })
+      }else{
+        wx.request({
+          url: urls.mainurl + urls.bindphone + that.data.phonecode + "/" + that.data.phone,
+          method: 'GET',
+          header: {
+            "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+          },
+          data: {
+
+          },
+          success: function (response) {
+            console.log(response)
+            wx.showToast({
+              title: '绑定成功',
+              icon: 'success',
+              duration: 2000
+            })
+            that.setData({
+              display: "none"
+            })
+          },
+          fail: function (err) {
+            console.log(err)
+            wx.showToast({
+              title: '验证码错误',
+              icon: 'none',
+              duration: 2000
+            })
+          }
+        })
       }
-    })
+    }
+  
   },
 
   // 跳转页面
@@ -351,20 +380,6 @@ Page({
     console.log(6565656)
   },
 
-  // 获取登录用户信息
-  // getUserInfo: function() {
-  //   wx.request(urls.getUserInfo, {
-  //     success: (res) => {
-  //       this.setData({
-  //         userInfo: res.content
-  //       });
-  //       wx.setStorage({
-  //         key: 'userInfo',
-  //         data: res.content,
-  //       });
-  //     }
-  //   });
-  // },
 
  
 
@@ -377,22 +392,48 @@ Page({
       height: this.data.typeList.length*450+50
     })
     let a =wx.getStorageSync("phone")
-    if(a==''){
+    if(a.length==11){
       this.setData({
-        display:"block"
+        display:"none"
       })
     } else {
       this.setData({
-        display: "none"
+        display: "block"
       })
     }
+  },
+   //获取产品列表
+  getloanall:function(){
+    let that =this;
+    wx.request({
+      url: urls.mainurl + urls.getloanall ,
+      method: 'POST',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+        "pageNum": 0,
+        "pageSize": 10,
+      },
+      success: function (response) {
+        console.log(response)
+        that.setData({
+         // typeList: response.data.dataList
+        })
+        
+      },
+      fail: function (err) {
+        console.log(err)
+       
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    this.getloanall();
   },
 
   /**

@@ -30,8 +30,8 @@ Page({
         value: 1231
       },
     ],
-    subscribe:"../../images/star.png",
-    subscribe2: "../../images/starlight.png",
+    subscribe:"http://zadai.net:8000/uploads/star.png",
+    subscribe2: "http://zadai.net:8000/uploads/starlight.png",
     message:"关注",
     message2: "已关注",
     typeList: [{

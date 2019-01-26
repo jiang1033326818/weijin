@@ -120,5 +120,21 @@ Page({
     wx.navigateTo({
       url: '../adviser/adviser'
     });
+  },
+   toconsu: function () {
+    console.log(444)
+    wx.navigateTo({
+      url: '../Consultant/achievement'
+    });
+  },
+  tocooperation:function(){
+    wx.navigateTo({
+      url: '../cooperation/cooperation'
+    });
+  },
+  aboutus:function(){
+    wx.navigateTo({
+      url: '../schedule/schedule'
+    });
   }
 })

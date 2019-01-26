@@ -8,27 +8,9 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    // wx.login({
-    //   success: res => {
-    //     const _ = this;
-    //     // 登录成功向后台发送临时登录凭证code,并记录登录凭证
-    //     if (res.errMsg === 'login:ok') {
-    //       this.globalData.jscode = res.code;
-    //       request(urls.sendLoginCode, {
-    //         data: {
-    //           jscode: res.code
-    //         },
-    //         success: function (res) {
-    //           // 记录用户权限信息
-    //           _.globalData.authorization = res.content;
-    //         }
-    //       });
-    //     }
-    //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
-    //   }
-    // })
-    // 获取用户信息
+    
+
+   
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {

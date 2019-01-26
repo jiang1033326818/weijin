@@ -1,22 +1,23 @@
 {
   "pages": [
       "pages/login/login",
+    "pages/expert/expert",
     "pages/cooperation/cooperation",
+    "pages/myadvice/myadvice",
+  
     "pages/home/home",
+    "pages/mine/mine",
     "pages/success2/success2",
     "pages/success/success",
     "pages/details/details",
     "pages/Consultant/achievement",
-  
     "pages/apply/apply",
     "pages/adviser/adviser",
-    "pages/mine/mine",
     "pages/clues/clues",
     "pages/schedule/schedule",
     "pages/detailso/detailso",
     "pages/phonetel/phonetel",
-    "pages/expert/expert"
-    
+    "pages/achievement/achievement"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -34,7 +35,7 @@
         "text": "微金"
       },
       {
-        "pagePath": "pages/schedule/schedule",
+        "pagePath": "pages/myadvice/myadvice",
         "iconPath": "images/calendar.png",
         "selectedIconPath": "images/calendar-g.png",
         "text": "我的咨询"

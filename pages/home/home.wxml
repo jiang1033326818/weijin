@@ -13,7 +13,7 @@
 
   <view class='gradual'>
     <view class='itemleft' bindtap='tophonetel'>
-      <image class='phonequick' src='../../images/tel2.png'>
+      <image class='phonequick' src='http://zadai.net:8000/uploads/tel2.png'>
       </image>
       <view style='font-size:35rpx' class='ffffff'>
         快捷电话
@@ -49,7 +49,7 @@
 
   <view class='bottommap'>
     <view>
-      <image src='../../images/toutiao.png'></image>
+      <image src='http://zadai.net:8000/uploads/toutiao.png'></image>
     </view>
     <text>没有稳定工作如何网上快速贷款10万</text>
   </view>
@@ -68,8 +68,8 @@
 
 
 
-  <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" class='swiper' style='height:{{height}}rpx' scroll-y>
-    <swiper-item class='swiper-item'>
+  <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" class='swiper' style='height:{{height}}rpx' id='item0' data-index='{{activeIndex}}'   scroll-y>
+    <swiper-item class='swiper-item' id='item1' >
       <view class='allOfpeople'>
         <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
           <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
@@ -78,14 +78,14 @@
         </scroll-view>
         <scroll-view class="icon-list">
           <view wx:for="{{typeList}}" class="row-flex list-item">
-            <view class='toplist' bindtap='toapply'>
+            <view class='toplist' bindtap='toapply' id='name{{item.id}}' >
               <view class='toptitle'>
                 <view class='toptitle1' style='font-size:30rpx'>
-                  <image src='../../images/oneicon.png'>
+                  <image src='http://zadai.net:8000/uploads/oneicon.png'>
                   </image>
                   {{item.name}}
                   <view class='toptitle2'>
-                    {{item.label}}
+                    {{item.readyLoan}}人申请
                   </view>
                 </view>
 
@@ -93,7 +93,7 @@
               </view>
               <view class='listitem'>
                 <view class='itemmuch'>
-                  <view class='itemrate'>{{item.value}}</view>
+                  <view class='itemrate'>{{item.amount}}</view>
                   <view class='itemrate2'>贷款金额</view>
 
                 </view>
@@ -123,11 +123,11 @@
 
 
 
-    <swiper-item class='swiper-item'>
-      <view class='allOfpeople'>
+    <swiper-item class='swiper-item' id='item2'  data-index='{{activeIndex}}'>
+      <view class='allOfpeople'  >
         <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
           <block wx:for="{{navData2}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
-            <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav2">{{navItem.text}}</view>
+            <view class="nav-item {{currentTab2 == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav2">{{navItem.text}}</view>
           </block>
         </scroll-view>
         <scroll-view class="icon-list">
@@ -169,7 +169,7 @@
   <!-- 绑定手机号码 -->
   <view class='bindphone' style='display:{{display}}'>
   </view>
-  <view class='bindphone_p' style='display:{{display}};background-image:url(../../images/bindphone.png) '>
+  <view class='bindphone_p' style='display:{{display}};background-image:url(http://zadai.net:8000/uploads/bindphone.png) '>
     <view class='white'>
       <view class='whiteinput'>
         <text>手机号:</text>
@@ -189,7 +189,7 @@
 
   </view>
   <view class='bindphone_x' bindtap='closeshow'  style='display:{{display}}'>
-    <image src='../../images/close.png'></image>
+    <image src='http://zadai.net:8000/uploads/close.png'></image>
   </view>
 
 

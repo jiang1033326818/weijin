@@ -22,7 +22,7 @@
   <view class='right'>
    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
       <text style='color:#437EF8'>{{array[index]}}</text>
-    <image src='../../images/right.png'></image>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
         </picker>
   </view> 
 </view>
@@ -32,7 +32,7 @@
   <view class='right'>
    <picker bindchange="bindPickerChange2" value="{{index}}" range="{{array2}}">
       <text style='color:#437EF8'>{{array2[index2]}}</text>
-    <image src='../../images/right.png'></image>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
         </picker>
   </view> 
 </view>
@@ -50,7 +50,7 @@
   <view class='right'>
    <picker bindchange="bindPickerChange3" value="{{index}}" range="{{array3}}">
       <text style='color:#437EF8'>{{array3[index3]}}</text>
-    <image src='../../images/right.png'></image>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
         </picker>
   </view> 
 </view>
@@ -60,7 +60,7 @@
   <view class='right'>
    <picker bindchange="bindPickerChange4" value="{{index}}" range="{{array4}}">
       <text style='color:#437EF8'>{{array4[index4]}}</text>
-    <image src='../../images/right.png'></image>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
         </picker>
   </view> 
 </view>
@@ -70,7 +70,7 @@
   <view class='right'>
    <picker bindchange="bindPickerChange5" value="{{index}}" range="{{array5}}">
       <text style='color:#437EF8'>{{array5[index5]}}</text>
-    <image src='../../images/right.png'></image>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
         </picker>
   </view> 
 </view>
@@ -82,7 +82,7 @@
   <view class='right'>
    <picker bindchange="bindPickerChange6" value="{{index}}" range="{{array6}}">
       <text style='color:#437EF8'>{{array6[index6]}}</text>
-    <image src='../../images/right.png'></image>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
         </picker>
   </view> 
 </view>
@@ -92,7 +92,7 @@
   <view class='right'>
    <picker bindchange="bindPickerChange7" value="{{index}}" range="{{array7}}">
       <text style='color:#437EF8'>{{array7[index7]}}</text>
-    <image src='../../images/right.png'></image>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
         </picker>
   </view> 
 </view>
@@ -102,7 +102,7 @@
   <view class='right'>
    <picker bindchange="bindPickerChange8" value="{{index}}" range="{{array8}}">
       <text style='color:#437EF8'>{{array8[index8]}}</text>
-    <image src='../../images/right.png'></image>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
         </picker>
   </view> 
 </view>
@@ -112,7 +112,7 @@
   <view class='right'>
    <picker bindchange="bindPickerChange9" value="{{index}}" range="{{array9}}">
       <text style='color:#437EF8'>{{array9[index9]}}</text>
-    <image src='../../images/right.png'></image>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
         </picker>
   </view> 
 </view>
@@ -122,7 +122,7 @@
   <view class='right'>
    <picker bindchange="bindPickerChange10" value="{{index1}}" range="{{array10}}">
       <text style='color:#437EF8'>{{array10[index10]}}</text>
-    <image src='../../images/right.png'></image>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
         </picker>
   </view> 
 </view>

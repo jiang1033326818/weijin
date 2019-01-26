@@ -167,7 +167,6 @@ Page({
                       hashCode: "string",
                       image: res.userInfo.avatarUrl,
                       language: "string",
-                      mobile: "",
                       nikeName: res.userInfo.nickName,
                       name: "string",
                       openid: "string",

@@ -6,7 +6,7 @@
     <view class='cardtop'>
 
       <view class='circle'>
-        <image src='../../images/header/head0.jpg'></image>
+        <image src='http://zadai.net:8000/uploads/header/head0.jpg'></image>
       </view>
       <view class='headbs'>
         <view class='headb'>{{name}}</view>
@@ -55,7 +55,7 @@
           <view class='toptitle'>
             <view class='toptitle1' style='font-size:30rpx'>
               <view class='circul'>
-                <image src='../../images/icon-user.png'>
+                <image src='http://zadai.net:8000/uploads/icon-user.png'>
                 </image>
               </view>
               {{item.name}}

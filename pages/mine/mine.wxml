@@ -12,7 +12,7 @@
     </view> -->
 
   <view class='mytop'>
-    <view class='mytop1' style='background-image:url("../../images/mybg.png")'>
+    <view class='mytop1' style='background-image:url("http://zadai.net:8000/uploads/mybg.png")'>
       <view>{{userInfo.nickName}}</view>
     </view>
     <view class='mytop2'>
@@ -35,35 +35,35 @@
 <view class='item0'>
 
 </view>
-<view class='item'>
+<view class='item'  bindtap='toconsu'>
   <view class='left'>我的顾问</view>
   <view class='right'>
-    <image src='../../images/right.png'></image>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
   </view>
 </view>
 <view class='item' bindtap='toadviser'>
   <view class='left' >顾问入口</view>
   <view class='right'>
-    <image src='../../images/right.png'></image>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
   </view>
 </view>
-<view class='item'>
+<view class='item' bindtap='tocooperation'>
   <view class='left'>商务合作</view>
   <view class='right'>
-    <image src='../../images/right.png'></image>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
   </view>
 </view>
 
 <view class='item'>
   <view class='left'>联系客服</view>
   <view class='right'>
-    <image src='../../images/right.png'></image>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
   </view>
 </view>
-<view class='item'>
+<view class='item'  bindtap='aboutus'>
   <view class='left'>关于我们</view>
   <view class='right'>
-    <image src='../../images/right.png'></image>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
   </view>
 </view>
 </view>

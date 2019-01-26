@@ -10,7 +10,7 @@
   border-radius: 20rpx;
   height: 300rpx;
   overflow: hidden;
-  /* background-image:url('../../images/personbgg.png'); */
+  /* background-image:url('http://zadai.net:8000/uploads/personbgg.png'); */
    background-repeat:no-repeat;
 }
 .cardtop{

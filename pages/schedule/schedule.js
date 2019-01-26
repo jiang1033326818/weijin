@@ -13,42 +13,42 @@ Page({
       time: '5分钟前',
       content:"呵呵",
       num:"5",
-      img:"../../images/header/head0.jpg",
+      img:"http://zadai.net:8000/uploads/header/head0.jpg",
     },
       {
         name: '李易峰',
         time: '5分钟前',
         content: "reuiytdsfsldf!",
         num: "5",
-        img: "../../images/header/head2.jpg"
+        img: "http://zadai.net:8000/uploads/header/head2.jpg"
       },
       {
         name: '恩柔',
         time: '5分钟前',
         content: "你麻sdfsdf!",
         num: "5",
-        img: "../../images/header/head0.jpg"
+        img: "http://zadai.net:8000/uploads/header/head0.jpg"
       },
       {
         name: '张雄辉',
         time: '5分钟前',
         content: "呵呵",
         num: "5",
-        img: "../../images/header/head0.jpg"
+        img: "http://zadai.net:8000/uploads/header/head0.jpg"
       },
       {
         name: '张雄辉',
         time: '5分钟前',
         content: "呵呵",
         num: "5",
-        img: "../../images/header/head0.jpg"
+        img: "http://zadai.net:8000/uploads/header/head0.jpg"
       },
       {
         name: '张雄辉',
         time: '5分钟前',
         content: "呵呵",
         num: "5",
-        img: "../../images/header/head0.jpg"
+        img: "http://zadai.net:8000/uploads/header/head0.jpg"
       },
      ]
   },

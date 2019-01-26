@@ -8,8 +8,8 @@ export default {
   checkmessagecode: '/user/checkMessageCode/', // 验证验证码
   getHistoryMessage: '/websocket/getHistoryMessage', // 聊天记录   get
   bindphone: '/user/bondMobile/', // 绑定手机号
-  // getCustomerList: '/api/customer/list', // 获取客户列表
-  // getTotalNum: '/api/dashboard/summary', // 首页获取总量数据
+  getloanall: '/loan/get', // 查询所有贷款  post
+  uploadimg: '/user/uploadImg', // 上传图片
   // submitClueUrl: '/api/clue/create', // 新增线索
   // addBilateralContract: '/api/contract/bilateral/add', // 新增双边合同接口
   // addBiddingContract: '/api/contract/bidding/add', // 新增月竞合同接口

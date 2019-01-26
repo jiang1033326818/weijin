@@ -3,7 +3,7 @@
 -->
 <view class='phonepage'>
   <view class='imagehigh'>
-    <image src='../../images/phonetitle.jpg'></image>
+    <image src='http://zadai.net:8000/uploads/phonetitle.jpg'></image>
   </view>
 
   <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
@@ -20,7 +20,7 @@
       <text class='phonetime2'>服务类型:</text>
       <view class="login-input-phone" bindtap='actionSheetTap'>
         <input value="{{menu}}" type="text" placeholder="请选择服务类型"></input>
-        <image src='../../images/right.png'></image>
+        <image src='http://zadai.net:8000/uploads/right.png'></image>
       </view>
     </view>
 
@@ -38,7 +38,7 @@
     <modal hidden="{{hidden}}" title="" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{nocancel}}">
 
       <view class='newmodal'>
-        <image src='../../images/formok.png'></image>
+        <image src='http://zadai.net:8000/uploads/formok.png'></image>
         <view>提交成功</view>
         <text>顾问助理会在10分钟内联系您,请保持电话通畅</text>
       </view>
@@ -52,7 +52,7 @@
         <view class='toptitle'>
           <view class='toptitle1' style='font-size:30rpx'>
             <view class='circul'>
-              <image src='../../images/icon-user.png'>
+              <image src='http://zadai.net:8000/uploads/icon-user.png'>
               </image>
             </view>
             {{item.name}}
