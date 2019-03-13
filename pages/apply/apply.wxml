@@ -41,7 +41,7 @@
 <view class='item'>
   <view class='left'>现金收入/月(元)</view>
   <view class='right'>
-    <input placeholder='0'></input>
+    <input placeholder='0' bindchange='money' value='{{money}}'></input>
   </view>
 </view>
 
@@ -78,7 +78,7 @@
 <view class='huise'></view>
 
 <view class='item'>
-  <view class='left'>是否有本地公积金</view>
+  <view class='left'>是否有本地福利2</view>
   <view class='right'>
    <picker bindchange="bindPickerChange6" value="{{index}}" range="{{array6}}">
       <text style='color:#437EF8'>{{array6[index6]}}</text>
@@ -88,7 +88,7 @@
 </view>
 
 <view class='item'>
-  <view class='left'>是否有本地社保</view>
+  <view class='left'>是否有本地福利1</view>
   <view class='right'>
    <picker bindchange="bindPickerChange7" value="{{index}}" range="{{array7}}">
       <text style='color:#437EF8'>{{array7[index7]}}</text>
@@ -98,7 +98,7 @@
 </view>
 
 <view class='item'>
-  <view class='left'>本地社保连续缴存时间</view>
+  <view class='left'>本地福利1连续缴存时间</view>
   <view class='right'>
    <picker bindchange="bindPickerChange8" value="{{index}}" range="{{array8}}">
       <text style='color:#437EF8'>{{array8[index8]}}</text>

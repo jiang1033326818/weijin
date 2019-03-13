@@ -1,67 +1,237 @@
-// pages/achievement/achievement.js
 
+import request from '../../utils/request.js';
+import urls from '../../common/urls.js';
+const tabs = [
+  {
+    name: "服务"
+  },
+  {
+    name: "信用服务"
+  },
+  {
+    name: "极速服务"
+  },
+  {
+    name: "信用卡"
+  },
+];
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    tabs: tabs,     //展示的数据
+    slideOffset: 0,//指示器每次移动的距离
+    activeIndex: 0,//当前展示的Tab项索引
+    sliderWidth: 96,//指示器的宽度,计算得到
+    contentHeight: 0,//页面除去头部Tabbar后，内容区的总高度，计算得到
+    selectPerson: true,
+    firstPerson: '全国',
+    selectArea: false,
+    selectPerson2: true,
+    firstPerson2: '',
+    selectArea2: false,
+    acity:'',
+    //就收负责人接口信息的数组
+    // managerlists: [],
+    // typeList: [{
+    //   name:"杨经理",
+    //   label: '高级融资顾问',
+    //   value: 'head0',
+    //   from:"微金网",
+    //   belong:"擅长:房产服务",
+    //   people:"44646",
+    // }, {
+    //     name: "杨经理",
+    //     label: '高级融资顾问',
+    //     value: 'head2',
+    //     from: "微金网",
+    //     belong: "擅长:房产服务",
+    //     people: "44646",
+    //   },
+    // ],
+    citylist:[
+      {city:"北京"},
+      { city: "上海" },
+      { city: "深圳" },
+      { city: "天津" },
+    ]
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  //经理信息
+  // getmanagerlists: function () {
+  //   let that = this;
+  //   wx.request({
+  //     url: urls.mainurl + urls.getloanlist,
+  //     method: 'POST',
+  //     header: { "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid") },
+  //     data: {
+  //       "pageNum": 0,
+  //       "pageSize": 10,
+  //     },
+  //     success: function (res) {
+  //       console.log(res,7777)
+  //       console.log(res.data.data.dataList)
+       
+  //       that.setData({
+  //         managerlists: res.data.data.dataList
+  //       })
+  //     },
+  //     fail: function (err) {
+  //       console.log(err)
+  //     }
+  //   })},
 
+  clickPerson: function () {
+    var selectPerson = this.data.selectPerson;
+    if (selectPerson == true) {
+      this.setData({
+        selectArea: true,
+        selectPerson: false,
+      })
+    } else {
+      this.setData({
+        selectArea: false,
+        selectPerson: true,
+      })
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  clickPerson2: function () {
+    var selectPerson2 = this.data.selectPerson2;
+    if (selectPerson2 == true) {
+      this.setData({
+        selectArea2: true,
+        selectPerson2: false,
+      })
+    } else {
+      this.setData({
+        selectArea2: false,
+        selectPerson2: true,
+      })
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  //点击切换
+  mySelect: function (e) {
+    console.log(e)
+    this.setData({
+      firstPerson: e.target.dataset.me,
+      selectPerson: true,
+      selectArea: false,
+    })
+    this.getloanall(e.target.dataset.me,this.data.firstPerson2)
+  },
+  mySelect2: function (e) {
+    this.setData({
+      firstPerson2: e.target.dataset.me,
+      selectPerson2: true,
+      selectArea2: false,
+    })
+    this.getloanall(this.data.firstPerson, e.target.dataset.me)
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
 
+  // 滑动事件
+	upper: function(e) {
+    // console.log(e)
+  },
+  lower: function(e) {
+    // console.log(e)
+  },
+  scroll: function(e) {
+    // console.log(e)
+  },
+  tap: function(e) {
+    for (var i = 0; i < order.length; ++i) {
+      if (order[i] === this.data.toView) {
+        this.setData({
+          toView: order[i + 1]
+        })
+        break
+      }
+    }
+  },
+  // 导航点击滑动
+  tapMove: function(e) {
+    this.setData({
+      scrollTop: this.data.scrollTop + 10
+    })
+  },
+	bindChange: function (e) {
+    console.log(this.data.scrollTop)
+    var current = e.detail.current;
+    wx.pageScrollTo({
+      scrollTop: 0
+    })
+    this.setData({
+      scrollTop: 0,
+      activeIndex: current,
+      sliderOffset: this.data.sliderWidth * current
+    });
+  },
+	// 导航点击事件
+  navTabClick: function (e) {
+    console.log(e.currentTarget.id)
+    this.setData({
+      sliderOffset: e.currentTarget.offsetLeft,
+      activeIndex: e.currentTarget.id
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  //跳转到专家详情
+  toone:function(e){
+    console.log(e)
+    wx.setStorageSync("mid", e.currentTarget.dataset.manger)
+    wx.navigateTo({
+      url: '../details/details'
+    });
   },
+ 
+  //获取专家列表
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+  getloanall: function (city,type) {
+    
+    let that = this;
+    wx.request({
+      url: urls.mainurl + urls.getloanlist,
+      method: 'POST',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+        "pageNum": 0,
+        "pageSize": 10,
+        city:city,
+        type:type,
+        "expert":0
+      },
+      success: function (response) {
+        that.setData({
+          managerlists: response.data.data.dataList
+        })
+      
+      },
+      fail: function (err) {
+        console.log(err)
 
+      }
+    })
   },
+ 
+ 
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  onLoad: function (e) {
+    //  console.log(this.data)
+    this.getloanall("全国",wx.getStorageSync("databelong"))
+    this.setData({
+      firstPerson2: wx.getStorageSync("databelong")
+    })
+  //  this.getlistExpert()
+    // this.getmanagerlists()
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+  onReady:function(e){
+    this.setData({
+      firstPerson2: wx.getStorageSync("databelong")
+    })
+  },
+  //获取客服信息
+  
+});

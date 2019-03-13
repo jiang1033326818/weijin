@@ -2,39 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46585cc2-222d-4961-aa1a-198cea89796c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/urls.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/urls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/calendar-g.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/calendar-g.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/calendar.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/calendar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hezuo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/hezuo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/home-g.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/home-g.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/home.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/home.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/mine-g.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/mine-g.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/mine.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/mine.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/oneicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/oneicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Consultant/achievement.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Consultant/achievement.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Consultant/achievement.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Consultant/achievement.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Consultant/achievement.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Consultant/achievement.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/achievement/achievement.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/achievement/achievement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/achievement/achievement.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/achievement/achievement.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/achievement/achievement.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/achievement/achievement.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/achievement/achievement.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/achievement/achievement.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/adviser/adviser.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/adviser/adviser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/adviser/adviser.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/adviser/adviser.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/apply/apply.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/apply/apply.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/apply/apply.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/apply/apply.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/clues/clues.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/clues/clues.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/clues/clues.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/clues/clues.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/cooperation/cooperation.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/cooperation/cooperation.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/details/details.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/details.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/details/details.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/details.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/detailso/detailso.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/detailso/detailso.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/detailso/detailso.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/detailso/detailso.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/detailso/detailso.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/detailso/detailso.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/expert/expert.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/expert/expert.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/expert/expert.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/expert/expert.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home/home.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/home.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/home.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/home.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/login/login.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login/login.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/mine/mine.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mine/mine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/mine/mine.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mine/mine.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/phonetel/phonetel.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/phonetel/phonetel.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/myadvice/myadvice.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/myadvice/myadvice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/phonetel/phonetel.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/phonetel/phonetel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/schedule/schedule.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/schedule/schedule.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/success/success.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/success/success.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/success2/success2.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/success2/success2.wxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/adviser/adviser.wxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+            <state relative-caret-position="101">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
             </state>
           </provider>
         </entry>
@@ -66,9 +62,23 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>../../images</find>
+      <find>贷款</find>
+      <find>贷</find>
+      <find>在线</find>
+      <find>金融</find>
+      <find>交易</find>
+      <find>抵押</find>
+      <find>社保</find>
+      <find>公积金</find>
     </findStrings>
     <replaceStrings>
       <replace>http://zadai.net:8000/uploads</replace>
+      <replace>服务</replace>
+      <replace>Finance</replace>
+      <replace>trading</replace>
+      <replace />
+      <replace>福利1</replace>
+      <replace>福利2</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -78,6 +88,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pages/adviser/adviser.wxml" />
+        <option value="$PROJECT_DIR$/pages/home/home.js" />
+        <option value="$PROJECT_DIR$/pages/phonetel/phonetel.js" />
+        <option value="$PROJECT_DIR$/pages/expert/expert.js" />
+        <option value="$PROJECT_DIR$/pages/details/details.wxml" />
+        <option value="$PROJECT_DIR$/pages/Consultant/achievement.wxml" />
+        <option value="$PROJECT_DIR$/pages/schedule/schedule.js" />
+        <option value="$PROJECT_DIR$/pages/cooperation/cooperation.wxml" />
+        <option value="$PROJECT_DIR$/pages/achievement/achievement.wxml" />
+        <option value="$PROJECT_DIR$/common/urls.js" />
+        <option value="$PROJECT_DIR$/pages/login/login.wxml" />
       </list>
     </option>
   </component>
@@ -147,11 +167,16 @@
       <updated>1548432104827</updated>
       <workItem from="1548432105997" duration="74000" />
       <workItem from="1548432192104" duration="143000" />
+      <workItem from="1548588144010" duration="776000" />
+      <workItem from="1548654542700" duration="2630000" />
+      <workItem from="1548873894671" duration="98000" />
+      <workItem from="1549029591736" duration="14000" />
+      <workItem from="1549029702613" duration="143000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217000" />
+    <option name="totallyTimeSpent" value="3878000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -181,8 +206,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pages/adviser/adviser.wxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        <state relative-caret-position="101">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
     </entry>

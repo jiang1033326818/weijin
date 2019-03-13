@@ -11,15 +11,15 @@ Page({
     address: "4353",
     customItem: '全部',
     region: ['北京市', '北京市', '东城区'],
-    array: ['上班族', '学生', '退休人员', '其他'],
-    array2: ['现金发放', '储蓄卡',],
-    array3: ['3', '6', '9', '12月以上'],
-    array4: ['1-3年', '4-6年', '7-10年', '10年以上'],
-    array5: ['国企', '外企', '创业公司', '私企(已上市)','私企(未上市)'],
+    array: ['上班族', '学生', '退休人员','无业人员'],
+    array2: ['现金发放', '银行卡',],
+    array3: ['3个月以下', '3-6个月', '6月以上'],
+    array4: ['不足3个月', '3-5个月', '6-11个月', '1-3年','3年以上'],
+    array5: ['公务员/事业单位员工', '国企单位员工', '世界500强企业员工', '上市企业员工', '普通企业员工'],
     array6: ['是', '否',],
     array7: ['是', '否',],
     array8: ['1年以下', '1-3年','4-6年','7到10年','10年以上'],
-    array9: ['全款', '贷款',],
+    array9: ['无房产', '小产权房', '经适/限价房', '房改/危改房', '商铺', '厂房', '商住两用房', '办公楼', '商品住宅','宅基地/自建房'],
     array10: ['是', '否',],
     index: 0,
     index2: 0,
@@ -31,6 +31,7 @@ Page({
     index8: 0,
     index9: 0,
     index10: 0,
+    money:"0",
     date: '2019-01-01',
     checked: true,
     time: '获取验证码', //倒计时 
@@ -118,6 +119,12 @@ Page({
   age: function (e) {
     this.setData({
       age: e.detail.value
+    })
+  },
+
+  money:function(e){
+    this.setData({
+      money: e.detail.value
     })
   },
 
@@ -222,7 +229,7 @@ Page({
             
           },
           success: function (response) {
-            console.log(response)
+            console.log(that.data)
             wx.request({
               url: urls.mainurl + urls.londadd,
               method: 'POST',
@@ -230,32 +237,38 @@ Page({
                 "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
               },
               data: {
-                "area": "string",
-                "avatarUrl": that.data.image0,
-                "business": that.data.array[that.data.index],
-                "checkCode": "string",
-                "city": that.data.region[2],
-                "company": that.data.danwei,
-                "companyImage": "string",
-                "country": "string",
-                "employment": that.data.image1,
-                "gender": 0,
-                "joinTime": that.data.date,
-                "hashCode": "string",
-                "language": "string",
-                "mobile": "string",
-                "name": "string",
-                "nikeName": "string",
-                "openid": "string",
-                "pageNum": 0,
-                "pageSize": 0,
-                "password": "string",
-                "personImage": that.data.image0,
-                "province": "string",
-                "unionid": "tom"
+               
+                "age": that.data.age,
+                "companyType": that.data.array5[that.data.index5],
+                "creationTime": "2019-01-28T11:06:19.132Z",
+                "creator": 0,
+                "estateType": that.data.array9[that.data.index9],
+                "id": 0,
+                "ifCar": that.data.array10[that.data.index10] === "是" ? true : false,
+                "ifProvidentFund": that.data.array6[that.data.index6]==="是"?true:false,
+                "ifSocialSecurity": that.data.array7[that.data.index7] === "是" ? true : false,
+                "job": that.data.array[that.data.index],
+                "mobile": that.data.phone,
+                "realName": that.data.name,
+                "salary": parseInt(that.data.money),
+                "salaryStatus": that.data.array2[that.data.index2],
+                "salaryStream": that.data.array3[that.data.index3],
+                "socialSecurityTime": that.data.array8[that.data.index8],
+                "userId": 0,
+                "workAge": that.data.index4,
+                loanId:parseInt(wx.getStorageSync("loanid"))
               },
               success: function (response) {
                 console.log(response)
+                wx.showToast({
+                  title: response.data.data.message,
+                  icon: 'success',
+                  duration: 2000
+                })
+
+                wx.navigateTo({
+                  url: '../success2/success2'
+                });
               }
             })
           },

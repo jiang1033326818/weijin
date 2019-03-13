@@ -10,15 +10,15 @@ Page({
     // text:"这是一个页面"
     actionSheetHidden: true,
     actionSheetItems: [
-      { bindtap: 'Menu1', txt: '房产抵押' },
-      { bindtap: 'Menu2', txt: '车产抵押' },
+      { bindtap: 'Menu1', txt: '房产' },
+      { bindtap: 'Menu2', txt: '车产' },
       { bindtap: 'Menu3', txt: '信用卡' },
-      { bindtap: 'Menu4', txt: '极速贷款' },
+      { bindtap: 'Menu4', txt: '极速服务' },
       { bindtap: 'Menu5', txt: '工资流水' },
-      { bindtap: 'Menu6', txt: '社保贷款' },
+      { bindtap: 'Menu6', txt: '福利1服务' },
       { bindtap: 'Menu7', txt: '营业执照' },
-      { bindtap: 'Menu8', txt: '公积金' },
-      { bindtap: 'Menu9', txt: '微粒贷' },
+      { bindtap: 'Menu8', txt: '福利2' },
+      // { bindtap: 'Menu9', txt: '微粒贷' },
     ],
     typeList: [{
       name: "155****6567",

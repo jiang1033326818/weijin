@@ -124,7 +124,7 @@ Page({
    toconsu: function () {
     console.log(444)
     wx.navigateTo({
-      url: '../Consultant/achievement'
+      url: '../consultant/consultant'
     });
   },
   tocooperation:function(){

@@ -9,54 +9,53 @@ Page({
    */
   data: {
     typeList: [{
-      label: '房产抵押贷款',
+      label: '房产服务',
       value: 'house',
     }, {
-      label: '车产低压贷款',
+      label: '车产低压服务',
       value: 'car'
     }, {
       label: '信用卡',
       value: 'credit'
     }, {
-      label: '极速贷款',
+      label: '极速服务',
       value: 'speet'
     }, {
-      label: '工资流水贷款',
+      label: '工资流水服务',
       value: 'bill0'
     },
       {
-        label: '社保贷款',
+        label: '社保服务',
         value: 'shebao'
       }, {
-        label: '营业执照贷款',
+        label: '营业执照服务',
         value: 'business'
       }, {
-        label: '公积金贷款',
+        label: '公积金服务',
         value: 'accumulation'
-      }, {
-        label: '微粒贷贷款',
-        value: 'loan'
-      }, {
-        label: '自存流水贷款',
+      },  {
+        label: '自存流水服务',
         value: 'bill'
       }, {
-        label: '按揭房贷款',
+        label: '按揭房服务',
         value: 'housloan'
       }, {
-        label: '按揭车贷款',
+        label: '按揭车服务',
         value: 'turncar'
       },
       {
-        label: '保单贷款',
+        label: '保单服务',
         value: 'policy'
       },
     ],
 
   },
 
-  tolist:function(){
+  tolist:function(e){
+    // console.log(e.currentTarget.dataset.list)
+    wx.setStorageSync("databelong", e.currentTarget.dataset.list)
     wx.navigateTo({
-      url: '../Consultant/achievement'
+      url: '../achievement/achievement'
     });
   },
 

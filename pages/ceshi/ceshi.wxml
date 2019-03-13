@@ -1,0 +1,36 @@
+<view class='nav_1'>
+  <view class='img_1'>
+    <image src="http://zadai.net:8000/uploads/image001.jpg"></image>
+  </view>
+  <view class='nav_2'>
+    <button class='btn_1' bindtap='changgeBtn'>确认办卡</button>
+    <!-- 5.通过按钮改变data里边b的值 -->
+    <!-- 6.通过按钮改变data里边c的值 -->
+    <button class='btn_2' bindtap='changgeColor'>咨询客服</button>
+  </view>
+  <view class='nav_3'>
+    <view wx:for="{{a}}">
+    <!-- 2.把a遍历到页面中形成表格 -->
+    <!-- 3.通过三元判断改变左侧表格的内容 -->
+    <!-- 4.通过三元判断改变右侧表格的背景色 -->
+
+      <view class='itemName'>{{b===true?"尽快":item.name}}</view>
+      <view class='itemName'  style='background:{{b===true?c:"yellow"}}' >{{item.value}}</view>
+    <!-- 7.将data里b和c的值绑定在元素里 -->
+    </view>
+
+  </view>
+  <!--> 进度条<-->
+  <view class="wrap">
+  <view class="circle-box">
+    <canvas class="circle" style="width:200px; height:200px;" canvas-id="canvasArcCir">
+    </canvas>
+    <canvas class="circle" style="z-index: -5; width:200px; height:200px;" canvas-id="canvasCircle">
+    </canvas>
+    <view class="draw_btn" bindtap="drawCircle">打开进度条</view> 
+  </view>
+</view>
+<!--<view class='nav_4'>
+<button wx:for="{{z}}"></button>
+</view>!-->
+</view>

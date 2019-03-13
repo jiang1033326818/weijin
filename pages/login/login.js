@@ -1,3 +1,4 @@
+
 //login.js
 //获取应用实例
 var WXBizDataCrypt = require('../../utils/cryptojs/RdWXBizDataCrypt.js');
@@ -18,6 +19,8 @@ Page({
     codeSendBtnDisabled: false, // 发送验证码按钮控制
     urlParams: null,
     timeCount: 0, // 倒计时计数
+    name:"快速登录",
+    aaaa:false
   },
   //事件处理函数
   bindViewTap: function() {

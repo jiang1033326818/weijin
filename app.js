@@ -1,5 +1,7 @@
 import request from './utils/request.js';
 import urls from './common/urls.js';
+// var WxParse = require('../../wxParse/wxParse.js');
+// import requese from './wxParse/wxParse.js';
 //app.js
 App({
   onLaunch: function () {

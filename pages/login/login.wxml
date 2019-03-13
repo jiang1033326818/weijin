@@ -4,7 +4,7 @@
     <view class="no-user" wx:if="{{!hasUserInfo && canIUse}}">
       <image class="logo" src="http://zadai.net:8000/uploads/logo.jpg"></image>
       <text class="summary">
-        　一站式智能金融服务平台
+        　一站式智能服务平台
       </text>
       <button
         class="btn-class try-btn"
@@ -56,12 +56,15 @@
       <icon type="warn" size="10" />
       {{pwdCheckMsg}}
     </view>
+      class="btn-class login-btn"
     <view class="tip">体验账号：17777777777，密码：Aa123456</view> -->
     <button
-      class="btn-class login-btn"
+    
+    class="btn-class login-btn"
+
       bindtap="login"
     >
-      登录
+      {{name}}
     </button>
   </view>
 </view>

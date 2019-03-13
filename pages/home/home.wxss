@@ -27,7 +27,15 @@
     color:  #257BFB;
     border: 1px solid #257BFB
 }
-
+.nav-item0 {
+    width: 33%;
+    display: inline-block;
+    text-align: center;
+}
+.nav-item0.active{
+    color:  #257BFB;
+    border: 1px solid #257BFB
+}
 
 .font30 {
   font-size: 30rpx;
@@ -416,4 +424,17 @@
 .bindphone_x image{
   width: 50rpx;
   height: 50rpx;
+}
+
+
+.typelist_item{
+  width: 94%;
+  margin-left: 3%;
+  height: 100rpx;
+  text-align: center;
+  color: #ffffff;
+  line-height: 100rpx;
+  background: #009DFF;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
 }

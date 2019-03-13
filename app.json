@@ -1,23 +1,26 @@
 {
   "pages": [
-      "pages/login/login",
+    "pages/login/login",
+    "pages/achievement/achievement",
     "pages/expert/expert",
     "pages/cooperation/cooperation",
     "pages/myadvice/myadvice",
-  
     "pages/home/home",
     "pages/mine/mine",
     "pages/success2/success2",
     "pages/success/success",
     "pages/details/details",
-    "pages/Consultant/achievement",
+    "pages/consultant/consultant",
     "pages/apply/apply",
     "pages/adviser/adviser",
     "pages/clues/clues",
     "pages/schedule/schedule",
     "pages/detailso/detailso",
     "pages/phonetel/phonetel",
-    "pages/achievement/achievement"
+    "pages/zzzzz1/zzzzz1",
+    "pages/zzzzz2/zzzzz2",
+    "pages/zzzzz3/zzzzz3",
+    "pages/knowdetails/knowdetails"
   ],
   "window": {
     "backgroundTextStyle": "light",

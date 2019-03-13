@@ -19,7 +19,7 @@
 <view class='item'>
   <view class='left'>单位名称</view>
   <view class='right'>
-    <input placeholder='请填写真实有效的单位' bindblur='danwei'></input>
+    <input placeholder='请填写真实有效的单位' value='{{danwei}}' bindblur='danwei'></input>
   </view>
 </view>
 

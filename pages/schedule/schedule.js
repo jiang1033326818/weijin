@@ -75,7 +75,7 @@ Page({
    */
   onReady: function () {
     let that=this;
-    //获取在线联系人
+    //获取联系人
     wx.request({
       url: urls.mainurl + urls.localExpert,
       method: 'GET',

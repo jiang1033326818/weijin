@@ -7,6 +7,7 @@
 
       <view class='circle'>
         <image src='http://zadai.net:8000/uploads/header/head0.jpg'></image>
+        
       </view>
       <view class='headbs'>
         <view class='headb'>{{name}}</view>
@@ -87,7 +88,7 @@
         <view  class='bottomthree2' bindtap='callphone'>电话咨询
         </view>
         <view  class='bottomthree3'>
-            在线咨询
+            咨询
         </view>
     </view>
   </view>

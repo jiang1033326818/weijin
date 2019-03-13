@@ -19,7 +19,7 @@
         快捷电话
       </view>
       <view style='font-size:25rpx' class='ffffff'>
-        贷款问题
+        服务问题
       </view>
       <view style='font-size:25rpx' class='ffffff'>
         一个电话全搞定
@@ -32,7 +32,7 @@
           本地专家服务
         </view>
         <view style='font-size:25rpx' class='ffffff'>
-          本地贷款顾问 更专业 更贴心
+          本地服务顾问 更专业 更贴心
         </view>
       </view>
 
@@ -41,7 +41,7 @@
           微金专家服务
         </view>
         <view style='font-size:25rpx' class='ffffff'>
-          微金专家 每天解决上万个贷款问题
+          微金专家 每天解决上万个服务问题
         </view>
       </view>
     </view>
@@ -51,7 +51,7 @@
     <view>
       <image src='http://zadai.net:8000/uploads/toutiao.png'></image>
     </view>
-    <text>没有稳定工作如何网上快速贷款10万</text>
+    <text>没有稳定工作如何快速找到工作</text>
   </view>
 
   <view class='maplist'>
@@ -68,24 +68,26 @@
 
 
 
-  <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" class='swiper' style='height:{{height}}rpx' id='item0' data-index='{{activeIndex}}'   scroll-y>
-    <swiper-item class='swiper-item' id='item1' >
+  <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" class='swiper' style='height:{{height}}rpx' id='item0' scroll-y>
+
+  
+    <swiper-item class='swiper-item'  data-index='{{activeIndex}}' id='item1'>
       <view class='allOfpeople'>
         <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
           <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
-            <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">{{navItem.text}}</view>
+            <view class="nav-item0 {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">{{navItem.text}}</view>
           </block>
         </scroll-view>
         <scroll-view class="icon-list">
-          <view wx:for="{{typeList}}" class="row-flex list-item">
-            <view class='toplist' bindtap='toapply' id='name{{item.id}}' >
+          <view wx:for="{{keykey===0?typeList:typeList0}}" class="row-flex list-item">
+            <!-- <view class='toplist' bindtap='toapply' id='name{{item.id}}' >
               <view class='toptitle'>
                 <view class='toptitle1' style='font-size:30rpx'>
                   <image src='http://zadai.net:8000/uploads/oneicon.png'>
                   </image>
                   {{item.name}}
                   <view class='toptitle2'>
-                    {{item.readyLoan}}人申请
+                    {{item.readyLoan===null?"0":item.readyLoan}}人咨询
                   </view>
                 </view>
 
@@ -93,29 +95,39 @@
               </view>
               <view class='listitem'>
                 <view class='itemmuch'>
-                  <view class='itemrate'>{{item.amount}}</view>
-                  <view class='itemrate2'>贷款金额</view>
+                  <view class='itemrate'>{{item.amount===null?"0":item.amount}}万</view>
+                  <view class='itemrate2'>服务金额</view>
 
                 </view>
                 <view class='itemmuch'>
-                  <view class='itemrate'>{{item.from}}</view>
-                  <view class='itemrate2'>贷款利率</view>
+                  <view class='itemrate'>{{item.rate===null?"0":item.rate}}%</view>
+                  <view class='itemrate2'>服务利率</view>
                 </view>
               </view>
 
               <view class='maptitle0'>
                 <view class='maptitle pink'>
-                  {{item.belong[0]}}
+                  {{item.tag[0]}}
                 </view>
                 <view class='maptitle green'>
-                  {{item.belong[1]}}
+                  {{item.tag[1]}}
                 </view>
                 <view class='maptitle yellow'>
-                  {{item.belong[2]}}
+                  {{item.tag[2]}}
                 </view>
               </view>
 
-            </view>
+            </view> -->
+            
+              <view class='typelist_item' data-id='{{item.https}}' bindtap='tonew'>
+                {{item.name}}
+              </view>
+
+            
+            
+
+
+
           </view>
         </scroll-view>
       </view>
@@ -123,17 +135,18 @@
 
 
 
-    <swiper-item class='swiper-item' id='item2'  data-index='{{activeIndex}}'>
-      <view class='allOfpeople'  >
+    <swiper-item class='swiper-item' id='item2' data-index='{{activeIndex}}'>
+      <view class='allOfpeople'>
         <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
           <block wx:for="{{navData2}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
             <view class="nav-item {{currentTab2 == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav2">{{navItem.text}}</view>
           </block>
         </scroll-view>
+        
         <scroll-view class="icon-list">
-          <view wx:for="{{typeList2}}" class="row-flex list-item">
-            <view class='toplist2' bindtap='toapply2'>
-              <view class='knowledge'>
+          <view wx:for="{{getknowledge}}" class="row-flex list-item">
+            <view class='toplist2' bindtap='toapply2'  data-id="{{item.id}}" >
+              <view class='knowledge' >
                 <image src='{{item.image}}'></image>
               </view>
 
@@ -144,7 +157,7 @@
                   <view class='knowledge_rbl'>{{item.type}} </view>
                   <view class='knowledge_rbr'>{{item.time}} </view>
                 </view>
-
+  
               </view>
 
             </view>
@@ -155,15 +168,7 @@
 
   </swiper>
 
-  <!-- <view class="navigator-container">
-    <navigator class="navigator-btn  btn-class" url="../clues/clues">
-      websocket聊天
-    </navigator>
-  
-    <navigator url="../knowledgebase/knowledgebase" class="navigator-btn  btn-class">
-      知识库
-    </navigator>
-  </view> -->
+
 
 
   <!-- 绑定手机号码 -->
@@ -173,22 +178,22 @@
     <view class='white'>
       <view class='whiteinput'>
         <text>手机号:</text>
-        <input placeholder='请输入您的手机号'  value='{{phone}}' bindchange='phone' maxlength='11' type='text'></input>
+        <input placeholder='请输入您的手机号' value='{{phone}}' bindchange='phone' maxlength='11' type='text'></input>
       </view>
-       <view class='whiteinput2'>
+      <view class='whiteinput2'>
         <text>验证码:</text>
         <view class='yanzhengma'>
-        <input placeholder=''  value='{{phonecode}}' bindchange='phonecode' maxlength='11' type='text'></input>
-        <view bindtap='getVerificationCode'>{{time}}</view>
+          <input placeholder='' value='{{phonecode}}' bindchange='phonecode' maxlength='11' type='text'></input>
+          <view bindtap='getVerificationCode'>{{time}}</view>
         </view>
-        
+
       </view>
     </view>
 
     <view class='whitebutton' bindtap='semb'>提交</view>
 
   </view>
-  <view class='bindphone_x' bindtap='closeshow'  style='display:{{display}}'>
+  <view class='bindphone_x' bindtap='closeshow' style='display:{{display}}'>
     <image src='http://zadai.net:8000/uploads/close.png'></image>
   </view>
 
