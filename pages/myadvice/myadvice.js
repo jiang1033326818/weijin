@@ -12,6 +12,7 @@ const tabs = [
 
 Page({
   data: {
+    onOff: true ,
     tabs: tabs,     //展示的数据
     slideOffset: 0,//指示器每次移动的距离
     activeIndex: 0,//当前展示的Tab项索引
@@ -151,6 +152,37 @@ Page({
       data: data
     }
   },
+  //评论
+  // btnclick: function () {
+  //   console.log(6868)
+  //   wx.showModal({
+  //     success: function (res) {
+  //       if (res.confirm) {
+  //         console.log('用户点击确定')
+  //       } else if (res.cancel) {
+  //         console.log('用户点击取消')
+  //       }
+  //     }
+  //   })
+  // },
+
+  btnclick: function () {
+    console.log(6868)
+    this.setData({
+      onOff: false,
+    })
+  },
+  modalConfirm:function(){
+    this.setData({
+      onOff: true,
+    })
+  },
+  modalCancel: function () {
+    this.setData({
+      onOff: true,
+    })
+  },
+  
   // 第一页饼图加载
   onLoad: function (e) {
     
