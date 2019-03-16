@@ -18,6 +18,7 @@ export default {
   knowtype:'/know/showType/',//知识库类别
   consulatanturl:'/consultant/listById/',//查询顾问详情
   assessment:'/consultant/listAll/',//客户评价
+  interesting:'/GET /loan/mark/',//添加关注
   // phonenum: '/api/contract/bilateral/list', //长协合同列表
   // contractListBid: '/api/contract/bidding/list', //月竟合同列表
   // contractsMsg: '/api/contract/summary', //合同汇总信息

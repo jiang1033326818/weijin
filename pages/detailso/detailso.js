@@ -61,7 +61,13 @@ Page({
       },
     ],
   },
-
+//点击咨询导航事件
+  bindtab1: function () {
+    console.log()
+    wx.navigateTo({
+      url: '../clues/clues'
+    });
+  },
   // 导航点击事件
   navTabClick: function(e) {
     //console.log(e.currentTarget.id)

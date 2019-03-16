@@ -85,7 +85,7 @@
           <view style='color:{{star===0?"#666666":"#FFB900"}};font-size:25rpx'>{{star===0?message:message2}}</view>
         </view>
        
-        <view  class='bottomthree3'>
+        <view  class='bottomthree3'bindtap="bindtab1">
             立即咨询
         </view>
     </view>

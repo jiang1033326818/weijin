@@ -17,7 +17,7 @@ Page({
     title: "文章详情",
     article_title: "",
     article_content: "",
-
+    knoweldgelist:'',
     getknowtype: [],
     getknowid: [],
     id:''
@@ -26,22 +26,8 @@ Page({
 //通过wxParse设置样式
   onLoad: function () {
     var that = this;
-    wx.request({
-      url: '',
-      method: 'POST',
-      data: {
-        'id': 13
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        var article = res.data[0].post;
-        WxParse.wxParse('article', 'html', article, that, 5);
-      }
-    })
-    this.setData({
-      id: wx.getStorageSync("knowid0")})
+   
+    that.knoweldgeid();
 
   },
 
@@ -63,17 +49,7 @@ Page({
       },
       success: function (res) {
         console.log(res)
-        // console.log(7777777777777777777777)
-        for (let i in res.data.data.dataList) {
-          getknowtype.push(rese.data.data.dataList[i])
-          if (res.data.data.dataList[i] !== null) {
-            that.setData({
-              getknowtype: res.data.data.dataList
-            })
-          } else {
-            getknowtype: res.data.data.dataList[i] = null
-          }
-        }
+       
       },
       fail: function (err) {
         console.log(err)
@@ -97,6 +73,10 @@ Page({
       },
       success: function (res) {
         console.log(res,33)
+        that.setData({
+          knoweldgelist: res.data.data.content
+        })
+        WxParse.wxParse('article', 'html', res.data.data.content, that, "1rpx"); 
       },
       fail: function (err) {
         console.log(err)
@@ -126,7 +106,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.knoweldgeid()
+    
   },
 
   /**

@@ -1,7 +1,7 @@
 <!--pages/knowdetails/knowdetails.wxml-->
-<text>这是知识库的详情页</text>
 <import src="../wxParse/wxParse.wxml"/>
-
-<view class="wxParse">
-        <template is="wxParse" data="{{wxParseData:article_content.nodes}}"/>
-        </view>
+<view class="container">
+  <view class='uinn'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>

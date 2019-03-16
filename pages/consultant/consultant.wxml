@@ -15,24 +15,24 @@
             <view  class="row-flex list-item"  wx:for="{{getloanalllist}}"  >
               <view class='toplist' bindtap="btn"data-bntuser="{{item.id}}" >
                 <view class='leftlist'>
-                  <image class="item-header" src="{{item.image}}" ></image>
+                  <image class="item-header" src="{{item.workImage}}" ></image>
                   <!-- <image class='item-header' wx:for="{{managerlist}}">"{{item.image}}"</image> -->
                 </view>
                 <view class='rightlist'>
-                  <text class='item-text' decode="{{true}}" space="{{true}}">{{item.name}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.business}}</text>
+                  <text class='item-text' decode="{{true}}" space="{{true}}">{{item.realName}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.level}}</text>
 
                   <view class='pink'>
-                    <text>{{item.company}}</text>
+                    <text>{{item.workCompany}}</text>
                   </view>
                    <view class='blue'>
-                    <text>{{item.country}}</text>
+                    <text>{{item.hobby}}</text>
                   </view>
                 </view>
 
               </view>
               <view class='bottomlist'>
                   <view class='people'>
-                    <text>{{item.people}}人咨询过</text>
+                    <text>{{item.fwrs}}人咨询过</text>
                   </view>
 
                   <view class='peoplebutton1' bindtap="btnphone" data-phonenum="{{item.mobile}}">
