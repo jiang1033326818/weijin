@@ -18,7 +18,7 @@ Page({
     time: '获取验证码', //倒计时 
     clueNum: 0,
     taskNum: 0,
-    height: 800,
+    height: 900,
     customerNum: 0,
     powerTotal: 0,
     userInfo: {}, // 登录用户的信息
@@ -45,6 +45,7 @@ Page({
       url: 'http://zadai.net:8000/uploads/image003.jpg'
     }],
     typeList: [{
+      image:'../../images/xyk.png',
         name: "微金二号",
         label: '123人申请',
         amount: '10-100万',
@@ -56,6 +57,7 @@ Page({
         ],
       },
       {
+        image: '../../images/360.png',
         name: "微金二号",
         label: '123人申请',
         amount: '10-100万',
@@ -69,6 +71,7 @@ Page({
     ],
 
     typeList0: [{
+      image: '../../images/blank.png',
       name: "微金二号",
       label: '123人申请',
       amount: '10-100万',
@@ -156,15 +159,15 @@ Page({
     // for (let x in typyList) {
     //   typeList.push(typeList[z],z)}
     
-    if (e.currentTarget.dataset.index === 1) {
-      this.setData({
-        height: this.data.typeList.length * 450 + 50
-      })
-    } else {
-      this.setData({
-        height: this.data.getknowledge.length * 300 + 80
-      })
-    }
+    // if (e.currentTarget.dataset.index === 1) {
+    //   this.setData({
+    //     height: this.data.typeList.length * 450 + 50
+    //   })
+    // } else {
+    //   this.setData({
+    //     height: this.data.getknowledge.length * 300 + 80
+    //   })
+    // }
     //console.log(e.currentTarget.dataset.index)
     var current = e.detail.current;
     wx.pageScrollTo({
@@ -180,15 +183,15 @@ Page({
   navTabClick: function(e) {
     // console.log(this.data.height)
     console.log(e.currentTarget.id)
-    if (e.currentTarget.id === "0") {
-      this.setData({
-        height: this.data.typeList.length * 450 + 50
-      })
-    } else {
-      this.setData({
-        height: this.data.getknowledge.length * 300 + 80
-      })
-    }
+    // if (e.currentTarget.id === "0") {
+    //   this.setData({
+    //     height: this.data.typeList.length * 450 + 50
+    //   })
+    // } else {
+    //   this.setData({
+    //     height: this.data.getknowledge.length * 300 + 80
+    //   })
+    // }
 
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
@@ -412,9 +415,9 @@ Page({
    */
   onShow: function() {
 
-    this.setData({
-      height: this.data.typeList.length * 300 + 80
-    })
+    // this.setData({
+    //   height: this.data.typeList.length * 300 + 80
+    // })
     let a = wx.getStorageSync("phone")
     if (a.length == 11) {
       this.setData({

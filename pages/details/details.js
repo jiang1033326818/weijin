@@ -16,6 +16,7 @@ Page({
     id:'',
     //顾问详情
     useradviceid:'',
+    getguesttalk:[],
     // tabs: [{
     //     name: "全部",
     //     value: 1231
@@ -101,9 +102,10 @@ Page({
   //咨询事件跳转页面
   bottombtn:function(){
    console.log()
-  wx.getStorageSync("mid")
+  // wx.getStorageSync("mid")
+  // wx.setStorageSync("askid", data)
     wx.navigateTo({
-     url: '../detailso/detailso'
+     url: '../clues/clues'
     });
    },
   //顾问详情
@@ -133,12 +135,49 @@ Page({
       }
     })
   },
+  //客户评价接口
+  guesttalk: function () {
+    let that = this;
+    wx.request({
+      url: urls.mainurl + urls.assessment + wx.getStorageSync("mid"),
+      method: 'POST',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+        "pageNum": 0,
+        "pageSize": 10,
+       "beginDate": "2019-03 - 16T10: 05: 54.478Z",
+        "bid": 0,
+        "cid": 0,
+        "commentType": "string",
+        "content": "string",
+        "endDate": "2019-03-16T10:05:54.478Z",
+        "id": 0,
+        "mobile": "string",
+        "pageNum": 0,
+        "pageSize": 0,
+        "status": "string",
+      },
+      success: function (e) {
+        console.log(e, "成功")
+        that.setData({
+          // id: currentTarget.dataset.manger,
+          // id:wx.getStorageSync("mid"),
+          getguesttalk:e.data.dataList
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function() {
     this.useradvice();
-    // this.bt();
+    this.guesttalk();
   },
 
   /**

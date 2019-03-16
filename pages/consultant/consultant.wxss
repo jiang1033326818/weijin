@@ -97,8 +97,8 @@ view , page {
   margin-left: 2%;
 }
 .item-header{
-  width: 140rpx;
-  height: 200rpx
+  width: 170rpx;
+  height: 170rpx
 }
 .rightlist{
   float: left;

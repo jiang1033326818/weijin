@@ -10,12 +10,12 @@
         <image src="{{useradviceid.image}}"></image>
       </view>
       <view class='headbs'>
-        <view class='headb'>{{useradviceid.company}}</view>
+        <view class='headb'>{{useradviceid.name}}</view>
         <!-- <view class='heads'>{{type}}</view> -->
-          <view class='heads'>{{useradviceid.business}}</view>
+          <view class='heads'>{{useradviceid.company}}</view>
       </view>
       <view class='headbs'>
-        <view class='headb'>{{useradviceid.employment}}</view>
+        <view class='headb'>{{useradviceid.expert}}</view>
         <view class='heads'>{{useradviceid.employment}}</view>
       </view>
 
@@ -23,16 +23,22 @@
     </view>
     <view class='cardbottom'>
       <view class='handbs2'>
-        <view class='headb2'>{{useradviceid.name}}</view>
-        <view class='heads2'>{{useradviceid.business}}</view>
+        <!-- <view class='headb2'>{{useradviceid.name}}</view>
+        <view class='heads2'>{{useradviceid.business}}</view> -->
+            <view class='headb2'>5398</view>
+        <view class='heads2'>服务人数</view>
       </view>
       <view class='handbs2'>
-        <view class='headb'>{{useradviceid.name}}</view>
-        <view class='heads'>{{type2}}</view>
+        <!-- <view class='headb'>{{useradviceid.name}}</view>
+        <view class='heads'>{{type2}}</view> -->
+         <view class='headb'>98%</view>
+        <view class='heads'>好评率</view>
       </view>
       <view class='handbs2'>
-        <view class='headb'>{{useradviceid.nikeName}}</view>
-        <view class='heads'>{{type2}}</view>
+        <!-- <view class='headb'>{{useradviceid.nikeName}}</view> -->
+          <view class='headb'>100分</view>
+        <!-- <view class='heads'>{{type2}}</view> -->
+         <view class='heads'>同行认可</view>
       </view>
     </view>
   </view>
@@ -88,7 +94,7 @@
         </view>
         <view  class='bottomthree2' bindtap='callphone' data-num="{{useradviceid.mobile}}">电话咨询
         </view>
-        <view  class='bottomthree3' bindtap='bottombtn'>
+        <view  class='bottomthree3' bindtap='bottombtn' data-askid="{{useradviceid.uid}}">
             咨询
         </view>
     </view>

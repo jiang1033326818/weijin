@@ -119,8 +119,10 @@
 
             </view> -->
             
-              <view class='typelist_item' data-id='{{item.https}}' bindtap='tonew'>
-                {{item.name}}
+              <view class='typelist_item' data-id='{{item.https}}'>
+              <!--热门图片-->
+              <image src="{{item.image}}" class='img_item'></image>
+                <!-- {{item.name}} -->
               </view>
 
             

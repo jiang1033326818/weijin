@@ -160,6 +160,15 @@ console.log("99")
       //仅为示例，并非真实的电话号码
     })
   },
+  //点击咨询本地专家
+  askpeople:function(e){
+    console.log(e)
+    wx.setStorageSync("mid", e.currentTarget.dataset.manger)
+    wx.navigateTo({
+      url: '../clues/clues'
+    });
+  },
+
   //跳转到专家详情
   toone:function(e){
     console.log(e)
@@ -185,7 +194,7 @@ console.log("99")
         "pageSize": 10,
         // city:city,
         // type:type,
-        "expert":0
+        expert:"0",
       },
       success: function (response) {
         that.setData({

@@ -103,7 +103,7 @@ Page({
  btn: function () {
   //  wx.grtStorageSync( e.currentTarget.dataset.bntuser),
     wx.navigateTo({
-      url: '../details/details'
+      url: '../detailso/detailso'
     });
     // wx.setStorageSync("mid", e.currentTarget.dataset.manger)
     // wx.navigateTo({
@@ -137,7 +137,8 @@ console.log(e)
       data: {
         "pageNum": 0,
         "pageSize": 10,
-        type:type
+        type:type,
+        expert: "1",
       },
       success: function(e) {
         // console.log("222"+response)

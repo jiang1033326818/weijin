@@ -47,13 +47,13 @@
         <image src="{{item.image}}" class="item-header"></image>
       </view>
       <view class='rightlist'>
-        <text class='item-text' decode="{{true}}" space="{{true}}">{{item.name}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.business}}</text>
+        <text class='item-text' decode="{{true}}" space="{{true}}">{{item.name}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.employment}}</text>
 
         <view class='pink'>
           <text>{{item.company}}</text>
         </view>
         <view class='blue'>
-          <text>{{item.company}}</text>
+          <text>{{item.expert}}</text>
         </view>
       </view>
 

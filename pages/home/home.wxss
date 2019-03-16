@@ -428,13 +428,20 @@
 
 
 .typelist_item{
-  width: 94%;
-  margin-left: 3%;
-  height: 100rpx;
+  border: 2px solid #ddd;
+  width: 100%;
+  /* margin-left: 3%; */
+  height: 400rpx;
   text-align: center;
   color: #ffffff;
   line-height: 100rpx;
-  background: #009DFF;
+  /* background: #009DFF; */
   border-radius: 10rpx;
-  margin-top: 20rpx;
+  /* margin-top: 30rpx; */
+}
+.img_item{
+  width: 100%;
+  height: 400rpx;
+  /* margin-top:5rpx;  */
+  /* height: 200rpx; */
 }
