@@ -47,20 +47,20 @@
         <image src="{{item.image}}" class="item-header"></image>
       </view>
       <view class='rightlist'>
-        <text class='item-text' decode="{{true}}" space="{{true}}">{{item.name}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.employment}}</text>
+        <text class='item-text' decode="{{true}}" space="{{true}}">{{item.realName}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.level}}</text>
 
         <view class='pink'>
-          <text>{{item.company}}</text>
+          <text>{{item.workCompany}}</text>
         </view>
         <view class='blue'>
-          <text>{{item.expert}}</text>
+          <text>{{item.hobby}}</text>
         </view>
       </view>
 
     </view>
     <view class='bottomlist'>
       <view class='people'>
-        <text>{{item.people}}人咨询过</text>
+        <text>{{item.fwrs===null?0:item.fwrs}}人咨询过</text>
       </view>
 
       <view class='peoplebutton1' bindtap="callphone1" data-phonenum="{{item.mobile}}">

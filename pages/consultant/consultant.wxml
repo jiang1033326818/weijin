@@ -32,7 +32,7 @@
               </view>
               <view class='bottomlist'>
                   <view class='people'>
-                    <text>{{item.fwrs}}人咨询过</text>
+                    <text>{{item.fwrs===null?0:item.fwrs}}人咨询过</text>
                   </view>
 
                   <view class='peoplebutton1' bindtap="btnphone" data-phonenum="{{item.mobile}}">
