@@ -6,10 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // name: "杨经理",
-    // name2: "微金网",
-     // type: "房产",
-    // type2: "高级顾问",
     belong: '新房按揭服务,二手房按揭服务,房屋服务,经营性服务',
     activeIndex: 0, //当前展示的Tab项索引
     star: 0,
@@ -123,7 +119,7 @@ Page({
     console.log(this.data.useradviceid.uid)
   // wx.getStorageSync("mid")
   // wx.setStorageSync("askid", data)
-    wx.setStorageSync("uid", this.data.useradviceid.uid)
+    wx.setStorageSync("tootherId", this.data.useradviceid.uid)
     wx.navigateTo({
      url: '../clues/clues'
     });

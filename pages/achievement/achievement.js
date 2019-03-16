@@ -163,7 +163,7 @@ console.log("99")
   //点击咨询本地专家
   askpeople:function(e){
     console.log(e.currentTarget.dataset.uid)
-    wx.setStorageSync("uid", e.currentTarget.dataset.uid)
+    wx.setStorageSync("tootherId", e.currentTarget.dataset.uid)
     wx.navigateTo({
       url: '../clues/clues'
     });

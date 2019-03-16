@@ -124,7 +124,7 @@ console.log(e)
     console.log(e.currentTarget)
     // wx.getStorageSync("mid")
     // wx.setStorageSync("askid", data)
-    wx.setStorageSync("uid", e.currentTarget.dataset.uid)
+    wx.setStorageSync("tootherId", e.currentTarget.dataset.uid)
     wx.navigateTo({
       url: '../clues/clues'
     });

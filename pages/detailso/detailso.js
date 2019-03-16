@@ -99,7 +99,7 @@ Page({
     console.log(this.data.useradviceid.uid)
     // wx.getStorageSync("mid")
     // wx.setStorageSync("askid", data)
-    wx.setStorageSync("uid", this.data.useradviceid.uid)
+    wx.setStorageSync("tootherId", this.data.useradviceid.uid)
     wx.navigateTo({
       url: '../clues/clues'
     });
