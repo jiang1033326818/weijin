@@ -5,7 +5,7 @@ import urls from '../../common/urls.js';
 var app = getApp();
 var socketOpen = false;
 var frameBuffer_Data, session, SocketTask;
-var url = 'wss://zadai.net/ws/im?uid=';
+var url = 'ws://zadai.net:8000/ws/im?uid=';
 // console.log(wx.getStorageSync("uid"))
 var upload_url = '请填写您的图片上传接口地址'
 Page({
@@ -22,6 +22,11 @@ Page({
   },
   // 页面加载
   onLoad: function () {
+    //首先获取聊天记录并加载
+    
+
+
+
 
     wx.request({
       url: urls.mainurl + urls.getHistoryMessage,
@@ -35,7 +40,7 @@ Page({
         uid: wx.getStorageSync("uid")
       },
       success: function (response) {
-        console.log(response)
+        console.log(response,'聊天记录')
       }
     })
 
