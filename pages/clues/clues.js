@@ -37,7 +37,7 @@ Page({
       data: {
         pageNum:0,
         pageSize:10,
-        uid: wx.getStorageSync("uid")
+        uid: wx.getStorageSync("tootherId")
       },
       success: function (response) {
         console.log(response,'聊天记录')
