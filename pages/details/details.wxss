@@ -84,6 +84,7 @@
   background: #FFFFFF;
   padding: 20rpx 0;
   margin-top: 20rpx;
+  margin-bottom:65rpx; 
 }
 .comment-item{
   float: left;
@@ -119,8 +120,10 @@
 
 
 .toplist{
-  height: 400rpx;
+  /* height: 400rpx; */
   width: 100%;
+  /* border: 1px solid #f0f0f0; */
+  border-bottom:solid 1rpx #ccc; 
 }
 .rightmap{
   float: right;
@@ -128,11 +131,12 @@
   font-weight: 500;
   margin-right: 3%;
 }
+ 
 .context{
   padding: 20rpx 3%;
   font-size: 30rpx;
   background: #ffffff;
-  height: 150rpx;
+  /* height: 150rpx; */
 }
 .context2{
   padding: 20rpx 3%;

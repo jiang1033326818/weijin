@@ -38,7 +38,7 @@
                   <view class='peoplebutton1' bindtap="btnphone" data-phonenum="{{item.mobile}}">
                   电话咨询
                   </view>
-                   <view class='peoplebutton2'bindtap="btnask"  >
+                   <view class='peoplebutton2' bindtap="btnask"  data-uid='{{item.uid}}' >
                   咨询
                   </view>
               </view>

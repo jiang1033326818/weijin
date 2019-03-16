@@ -120,9 +120,13 @@ console.log(e)
     })
   },
   //咨询
-  btnask: function () {
+  btnask: function (e) {
+    console.log(e.currentTarget)
+    // wx.getStorageSync("mid")
+    // wx.setStorageSync("askid", data)
+    wx.setStorageSync("uid", e.currentTarget.dataset.uid)
     wx.navigateTo({
-      url: '../detailso/detailso'
+      url: '../clues/clues'
     });
   },
   //获取专家列表
