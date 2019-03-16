@@ -16,7 +16,8 @@ export default {
   knowlist:'/know/list/',//知识库
   knowid:'/know/list/',//知识库id
   knowtype:'/know/showType/',//知识库类别
-  // contractList: '/api/contract/bilateral/list', //长协合同列表
+  consulatanturl:'/consultant/listById/',//查询顾问详情
+  // phonenum: '/api/contract/bilateral/list', //长协合同列表
   // contractListBid: '/api/contract/bidding/list', //月竟合同列表
   // contractsMsg: '/api/contract/summary', //合同汇总信息
   // contractsStatus: '/api/contract/status', //修改合同状态

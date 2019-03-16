@@ -1,4 +1,5 @@
 // pages/details/details.js
+import urls from '../../common/urls.js'
 Page({
 
   /**
@@ -12,6 +13,7 @@ Page({
     belong: '新房按揭服务,二手房按揭服务,房屋服务,经营性服务',
     activeIndex: 0, //当前展示的Tab项索引
     star: 0,
+    getconsult:' ',
     tabs: [{
         name: "全部",
         value: 1231
@@ -83,12 +85,41 @@ Page({
       });
     }
   },
+  //顾问详情
+  consulter: function () {
+    let that = this;
+    wx.request({
+      // useradviser: '/user/adviser/', // 顾问详情
+      // url: urls.mainurl + urls.useradviser + wx.getStorageSync("mid"),
+      url: urls.mainurl + urls.consulatanturl + wx.getStorageSync("mid"),
+      method: 'GET',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid") 
+      },
+      data: {
+        // "pageNum": 0,
+        // "pageSize": 10,
+
+      },
+      success: function (e) {
+        console.log(e,"999")
+        that.setData({
+          getconsult:e.data.data
+        })
+
+      },
+      fail: function (err) {
+        console.log(err)
+
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-
+  onLoad: function() {
+  this.consulter();
   },
 
   /**

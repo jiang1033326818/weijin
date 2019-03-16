@@ -1,36 +1,37 @@
 <!--pages/details/details.wxml
 姜海鹏 1.12
 -->
-<view class='detailspage'>
+<view class='detailspage' >
   <view class='detailscard'>
     <view class='cardtop'>
 
       <view class='circle'>
-        <image src='http://zadai.net:8000/uploads/header/head0.jpg'></image>
-        
+        <!-- <image src='http://zadai.net:8000/uploads/header/head0.jpg'></image> -->
+        <image src="{{useradviceid.image}}"></image>
       </view>
       <view class='headbs'>
-        <view class='headb'>{{name}}</view>
-        <view class='heads'>{{type}}</view>
+        <view class='headb'>{{useradviceid.company}}</view>
+        <!-- <view class='heads'>{{type}}</view> -->
+          <view class='heads'>{{useradviceid.business}}</view>
       </view>
       <view class='headbs'>
-        <view class='headb'>{{name2}}</view>
-        <view class='heads'>{{type2}}</view>
+        <view class='headb'>{{useradviceid.employment}}</view>
+        <view class='heads'>{{useradviceid.employment}}</view>
       </view>
 
 
     </view>
     <view class='cardbottom'>
       <view class='handbs2'>
-        <view class='headb2'>{{name}}</view>
-        <view class='heads2'>{{type}}</view>
+        <view class='headb2'>{{useradviceid.name}}</view>
+        <view class='heads2'>{{useradviceid.business}}</view>
       </view>
       <view class='handbs2'>
-        <view class='headb'>{{name2}}</view>
+        <view class='headb'>{{useradviceid.name}}</view>
         <view class='heads'>{{type2}}</view>
       </view>
       <view class='handbs2'>
-        <view class='headb'>{{name2}}</view>
+        <view class='headb'>{{useradviceid.nikeName}}</view>
         <view class='heads'>{{type2}}</view>
       </view>
     </view>
@@ -85,9 +86,9 @@
 
           <view style='color:{{star===0?"#666666":"#FFB900"}};font-size:25rpx'>{{star===0?message:message2}}</view>
         </view>
-        <view  class='bottomthree2' bindtap='callphone'>电话咨询
+        <view  class='bottomthree2' bindtap='callphone' data-num="{{useradviceid.mobile}}">电话咨询
         </view>
-        <view  class='bottomthree3'>
+        <view  class='bottomthree3' bindtap='bottombtn'>
             咨询
         </view>
     </view>

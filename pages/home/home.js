@@ -230,6 +230,7 @@ Page({
 
   switchNav2(event) {
     var cur = event.currentTarget.dataset.current;
+    wx: wx.setStorageSync("nid", event.currentTarget.dataset.current)
     console.log(event)
     //每个tab选项宽度占1/5
     var singleNavWidth = this.data.windowWidth / 5;
@@ -400,7 +401,7 @@ Page({
     wx.navigateTo({
       url: '../consultant/consultant'
     });
-    console.log(6565656)
+    // console.log(6565656)
   },
 
 
@@ -476,12 +477,14 @@ Page({
         "pageSize": 10,
       },
       success: function(res) {
-        console.log(res, 11)
-        that.setData({
-          getknowledge: res.data.data.dataList
-        })
-
-      },
+        for (let i in res.data.data.dataList)
+          if (res.data.data.dataList[i]!==null){
+            that.setData({
+              getknowledge: res.data.data.dataList
+            })
+            
+        // console.log(res, 11)
+          } else { getknowledge: res.data.data.dataList[i] = null } },
       fail: function(err) {
         console.log(err)
       }

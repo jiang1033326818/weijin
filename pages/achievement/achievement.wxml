@@ -1,23 +1,23 @@
 <view class="page">
-  <view  class="phone_one">
-   <view  bindtap="clickPerson" class="phone_two">
-    <view class="phone_personal">{{firstPerson}}</view>
-    <image src="../../images/right.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image>
-  </view>
-   <view bindtap="clickPerson2" class="phone_two" >
-    <view class="phone_personal">{{firstPerson2}}</view>
-    <image src="../../images/right.png" class="personal_image {{selectArea2 ? 'rotateRight' :''}}"></image>
-  </view>
-  </view>
- 
-
-  <view class="person_box"  wx:for="{{citylist}}">
-    <view class="phone_select" hidden="{{selectPerson}}" >
-      <view class="select_one" bindtap="mySelect" data-me="{{item.city}}"   wx:for="{{citylist}}">{{item.city}}</view>
- 
+  <view class="phone_one">
+    <view bindtap="clickPerson" class="phone_two">
+      <view class="phone_personal">{{firstPerson}}</view>
+      <image src="../../images/right.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image>
+    </view>
+    <view bindtap="clickPerson2" class="phone_two">
+      <view class="phone_personal">{{firstPerson2}}</view>
+      <image src="../../images/right.png" class="personal_image {{selectArea2 ? 'rotateRight' :''}}"></image>
     </view>
   </view>
- <view class="person_box">
+
+
+  <view class="person_box" wx:for="{{citylist}}">
+    <view class="phone_select" hidden="{{selectPerson}}">
+      <view class="select_one" bindtap="mySelect" data-me="{{item.city}}" wx:for="{{citylist}}">{{item.city}}</view>
+
+    </view>
+  </view>
+  <view class="person_box">
     <view class="phone_select" hidden="{{selectPerson2}}">
       <view class="select_one" bindtap="mySelect2" data-me="房产服务">房产服务</view>
       <view class="select_one" bindtap="mySelect2" data-me="车产抵押服务">车产抵押服务</view>
@@ -36,15 +36,15 @@
       <view class="select_one" bindtap="mySelect2" data-me="按揭房服务">按揭房服务</view>
       <view class="select_one" bindtap="mySelect2" data-me="按揭车服务">按揭车服务</view>
       <view class="select_one" bindtap="mySelect2" data-me="保单服务">保单服务</view>
-            
+
 
     </view>
   </view>
 
-  <view wx:for="{{managerlists}}" class="row-flex list-item" data-manger="{{item.id}}" bindtap='toone'>
-    <view class='toplist'>
+  <view wx:for="{{managerlists}}" class="row-flex list-item">
+    <view class='toplist' data-manger="{{item.id}}" bindtap="toone">
       <view class='leftlist'>
-        <image  src="{{item.image}}" class="item-header"></image>
+        <image src="{{item.image}}" class="item-header"></image>
       </view>
       <view class='rightlist'>
         <text class='item-text' decode="{{true}}" space="{{true}}">{{item.name}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.business}}</text>
@@ -63,10 +63,10 @@
         <text>{{item.people}}人咨询过</text>
       </view>
 
-      <view class='peoplebutton1'>
+      <view class='peoplebutton1' bindtap="callphone1" data-phonenum="{{item.mobile}}">
         电话咨询
       </view>
-      <view class='peoplebutton2'>
+      <view class='peoplebutton2' bindtap="askpeople">
         咨询
       </view>
     </view>

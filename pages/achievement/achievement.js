@@ -29,8 +29,8 @@ Page({
     firstPerson2: '',
     selectArea2: false,
     acity:'',
+    managerlists:[],
     //就收负责人接口信息的数组
-    // managerlists: [],
     // typeList: [{
     //   name:"杨经理",
     //   label: '高级融资顾问',
@@ -54,30 +54,6 @@ Page({
       { city: "天津" },
     ]
   },
-
-  //经理信息
-  // getmanagerlists: function () {
-  //   let that = this;
-  //   wx.request({
-  //     url: urls.mainurl + urls.getloanlist,
-  //     method: 'POST',
-  //     header: { "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid") },
-  //     data: {
-  //       "pageNum": 0,
-  //       "pageSize": 10,
-  //     },
-  //     success: function (res) {
-  //       console.log(res,7777)
-  //       console.log(res.data.data.dataList)
-       
-  //       that.setData({
-  //         managerlists: res.data.data.dataList
-  //       })
-  //     },
-  //     fail: function (err) {
-  //       console.log(err)
-  //     }
-  //   })},
 
   clickPerson: function () {
     var selectPerson = this.data.selectPerson;
@@ -175,7 +151,15 @@ Page({
       activeIndex: e.currentTarget.id
     });
   },
-
+  // 打电话事件   
+  callphone1: function (e) {
+   console.log(e.currentTarget.dataset.phonenum)
+console.log("99")
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.phonenum
+      //仅为示例，并非真实的电话号码
+    })
+  },
   //跳转到专家详情
   toone:function(e){
     console.log(e)
@@ -185,13 +169,13 @@ Page({
     });
   },
  
+
   //获取专家列表
 
-  getloanall: function (city,type) {
-    
+  getloanall: function () {
     let that = this;
     wx.request({
-      url: urls.mainurl + urls.getloanlist,
+      url: urls.mainurl + urls.getloanlist, 
       method: 'POST',
       header: {
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
@@ -199,8 +183,8 @@ Page({
       data: {
         "pageNum": 0,
         "pageSize": 10,
-        city:city,
-        type:type,
+        // city:city,
+        // type:type,
         "expert":0
       },
       success: function (response) {

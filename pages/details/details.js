@@ -6,33 +6,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: "杨经理",
-    name2: "微金网",
-    type: "房产",
-    type2: "高级顾问",
+    // name: "杨经理",
+    // name2: "微金网",
+     // type: "房产",
+    // type2: "高级顾问",
     belong: '新房按揭服务,二手房按揭服务,房屋服务,经营性服务',
     activeIndex: 0, //当前展示的Tab项索引
     star: 0,
     id:'',
     //顾问详情
-    useradviceid: [],
-    tabs: [{
-        name: "全部",
-        value: 1231
-      },
-      {
-        name: "很满意",
-        value: 1231
-      },
-      {
-        name: "满意",
-        value: 1231
-      },
-      {
-        name: "不满意",
-        value: 1231
-      },
-    ],
+    useradviceid:'',
+    // tabs: [{
+    //     name: "全部",
+    //     value: 1231
+    //   },
+    //   {
+    //     name: "很满意",
+    //     value: 1231
+    //   },
+    //   {
+    //     name: "满意",
+    //     value: 1231
+    //   },
+    //   {
+    //     name: "不满意",
+    //     value: 1231
+    //   },
+    // ],
     subscribe: "http://zadai.net:8000/uploads/star.png",
     subscribe2: "http://zadai.net:8000/uploads/starlight.png",
     message: "关注",
@@ -90,35 +90,46 @@ Page({
 
   // 打电话事件
   callphone: function(e) {
+    console.log(e.currentTarget.dataset.num)
+   
     wx.makePhoneCall({
-      phoneNumber: '18888888888' //仅为示例，并非真实的电话号码
+      phoneNumber: e.currentTarget.dataset.num
+       //仅为示例，并非真实的电话号码
     })
   },
+
+  //咨询事件跳转页面
+  bottombtn:function(){
+   console.log()
+  wx.getStorageSync("mid")
+    wx.navigateTo({
+     url: '../detailso/detailso'
+    });
+   },
   //顾问详情
   useradvice: function() {
     let that = this;
     wx.request({
-      url: urls.mainurl + urls.useradviser+wx.getStorageSync("mid"),
+      // url: urls.mainurl + urls.consulatanturl + wx.getStorageSync("mid"),
+      url: urls.mainurl + urls.useradviser + wx.getStorageSync("mid"),
       method: 'GET',
       header: {
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
       },
       data: {
-        // "pageNum": 0,
-        // "pageSize": 10,
-
+        "pageNum": 0,
+        "pageSize": 10,
       },
-      success: function(res) {
-        console.log(res)
-        console.log(11)
+      success: function(e) {
+        console.log(e,"成功")
         that.setData({
-          useradviceid: res.data
+          // id: currentTarget.dataset.manger,
+          // id:wx.getStorageSync("mid"),
+          useradviceid:e.data.data
         })
-
       },
       fail: function(err) {
         console.log(err)
-
       }
     })
   },
@@ -127,6 +138,7 @@ Page({
    */
   onLoad: function() {
     this.useradvice();
+    // this.bt();
   },
 
   /**

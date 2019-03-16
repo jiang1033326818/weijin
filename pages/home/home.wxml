@@ -139,7 +139,7 @@
       <view class='allOfpeople'>
         <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
           <block wx:for="{{navData2}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
-            <view class="nav-item {{currentTab2 == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav2">{{navItem.text}}</view>
+            <view class="nav-item {{currentTab2 == idx ?'active':''}}" data-current="{{idx}} " bindtap="switchNav2">{{navItem.text}}</view>
           </block>
         </scroll-view>
         
