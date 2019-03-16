@@ -17,23 +17,23 @@ Page({
     //顾问详情
     useradviceid:'',
     getguesttalk:[],
-    // tabs: [{
-    //     name: "全部",
-    //     value: 1231
-    //   },
-    //   {
-    //     name: "很满意",
-    //     value: 1231
-    //   },
-    //   {
-    //     name: "满意",
-    //     value: 1231
-    //   },
-    //   {
-    //     name: "不满意",
-    //     value: 1231
-    //   },
-    // ],
+    tabs: [{
+        name: "全部",
+        value: 1231
+      },
+      {
+        name: "很满意",
+        value: 1231
+      },
+      {
+        name: "满意",
+        value: 1231
+      },
+      {
+        name: "不满意",
+        value: 1231
+      },
+    ],
     subscribe: "http://zadai.net:8000/uploads/star.png",
     subscribe2: "http://zadai.net:8000/uploads/starlight.png",
     message: "关注",
@@ -87,6 +87,25 @@ Page({
         star: 0
       });
     }
+
+    wx.request({
+      // url: urls.mainurl + urls.consulatanturl + wx.getStorageSync("mid"),
+      url: urls.mainurl + urls.interesting + wx.getStorageSync("mid"),
+      method: 'GET',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+        
+      },
+      success: function (e) {
+        console.log(e, "999成功")
+      
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    })
   },
 
   // 打电话事件
@@ -101,9 +120,10 @@ Page({
 
   //咨询事件跳转页面
   bottombtn:function(){
-   console.log()
+    console.log(this.data.useradviceid.uid)
   // wx.getStorageSync("mid")
   // wx.setStorageSync("askid", data)
+    wx.setStorageSync("uid", this.data.useradviceid.uid)
     wx.navigateTo({
      url: '../clues/clues'
     });
@@ -113,7 +133,7 @@ Page({
     let that = this;
     wx.request({
       // url: urls.mainurl + urls.consulatanturl + wx.getStorageSync("mid"),
-      url: urls.mainurl + urls.useradviser + wx.getStorageSync("mid"),
+      url: urls.mainurl + urls.consulatanturl + wx.getStorageSync("mid"),
       method: 'GET',
       header: {
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
@@ -127,7 +147,8 @@ Page({
         that.setData({
           // id: currentTarget.dataset.manger,
           // id:wx.getStorageSync("mid"),
-          useradviceid:e.data.data
+          useradviceid:e.data.data,
+          star:e.data.data.attention===false?0:1
         })
       },
       fail: function(err) {
@@ -139,7 +160,7 @@ Page({
   guesttalk: function () {
     let that = this;
     wx.request({
-      url: urls.mainurl + urls.assessment + wx.getStorageSync("mid"),
+      url: urls.mainurl + urls.assessment,
       method: 'POST',
       header: {
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
@@ -147,24 +168,13 @@ Page({
       data: {
         "pageNum": 0,
         "pageSize": 10,
-       "beginDate": "2019-03 - 16T10: 05: 54.478Z",
-        "bid": 0,
-        "cid": 0,
-        "commentType": "string",
-        "content": "string",
-        "endDate": "2019-03-16T10:05:54.478Z",
-        "id": 0,
-        "mobile": "string",
-        "pageNum": 0,
-        "pageSize": 0,
-        "status": "string",
       },
       success: function (e) {
-        console.log(e, "成功")
+        console.log(e, "77")
         that.setData({
           // id: currentTarget.dataset.manger,
           // id:wx.getStorageSync("mid"),
-          getguesttalk:e.data.dataList
+          getguesttalk:e.data.data.dataList
         })
       },
       fail: function (err) {

@@ -10,8 +10,6 @@
   border-radius: 20rpx;
   height: 300rpx;
   overflow: hidden;
-  /* background-image:url('http://zadai.net:8000/uploads/personbgg.png'); */
-   background-repeat:no-repeat;
 }
 .cardtop{
   height: 150rpx;
@@ -49,7 +47,7 @@
   height:100rpx; 
   display: flex;
     padding: 0 3%;
-  /* background: #1675E1; */
+  background: #ff9933;
   color: #FFFFFF;
 }
 .handbs2{
@@ -86,6 +84,7 @@
   background: #FFFFFF;
   padding: 20rpx 0;
   margin-top: 20rpx;
+  margin-bottom:65rpx; 
 }
 .comment-item{
   float: left;
@@ -121,8 +120,10 @@
 
 
 .toplist{
-  height: 400rpx;
+  /* height: 400rpx; */
   width: 100%;
+  /* border: 1px solid #f0f0f0; */
+  border-bottom:solid 1rpx #ccc; 
 }
 .rightmap{
   float: right;
@@ -130,11 +131,12 @@
   font-weight: 500;
   margin-right: 3%;
 }
+ 
 .context{
   padding: 20rpx 3%;
   font-size: 30rpx;
   background: #ffffff;
-  height: 150rpx;
+  /* height: 150rpx; */
 }
 .context2{
   padding: 20rpx 3%;
@@ -198,7 +200,7 @@
   font-weight: bold;
 }
 .bottomthree3{
-  width: 74%;
+  width: 37%;
   height: 100rpx;
   text-align: center;
   line-height: 100rpx;

@@ -162,8 +162,8 @@ console.log("99")
   },
   //点击咨询本地专家
   askpeople:function(e){
-    console.log(e)
-    wx.setStorageSync("mid", e.currentTarget.dataset.manger)
+    console.log(e.currentTarget.dataset.uid)
+    wx.setStorageSync("uid", e.currentTarget.dataset.uid)
     wx.navigateTo({
       url: '../clues/clues'
     });
@@ -197,6 +197,7 @@ console.log("99")
         expert:"0",
       },
       success: function (response) {
+        console.log(response,8888)
         that.setData({
           managerlists: response.data.data.dataList
         })

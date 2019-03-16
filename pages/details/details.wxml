@@ -58,7 +58,7 @@
     <view style='clear:both'></view>
 
     <view class='maplist'>
-      <view wx:for="{{typeList}}" class="row-flex list-item">
+      <view  wx:for="{{getguesttalk}}" class="row-flex list-item">
         <view class='toplist'>
           <view class='toptitle'>
             <view class='toptitle1' style='font-size:30rpx'>
@@ -67,19 +67,20 @@
                 </image>
               </view>
               {{item.name}}
-              <view class='rightmap'>{{item.result}}</view>
+              <view class='rightmap'
+               style='color:{{item.status==="很满意"?"red":item.status==="一般"?"blue":"black"}}'>{{item.status}}</view>
             </view>
             <view class='toptitle2'>
-              {{item.label}}
+              <!-- {{item.content}} -->
             </view>
             <view class='clear'></view>
           </view>
 
           <view class='context'>
-            {{item.text}}
+            {{item.content}}
           </view>
           <view class='context2'>
-            {{item.from}}
+          {{item.creationTime}} 
           </view>
         </view>
       </view>
