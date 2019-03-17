@@ -63,10 +63,10 @@
         <text>{{item.fwrs===null?0:item.fwrs}}人咨询过</text>
       </view>
 
-      <view class='peoplebutton1' bindtap="callphone1" data-phonenum="{{item.mobile}}">
+      <view class='peoplebutton1' bindtap="callphone1"  data-id="{{item.id}}"  data-phonenum="{{item.mobile}}">
         电话咨询
       </view>
-      <view class='peoplebutton2' bindtap="askpeople" data-uid="{{item.uid}}">
+      <view class='peoplebutton2' bindtap="askpeople"  data-id="{{item.id}}" data-uid="{{item.uid}}">
         咨询
       </view>
     </view>

@@ -93,9 +93,11 @@
 
           <view style='color:{{star===0?"#666666":"#FFB900"}};font-size:25rpx'>{{star===0?message:message2}}</view>
         </view>
-        <view  class='bottomthree2' bindtap='callphone' data-num="{{useradviceid.mobile}}">电话咨询
+        <view  class='bottomthree2' bindtap='callphone'
+         data-id="{{useradviceid.id}}" data-num="{{useradviceid.mobile}}">电话咨询
         </view>
-        <view  class='bottomthree3' bindtap='bottombtn' data-askid="{{useradviceid.uid}}">
+        <view  class='bottomthree3' bindtap='bottombtn'
+         data-id="{{useradviceid.id}}" data-askid="{{useradviceid.uid}}">
             咨询
         </view>
     </view>

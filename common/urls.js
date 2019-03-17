@@ -21,4 +21,6 @@ export default {
   interesting:'/loan/mark/',//添加关注
   getmyadvice: '/loan/chatExpertPre', //我的咨询
   advisorylist: '/advisory/list/',//咨询展示接口
+  phoneandchat:"/advisory/record"
+
 }

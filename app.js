@@ -35,13 +35,50 @@ App({
     userInfo: null
   },
   //记录打电话
-  phoneit:function (e) {
-      console.log(e)
+  phoneit:function (id) {
+    wx.request({
+      url: urls.mainurl + urls.phoneandchat,
+      method: 'GET',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+        cid:id,
+        type: "0",
+      },
+      success: function (response) {
+       
+
+      },
+      fail: function (err) {
+        console.log(err)
+
+      }
+    })
+
   },
 
   //记录聊天
-   chatit: function (e) {
-    console.log("聊天")
+   chatit: function (id) {
+     wx.request({
+       url: urls.mainurl + urls.phoneandchat,
+       method: 'GET',
+       header: {
+         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+       },
+       data: {
+         cid: id,
+         type: "1",
+       },
+       success: function (response) {
+
+
+       },
+       fail: function (err) {
+         console.log(err)
+
+       }
+     })
   }
 
 
