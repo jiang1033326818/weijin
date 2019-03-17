@@ -47,13 +47,13 @@
         <image src="{{item.image}}" class="item-header"></image>
       </view>
       <view class='rightlist'>
-        <text class='item-text' decode="{{true}}" space="{{true}}">{{item.realName}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.level}}</text>
+        <text class='item-text' decode="{{true}}" space="{{true}}">{{item.realName}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.level===null?'':item.level}}</text>
 
         <view class='pink'>
-          <text>{{item.workCompany}}</text>
+          <text>{{item.workCompany===null?'':item.workCompany}}</text>
         </view>
         <view class='blue'>
-          <text>{{item.hobby}}</text>
+          <text>{{item.hobby===null?'':item.hobby}}</text>
         </view>
       </view>
 

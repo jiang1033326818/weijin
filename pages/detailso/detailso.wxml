@@ -7,16 +7,16 @@
 
       <view class='circle'>
         <!-- <image src='http://zadai.net:8000/uploads/header/head0.jpg'></image> -->
-        <image src="{{useradviceid.image}}"></image>
+        <image src="{{useradviceid.workImage}}"></image>
       </view>
       <view class='headbs'>
-        <view class='headb'>{{useradviceid.name}}</view>
+        <view class='headb'>{{useradviceid.realName}}</view>
         <!-- <view class='heads'>{{type}}</view> -->
-          <view class='heads'>{{useradviceid.company}}</view>
+          <view class='heads'>{{useradviceid.workCompany}}</view>
       </view>
       <view class='headbs'>
-        <view class='headb'>{{useradviceid.expert}}</view>
-        <view class='heads'>{{useradviceid.employment}}</view>
+        <view class='headb'>{{useradviceid.hobby}}</view>
+        <view class='heads'>{{useradviceid.level}}</view>
       </view>
 
 
