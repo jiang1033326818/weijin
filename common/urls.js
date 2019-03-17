@@ -19,25 +19,6 @@ export default {
   consulatanturl:'/consultant/listById/',//查询顾问详情
   assessment:'/consultant/listAll/',//客户评价
   interesting:'/loan/mark/',//添加关注
-  // phonenum: '/api/contract/bilateral/list', //长协合同列表
-  // contractListBid: '/api/contract/bidding/list', //月竟合同列表
-  // contractsMsg: '/api/contract/summary', //合同汇总信息
-  // contractsStatus: '/api/contract/status', //修改合同状态
-  // companyLinkman: '/api/contract/', // 公司联系人列表
-  // companyDetail: '/api/contract/', // 选定的公司详细信息
-  // linkmanDetail: '/api/contract/', // 选定的联系人详细信息
-  // companyList: '/api/contract/companies', // 已签订过合同的公司列表
-  // companyInfo: '/api/company/summary', // 合同汇总信息
-  // contractdetails:'/api/contract/', //查看合同详情
-  // customerDetail: '/api/customer/', // 查看客户详情
-  // getTasks: '/api/gather/${param}/list', // 获取任务列表
-  // getContacts: '/api/customer/${param}/contact', // 获取客户联系人列表
-  // getTaskDetail: '/api/gather/${param}/detail', // 获取申报任务详情
-  // contactConfirm: '/api/gather/${param}/confirm', //确认发送联系人
-  // biddingPowerReport: '/api/gather/${param}/bidding/report', // 申报月竞电量 
-  // bilateralPowerReport: '/api/gather/${param}/bilateral/report', // 申报长协电量 
-  // getCustomerNum: '/api/customer/count', // 获取客户数量
-  // getClueNum: '/api/clue/count', // 获取线索数量
-  // getTaskNum: '/api/gather/todo/count', // 获取申报任务数量
-  // getUserInfo: '/api/login/info', // 获取登录用户信息
+  getmyadvice: '/loan/chatExpertPre', //我的咨询
+
 }

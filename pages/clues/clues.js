@@ -10,24 +10,20 @@ var url = 'ws://zadai.net:8000/ws/im?uid=';
 var upload_url = '请填写您的图片上传接口地址'
 Page({
   data: {
-    user_input_text: '',//用户输入文字
+    user_input_text: '', //用户输入文字
     inputValue: '',
     returnValue: '',
     addImg: false,
     //格式示例数据，可为空
     allContentList: [],
     num: 0,
-    uid:'',
-    userInfo:{},
+    uid: '',
+    userInfo: {},
   },
   // 页面加载
-  onLoad: function () {
+  onLoad: function() {
     //首先获取聊天记录并加载
-    
-
-
-
-
+    let that = this
     wx.request({
       url: urls.mainurl + urls.getHistoryMessage,
       method: 'GET',
@@ -35,12 +31,48 @@ Page({
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
       },
       data: {
-        pageNum:0,
-        pageSize:10,
+        pageNum: 0,
+        pageSize: 30,
         uid: wx.getStorageSync("tootherId")
       },
-      success: function (response) {
-        console.log(response,'聊天记录')
+      success: function(response) {
+        console.log(response, '聊天记录')
+        let chatlist = response.data.data.dataList.reverse();
+        let newlist=[]
+        for (let i in chatlist) {
+          if (chatlist[i].fromId === that.data.uid) {
+            if (chatlist[i].text.slice(0, 9) === '/uploads/') {
+              console.log(111)
+              newlist.push({
+                is_my: {
+                  img: "https://zadai.net"+chatlist[i].text
+                }
+              })
+            } else {
+              newlist.push({
+                is_my:{
+                  text: chatlist[i].text
+                }
+              })
+            }
+          } else {
+            if (chatlist[i].text.slice(0, 9) === '/uploads/') {
+              newlist.push({
+                is_ai: true,
+                is_twoimg: "https://zadai.net" + chatlist[i].text
+              })
+            } else {
+              newlist.push({
+                is_ai: true,
+                is_two: chatlist[i].text
+              })
+            }
+          }
+        }
+        that.setData({
+          allContentList: newlist,
+        })
+        that.bottom()
       }
     })
 
@@ -58,10 +90,10 @@ Page({
       uid: wx.getStorageSync("uid"),
       toId: wx.getStorageSync("tootherId")
     })
-    console.log(111,wx.getStorageSync("uid"))
+    console.log(111, wx.getStorageSync("uid"))
     this.bottom();
   },
-  onShow: function (e) {
+  onShow: function(e) {
     console.log(222, wx.getStorageSync("uid"))
     if (!socketOpen) {
       this.webSocket()
@@ -86,44 +118,50 @@ Page({
       console.log(this.data)
       var onMessage_data = JSON.parse(onMessage.data)
       if (onMessage_data.toId == this.data.uid) {
-      
-        if (onMessage_data.text.slice(0, 9) =="/uploads/"){
-          that.data.allContentList.push({ is_ai: true, is_twoimg: urls.mainurl +onMessage_data.text });
+
+        if (onMessage_data.text.slice(0, 9) == "/uploads/") {
+          that.data.allContentList.push({
+            is_ai: true,
+            is_twoimg: urls.mainurl + onMessage_data.text
+          });
           that.setData({
             allContentList: that.data.allContentList,
           })
-        }else{
-          that.data.allContentList.push({ is_ai: true, is_two: onMessage_data.text });
+        } else {
+          that.data.allContentList.push({
+            is_ai: true,
+            is_two: onMessage_data.text
+          });
           that.setData({
             allContentList: that.data.allContentList,
           })
         }
 
-      
+
         that.bottom()
       }
     })
-   
+
   },
   // 页面加载完成
-  onReady: function () {
+  onReady: function() {
     wx.setNavigationBarTitle({
       title: wx.getStorageSync("name")
     })
   },
-  webSocket: function () {
+  webSocket: function() {
     // 创建Socket
     SocketTask = wx.connectSocket({
-      header:{
-        "Cookie":'JSESSIONID='+wx.getStorageSync("sessionid")
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
       },
-      url: url+this.data.uid,
+      url: url + this.data.uid,
       data: this.data.uid,
       method: 'get',
-      success: function (res) {
+      success: function(res) {
         console.log('WebSocket连接创建', res)
       },
-      fail: function (err) {
+      fail: function(err) {
         wx.showToast({
           title: '网络异常！',
         })
@@ -133,49 +171,53 @@ Page({
   },
 
   // 提交文字
-  submitTo: function (e) {
+  submitTo: function(e) {
     let that = this;
     console.log(that.data)
     var data = {
       text: that.data.inputValue,
       fromId: that.data.uid,
       fromName: that.data.userInfo.nickName,
-      toId:that.data.toId,
+      toId: that.data.toId,
     }
     console.log(that.data.inputValue)
-  
-      // 如果打开了socket就发送数据给服务器
-      sendSocketMessage(data)
-      this.data.allContentList.push({ is_my: { text: this.data.inputValue+"\n" } });
-      this.setData({
-        allContentList: this.data.allContentList,
-        inputValue: '',
-         scrollTop: 1000000
-      })
- 
-      that.bottom()
-    
+
+    // 如果打开了socket就发送数据给服务器
+    sendSocketMessage(data)
+    this.data.allContentList.push({
+      is_my: {
+        text: this.data.inputValue + "\n"
+      }
+    });
+    this.setData({
+      allContentList: this.data.allContentList,
+      inputValue: '',
+      scrollTop: 1000000
+    })
+
+    that.bottom()
+
   },
-  bindKeyInput: function (e) {
+  bindKeyInput: function(e) {
     this.setData({
       inputValue: e.detail.value
     })
   },
 
-  onHide: function () {
-    SocketTask.close(function (close) {
+  onHide: function() {
+    SocketTask.close(function(close) {
       console.log('关闭 WebSocket 连接。', close)
     })
   },
-  upimg: function () {
+  upimg: function() {
     var that = this;
     wx.chooseImage({
-      count: 1, 
-       sizeType: ['original', 'compressed'],
+      count: 1,
+      sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
-      success: function (res) {
+      success: function(res) {
         console.log(res)
-        
+
 
         wx.uploadFile({
           url: urls.mainurl + urls.uploadimg, // 仅为示例，非真实的接口地址
@@ -195,14 +237,18 @@ Page({
               toId: that.data.toId,
             }
 
-            setTimeout(function () {
+            setTimeout(function() {
               sendSocketMessage(data)
             }, 1000);
 
-          
 
-          
-            that.data.allContentList.push({ is_my: { img: res.tempFilePaths } });
+
+
+            that.data.allContentList.push({
+              is_my: {
+                img: res.tempFilePaths
+              }
+            });
             that.setData({
               allContentList: that.data.allContentList,
             })
@@ -211,28 +257,34 @@ Page({
               console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
               var onMessage_data = JSON.parse(onMessage.data)
               if (onMessage_data) {
-               
+
                 if (onMessage_data.text.slice(0, 9) == "/uploads/") {
-                  that.data.allContentList.push({ is_ai: true, is_twoimg: urls.mainurl + onMessage_data.text });
+                  that.data.allContentList.push({
+                    is_ai: true,
+                    is_twoimg: urls.mainurl + onMessage_data.text
+                  });
                   that.setData({
                     allContentList: that.data.allContentList,
                   })
                 } else {
-                  that.data.allContentList.push({ is_ai: true, is_two: onMessage_data.text });
+                  that.data.allContentList.push({
+                    is_ai: true,
+                    is_two: onMessage_data.text
+                  });
                   that.setData({
                     allContentList: that.data.allContentList,
                   })
                 }
                 that.bottom()
-              }else{
+              } else {
                 console.log("接收失败")
               }
             })
 
-            
+
           }
         })
-       
+
         //console.log(111,res.tempFilePaths)
         // wx.getFileSystemManager().readFile({
         //   filePath: res.tempFilePaths[0], //选择图片返回的相对路径
@@ -243,19 +295,19 @@ Page({
         //     sendSocketMessage(data)
         //   }
         // })
-       
+
       },
-    
+
     })
   },
-  addImg: function () {
+  addImg: function() {
     this.setData({
       addImg: !this.data.addImg
     })
 
   },
   // 获取hei的id节点然后屏幕焦点调转到这个节点  
-  bottom: function () {
+  bottom: function() {
     var that = this;
     this.setData({
       scrollTop: 1000000
@@ -267,10 +319,10 @@ Page({
 function sendSocketMessage(msg) {
   var that = this;
   console.log('通过 WebSocket 连接发送数据', JSON.stringify(msg))
-  
+
   SocketTask.send({
     data: JSON.stringify(msg)
-  }, function (res) {
+  }, function(res) {
     console.log('已发送', res)
   })
 }
