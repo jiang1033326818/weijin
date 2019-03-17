@@ -6,15 +6,15 @@
       </view>
     </block>
   </view>
-  <view class='swiper'>
+  <view class='swiper' >
 
-      <swiper-item style='margin-top:80rpx' class='swiper-item'>
+      <view    class='swiper-item'>
         <view class='allOfpeople'>
         
-            <view wx:for="{{getimgphone}}" class="row-flex list-item">
+            <view wx:for="{{activeIndex==='1'?getimgphone:gitimgchat}}" class="row-flex list-item">
 
               <view class='topcon'>
-                <view class='itemtime'>{{item.time}}</view>
+                <view class='itemtime'>{{item.creationTime}}</view>
                 <view class='pingjia'>{{item.pingjia}}</view>
               </view>
 
@@ -23,13 +23,13 @@
                   <image src="http://zadai.net:8000/uploads/header/{{item.value}}.jpg" class="item-header"></image>
                 </view>
                 <view class='rightlist'>
-                  <text class='item-text' decode="{{true}}" space="{{true}}">{{item.name}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.label}}</text>
+                  <text class='item-text' decode="{{true}}" space="{{true}}">{{item.realName}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.level}}</text>
 
                   <view class='pink'>
-                    <text>{{item.from}}</text>
+                    <text>{{item.workCompany}}</text>
                   </view>
                    <view class='blue'>
-                    <text>{{item.belong}}</text>
+                    <text>{{item.hobby}}</text>
                   </view>
                 </view>
 
@@ -54,7 +54,7 @@
             </view>
   
         </view>
-      </swiper-item>
+      </view>
  
     
 
