@@ -121,7 +121,7 @@ page {
   height: 85rpx;
 }  
 .voice_icon{
-  width: 60rpx;
+  width: 83rpx;
   height: 60rpx;
   margin: 0 auto;
   padding: 10rpx 10rpx 10rpx 10rpx;
