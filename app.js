@@ -9,10 +9,6 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
-    
-
-   
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
@@ -37,5 +33,19 @@ App({
     authorization: '',
     jscode: '',
     userInfo: null
+  },
+  //记录打电话
+  phoneit:function (e) {
+      console.log(e)
+  },
+
+  //记录聊天
+   chatit: function (e) {
+    console.log("聊天")
   }
+
+
+
+
+
 })

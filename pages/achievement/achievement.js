@@ -153,8 +153,7 @@ Page({
   },
   // 打电话事件   
   callphone1: function (e) {
-   console.log(e.currentTarget.dataset.phonenum)
-console.log("99")
+    getApp().phoneit("1555")
     wx.makePhoneCall({
       phoneNumber: e.currentTarget.dataset.phonenum
       //仅为示例，并非真实的电话号码
