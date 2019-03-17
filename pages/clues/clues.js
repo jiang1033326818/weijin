@@ -45,7 +45,7 @@ Page({
               console.log(111)
               newlist.push({
                 is_my: {
-                  img: chatlist[i].text
+                  img: "https://zadai.net"+chatlist[i].text
                 }
               })
             } else {
@@ -59,7 +59,7 @@ Page({
             if (chatlist[i].text.slice(0, 9) === '/uploads/') {
               newlist.push({
                 is_ai: true,
-                is_twoimg: chatlist[i].text
+                is_twoimg: "https://zadai.net" + chatlist[i].text
               })
             } else {
               newlist.push({

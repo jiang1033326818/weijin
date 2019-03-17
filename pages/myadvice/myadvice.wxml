@@ -7,10 +7,10 @@
     </block>
   </view>
   <view class='swiper'>
-    <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" class='swiper' data-index="{{activeIndex}}">
+
       <swiper-item style='margin-top:80rpx' class='swiper-item'>
         <view class='allOfpeople'>
-          <scroll-view class="icon-list">
+        
             <view wx:for="{{typeList}}" class="row-flex list-item">
 
               <view class='topcon'>
@@ -52,54 +52,12 @@
               </view>
 
             </view>
-          </scroll-view>
+  
         </view>
       </swiper-item>
-     <swiper-item style='margin-top:80rpx' class='swiper-item'>
-        <view class='allOfpeople'>
-          <scroll-view class="icon-list">
-            <view wx:for="{{typeList2}}" class="row-flex list-item" bindtap='toclues'>
-
-              <view class='topcon'>
-                <view class='itemtime'>{{item.time}}</view>
-                <view class='pingjia'>{{item.pingjia}}</view>
-              </view>
-
-              <view class='toplist'>
-                <view class='leftlist'>
-                  <image src="http://zadai.net:8000/uploads/header/{{item.value}}.jpg" class="item-header"></image>
-                </view>
-                <view class='rightlist'>
-                  <text class='item-text' decode="{{true}}" space="{{true}}">{{item.name}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.label}}</text>
-
-                  <view class='pink'>
-                    <text>{{item.from}}</text>
-                  </view>
-                   <view class='blue'>
-                    <text>{{item.belong}}</text>
-                  </view>
-                </view>
-
-              </view>
-              <view class='bottomlist'>
-                  <!-- <view class='people'>
-                    <text>{{item.people}}人咨询过</text>
-                  </view> -->
-
-                  <!-- <view class='peoplebutton1'>
-                  电话咨询
-                  </view> -->
-                   <view class='peoplebutton2' data-tap='14'>
-                  立即评价
-                  </view>
-              </view>
-
-            </view>
-          </scroll-view>
-        </view>
-      </swiper-item>
+ 
     
-    </swiper>
+
   </view>
 <!-- <modal show="{{showModal}}" height='60%' bindcancel="modalCancel" bindconfirm='modalConfirm'>
   <view class='modal-content'>
