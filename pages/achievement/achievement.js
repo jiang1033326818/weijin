@@ -153,7 +153,7 @@ Page({
   },
   // 打电话事件   
   callphone1: function (e) {
-    getApp().phoneit("1555")
+    getApp().phoneit(e.currentTarget.dataset.id)
     wx.makePhoneCall({
       phoneNumber: e.currentTarget.dataset.phonenum
       //仅为示例，并非真实的电话号码
@@ -161,7 +161,7 @@ Page({
   },
   //点击咨询本地专家
   askpeople:function(e){
-    console.log(e.currentTarget.dataset.uid)
+    getApp().chatit(e.currentTarget.dataset.id)
     wx.setStorageSync("tootherId", e.currentTarget.dataset.uid)
     wx.navigateTo({
       url: '../clues/clues'

@@ -120,8 +120,8 @@ Page({
 
   // 打电话事件
   callphone: function(e) {
-    console.log(e.currentTarget.dataset.num)
-   
+    
+    getApp().phoneit(e.currentTarget.dataset.id)
     wx.makePhoneCall({
       phoneNumber: e.currentTarget.dataset.num
        //仅为示例，并非真实的电话号码
@@ -129,8 +129,8 @@ Page({
   },
 
   //咨询事件跳转页面
-  bottombtn:function(){
-    console.log(this.data.useradviceid.uid)
+  bottombtn:function(e){
+    getApp().chatit(e.currentTarget.dataset.id)
   // wx.getStorageSync("mid")
   // wx.setStorageSync("askid", data)
     wx.setStorageSync("tootherId", this.data.useradviceid.uid)

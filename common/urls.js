@@ -20,5 +20,7 @@ export default {
   assessment:'/consultant/listAll/',//客户评价
   interesting:'/loan/mark/',//添加关注
   getmyadvice: '/loan/chatExpertPre', //我的咨询
+  
 
+  phoneandchat:"/advisory/record"
 }

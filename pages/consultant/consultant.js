@@ -112,8 +112,7 @@ Page({
   },
   //电话咨询
   btnphone: function (e) {
-    console.log(e.currentTarget.dataset.phonenum, 999)
-console.log(e)
+    getApp().phoneit(e.currentTarget.dataset.id)
     wx.makePhoneCall({
       phoneNumber: e.currentTarget.dataset.phonenum
       //仅为示例，并非真实的电话号码
@@ -121,7 +120,7 @@ console.log(e)
   },
   //咨询
   btnask: function (e) {
-    console.log(e.currentTarget)
+    getApp().chatit(e.currentTarget.dataset.id)
     // wx.getStorageSync("mid")
     // wx.setStorageSync("askid", data)
     wx.setStorageSync("tootherId", e.currentTarget.dataset.uid)
