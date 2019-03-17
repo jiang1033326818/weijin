@@ -115,6 +115,7 @@ Page({
     })
     SocketTask.onMessage(onMessage => {
       console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
+      console.log(this.data)
       var onMessage_data = JSON.parse(onMessage.data)
       if (onMessage_data.toId == this.data.uid) {
 
