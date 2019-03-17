@@ -18,48 +18,77 @@ Page({
     activeIndex: 0,//当前展示的Tab项索引
     sliderWidth: 96,//指示器的宽度,计算得到
     contentHeight: 0,//页面除去头部Tabbar后，内容区的总高度，计算得到
-    typeList: [{
-      name:"杨经理",
-      label: '高级融资顾问',
-      value: 'head0',
-      from:"微金网",
-      time:"2019-01-01 13:34",
-      pingjia:"已评价",
-      belong:"擅长:房产服务",
-      people:"44646",
-    }, {
-        name: "杨经理",
-        label: '高级融资顾问',
-        value: 'head2',
-        from: "微金网",
-        pingjia: "待评价",
-        time: "2019-01-01 13:34",
-        belong: "擅长:房产服务",
-        people: "44646",
-      },
-    ],
-      typeList2: [{
-      name: "杨经理",
-      label: '高级融资顾问',
-      value: 'head0',
-      from: "微金网",
-      time: "2019-01-01 13:34",
-      pingjia: "已评价",
-      belong: "擅长:房产服务",
-      people: "44646",
-    }, {
-      name: "杨经理",
-      label: '高级融资顾问',
-      value: 'head2',
-      from: "微金网",
-      pingjia: "待评价",
-      time: "2019-01-01 13:34",
-      belong: "擅长:房产服务",
-      people: "44646",
-    },
-    ]
+    getimgphone:[],
+    // typeList: [{
+    //   name:"杨经理",
+    //   label: '高级融资顾问',
+    //   value: 'head0',
+    //   from:"微金网",
+    //   time:"2019-01-01 13:34",
+    //   pingjia:"已评价",
+    //   belong:"擅长:房产服务",
+    //   people:"44646",
+    // }, {
+    //     name: "杨经理",
+    //     label: '高级融资顾问',
+    //     value: 'head2',
+    //     from: "微金网",
+    //     pingjia: "待评价",
+    //     time: "2019-01-01 13:34",
+    //     belong: "擅长:房产服务",
+    //     people: "44646",
+    //   },
+    // ],
+    //   typeList2: [{
+    //   name: "杨经理",
+    //   label: '高级融资顾问',
+    //   value: 'head0',
+    //   from: "微金网",
+    //   time: "2019-01-01 13:34",
+    //   pingjia: "已评价",
+    //   belong: "擅长:房产服务",
+    //   people: "44646",
+    // }, {
+    //   name: "杨经理",
+    //   label: '高级融资顾问',
+    //   value: 'head2',
+    //   from: "微金网",
+    //   pingjia: "待评价",
+    //   time: "2019-01-01 13:34",
+    //   belong: "擅长:房产服务",
+    //   people: "44646",
+    // },
+    // ]
 
   },
+
+  //图文电话咨询接口
+  imgphone: function () {
+    let that = this;
+    wx.request({
+      url: urls.mainurl + urls.advisorylist,
+      method: 'GET',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+        "pageNum": 0,
+        "pageSize": 10,
+
+      },
+      success: function (e) {
+        console.log("366")
+        that.setData({
+       getimgphone:e.data.dataList
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+
+      }
+    })
+  },
+
   toclues:function(e){
     wx.setStorageSync("tootherId", e.currentTarget.id)
     wx.setStorageSync("name", e.currentTarget.name)
@@ -115,26 +144,6 @@ Page({
   },
 
 
-  //获取我的咨询信息
-  myadvice:function(imgphone){
-    wx.request({
-      url: urls.mainurl + urls.getmyadvice,
-      method: 'GET',
-      header: {
-        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
-      },
-      data: {
-        pageNum: 0,
-        pageSize: 10,
-        chatType:imgphone,
-        cid:wx.getStorageSync("uid")
-      },
-      success: function (response) {
-       console.log(response,2222)
-      }
-    })
-  },
-
  
 
   //评论
@@ -168,7 +177,8 @@ Page({
   
   // 加载初始数据
   onLoad: function (e) {
-    this.myadvice(0)
+    // this.myadvice(0)
+    this.imgphone();
   },
 });
 

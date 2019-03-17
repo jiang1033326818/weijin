@@ -11,7 +11,7 @@
       <swiper-item style='margin-top:80rpx' class='swiper-item'>
         <view class='allOfpeople'>
         
-            <view wx:for="{{typeList}}" class="row-flex list-item">
+            <view wx:for="{{getimgphone}}" class="row-flex list-item">
 
               <view class='topcon'>
                 <view class='itemtime'>{{item.time}}</view>
