@@ -18,7 +18,7 @@ Page({
     time: '获取验证码', //倒计时 
     clueNum: 0,
     taskNum: 0,
-    height: 900,
+    height: 900, 
     customerNum: 0,
     powerTotal: 0,
     userInfo: {}, // 登录用户的信息
@@ -33,6 +33,7 @@ Page({
     phonecode: "",
     display: "none",
     getknowledge: [],
+    indextab:0,
     
     imgUrls: [{
       link: '/pages/index/index',
@@ -392,19 +393,42 @@ Page({
       url: "../../" + e.currentTarget.dataset.id
     });
   },
-
+//点击本地专家服务
   toexpert: function() {
-    wx.navigateTo({
-      url: '../expert/expert'
-    });
-    console.log(6565656)
+    
+    let a = wx.getStorageSync("phone")
+    if (a&&a.length==11) {
+      this.setData({
+        display: "none"
+      })
+      wx.navigateTo({
+        url: '../expert/expert'
+      }); 
+    } else {
+      this.setData({
+        display: "block"
+      })
+    }
+   
+    
   },
 
+//点击微金专家服务
   toconsultant: function() {
-    wx.navigateTo({
-      url: '../consultant/consultant'
-    });
-    // console.log(6565656)
+    let a = wx.getStorageSync("phone")
+    if (a && a.length == 11) {
+      this.setData({
+        display: "none"
+      })
+      wx.navigateTo({
+        url: '../consultant/consultant'
+      });
+    } else {
+      this.setData({
+        display: "block"
+      })
+    }
+   
   },
 
 
@@ -418,16 +442,7 @@ Page({
     // this.setData({
     //   height: this.data.typeList.length * 300 + 80
     // })
-    let a = wx.getStorageSync("phone")
-    if (a.length == 11) {
-      this.setData({
-        display: "none"
-      })
-    } else {
-      this.setData({
-        display: "none"
-      })
-    }
+    
   },
   //获取产品列表
   getloanall: function(e) {

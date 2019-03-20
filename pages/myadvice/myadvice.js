@@ -18,47 +18,9 @@ Page({
     contentHeight: 0, //页面除去头部Tabbar后，内容区的总高度，计算得到
     getimgphone: [],
     gitimgchat: [],
-    // typeList: [{
-    //   name:"杨经理",
-    //   label: '高级融资顾问',
-    //   value: 'head0',
-    //   from:"微金网",
-    //   time:"2019-01-01 13:34",
-    //   pingjia:"已评价",
-    //   belong:"擅长:房产服务",
-    //   people:"44646",
-    // }, {
-    //     name: "杨经理",
-    //     label: '高级融资顾问',
-    //     value: 'head2',
-    //     from: "微金网",
-    //     pingjia: "待评价",
-    //     time: "2019-01-01 13:34",
-    //     belong: "擅长:房产服务",
-    //     people: "44646",
-    //   },
-    // ],
-    //   typeList2: [{
-    //   name: "杨经理",
-    //   label: '高级融资顾问',
-    //   value: 'head0',
-    //   from: "微金网",
-    //   time: "2019-01-01 13:34",
-    //   pingjia: "已评价",
-    //   belong: "擅长:房产服务",
-    //   people: "44646",
-    // }, {
-    //   name: "杨经理",
-    //   label: '高级融资顾问',
-    //   value: 'head2',
-    //   from: "微金网",
-    //   pingjia: "待评价",
-    //   time: "2019-01-01 13:34",
-    //   belong: "擅长:房产服务",
-    //   people: "44646",
-    // },
-    // ]
-
+    getjudge: [],
+    nowid:'',
+    bincontent:'',
   },
 
   //图文电话咨询接口
@@ -156,28 +118,68 @@ Page({
   },
 
 
+  //获取评论内容
+  bind1: function(e) {
+    console.log(e, 14)
+  //  this.setData({
+  //     bincontent: e.datail.value
+  //   })
+    this.setData({
+      bincontent:e.detail.value
+    })
+    
+  },
 
 
-  //评论
-  btnclick: function() {
-    console.log(6868)
+
+  //评论+//评价接口
+  btnclick: function(e) {
+    console.log(e,6868)
     this.setData({
       onOff: false,
+      nowid:e.currentTarget.dataset.getcontent,
     })
   },
+
+
+  //确认
   modalConfirm: function() {
-    this.setData({
+    let that=this;
+    console.log("queren")
+    that.setData({
       onOff: true,
     })
     wx.showToast({
       title: '评论成功', //标题
       icon: 'success', //图标，支持"success"、"loading"
-
       duration: 1000, //提示的延迟时间，单位毫秒，默认：1500
       mask: false, //是否显示透明蒙层，防止触摸穿透，默认：false
-      success: function() {}, //接口调用成功的回调函数
-      fail: function() {}, //接口调用失败的回调函数
-      complete: function() {} //接口调用结束的回调函数
+    })
+    console.log(that.data)
+    wx.request({
+      url: urls.mainurl + urls.judgecontent,
+      method: 'POST',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+        // pageNum: 0,
+        // pageSize: 10,
+       content: that.data.bincontent,
+        bid: that.data.nowid,
+        chatType:activeIndex===0?"在线咨询":"电话咨询"
+      },
+      success: function(e) {
+        console.log(e, 343)
+        that.setData({
+          getjudge: e.data
+        })
+        console.log(that.data)
+      },
+      fail: function(err) {
+        console.log(err)
+
+      }
     })
   },
   modalCancel: function() {

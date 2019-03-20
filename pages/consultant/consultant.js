@@ -101,14 +101,10 @@ Page({
 
   //点击查看详情
  btn: function () {
-  //  wx.grtStorageSync( e.currentTarget.dataset.bntuser),
     wx.navigateTo({
       url: '../detailso/detailso'
     });
-    // wx.setStorageSync("mid", e.currentTarget.dataset.manger)
-    // wx.navigateTo({
-    //  url: '../details/details'
-    // });
+   
   },
   //电话咨询
   btnphone: function (e) {
