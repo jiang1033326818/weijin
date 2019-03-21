@@ -9,7 +9,7 @@
   <view class='swiper' >
     
 
-      <swiper-item style='margin-top:80rpx'  class='swiper-item'>
+      <view style='margin-top:80rpx'  class='swiper-item'>
         <view class='allOfpeople'>
           <scroll-view class="icon-list">
             <view  class="row-flex list-item"  wx:for="{{getloanalllist}}"  >
@@ -48,6 +48,6 @@
             </view>
           </scroll-view>
         </view>
-      </swiper-item>
+      </view>
   </view>
 </view>

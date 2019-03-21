@@ -96,31 +96,6 @@ Page({
   },
 //获取关于我们顾问列表
 
-  aboutour: function () {
-    let that = this;
-    wx.request({
-      url: urls.mainurl + urls.getloanlist,
-      method: 'POST',
-      header: {
-        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
-      },
-      data: {
-        "pageNum": 0,
-        "pageSize": 10,
-        // expert:"0"
-      },
-      success: function (e) {
-        console.log(e,"成功了")
-            that.setData({
-              getaboutour: e.data
-            })
-
-      },
-      fail: function (err) {
-        console.log(err)
-      }
-    })
-  },
   /**
    * 生命周期函数--监听页面显示
    */
