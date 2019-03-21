@@ -252,6 +252,7 @@ Page({
         })
       }
     })
+
     interval = setInterval(function() {
       currentTime--;
       that.setData({
