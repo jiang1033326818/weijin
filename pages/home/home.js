@@ -46,7 +46,7 @@ Page({
       url: 'http://zadai.net:8000/uploads/image003.jpg'
     }],
     typeList: [{
-      image:'../../images/xyk.png',
+      image:'http://zadai.net:8000/uploads/xyk.png',
         name: "微金二号",
         label: '123人申请',
         amount: '10-100万',
@@ -58,7 +58,7 @@ Page({
         ],
       },
       {
-        image: '../../images/360.png',
+        image: 'http://zadai.net:8000/uploads/360.png',
         name: "微金二号",
         label: '123人申请',
         amount: '10-100万',
@@ -72,7 +72,7 @@ Page({
     ],
 
     typeList0: [{
-      image: '../../images/blank.png',
+      image: 'http://zadai.net:8000/uploads/blank.png',
       name: "微金二号",
       label: '123人申请',
       amount: '10-100万',
@@ -83,33 +83,6 @@ Page({
         "先息后本"
       ],
     }, ],
-
-    // typeList2:[
-    //   {
-    //     image:"http://zadai.net:8000/uploads/logo.jpg",
-    //     title:"微金网:让人们生活更美好是市场的责任",
-    //     type:"信用防护",
-    //     time:"刚刚",
-    //   },
-    //   {
-    //     image: "http://zadai.net:8000/uploads/logo.jpg",
-    //     title: "微金网:让人们生活更美好是市场的责任",
-    //     type: "信用防护",
-    //     time: "刚刚",
-    //   },
-    //   {
-    //     image: "http://zadai.net:8000/uploads/logo.jpg",
-    //     title: "微金网:让人们生活更美好是市场的责任",
-    //     type: "信用防护",
-    //     time: "刚刚",
-    //   },
-    //   {
-    //     image: "http://zadai.net:8000/uploads/logo.jpg",
-    //     title: "微金网:让人们生活更美好是市场的责任",
-    //     type: "信用防护",
-    //     time: "刚刚",
-    //   },
-    // ],
     indicatorDots: true, //小点
     autoplay: true, //是否自动轮播
     interval: 3000, //间隔时间
