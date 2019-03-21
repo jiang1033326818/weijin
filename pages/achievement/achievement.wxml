@@ -2,11 +2,11 @@
   <view class="phone_one">
     <view bindtap="clickPerson" class="phone_two1">
       <view class="phone_personal">{{firstPerson}}</view>
-      <image src="../../images/right.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image>
+      <image src="http://zadai.net:8000/uploads/right.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image>
     </view>
     <view bindtap="clickPerson2" class="phone_two">
       <view class="phone_personal">{{firstPerson2}}</view>
-      <image src="../../images/right.png" class="personal_image {{selectArea2 ? 'rotateRight' :''}}"></image>
+      <image src="http://zadai.net:8000/uploads/right.png" class="personal_image {{selectArea2 ? 'rotateRight' :''}}"></image>
     </view>
   </view>
 
@@ -78,3 +78,5 @@
 
  
 </view>
+
+
