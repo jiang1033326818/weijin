@@ -1,6 +1,6 @@
 <view class="page">
   <view class="phone_one">
-    <view bindtap="clickPerson" class="phone_two">
+    <view bindtap="clickPerson" class="phone_two1">
       <view class="phone_personal">{{firstPerson}}</view>
       <image src="../../images/right.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image>
     </view>
@@ -41,7 +41,9 @@
     </view>
   </view>
 
-  <view wx:for="{{managerlists}}" class="row-flex list-item">
+
+  <view class='qqqqq'>
+   <view wx:for="{{managerlists}}" class="wwwww row-flex list-item">
     <view class='toplist' data-manger="{{item.id}}" bindtap="toone">
       <view class='leftlist'>
         <image src="{{item.image}}" class="item-header"></image>
@@ -63,13 +65,16 @@
         <text>{{item.fwrs===null?0:item.fwrs}}人咨询过</text>
       </view>
 
-      <view class='peoplebutton1' bindtap="callphone1"  data-id="{{item.id}}"  data-phonenum="{{item.mobile}}">
+      <view class='peoplebutton1' bindtap="callphone1" data-id="{{item.id}}" data-phonenum="{{item.mobile}}">
         电话咨询
       </view>
-      <view class='peoplebutton2' bindtap="askpeople"  data-id="{{item.id}}" data-uid="{{item.uid}}">
+      <view class='peoplebutton2' bindtap="askpeople" data-id="{{item.id}}" data-uid="{{item.uid}}">
         咨询
       </view>
     </view>
 
   </view>
+  </view>
+
+ 
 </view>

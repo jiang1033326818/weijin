@@ -30,23 +30,7 @@ Page({
     selectArea2: false,
     acity:'',
     managerlists:[],
-    //就收负责人接口信息的数组
-    // typeList: [{
-    //   name:"杨经理",
-    //   label: '高级融资顾问',
-    //   value: 'head0',
-    //   from:"微金网",
-    //   belong:"擅长:房产服务",
-    //   people:"44646",
-    // }, {
-    //     name: "杨经理",
-    //     label: '高级融资顾问',
-    //     value: 'head2',
-    //     from: "微金网",
-    //     belong: "擅长:房产服务",
-    //     people: "44646",
-    //   },
-    // ],
+   
     citylist:[
       {city:"北京"},
       { city: "上海" },

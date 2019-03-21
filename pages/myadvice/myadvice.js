@@ -107,13 +107,13 @@ Page({
       activeIndex: e.currentTarget.id
     });
     if (e.currentTarget.id === "0") {
-      this.setData({
-        height: this.data.typeList.length * 410 + 50
-      })
+      // this.setData({
+      //   height: this.data.typeList.length * 410 + 50
+      // })
     } else {
-      this.setData({
-        height: this.data.typeList2.length * 410 + 50
-      })
+      // this.setData({
+      //   height: this.data.typeList2.length * 410 + 50
+      // })
     }
   },
 

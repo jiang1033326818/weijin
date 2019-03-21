@@ -155,8 +155,6 @@ Page({
       success: function(e) {
         console.log(e,"成功")
         that.setData({
-          // id: currentTarget.dataset.manger,
-          // id:wx.getStorageSync("mid"),
           useradviceid:e.data.data,
           star:e.data.data.attention===false?0:1
         })

@@ -84,32 +84,7 @@ Page({
       ],
     }, ],
 
-    // typeList2:[
-    //   {
-    //     image:"http://zadai.net:8000/uploads/logo.jpg",
-    //     title:"微金网:让人们生活更美好是市场的责任",
-    //     type:"信用防护",
-    //     time:"刚刚",
-    //   },
-    //   {
-    //     image: "http://zadai.net:8000/uploads/logo.jpg",
-    //     title: "微金网:让人们生活更美好是市场的责任",
-    //     type: "信用防护",
-    //     time: "刚刚",
-    //   },
-    //   {
-    //     image: "http://zadai.net:8000/uploads/logo.jpg",
-    //     title: "微金网:让人们生活更美好是市场的责任",
-    //     type: "信用防护",
-    //     time: "刚刚",
-    //   },
-    //   {
-    //     image: "http://zadai.net:8000/uploads/logo.jpg",
-    //     title: "微金网:让人们生活更美好是市场的责任",
-    //     type: "信用防护",
-    //     time: "刚刚",
-    //   },
-    // ],
+    
     indicatorDots: true, //小点
     autoplay: true, //是否自动轮播
     interval: 3000, //间隔时间

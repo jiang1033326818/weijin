@@ -88,23 +88,20 @@ Page({
   },
 
   //页面跳转
-  toone: function() {
-    // wx.grtStorageSync("mid", e.currentTarget.dataset.manger),
+  toone: function(e) {
+    wx.setStorageSync("mid", e.currentTarget.dataset.bntuser),
     wx.navigateTo({
       url: '../detailso/detailso'
     });
-    // wx.setStorageSync("mid", e.currentTarget.dataset.manger)
-    // wx.navigateTo({
-    //  url: '../details/details'
-    // });
   },
 
   //点击查看详情
- btn: function () {
+ btn: function (e) {
+   wx.setStorageSync("mid", e.currentTarget.dataset.bntuser),
     wx.navigateTo({
       url: '../detailso/detailso'
     });
-   
+   console.log(e)
   },
   //电话咨询
   btnphone: function (e) {
@@ -128,7 +125,7 @@ Page({
   getloanall: function(type) {
     let that = this;
     wx.request({
-      url: urls.mainurl + urls.getloanlist, // +this.data.activeIndex
+      url: urls.mainurl + urls.getloanlist, 
       method: 'POST',
       header: {
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
@@ -138,6 +135,7 @@ Page({
         "pageSize": 10,
         type:type,
         expert: "1",
+        
       },
       success: function(e) {
         // console.log("222"+response)

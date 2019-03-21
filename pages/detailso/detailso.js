@@ -159,7 +159,7 @@ Page({
         that.setData({
           // id: currentTarget.dataset.manger,
           // id:wx.getStorageSync("mid"),
-          getguesttalk: e.data.data.dataList
+          getguesttalk: e.data.data
         })
       },
       fail: function (err) {

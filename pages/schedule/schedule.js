@@ -7,50 +7,51 @@ Page({
    * 页面的初始数据
    */
   data: {
-    typeList: [
-      {
-      name: '张雄辉',
-      time: '5分钟前',
-      content:"呵呵",
-      num:"5",
-      img:"http://zadai.net:8000/uploads/header/head0.jpg",
-    },
-      {
-        name: '李易峰',
-        time: '5分钟前',
-        content: "reuiytdsfsldf!",
-        num: "5",
-        img: "http://zadai.net:8000/uploads/header/head2.jpg"
-      },
-      {
-        name: '恩柔',
-        time: '5分钟前',
-        content: "你麻sdfsdf!",
-        num: "5",
-        img: "http://zadai.net:8000/uploads/header/head0.jpg"
-      },
-      {
-        name: '张雄辉',
-        time: '5分钟前',
-        content: "呵呵",
-        num: "5",
-        img: "http://zadai.net:8000/uploads/header/head0.jpg"
-      },
-      {
-        name: '张雄辉',
-        time: '5分钟前',
-        content: "呵呵",
-        num: "5",
-        img: "http://zadai.net:8000/uploads/header/head0.jpg"
-      },
-      {
-        name: '张雄辉',
-        time: '5分钟前',
-        content: "呵呵",
-        num: "5",
-        img: "http://zadai.net:8000/uploads/header/head0.jpg"
-      },
-     ]
+    // typeList: [
+    //   {
+    //   name: '张雄辉',
+    //   time: '5分钟前',
+    //   content:"呵呵",
+    //   num:"5",
+    //   img:"http://zadai.net:8000/uploads/header/head0.jpg",
+    // },
+    //   {
+    //     name: '李易峰',
+    //     time: '5分钟前',
+    //     content: "reuiytdsfsldf!",
+    //     num: "5",
+    //     img: "http://zadai.net:8000/uploads/header/head2.jpg"
+    //   },
+    //   {
+    //     name: '恩柔',
+    //     time: '5分钟前',
+    //     content: "你麻sdfsdf!",
+    //     num: "5",
+    //     img: "http://zadai.net:8000/uploads/header/head0.jpg"
+    //   },
+    //   {
+    //     name: '张雄辉',
+    //     time: '5分钟前',
+    //     content: "呵呵",
+    //     num: "5",
+    //     img: "http://zadai.net:8000/uploads/header/head0.jpg"
+    //   },
+    //   {
+    //     name: '张雄辉',
+    //     time: '5分钟前',
+    //     content: "呵呵",
+    //     num: "5",
+    //     img: "http://zadai.net:8000/uploads/header/head0.jpg"
+    //   },
+    //   {
+    //     name: '张雄辉',
+    //     time: '5分钟前',
+    //     content: "呵呵",
+    //     num: "5",
+    //     img: "http://zadai.net:8000/uploads/header/head0.jpg"
+    //   },
+    //  ]
+    getaboutour:[],
   },
 
 
@@ -93,7 +94,33 @@ Page({
       }
     })
   },
+//获取关于我们顾问列表
 
+  aboutour: function () {
+    let that = this;
+    wx.request({
+      url: urls.mainurl + urls.getloanlist,
+      method: 'POST',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+        "pageNum": 0,
+        "pageSize": 10,
+        // expert:"0"
+      },
+      success: function (e) {
+        console.log(e,"成功了")
+            that.setData({
+              getaboutour: e.data
+            })
+
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -112,7 +139,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    this.aboutour();
   },
 
   /**

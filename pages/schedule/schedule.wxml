@@ -3,14 +3,14 @@
 
   </view>
 
-  <view wx:for="{{typeList}}" class="row-flex list-item"  >
+  <view wx:for="{{getaboutour}}" class="row-flex list-item"  >
     <view class='personchat' bindtap='toclues' id='{{item.id}}'>
       <view class='chatimg'>
-        <image src='{{item.img}}'></image>
+        <image src='{{item.image}}'></image>
       </view>
       <view class='charcon'>
        <view class='chattop'>
-        <view class='chatname'>{{item.name}}</view>
+        <view class='chatname'>{{item.nikeName}}</view>
         <view class='chattime'>{{item.time}}</view>
       </view>
       <view style='clear:both'></view>
