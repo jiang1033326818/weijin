@@ -1,4 +1,5 @@
 // pages/cooperation/cooperation.js
+import urls from '../../common/urls.js';
 Page({
 
   /**
@@ -6,6 +7,11 @@ Page({
    */
   data: {
     region: ['北京市', '北京市', '东城区'],
+    workname:'',
+    workphone:'',
+    workaddress:'',
+    workremarks:'',
+    getwork:'',
   },
 
   bindRegionChange: function (e) {
@@ -40,13 +46,68 @@ Page({
       })
     }
   },
+  //xingming 
+  workbtn1:function(e){
+   
+this.setData({
+   workname: e.detail.value
+})
+  },
+  workbtn2: function (e) {
+  
+    this.setData({
+      workphone: e.detail.value
+    })
+  },
+  workbtn4: function (e) {
+this.setData({
+  workremarks:e.detail.value
+})
+  },
+//点击合伙人申请按钮
+  workbtn: function (e) {
+    wx:wx.navigateTo({
+      url: '../success/success',
+     
+    })
+    let that = this;
+    wx.request({
+      url: urls.mainurl + urls.worktogether, 
+      method: 'POST',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      }, 
+      data: {
+        "pageNum": 0,
+        "pageSize": 10,
+        "remark": that.data.workremarks,
+        "name":that.data.workname,
+        "mobile": that.data.workphone,
+        "province": that.data.region[0],
+        "city": that.data.region[1],
+        "area": that.data.region[2],
+        // "creationTime": null
 
+      },
+      success: function (e) {
+        // console.log(e, "添加成功")
+        that.setData({
+          getwork: e.data.data
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // this.workbtn1(e);
+// this.workbtn();
   },
 
   /**

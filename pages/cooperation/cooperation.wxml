@@ -17,19 +17,19 @@
       <view class='applyform0'>
         <view>姓名
           <text>*</text> </view>
-        <input placeholder='请输入您的姓名' bindchange='name'></input>
+        <input placeholder='请输入您的姓名' bindchange='name' bindinput='workbtn1'></input>
       </view>
 
       <view class='applyform0'>
         <view>手机
           <text>*</text> </view>
-        <input placeholder='请输入手机号' bindchange='phone'></input>
+        <input placeholder='请输入手机号' bindchange='phone' bindinput='workbtn2'></input>
       </view>
 
       <view class='applyform0'>
         <view>地址
           <text>*</text> </view>
-        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" class='dizhi'>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" class='dizhi' bindinput=' workbtn3'>
           <text>{{region[0]}}，{{region[1]}}，{{region[2]}}</text>
           <image src='http://zadai.net:8000/uploads/right.png'></image>
         </picker>
@@ -41,10 +41,10 @@
       <view class='applyform0'>
         <view>备注
           <text>*</text> </view>
-        <input bindchange='beizhu'></input>
+        <input bindchange='beizhu' bindinput='workbtn4'></input>
       </view>
 
-      <view class='applybutton'>合伙人申请</view>
+      <view class='applybutton' bindtap='workbtn'>合伙人申请</view>
     </view>
   </view>
 
