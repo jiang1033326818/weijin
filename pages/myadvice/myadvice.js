@@ -1,4 +1,3 @@
-import * as echarts from '../../ec-canvas/echarts';
 import urls from '../../common/urls.js';
 const tabs = [{
     name: "图文咨询"

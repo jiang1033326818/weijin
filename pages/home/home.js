@@ -18,7 +18,7 @@ Page({
     time: '获取验证码', //倒计时 
     clueNum: 0,
     taskNum: 0,
-    height: 900, 
+    height: 1200, 
     customerNum: 0,
     powerTotal: 0,
     userInfo: {}, // 登录用户的信息
@@ -51,7 +51,7 @@ Page({
         label: '123人申请',
         amount: '10-100万',
         from: "0.89%",
-        https: '../../zzzzz1/zzzzz1',
+      https: 'http://h5.mayi100.vip//goods/gdetail.html?pid=1080600&loan_id=93528e0c56329a46d01d9cfcafdc0f7c&1552612703=',
         belong: [
           "房产",
           "先息后本"
@@ -63,7 +63,19 @@ Page({
         label: '123人申请',
         amount: '10-100万',
         from: "0.89%",
-        https: '../../zzzzz2/zzzzz2',
+        https: 'http://h5.mayi100.vip//goods/gdetail.html?pid=1080600&loan_id=d5a7af477ff5bf779704766f3abcb012&1552612763=',
+        belong: [
+          "房产",
+          "先息后本"
+        ],
+      },
+      {
+        image: 'http://zadai.net:8000/uploads/360.png',
+        name: "微金三号",
+        label: '123人申请',
+        amount: '10-100万',
+        from: "0.89%",
+        https: 'http://h5.mayi100.vip//goods/gdetail.html?pid=1080600&loan_id=3b8b6d482f53ccf22a395956109e3c7b&1552612877=',
         belong: [
           "房产",
           "先息后本"
@@ -71,18 +83,32 @@ Page({
       },
     ],
 
-    typeList0: [{
+    typeList0: [
+      {
       image: 'http://zadai.net:8000/uploads/blank.png',
       name: "微金二号",
       label: '123人申请',
       amount: '10-100万',
       from: "0.89%",
-      https: '../../zzzzz3/zzzzz3',
+        https: 'https://ld.tuandai.com/landing/t/lwborrowdownappregistsc?tdfrom=SYBTDJK03eacDKcps&word=SYBTDJK03eacDKcps-wap',
       belong: [
         "房产",
         "先息后本"
       ],
-    }, ],
+    }, 
+      {
+        image: 'http://zadai.net:8000/uploads/blank.png',
+        name: "微金一号",
+        label: '123人申请',
+        amount: '10-100万',
+        from: "0.89%",
+        https: 'https://mywap2.icbc.com.cn/ICBCWAPBank/icbc/aperson/creditLoan/client_loanClientLoading.jsp#',
+        belong: [
+          "房产",
+          "先息后本"
+        ],
+      }, 
+    ],
 
     indicatorDots: true, //小点
     autoplay: true, //是否自动轮播
@@ -329,6 +355,7 @@ Page({
               icon: 'success',
               duration: 2000
             })
+            wx.setStorageSync("phone", that.data.phone)
             that.setData({
               display: "none"
             })
@@ -364,8 +391,9 @@ Page({
 
   tonew: function(e) {
     console.log(e)
+    wx.setStorageSync("https", e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: "../../" + e.currentTarget.dataset.id
+      url: "../zzzzz2/zzzzz2"
     });
   },
 //点击本地专家服务

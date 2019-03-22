@@ -116,10 +116,17 @@ Page({
   },
 
   toadviser:function(){
-    console.log(444)
-    wx.navigateTo({
-      url: '../adviser/adviser'
-    });
+    let a = wx.getStorageSync("expert")
+    if(a==="-1"){
+      wx.navigateTo({
+        url: '../adviser/adviser'
+      });
+    }else{
+      wx.navigateTo({
+        url: '../schedule/schedule'
+      });
+    }
+   
   },
    toconsu: function () {
     console.log(444)

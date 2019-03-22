@@ -51,7 +51,7 @@
   </block>
 </scroll-view>
 <view class="sendmessage">
-  <image class='voice_icon' bindtap='addImg' src='http://zadai.net:8000/uploads/jia_img.png'></image>
+  <image class='voice_icon' bindtap='addImg' src='../../images/jia_img.png'></image>
   <block wx:if='{{!addImg}}'>
     <input type="text" bindinput="bindKeyInput" value='{{inputValue}}' focus='{{focus}}' bindfocus="focus" confirm-type="done" placeholder="" />
     <button bindtap="submitTo" class='user_input_text'>发送</button>

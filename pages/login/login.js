@@ -182,6 +182,8 @@ Page({
                       wx.setStorageSync("uid", response.data.data.id)
                       wx.setStorageSync("sessionid", response.data.data.sessionid)
                       wx.setStorageSync("phone", response.data.data.mobile)
+                      wx.setStorageSync("expert", response.data.data.expert)
+
                     }
                   })
                 },
