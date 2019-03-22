@@ -23,5 +23,6 @@ export default {
   advisorylist: '/advisory/list/',//咨询展示接口
   phoneandchat:"/advisory/record/",
   judgecontent: "/loan/advisoryComment/",
+  worktogether:"/user/teamwork/",//合伙人接口
 
 }
