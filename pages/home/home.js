@@ -155,21 +155,6 @@ Page({
 
   bindChange: function(e) {
     
-    // // let typelist='z',
-    // // let x in
-    // for (let x in typyList) {
-    //   typeList.push(typeList[z],z)}
-    
-    // if (e.currentTarget.dataset.index === 1) {
-    //   this.setData({
-    //     height: this.data.typeList.length * 450 + 50
-    //   })
-    // } else {
-    //   this.setData({
-    //     height: this.data.getknowledge.length * 300 + 80
-    //   })
-    // }
-    //console.log(e.currentTarget.dataset.index)
     var current = e.detail.current;
     wx.pageScrollTo({
       scrollTop: 0
@@ -184,15 +169,6 @@ Page({
   navTabClick: function(e) {
     // console.log(this.data.height)
     console.log(e.currentTarget.id)
-    // if (e.currentTarget.id === "0") {
-    //   this.setData({
-    //     height: this.data.typeList.length * 450 + 50
-    //   })
-    // } else {
-    //   this.setData({
-    //     height: this.data.getknowledge.length * 300 + 80
-    //   })
-    // }
 
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
@@ -201,8 +177,6 @@ Page({
   },
 
   switchNav(event) {
-    // console.log(event)
-    // this.getloanall(event._relatedInfo.anchorRelatedText)
 
     if (this.data.keykey === 0) {
       this.setData({
@@ -442,9 +416,6 @@ Page({
    */
   onShow: function() {
 
-    // this.setData({
-    //   height: this.data.typeList.length * 300 + 80
-    // })
     
   },
   //获取产品列表
