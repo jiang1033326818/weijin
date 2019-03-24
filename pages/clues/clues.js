@@ -155,8 +155,8 @@ Page({
       header: {
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
       },
-      url: url + this.data.uid,
-      data: this.data.uid,
+      url: url + wx.getStorageSync("tootherId"),
+      data: wx.getStorageSync("tootherId"),
       method: 'get',
       success: function(res) {
         console.log('WebSocket连接创建', res)

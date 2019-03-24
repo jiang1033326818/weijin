@@ -13,7 +13,7 @@
 		"uglifyFileName": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.4",
+	"libVersion": "2.6.4",
 	"appid": "wx0f95ffcd25a151de",
 	"projectname": "%E5%BE%AE%E9%87%91%E7%BD%91",
 	"isGameTourist": false,

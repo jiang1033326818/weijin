@@ -51,7 +51,7 @@ Page({
         label: '123人申请',
         amount: '10-100万',
         from: "0.89%",
-      https: 'http://h5.mayi100.vip//goods/gdetail.html?pid=1080600&loan_id=93528e0c56329a46d01d9cfcafdc0f7c&1552612703=',
+      https: '../../alost.html',
         belong: [
           "房产",
           "先息后本"
@@ -63,7 +63,7 @@ Page({
         label: '123人申请',
         amount: '10-100万',
         from: "0.89%",
-        https: 'http://h5.mayi100.vip//goods/gdetail.html?pid=1080600&loan_id=d5a7af477ff5bf779704766f3abcb012&1552612763=',
+        https: 'https://html.m.cmbchina.com/MobileHtml/Outreach/MCMBInnerApp/IMSP/Loan_BindIM.aspx?BindParam=EvOB9l2C1ESCEsy2mv*ldNFgsaanIoLS8zogq3hZR8racJ*fZBufv5C5cfEnRR:f7k222BpDtgJhs7Phft5Ygwua:4JJi4GDiyMjlplcSMght:7dzPwmWDMrdWFjmN3JNAdyTELeAnTBF4RjIi3:OJs:dcsQPeF4aZL*twXA2WnY66HDUtsHcjfCsstSbeUechzDE:NMBZ7yMW8IgSJZfZQYDxPyJ80ZUSaWQGBoIKSwGBj*A6Y2S7HlO3*7p08zs2mygEZZIFSx7BFUbaZP5ErgcRUNe7Fo4veOKAFHBC5tWkR1G1G5CBjzIUsHx0OmjmTRPX4FKV94MaLNo42ttMjWnYb3Jvczhm*pEl4L3swQTb01A5two*BmCZKNeTbbLcDU96Ou7lQ_&data=JTdCJTIydXRtX2lkJTIyJTNBJTIyU19PUEVOSUQlM0FvLXYtaXdtaXU4cGFVS0huQU9aZVpmYmFyTDFBJTJDU19SRVNPVVJDRV9JRCUzQWZsYXNoQmluZCUyQ1NfU0NFTkVfU1RSJTNBJTJDU19FVkVOVF9JRCUzQSUyMiU3RA==',
         belong: [
           "房产",
           "先息后本"
@@ -75,7 +75,7 @@ Page({
         label: '123人申请',
         amount: '10-100万',
         from: "0.89%",
-        https: 'http://h5.mayi100.vip//goods/gdetail.html?pid=1080600&loan_id=3b8b6d482f53ccf22a395956109e3c7b&1552612877=',
+        https: 'http://snsauth.ccb.com/ccbsns/SNSService?TXCODE=MH2001&wParam&bind_status=4&clientType=2',
         belong: [
           "房产",
           "先息后本"
