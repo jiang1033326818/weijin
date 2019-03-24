@@ -34,6 +34,7 @@ App({
     jscode: '',
     userInfo: null
   },
+  
   //记录打电话
   phoneit:function (id) {
     wx.request({
