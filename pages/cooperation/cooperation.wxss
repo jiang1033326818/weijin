@@ -78,10 +78,20 @@
   height: 80rpx;
    
 }
-.dizhi text{
-font-size: 35rpx;
+
+.viewtext{
+  height: 80rpx;
+  font-size: 35rpx;
 line-height: 80rpx;
 color: #169BD5;
+ display:block; /*这里设置inline-block或者block；根据使用情况来定（行内元素需要加这个，块级元素和行内块级可以不用）*/
+
+ white-space:nowrap;
+
+ overflow:hidden;
+
+ text-overflow:ellipsis;
+
 }
 .dizhi image{
   width: 50rpx;

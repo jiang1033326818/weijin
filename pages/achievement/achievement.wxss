@@ -55,7 +55,8 @@ view , page {
  background: #ffccff;
   /* width: 100rpx; */
   width: 180rpx;
-  text-align: center;
+  /* text-align: center; */
+  height: 45rpx;
 }
 .pink text{
 font-size: 30rpx;
@@ -66,6 +67,7 @@ color: #ff3366;
  background: #ccffff;
   width: 250rpx;
   /* text-align: center; */
+  height: 45rpx;
 }
 .blue text{
 font-size: 30rpx;

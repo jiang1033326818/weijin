@@ -30,7 +30,7 @@
         <view>地址
           <text>*</text> </view>
         <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" class='dizhi' bindinput=' workbtn3'>
-          <text>{{region[0]}}，{{region[1]}}，{{region[2]}}</text>
+          <h3 class='viewtext' style='width:80%;float:left'>{{region[0]}}，{{region[1]}}，{{region[2]}}</h3>
           <image src='http://zadai.net:8000/uploads/right.png'></image>
         </picker>
 

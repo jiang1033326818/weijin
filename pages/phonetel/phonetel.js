@@ -22,6 +22,7 @@ Page({
       { bindtap: 'Menu8', txt: '福利2', key: 7, num: 0 },
       // { bindtap: 'Menu9', txt: '微粒贷' },
     ],
+   righttype: ['上班族', '学生', '退休人员', '无业人员'],
     typeList: [{
       name: "155****6567",
       result: '很满意',
@@ -53,13 +54,13 @@ Page({
     getgo:'',
   },
   //服务类型
-//   servetype1:function(e){
-//     wx.getStorageSync("itemnum", e.actionSheetItems.key)
-//     console.log("itemnum"),
-//   this.setData({
-//     servetype:e.menu
-//  })
-//   },
+  servetype1:function(e){
+    wx.getStorageSync("itemnum", e.actionSheetItems.key)
+    console.log("itemnum"),
+  this.setData({
+    servetype:e.menu
+ })
+  },
     //接听手机
   phoneint: function (e) {
 console.log(e,"接听手机")
@@ -71,7 +72,7 @@ this.setData({
   actionSheetTap: function () {
     this.setData({
       actionSheetHidden: !this.data.actionSheetHidden
-    })
+    }) 
   },
   actionSheetbindchange: function () {
     this.setData({
@@ -165,7 +166,13 @@ this.setData({
       hidden: true
     });
   },
-
+  //服务类型里面值的选择
+  // righttype: function (e) {
+  //   console.log('picker发送选择改变，携带值为', e.detail.value)
+  //   this.setData({
+  //     index: e.detail.value
+  //   })
+  // },
 
   gogogo :function(e){
   
@@ -195,6 +202,7 @@ this.setData({
 
       }
     })
+    
   },
 
   /**

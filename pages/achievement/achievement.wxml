@@ -49,7 +49,7 @@
         <image src="{{item.image}}" class="item-header"></image>
       </view>
       <view class='rightlist'>
-        <text class='item-text' decode="{{true}}" space="{{true}}">{{item.realName}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.level===null?'':item.level}}</text>
+        <text class='item-text' decode="{{true}}" space="{{true}}">{{item.realName===null?'':item.realName}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.level===null?'':item.level}}</text>
 
         <view class='pink'>
           <text>{{item.workCompany===null?'':item.workCompany}}</text>
