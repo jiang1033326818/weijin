@@ -246,7 +246,7 @@ Page({
 
             that.data.allContentList.push({
               is_my: {
-                img: res.tempFilePaths
+                img: "https://zadai.net" + '/uploads/' + JSON.parse(response.data).data
               }
             });
             that.setData({

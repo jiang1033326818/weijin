@@ -300,11 +300,11 @@ Page({
   semb: function() {
     let that = this;
     if (that.data.phone === '' || that.data.phone.length < 11) {
-      wx.showToast({
-        title: '请输入正确的手机号',
-        icon: 'none',
-        duration: 2000
-      })
+      // wx.showToast({
+      //   title: '请输入正确的手机号',
+      //   icon: 'none',
+      //   duration: 2000
+      // })
     } else {
       if (that.data.phonecode === '') {
         wx.showToast({
