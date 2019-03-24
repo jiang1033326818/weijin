@@ -45,7 +45,9 @@
 .login-input-phone image{
   margin-top: 20rpx;
   height: 40rpx;
-  width: 40rpx
+  width: 40rpx;
+  /* margin-left:490rpx; */
+
 }
 .login-btn {
   margin: 50rpx 7%;
@@ -115,3 +117,4 @@
   color: #666666;
   height: 46rpx;
 }
+ 

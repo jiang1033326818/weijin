@@ -66,10 +66,37 @@ this.setData({
   },
 //点击合伙人申请按钮
   workbtn: function (e) {
-    wx:wx.navigateTo({
-      url: '../success/success',
+    // console.log(e)
+    if (this.data.workname ==='' && this.data.workphone === '' && this.data.workaddress === '' && this.data.workremarks === ''){
+    
+       wx.showToast({
+         title: '请将内容填写完整', //标题
+         icon: 'none', 
+         duration: 1000, 
+         mask:true, 
+       })
+     }else{
+      if (!(/^1[34578]\d{9}$/.test(this.data.workphone))) {
+
+        wx.showToast({
+
+          title: '手机号码有误',
+
+          duration: 1000,
+
+          icon: 'none'
+        })
+      } else {
+        wx: wx.navigateTo({
+          url: '../success/success',
+
+        })
+
+      }
+       
+     }
+   
      
-    })
     let that = this;
     wx.request({
       url: urls.mainurl + urls.worktogether, 

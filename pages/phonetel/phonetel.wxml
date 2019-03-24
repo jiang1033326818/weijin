@@ -22,7 +22,13 @@
         <input value="{{menu2}}"  type="text" placeholder="请选择服务类型" bindinput='servetype1'></input>
         <image src='http://zadai.net:8000/uploads/right.png'></image>
       </view>
-    </view>
+    </view> 
+    <!-- <view class="login-input-phone">
+   <picker bindchange="righttype" value="{{index}}" range="{{righttype}}">
+      <text style='color:#437EF8'>{{righttype[index]}}</text>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
+        </picker>
+  </view>  -->
 
     <view class='typephone'>
       <text class='phonetime2'>接听手机:</text>
