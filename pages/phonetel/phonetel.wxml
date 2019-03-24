@@ -6,9 +6,9 @@
     <image src='http://zadai.net:8000/uploads/phonetitle.jpg'></image>
   </view>
 
-  <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
-    <block wx:for-items="{{actionSheetItems}}">
-      <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange" >
+    <block wx:for-items="{{actionSheetItems}}" >
+      <action-sheet-item bindtap="bind{{item.bindtap}}"  data-itemnum="{{item.key}}" data-itemnum2="{{item.txt}}">{{item.txt}}</action-sheet-item>
     </block>
     <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
   </action-sheet>
@@ -19,7 +19,7 @@
     <view class='typephone'>
       <text class='phonetime2'>服务类型:</text>
       <view class="login-input-phone" bindtap='actionSheetTap'>
-        <input value="{{menu}}" type="text" placeholder="请选择服务类型"></input>
+        <input value="{{menu2}}"  type="text" placeholder="请选择服务类型" bindinput='servetype1'></input>
         <image src='http://zadai.net:8000/uploads/right.png'></image>
       </view>
     </view>
@@ -27,7 +27,7 @@
     <view class='typephone'>
       <text class='phonetime2'>接听手机:</text>
       <view class="login-input-phone">
-        <input type="phone" placeholder="请输入手机号码"></input>
+        <input type="phone" placeholder="请输入手机号码" bindinput='phoneint'></input>
       </view>
     </view>
 

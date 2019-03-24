@@ -1,23 +1,25 @@
 // pages/phonetel/phonetel.js
+import urls from '../../common/urls.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    menu2:'',
     hidden: true,
     nocancel: false,
     // text:"这是一个页面"
     actionSheetHidden: true,
     actionSheetItems: [
-      { bindtap: 'Menu1', txt: '房产' },
-      { bindtap: 'Menu2', txt: '车产' },
-      { bindtap: 'Menu3', txt: '信用卡' },
-      { bindtap: 'Menu4', txt: '极速服务' },
-      { bindtap: 'Menu5', txt: '工资流水' },
-      { bindtap: 'Menu6', txt: '福利1服务' },
-      { bindtap: 'Menu7', txt: '营业执照' },
-      { bindtap: 'Menu8', txt: '福利2' },
+      { bindtap: 'Menu1', txt: '房产',key: 0 ,num:0 },
+      { bindtap: 'Menu2', txt: '车产', key: 1, num: 1},
+      { bindtap: 'Menu3', txt: '信用卡', key: 2, num: 2 },
+      { bindtap: 'Menu4', txt: '极速服务', key: 3, num: 3 },
+      { bindtap: 'Menu5', txt: '工资流水', key: 4, num: 4},
+      { bindtap: 'Menu6', txt: '福利1服务', key: 5, num: 5 },
+      { bindtap: 'Menu7', txt: '营业执照', key: 6, num: 6 },
+      { bindtap: 'Menu8', txt: '福利2', key: 7, num: 0 },
       // { bindtap: 'Menu9', txt: '微粒贷' },
     ],
     typeList: [{
@@ -45,8 +47,27 @@ Page({
         from: "微金网 王经理",
       }, 
     ],
-    menu: ''
+    menu: '',
+    // servetype: '',
+    phonenum:'',
+    getgo:'',
   },
+  //服务类型
+//   servetype1:function(e){
+//     wx.getStorageSync("itemnum", e.actionSheetItems.key)
+//     console.log("itemnum"),
+//   this.setData({
+//     servetype:e.menu
+//  })
+//   },
+    //接听手机
+  phoneint: function (e) {
+console.log(e,"接听手机")
+this.setData({
+  phonenum:e.detail.value
+})
+  },
+
   actionSheetTap: function () {
     this.setData({
       actionSheetHidden: !this.data.actionSheetHidden
@@ -61,62 +82,75 @@ Page({
     console.log(i)
     this.setData({
       menu: i._relatedInfo.anchorRelatedText,
+      menu2: i.currentTarget.dataset.itemnum2,
+     
+            actionSheetHidden: !this.data.actionSheetHidden,
+            
+               
       actionSheetHidden: !this.data.actionSheetHidden
     })
   },
   bindMenu2: function (i) {
     console.log(i)
     this.setData({
-      menu: i._relatedInfo.anchorRelatedText,
+      menu: i._relatedInfo.anchorRelatedText.itemnum,
+      menu2: i.currentTarget.dataset.itemnum2,
       actionSheetHidden: !this.data.actionSheetHidden
     })
   },
   bindMenu3: function (i) {
     console.log(i)
     this.setData({
-      menu: i._relatedInfo.anchorRelatedText,
+      menu: i.currentTarget.dataset.itemnum,
+      menu2: i.currentTarget.dataset.itemnum2,
       actionSheetHidden: !this.data.actionSheetHidden
     })
   },
   bindMenu4: function (i) {
     console.log(i)
     this.setData({
-      menu: i._relatedInfo.anchorRelatedText,
+      menu: i.currentTarget.dataset.itemnum,
+      menu2: i.currentTarget.dataset.itemnum2,
       actionSheetHidden: !this.data.actionSheetHidden
     })
   },
   bindMenu5: function (i) {
     console.log(i)
     this.setData({
-      menu: i._relatedInfo.anchorRelatedText,
+      menu: i.currentTarget.dataset.itemnum,
+      menu2: i.currentTarget.dataset.itemnum2,
       actionSheetHidden: !this.data.actionSheetHidden
     })
   },
   bindMenu6: function (i) {
     console.log(i)
     this.setData({
-      menu: i._relatedInfo.anchorRelatedText,
+      menu: i.currentTarget.dataset.itemnum,
+      menu2: i.currentTarget.dataset.itemnum2,
       actionSheetHidden: !this.data.actionSheetHidden
     })
   },
   bindMenu7: function (i) {
     console.log(i)
     this.setData({
-      menu: i._relatedInfo.anchorRelatedText,
+      menu: i.currentTarget.dataset.itemnum,
+      menu2:i.currentTarget.dataset.itemnum2,
       actionSheetHidden: !this.data.actionSheetHidden
     })
   },
   bindMenu8: function (i) {
     console.log(i)
     this.setData({
-      menu: i._relatedInfo.anchorRelatedText,
+      menu: i.currentTarget.dataset.itemnum,
+      menu2: i.currentTarget.dataset.itemnum2,
       actionSheetHidden: !this.data.actionSheetHidden
     })
   },
   bindMenu9: function (i) {
     console.log(i)
     this.setData({
-      menu: i._relatedInfo.anchorRelatedText,
+      menu: i.currentTarget.dataset.itemnum,
+      menu2: i.currentTarget.dataset.itemnum2,
       actionSheetHidden: !this.data.actionSheetHidden
     })
   },
@@ -131,10 +165,36 @@ Page({
       hidden: true
     });
   },
-  gogogo:function(){
+
+
+  gogogo :function(e){
+  
     this.setData({
       hidden: false
     });
+    wx.request({
+      url: urls.mainurl + urls.fastphone+this.data.phonenum+"/"+this.data.menu,
+      method: 'GET',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+        // "pageNum": 0,
+        // "pageSize": 10,
+        //  mobile: this.data.phonenum,
+        //  loanType:this.data.menu,
+      },
+      success: function (e) {
+        console.log(e, "快捷电话成功")
+      //  this.setData({
+      //    getgo: e.data.data
+      //   })
+      },
+      fail: function (err) {
+        console.log(err)
+
+      }
+    })
   },
 
   /**

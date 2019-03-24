@@ -131,8 +131,6 @@ Page({
   //咨询事件跳转页面
   bottombtn:function(e){
     getApp().chatit(e.currentTarget.dataset.id)
-  // wx.getStorageSync("mid")
-  // wx.setStorageSync("askid", data)
     wx.setStorageSync("tootherId", this.data.useradviceid.uid)
     wx.navigateTo({
      url: '../clues/clues'
@@ -180,8 +178,6 @@ Page({
       success: function (e) {
         console.log(e, "77")
         that.setData({
-          // id: currentTarget.dataset.manger,
-          // id:wx.getStorageSync("mid"),
           getguesttalk:e.data.data.dataList
         })
       },

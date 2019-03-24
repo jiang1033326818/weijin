@@ -3,24 +3,23 @@
 
   </view>
 
-  <view wx:for="{{getaboutour}}" class="row-flex list-item"  >
+  <view wx:for="{{typeList}}" class="row-flex list-item"  >
     <view class='personchat' bindtap='toclues' id='{{item.id}}'>
       <view class='chatimg'>
-        <image src='{{item.image}}'></image>
+        <image src="{{item.image===null?'':item.image}}"></image>
       </view>
       <view class='charcon'>
        <view class='chattop'>
-        <view class='chatname'>{{item.nikeName}}</view>
-        <view class='chattime'>{{item.time}}</view>
+        <view class='chatname'>{{item.realName===null?'':item.realName}}</view>
+        <view class='chattime'>{{item.lastDate===null?'':item.lastDate}}</view>
       </view>
       <view style='clear:both'></view>
       <view class='chatbottom'>
-        <view class='chatcontent'>{{item.content}}</view>
+        <view class='chatcontent'>{{item.lastMsg===null?'':item.lastMsg}}</view>
       </view>
       </view>
      
-
-      <view class='chatred'>{{item.num}}</view>
+      <view class='chatred'  style='display:{{item.wdxx===null?"none":"block"}}' >{{item.wdxx}}</view>
     </view>
   </view>
 </view>

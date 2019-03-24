@@ -65,6 +65,8 @@ Page({
   toclues: function(e) {
     wx.setStorageSync("tootherId", e.currentTarget.id)
     wx.setStorageSync("name", e.currentTarget.name)
+    
+    getApp().phoneit(e.currentTarget.dataset.pnum)
 
     wx.navigateTo({
       url: '../clues/clues'

@@ -51,7 +51,6 @@ Page({
     //     img: "http://zadai.net:8000/uploads/header/head0.jpg"
     //   },
     //  ]
-    getaboutour:[],
   },
 
 
@@ -114,7 +113,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    this.aboutour();
   },
 
   /**
