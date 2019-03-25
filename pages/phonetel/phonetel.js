@@ -9,19 +9,10 @@ Page({
     menu2:'',
     hidden: true,
     nocancel: false,
-    // text:"这是一个页面"
+    index:0,
     actionSheetHidden: true,
-    actionSheetItems: [
-      { bindtap: 'Menu1', txt: '房产',key: 0 ,num:0 },
-      { bindtap: 'Menu2', txt: '车产', key: 1, num: 1},
-      { bindtap: 'Menu3', txt: '信用卡', key: 2, num: 2 },
-      { bindtap: 'Menu4', txt: '极速服务', key: 3, num: 3 },
-      { bindtap: 'Menu5', txt: '工资流水', key: 4, num: 4},
-      { bindtap: 'Menu6', txt: '福利1服务', key: 5, num: 5 },
-      { bindtap: 'Menu7', txt: '营业执照', key: 6, num: 6 },
-      { bindtap: 'Menu8', txt: '福利2', key: 7, num: 0 },
-      // { bindtap: 'Menu9', txt: '微粒贷' },
-    ],
+    actionSheetItems: ['房产', '车产', '信用卡', '急速服务', '工资流水', '福利服务', '营业执照', '福利','微粒贷'],
+    actionnum: {txt:'房产',key:0},
    righttype: ['上班族', '学生', '退休人员', '无业人员'],
     typeList: [{
       name: "155****6567",
@@ -54,13 +45,13 @@ Page({
     getgo:'',
   },
   //服务类型
-  servetype1:function(e){
-    wx.getStorageSync("itemnum", e.actionSheetItems.key)
-    console.log("itemnum"),
-  this.setData({
-    servetype:e.menu
- })
-  },
+//   servetype1:function(e){
+//     wx.getStorageSync("itemnum", e.actionSheetItems.key)
+//     console.log("itemnum"),
+//   this.setData({
+//     servetype:e.menu
+//  })
+//   },
     //接听手机
   phoneint: function (e) {
 console.log(e,"接听手机")
@@ -79,82 +70,82 @@ this.setData({
       actionSheetHidden: !this.data.actionSheetHidden
     })
   },
-  bindMenu1: function (i) {
-    console.log(i)
-    this.setData({
-      menu: i._relatedInfo.anchorRelatedText,
-      menu2: i.currentTarget.dataset.itemnum2,
+  // bindMenu1: function (i) {
+  //   console.log(i)
+  //   this.setData({
+  //     menu: i._relatedInfo.anchorRelatedText,
+  //     menu2: i.currentTarget.dataset.itemnum2,
      
-            actionSheetHidden: !this.data.actionSheetHidden,
+  //           actionSheetHidden: !this.data.actionSheetHidden,
             
                
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
-  },
-  bindMenu2: function (i) {
-    console.log(i)
-    this.setData({
-      menu: i._relatedInfo.anchorRelatedText.itemnum,
-      menu2: i.currentTarget.dataset.itemnum2,
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
-  },
-  bindMenu3: function (i) {
-    console.log(i)
-    this.setData({
-      menu: i.currentTarget.dataset.itemnum,
-      menu2: i.currentTarget.dataset.itemnum2,
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
-  },
-  bindMenu4: function (i) {
-    console.log(i)
-    this.setData({
-      menu: i.currentTarget.dataset.itemnum,
-      menu2: i.currentTarget.dataset.itemnum2,
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
-  },
-  bindMenu5: function (i) {
-    console.log(i)
-    this.setData({
-      menu: i.currentTarget.dataset.itemnum,
-      menu2: i.currentTarget.dataset.itemnum2,
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
-  },
-  bindMenu6: function (i) {
-    console.log(i)
-    this.setData({
-      menu: i.currentTarget.dataset.itemnum,
-      menu2: i.currentTarget.dataset.itemnum2,
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
-  },
-  bindMenu7: function (i) {
-    console.log(i)
-    this.setData({
-      menu: i.currentTarget.dataset.itemnum,
-      menu2:i.currentTarget.dataset.itemnum2,
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
-  },
-  bindMenu8: function (i) {
-    console.log(i)
-    this.setData({
-      menu: i.currentTarget.dataset.itemnum,
-      menu2: i.currentTarget.dataset.itemnum2,
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
-  },
-  bindMenu9: function (i) {
-    console.log(i)
-    this.setData({
-      menu: i.currentTarget.dataset.itemnum,
-      menu2: i.currentTarget.dataset.itemnum2,
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
-  },
+  //     actionSheetHidden: !this.data.actionSheetHidden
+  //   })
+  // },
+  // bindMenu2: function (i) {
+  //   console.log(i)
+  //   this.setData({
+  //     menu: i._relatedInfo.anchorRelatedText.itemnum,
+  //     menu2: i.currentTarget.dataset.itemnum2,
+  //     actionSheetHidden: !this.data.actionSheetHidden
+  //   })
+  // },
+  // bindMenu3: function (i) {
+  //   console.log(i)
+  //   this.setData({
+  //     menu: i.currentTarget.dataset.itemnum,
+  //     menu2: i.currentTarget.dataset.itemnum2,
+  //     actionSheetHidden: !this.data.actionSheetHidden
+  //   })
+  // },
+  // bindMenu4: function (i) {
+  //   console.log(i)
+  //   this.setData({
+  //     menu: i.currentTarget.dataset.itemnum,
+  //     menu2: i.currentTarget.dataset.itemnum2,
+  //     actionSheetHidden: !this.data.actionSheetHidden
+  //   })
+  // },
+  // bindMenu5: function (i) {
+  //   console.log(i)
+  //   this.setData({
+  //     menu: i.currentTarget.dataset.itemnum,
+  //     menu2: i.currentTarget.dataset.itemnum2,
+  //     actionSheetHidden: !this.data.actionSheetHidden
+  //   })
+  // },
+  // bindMenu6: function (i) {
+  //   console.log(i)
+  //   this.setData({
+  //     menu: i.currentTarget.dataset.itemnum,
+  //     menu2: i.currentTarget.dataset.itemnum2,
+  //     actionSheetHidden: !this.data.actionSheetHidden
+  //   })
+  // },
+  // bindMenu7: function (i) {
+  //   console.log(i)
+  //   this.setData({
+  //     menu: i.currentTarget.dataset.itemnum,
+  //     menu2:i.currentTarget.dataset.itemnum2,
+  //     actionSheetHidden: !this.data.actionSheetHidden
+  //   })
+  // },
+  // bindMenu8: function (i) {
+  //   console.log(i)
+  //   this.setData({
+  //     menu: i.currentTarget.dataset.itemnum,
+  //     menu2: i.currentTarget.dataset.itemnum2,
+  //     actionSheetHidden: !this.data.actionSheetHidden
+  //   })
+  // },
+  // bindMenu9: function (i) {
+  //   console.log(i)
+  //   this.setData({
+  //     menu: i.currentTarget.dataset.itemnum,
+  //     menu2: i.currentTarget.dataset.itemnum2,
+  //     actionSheetHidden: !this.data.actionSheetHidden
+  //   })
+  // },
 
   cancel: function () {
     this.setData({
@@ -167,12 +158,13 @@ this.setData({
     });
   },
   //服务类型里面值的选择
-  // righttype: function (e) {
-  //   console.log('picker发送选择改变，携带值为', e.detail.value)
-  //   this.setData({
-  //     index: e.detail.value
-  //   })
-  // },
+  righttype222: function (e) {
+    console.log(this.data)
+    console.log('picker发送选择改变，携带值为', e)
+    this.setData({
+      index: e.detail.value
+    })
+  },
 
   gogogo :function(e){
   
@@ -180,22 +172,16 @@ this.setData({
       hidden: false
     });
     wx.request({
-      url: urls.mainurl + urls.fastphone+this.data.phonenum+"/"+this.data.menu,
+      url: urls.mainurl + urls.fastphone+this.data.phonenum+"/"+this.data.index,
       method: 'GET',
       header: {
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
       },
       data: {
-        // "pageNum": 0,
-        // "pageSize": 10,
-        //  mobile: this.data.phonenum,
-        //  loanType:this.data.menu,
+      
       },
       success: function (e) {
         console.log(e, "快捷电话成功")
-      //  this.setData({
-      //    getgo: e.data.data
-      //   })
       },
       fail: function (err) {
         console.log(err)

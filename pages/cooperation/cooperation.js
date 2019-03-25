@@ -32,7 +32,21 @@ Page({
       });
     }
   },
-
+//咨询按钮找到聊天界面
+  bindtap1:function(e){
+    wx.setStorageSync("uid","14")
+    wx.navigateTo({
+      url: '../clues/clues'
+    });
+  },
+  //成为合伙人
+  // btn:function(e){
+  //   getApp().phoneit(e.currentTarget.dataset.id)
+  //   //  wx.makePhoneCall({
+  //   //    phoneNumber:"14"
+  //   //   //仅为示例，并非真实的电话号码
+  //   //  })
+  // },
   //回到顶部
   goTop: function (e) {  // 一键回到顶部
     if (wx.pageScrollTo) {

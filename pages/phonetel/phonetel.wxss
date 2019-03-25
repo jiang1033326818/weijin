@@ -43,11 +43,26 @@
    margin-left: 3%;
 }
 .login-input-phone image{
-  margin-top: 20rpx;
+  /* margin-top: 20rpx;
   height: 40rpx;
   width: 40rpx;
-  /* margin-left:490rpx; */
+  margin-left:350rpx;  */
+  margin-top:-61rpx;
+height:40rpx;
+width:40rpx;
+margin-left:462rpx;
+float:left;
 
+
+}
+/* .login-input-phone text{
+
+ 
+} */
+.viewclass{
+width:70%;
+line-height: 86rpx;
+margin-left: 17rpx;
 }
 .login-btn {
   margin: 50rpx 7%;

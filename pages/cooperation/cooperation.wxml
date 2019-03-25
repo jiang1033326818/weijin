@@ -4,8 +4,8 @@
     <image src='http://zadai.net:8000/uploads/hezuo.jpg'></image>
 
     <view class='topbutton'>
-      <view class='topbutton0'>成为合伙人</view>
-      <view class='topbutton1'>咨询</view>
+      <view class='topbutton0' bindtap="btn1">成为合伙人</view>
+      <view class='topbutton1'bindtap="bindtap1">咨询</view>
     </view>
   </view>
 

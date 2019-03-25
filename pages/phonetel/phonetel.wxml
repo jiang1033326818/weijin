@@ -18,10 +18,17 @@
     <text class='phonetime'>服务时间:9:00~21:00</text>
     <view class='typephone'>
       <text class='phonetime2'>服务类型:</text>
-      <view class="login-input-phone" bindtap='actionSheetTap'>
+      <!-- <view class="login-input-phone" bindtap='actionSheetTap'>
         <input value="{{menu2}}"  type="text" placeholder="请选择服务类型" bindinput='servetype1'></input>
         <image src='http://zadai.net:8000/uploads/right.png'></image>
-      </view>
+      </view> -->
+      <view class="login-input-phone">
+   <picker  bindchange="righttype222"  value="{{index}}" range="{{actionSheetItems}}" >
+       <view  class='viewclass' style='color:#437EF8' data-actionnum="{{index}}" >{{actionSheetItems[index]}}</view>
+    <image src='http://zadai.net:8000/uploads/right.png'></image>
+    </picker>
+      
+  </view> 
     </view> 
     <!-- <view class="login-input-phone">
    <picker bindchange="righttype" value="{{index}}" range="{{righttype}}">
