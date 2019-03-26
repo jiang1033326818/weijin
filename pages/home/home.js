@@ -133,19 +133,7 @@ Page({
 
     ],
     navData2: [{
-      typeName: '热门知识'
-      },
-      {
-        typeName: '常识'
-      },
-      {
-        typeName: '信用防护'
-      },
-      {
-        typeName: '服务解析'
-      },
-      {
-        typeName: '用卡心得'
+      typeName: '热门知识',id:0,
       },
   ]
     },
@@ -205,9 +193,17 @@ Page({
 
 
     switchNav2(event) {
+      var chanpinid=event.currentTarget.dataset.chanpin
+      this.knowledge(chanpinid)
+
+
+
+
+
+
       var cur = event.currentTarget.dataset.current;
       wx: wx.setStorageSync("nid", event.currentTarget.dataset.current)
-      console.log(event)
+      console.log(event,2222)
       //每个tab选项宽度占1/5
       var singleNavWidth = this.data.windowWidth / 5;
       //tab选项居中                            
@@ -298,11 +294,7 @@ Page({
     semb: function() {
       let that = this;
       if (that.data.phone === '' || that.data.phone.length < 11) {
-        // wx.showToast({
-        //   title: '请输入正确的手机号',
-        //   icon: 'none',
-        //   duration: 2000
-        // })
+      
       } else {
         if (that.data.phonecode === '') {
           wx.showToast({
@@ -407,7 +399,7 @@ Page({
     },
 
     //获取产品列表
-    getloanall: function(e) {
+  getloanall: function (e) {
       let that = this;
       wx.request({
         url: urls.mainurl + urls.getloanall,
@@ -418,7 +410,7 @@ Page({
         data: {
           "pageNum": 0,
           "pageSize": 10,
-          loanType: e
+
         },
         success: function(response) {
           let data_0 = [];
@@ -432,9 +424,7 @@ Page({
           }
           console.log(data_0)
 
-          // that.setData({
-          //   typeList: data_0
-          // })
+        
 
         },
         fail: function(err) {
@@ -473,7 +463,7 @@ Page({
     },
   
   //获取知识库
-  knowledge: function() {
+  knowledge: function (chanpinid) {
     let that = this;
     wx.request({
       url: urls.mainurl + urls.knowlist,
@@ -484,6 +474,7 @@ Page({
       data: {
         "pageNum": 0,
         "pageSize": 10,
+          contentType: chanpinid
       },
       success: function(res) {
         for (let i in res.data.data.dataList)
@@ -522,9 +513,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-    this.getloanall("热门");
+    this.getloanall(1);
     // this.getloanall();
-    this.knowledge();
+    this.knowledge(1);
     this.knownav();
     //  this.knowtype();
     // this.knoweldgeid();
