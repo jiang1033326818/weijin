@@ -179,12 +179,12 @@ Page({
       success: function(res) {
         console.log('WebSocket连接创建', res)
       },
-      fail: function(err) {
-        wx.showToast({
-          title: '网络异常！',
-        })
-        console.log(err)
-      },
+      // fail: function(err) {
+      //   wx.showToast({
+      //     title: '网络异常！',
+      //   })
+      //   console.log(err)
+      // },
     })
   },
 
@@ -227,6 +227,8 @@ Page({
       console.log('关闭 WebSocket 连接。', close)
     })
   },
+
+
   upimg: function() {
     var that = this;
     wx.chooseImage({
