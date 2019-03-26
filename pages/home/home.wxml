@@ -121,7 +121,7 @@
             
               <view class='typelist_item' data-id='{{item.https}}' bindtap='tonew'>
               <!--热门图片-->
-              <image src="{{item.image}}" class='img_item'  ></image>
+              <image src="{{item.image}}" class='img_item'></image>
                 <!-- {{item.name}} -->
               </view>
 
@@ -140,8 +140,9 @@
     <swiper-item class='swiper-item' id='item2' data-index='{{activeIndex}}'>
       <view class='allOfpeople'>
         <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
-          <block wx:for="{{navData2}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
-            <view class="nav-item {{currentTab2 == idx ?'active':''}}" data-current="{{idx}} " bindtap="switchNav2">{{navItem.text}}</view>
+          <!-- <block wx:for="{{navData2}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx"> -->
+            <block wx:for="{{navData2}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+            <view class="nav-item {{currentTab2 == idx ?'active':''}}" data-current="{{idx}} " bindtap="switchNav2" data-chanpin="{{navItem.id}}" >{{navItem.typeName}}</view>
           </block>
         </scroll-view>
         

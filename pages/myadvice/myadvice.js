@@ -20,6 +20,13 @@ Page({
     getjudge: [],
     nowid:'',
     bincontent:'',
+    adviceid:'',
+    advicestatus:'',
+    items: [
+      { name: '0', value: '很满意', checked: 'true'},
+      { name: '1', value: '满意', },
+      { name: '2', value: '不满意' },
+    ]
   },
 
   //图文电话咨询接口
@@ -117,21 +124,22 @@ Page({
       // })
     }
   },
-
+//满意程度选择
+  radioChange(e) {
+    console.log(e, e.detail.value)
+    this.setData({
+      advicestatus: e.detail.value 
+    })
+  },
 
   //获取评论内容
   bind1: function(e) {
     console.log(e, 14)
-  //  this.setData({
-  //     bincontent: e.datail.value
-  //   })
     this.setData({
       bincontent:e.detail.value
     })
     
   },
-
-
 
   //评论+//评价接口
   btnclick: function(e) {
@@ -163,7 +171,10 @@ Page({
         // pageSize: 10,
        content: that.data.bincontent,
         bid: that.data.nowid,
-        chatType:activeIndex===0?"在线咨询":"电话咨询"
+        chatType:activeIndex===0?"在线咨询":"电话咨询",
+        status: that.data.advicestatus,
+       
+
       },
       success: function(e) {
         console.log(e, 343)

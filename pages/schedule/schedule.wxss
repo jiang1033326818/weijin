@@ -23,10 +23,9 @@
 .chatimg image{
    /* height: 170rpx;
   width: 120rpx; */
-  height:160rpx;
-width:125rpx;
-
-  margin-top: -20rpx;
+  height:125rpx;
+  width:125rpx;
+  margin-top: 6rpx;
 }
 .charcon{
   height: 130rpx;

@@ -46,7 +46,14 @@
               立即评价
             </view>
             <modal title="标题" confirm-text="确认" success="suc" cancel-text="取消" hidden="{{onOff}}" bindconfirm="modalConfirm" bindcancel="modalCancel">
-              <textarea bindinput='bind1'   data-contentid="{{item.id}}"></textarea>
+            <!-- 满意程度 -->
+          <radio-group class="radio-group" bindchange="radioChange">
+          <label class="radio" wx:for="{{items}}">
+           <radio value="{{item.name}}" checked="{{item.checked}}" />
+         {{item.value}}
+  </label>
+</radio-group>
+              <textarea bindinput='bind1' class='bingtext' placeholder='请输入您的评价'  data-contentid="{{item.id}}"></textarea>
             </modal>
           </view>
         </view>
