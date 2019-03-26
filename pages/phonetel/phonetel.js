@@ -172,7 +172,7 @@ this.setData({
       hidden: false
     });
     wx.request({
-      url: urls.mainurl + urls.fastphone+this.data.phonenum+"/"+this.data.index,
+      url: urls.mainurl + urls.fastphone + this.data.phonenum + "/" +this.data.actionSheetItems[this.data.index],
       method: 'GET',
       header: {
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")

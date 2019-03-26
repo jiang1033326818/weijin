@@ -20,6 +20,24 @@ Page({
     uid: '',
     userInfo: {},
   },
+   //图片变大
+  imgbh: function (e) {
+     console.log(e,"打印图片")
+    var imgsrc = e.currentTarget.dataset.imagesrc
+    var imglists = e.currentTarget.dataset.imglist
+ wx.previewImage({
+   urls:[imglists] ,
+   current: imgsrc,
+ })
+  },
+  youbind: function (e) {
+    var youimgsrc = e.currentTarget.dataset.youimage
+    var youimglists = e.currentTarget.dataset.youimageurl
+    wx.previewImage({
+      urls: [youimglists],
+      current: youimgsrc,
+    })
+   },
   // 页面加载
   onLoad: function() {
     //首先获取聊天记录并加载
@@ -94,7 +112,7 @@ Page({
     this.bottom();
   },
   onShow: function(e) {
-    console.log(222, wx.getStorageSync("uid"))
+    console.log(222,this.data)
     if (!socketOpen) {
       this.webSocket()
     }
@@ -313,6 +331,7 @@ Page({
       scrollTop: 1000000
     })
   },
+ 
 })
 
 //通过 WebSocket 连接发送数据，需要先 wx.connectSocket，并在 wx.onSocketOpen 回调之后才能发送。

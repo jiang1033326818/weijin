@@ -184,4 +184,8 @@ color: #33cccc;
   margin-right: 5%;
   /* width: 30%; */
 }
-
+.bingtext{
+  /* border: 1rpx solid black; */
+  margin-top:30rpx;
+  font-size: 25rpx;
+}
