@@ -18,7 +18,7 @@
             <view class='pingjia'>{{item.pingjia}}</view>
           </view>
 
-          <view class='toplist' bindtap='toclues' data-pnum="{{item.id}}">
+          <view class='toplist' bindtap='toclues' data-pnum="{{item.cid}}">
             <view class='leftlist'>
               <image src="http://zadai.net:8000/uploads/header/{{item.value}}.jpg" class="item-header"></image>
             </view>
@@ -45,13 +45,10 @@
             <view class='peoplebutton2' bindtap='btnclick' data-getcontent="{{item.id}}">
               立即评价
             </view>
-
             <modal title="标题" confirm-text="确认" success="suc" cancel-text="取消" hidden="{{onOff}}" bindconfirm="modalConfirm" bindcancel="modalCancel">
               <textarea bindinput='bind1'   data-contentid="{{item.id}}"></textarea>
             </modal>
           </view>
-
-
         </view>
 
       </view>

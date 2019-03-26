@@ -63,7 +63,7 @@ Page({
   },
 
   toclues: function(e) {
-    wx.setStorageSync("tootherId", e.currentTarget.id)
+    wx.setStorageSync("tootherId", e.currentTarget.dataset.pnum)
     wx.setStorageSync("name", e.currentTarget.name)
     
     getApp().phoneit(e.currentTarget.dataset.pnum)
@@ -150,12 +150,7 @@ Page({
     that.setData({
       onOff: true,
     })
-    wx.showToast({
-      title: '评论成功', //标题
-      icon: 'success', //图标，支持"success"、"loading"
-      duration: 1000, //提示的延迟时间，单位毫秒，默认：1500
-      mask: false, //是否显示透明蒙层，防止触摸穿透，默认：false
-    })
+ 
     console.log(that.data)
     wx.request({
       url: urls.mainurl + urls.judgecontent,
@@ -175,7 +170,12 @@ Page({
         that.setData({
           getjudge: e.data
         })
-        console.log(that.data)
+        wx.showToast({
+          title: '评论成功', //标题
+          icon: 'success', //图标，支持"success"、"loading"
+          duration: 1000, //提示的延迟时间，单位毫秒，默认：1500
+          mask: false, //是否显示透明蒙层，防止触摸穿透，默认：false
+        })
       },
       fail: function(err) {
         console.log(err)
