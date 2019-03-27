@@ -52,31 +52,7 @@ Page({
         label: '123人申请',
         amount: '10-100万',
         from: "0.89%",
-        https: '../../alost.html',
-        belong: [
-          "房产",
-          "先息后本"
-        ],
-      },
-      {
-        image: 'http://zadai.net:8000/uploads/360.png',
-        name: "微金二号",
-        label: '123人申请',
-        amount: '10-100万',
-        from: "0.89%",
-        https: 'https://html.m.cmbchina.com/MobileHtml/Outreach/MCMBInnerApp/IMSP/Loan_BindIM.aspx?BindParam=EvOB9l2C1ESCEsy2mv*ldNFgsaanIoLS8zogq3hZR8racJ*fZBufv5C5cfEnRR:f7k222BpDtgJhs7Phft5Ygwua:4JJi4GDiyMjlplcSMght:7dzPwmWDMrdWFjmN3JNAdyTELeAnTBF4RjIi3:OJs:dcsQPeF4aZL*twXA2WnY66HDUtsHcjfCsstSbeUechzDE:NMBZ7yMW8IgSJZfZQYDxPyJ80ZUSaWQGBoIKSwGBj*A6Y2S7HlO3*7p08zs2mygEZZIFSx7BFUbaZP5ErgcRUNe7Fo4veOKAFHBC5tWkR1G1G5CBjzIUsHx0OmjmTRPX4FKV94MaLNo42ttMjWnYb3Jvczhm*pEl4L3swQTb01A5two*BmCZKNeTbbLcDU96Ou7lQ_&data=JTdCJTIydXRtX2lkJTIyJTNBJTIyU19PUEVOSUQlM0FvLXYtaXdtaXU4cGFVS0huQU9aZVpmYmFyTDFBJTJDU19SRVNPVVJDRV9JRCUzQWZsYXNoQmluZCUyQ1NfU0NFTkVfU1RSJTNBJTJDU19FVkVOVF9JRCUzQSUyMiU3RA==',
-        belong: [
-          "房产",
-          "先息后本"
-        ],
-      },
-      {
-        image: 'http://zadai.net:8000/uploads/360.png',
-        name: "微金三号",
-        label: '123人申请',
-        amount: '10-100万',
-        from: "0.89%",
-        https: 'http://snsauth.ccb.com/ccbsns/SNSService?TXCODE=MH2001&wParam&bind_status=4&clientType=2',
+      https: 'https://zadai.net/alost.html',
         belong: [
           "房产",
           "先息后本"
@@ -90,24 +66,13 @@ Page({
         label: '123人申请',
         amount: '10-100万',
         from: "0.89%",
-        https: 'https://ld.tuandai.com/landing/t/lwborrowdownappregistsc?tdfrom=SYBTDJK03eacDKcps&word=SYBTDJK03eacDKcps-wap',
+      https: 'https://zadai.net/alost.html',
         belong: [
           "房产",
           "先息后本"
         ],
       },
-      {
-        image: 'http://zadai.net:8000/uploads/blank.png',
-        name: "微金一号",
-        label: '123人申请',
-        amount: '10-100万',
-        from: "0.89%",
-        https: 'https://mywap2.icbc.com.cn/ICBCWAPBank/icbc/aperson/creditLoan/client_loanClientLoading.jsp#',
-        belong: [
-          "房产",
-          "先息后本"
-        ],
-      },
+    
     ],
 
     indicatorDots: true, //小点
@@ -382,6 +347,7 @@ Page({
 
     //点击微金专家服务
     toconsultant: function() {
+      console.log(wx.getStorageSync("phone"))
       let a = wx.getStorageSync("phone")
       if (a && a.length == 11) {
         this.setData({
