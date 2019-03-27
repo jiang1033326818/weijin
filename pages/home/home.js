@@ -383,6 +383,7 @@ Page({
     //点击微金专家服务
     toconsultant: function() {
       let a = wx.getStorageSync("phone")
+      console.log(a,8989)
       if (a && a.length == 11) {
         this.setData({
           display: "none"
@@ -477,12 +478,12 @@ Page({
           contentType: chanpinid
       },
       success: function(res) {
+        console.log(res,"这是什么")
         for (let i in res.data.data.dataList)
           if (res.data.data.dataList[i] !== null) {
             that.setData({
               getknowledge: res.data.data.dataList
             })
-
             // console.log(res, 11)
           } else {
             getknowledge: res.data.data.dataList[i] = null
