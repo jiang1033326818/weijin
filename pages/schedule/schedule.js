@@ -77,11 +77,13 @@ Page({
     let that=this;
     //获取联系人
     wx.request({
-      url: urls.mainurl + urls.localExpert,
+      url: urls.mainurl + urls.localExpert + wx.getStorageSync("cid"),
       method: 'GET',
-      data: JSON.stringify({
+      data: 
+      JSON.stringify({
         
       }),
+
       header: {
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
       },

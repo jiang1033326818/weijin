@@ -167,10 +167,25 @@ this.setData({
   },
 
   gogogo :function(e){
+    if (!(/^1[34578]\d{9}$/.test(this.data.phonenum))) {
+
+      wx.showToast({
+
+        title: '手机号码有误',
+
+        duration: 1000,
+
+        icon: 'none'
+      })
+    } else {
+     
+      this.setData({
+        hidden: false
+      })
+    }
+
   
-    this.setData({
-      hidden: false
-    });
+   
     wx.request({
       url: urls.mainurl + urls.fastphone + this.data.phonenum + "/" +this.data.actionSheetItems[this.data.index],
       method: 'GET',

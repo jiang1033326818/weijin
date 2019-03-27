@@ -9,6 +9,13 @@ const MAXTIMECOUNT = 60;
 const app = getApp();
 Page({
   data: {
+    response0:{data:{data:{
+    id:'',
+    sessionid:'',
+    mobile:'',
+    expert:'',
+    cid:'',
+    }}},
     phone: '17777777777', // 手机号
     phoneCheckMsg: '', // 手机号输入错误提示
     pwd: 'Aa123456',// 密码
@@ -91,20 +98,21 @@ Page({
     }
   },
   onLoad: function (params) {
-    this.setData({
+    let that = this;
+    that.setData({
       urlParams: params
     });
     if (app.globalData.userInfo) {
       console.log(app.globalData.userInfo)
-      this.setData({
+      that.setData({
         //userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (that.data.canIUse){
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
-        this.setData({
+        that.setData({
           userInfo: res.userInfo,
           hasUserInfo: true,
           jscode:app.globalData.jscode
@@ -117,20 +125,20 @@ Page({
       wx.getUserInfo({
         success: res => {
           app.globalData.userInfo = res.userInfo
-          this.setData({
+          that.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
           })
         }
       })
     }
-    const _ = this;
+    // const _ = this;
     // 登录
  
 
     wx.login({
       success(res) {
-        let that = this;
+       
         if (res.code) {
           //发起网络请求
           console.log(333,res)
@@ -178,11 +186,11 @@ Page({
                       unionid: app.globalData.unionid,
                     }),
                     success: function (response){
-                      console.log(response)
-                      wx.setStorageSync("uid", response.data.data.id)
-                      wx.setStorageSync("sessionid", response.data.data.sessionid)
-                      wx.setStorageSync("phone", response.data.data.mobile)
-                      wx.setStorageSync("expert", response.data.data.expert)
+                      that.setData({
+                        response0:response
+                      })
+                      console.log(response,74)
+                   
 
                     }
                   })
@@ -218,7 +226,13 @@ Page({
   },
   // 登录
   login: function() {
- 
+ console.log(this.data)
+    wx.setStorageSync("uid", this.data.response0.data.data.id)
+    wx.setStorageSync("sessionid", this.data.response0.data.data.sessionid)
+    wx.setStorageSync("phone", this.data.response0.data.data.mobile)
+    wx.setStorageSync("expert", this.data.response0.data.data.expert)
+    wx.setStorageSync("cid", this.data.response0.data.data.cid)
+
                   wx.switchTab({
                     url: '../home/home'
                   });
