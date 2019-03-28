@@ -30,8 +30,8 @@ Page({
   },
 
   //图文电话咨询接口
-  imgphone: function (zxid) {
-    var zxid = e.currentTarget.dataset.asktype
+  imgphone: function (e) {
+    //  var zxid = e.currentTarget.dataset.asktype
     let that = this;
     wx.request({
      
@@ -43,7 +43,8 @@ Page({
       data: {
         "pageNum": 0,
         "pageSize": 10,
-       chatType:that.data.zxid
+        //  chatType:e
+        
       },
       success: function(e) {
         console.log(e, "成功没成功")
@@ -116,15 +117,6 @@ Page({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
-    if (e.currentTarget.id === "0") {
-      // this.setData({
-      //   height: this.data.typeList.length * 410 + 50
-      // })
-    } else {
-      // this.setData({
-      //   height: this.data.typeList2.length * 410 + 50
-      // })
-    }
   },
 //满意程度选择
   radioChange(e) {
@@ -206,6 +198,6 @@ Page({
   // 加载初始数据
   onLoad: function(e) {
     // this.myadvice(0)
-    this.imgphone(zxid);
+    this.imgphone(0);
   },
 });
