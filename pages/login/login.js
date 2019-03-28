@@ -1,4 +1,3 @@
-
 //login.js
 //获取应用实例
 var WXBizDataCrypt = require('../../utils/cryptojs/RdWXBizDataCrypt.js');
@@ -9,16 +8,20 @@ const MAXTIMECOUNT = 60;
 const app = getApp();
 Page({
   data: {
-    response0:{data:{data:{
-    id:'',
-    sessionid:'',
-    mobile:'',
-    expert:'',
-    cid:'',
-    }}},
+    response0: {
+      data: {
+        data: {
+          id: '',
+          sessionid: '',
+          mobile: '',
+          expert: '',
+          cid: '',
+        }
+      }
+    },
     phone: '17777777777', // 手机号
     phoneCheckMsg: '', // 手机号输入错误提示
-    pwd: 'Aa123456',// 密码
+    pwd: 'Aa123456', // 密码
     pwdCheckMsg: '', // 密码输入错误提示
     userInfo: {}, // 用户信息
     hasUserInfo: false,
@@ -26,8 +29,8 @@ Page({
     codeSendBtnDisabled: false, // 发送验证码按钮控制
     urlParams: null,
     timeCount: 0, // 倒计时计数
-    name:"快速登录",
-    aaaa:false
+    name: "快速登录",
+    aaaa: false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -51,8 +54,9 @@ Page({
     const obj = {};
     obj[('' + inputType)] = val;
     obj[(inputType + 'CheckMsg')] = msg;
-    this.setData({...obj});
-    return backVal;   
+    this.setData({ ...obj
+    });
+    return backVal;
   },
   // 手机号码输入结束
   phoneChangeOver: function(e) {
@@ -64,7 +68,10 @@ Page({
   },
   // 点击发送验证码
   sendCode: function(e) {
-    const { phone, phoneCheckMsg } = this.data;
+    const {
+      phone,
+      phoneCheckMsg
+    } = this.data;
     // 校验手机号
     if (phone && !phoneCheckMsg) {
       // 置灰按钮
@@ -77,12 +84,18 @@ Page({
         },
         success: () => {
           // 设置定时器
-          this.setData({ timeCount: MAXTIMECOUNT });
+          this.setData({
+            timeCount: MAXTIMECOUNT
+          });
           const timer = setInterval(() => {
             if (this.data.timeCount) { // 倒计时
-              this.setData({ timeCount: --this.data.timeCount });
+              this.setData({
+                timeCount: --this.data.timeCount
+              });
             } else {
-              this.setData({ codeSendBtnDisabled: false });
+              this.setData({
+                codeSendBtnDisabled: false
+              });
               clearInterval(timer); // 清除定时器
             }
           }, 1000)
@@ -97,7 +110,7 @@ Page({
       this.inputChange(phone, 'phone', regs.PHONE);
     }
   },
-  onLoad: function (params) {
+  onLoad: function(params) {
     let that = this;
     that.setData({
       urlParams: params
@@ -108,16 +121,16 @@ Page({
         //userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (that.data.canIUse){
+    } else if (that.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
         that.setData({
           userInfo: res.userInfo,
           hasUserInfo: true,
-          jscode:app.globalData.jscode
+          jscode: app.globalData.jscode
         })
-        
+
       }
       console.log(app.globalData)
     } else {
@@ -134,28 +147,45 @@ Page({
     }
     // const _ = this;
     // 登录
- 
 
+
+    // 有权限信息，说明已经登录
+    // if (app.globalData.authorization) {
+    //   if (params && params.noAuthority) {
+    //     wx.navigateBack({
+    //       delta: 1,
+    //     });
+    //   } else {
+    //     wx.switchTab({
+    //       url: '../home/home'
+    //     });
+    //   }
+    // }
+
+  },
+  // 登录
+  login: function() {
+    let that =this
     wx.login({
       success(res) {
-       
+
         if (res.code) {
           //发起网络请求
-          console.log(333,res)
-          wx.request( {
+          console.log(333, res)
+          wx.request({
             url: 'https://api.weixin.qq.com/sns/jscode2session',
             method: 'GET',
             data: {
               appid: "wx0f95ffcd25a151de",
               secret: "bdb031b55a2eac8ddef19cecb9eadedb",
               js_code: res.code,
-              grant_type:"authorization_code",
+              grant_type: "authorization_code",
             },
-            success: function (response)  {
-              console.log(4444,response)
+            success: function(response) {
+              console.log(4444, response)
               var pc = new WXBizDataCrypt("wx0f95ffcd25a151de", response.data.session_key)
               wx.getUserInfo({
-                success: function (res) {
+                success: function(res) {
                   console.log(555, res.userInfo)
                   //拿到getUserInfo（）取得的res.encryptedData, res.iv，调用decryptData（）解密              
                   var data = pc.decryptData(res.encryptedData, res.iv)
@@ -163,7 +193,7 @@ Page({
                   app.globalData.unionid = data.unionId
                   console.log('解密后 unionid: ', app.globalData.unionid)
                   wx.request({
-                    url: urls.mainurl+urls.loginUrl,
+                    url: urls.mainurl + urls.loginUrl,
                     method: 'POST',
                     data: JSON.stringify({
                       area: "string",
@@ -185,23 +215,29 @@ Page({
                       province: "string",
                       unionid: app.globalData.unionid,
                     }),
-                    success: function (response){
+                    success: function(response) {
                       that.setData({
-                        response0:response
+                        response0: response
                       })
-                      console.log(response,74)
-                   
-
+                      console.log(that.data)
+                      wx.setStorageSync("uid", response.data.data.id)
+                      wx.setStorageSync("sessionid", response.data.data.sessionid)
+                      wx.setStorageSync("phone", response.data.data.mobile)
+                      wx.setStorageSync("expert", response.data.data.expert)
+                      wx.setStorageSync("cid", response.data.data.cid)
+                      wx.switchTab({
+                        url: '../home/home'
+                      });
+                      console.log(response, 74)
                     }
                   })
                 },
-                fail: function (res) {
+                fail: function(res) {
                   console.log(res)
                 }
               })
-
             },
-            fail: function(response)  {
+            fail: function(response) {
               console.log(response, '失败了');
             }
           })
@@ -210,32 +246,9 @@ Page({
         }
       }
     })
-    // 有权限信息，说明已经登录
-    // if (app.globalData.authorization) {
-    //   if (params && params.noAuthority) {
-    //     wx.navigateBack({
-    //       delta: 1,
-    //     });
-    //   } else {
-    //     wx.switchTab({
-    //       url: '../home/home'
-    //     });
-    //   }
-    // }
 
-  },
-  // 登录
-  login: function() {
- console.log(this.data)
-    wx.setStorageSync("uid", this.data.response0.data.data.id)
-    wx.setStorageSync("sessionid", this.data.response0.data.data.sessionid)
-    wx.setStorageSync("phone", this.data.response0.data.data.mobile)
-    wx.setStorageSync("expert", this.data.response0.data.data.expert)
-    wx.setStorageSync("cid", this.data.response0.data.data.cid)
 
-                  wx.switchTab({
-                    url: '../home/home'
-                  });
+
 
   },
   getUserInfo: function(e) {
