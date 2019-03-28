@@ -123,7 +123,7 @@ Page({
 
   toadviser:function(){
     let a = wx.getStorageSync("expert")
-    if(a==="-1"){
+    if(a==="-1"||a==="null"){
       wx.navigateTo({
         url: '../adviser/adviser'
       });

@@ -260,12 +260,12 @@ Page({
               },
               success: function (response) {
                 console.log(response)
-                wx.showToast({
-                  title: response.data.data.message,
-                  icon: 'success',
-                  duration: 2000
-                })
-
+                // wx.showToast({
+                //   title: response.data.data.message,
+                //   icon: 'success',
+                //   duration: 2000
+                // })
+                wx.setStorageSync("expert", '1')
                 wx.navigateTo({
                   url: '../success2/success2'
                 });
