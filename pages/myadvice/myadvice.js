@@ -1,9 +1,9 @@
 import urls from '../../common/urls.js';
 const tabs = [{
-    name: "图文咨询"
+  name: "电话咨询"
   },
   {
-    name: "电话咨询"
+    name:"图文咨询"
   },
 ];
 
@@ -43,7 +43,7 @@ Page({
       data: {
         "pageNum": 0,
         "pageSize": 10,
-        //  chatType:e
+       
         
       },
       success: function(e) {
@@ -165,7 +165,7 @@ Page({
         // pageSize: 10,
         content: that.data.bincontent,
         bid: that.data.nowid,
-        chatType:that.data.activeIndex===0?"在线咨询":"电话咨询",
+        chatType:that.data.activeIndex==="1"?"在线咨询":"电话咨询",
         status: that.data.advicestatus,
        
 

@@ -40,28 +40,38 @@ page {
   margin-left: 50% 
 }  
 .my_audio{
-  height: 120rpx;
+ height: 120rpx;
   width: 150rpx;
   position: absolute;
-  right: 150rpx;
+  right: 20rpx;
+  background: white;
+  top: 20rpx;
+  
+}
+.my_audio2{
+height: 120rpx;
+  width: 150rpx;
+  
+  position: absolute;
+  left: 20rpx;
   background: white;
   top: 20rpx;
 }
 .my_img_bg{
-  height: 150rpx;
+ 
   width: 400rpx;
   position: relative;
   right: 0;
-  background: white;
-  top: 20rpx;
+  top: 30rpx;
+  margin-top:80rpx; 
 }
 .you_img_bg{
   height: 150rpx;
   width: 400rpx;
   position: relative;
   left: 0;
-  background: white;
   top: 20rpx;
+  margin-top: 80rpx;
 }
 .you_left {  
   margin-top: 30rpx;
