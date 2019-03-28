@@ -4,7 +4,7 @@
   </view>
 
   <view wx:for="{{typeList}}" class="row-flex list-item"  >
-    <view class='personchat' bindtap='toclues' id='{{item.id}}'>
+    <view class='personchat' bindtap='toclues' id='{{item.uid}}'>
       <view class='chatimg'>
         <image src="{{item.image===null?'':item.image}}"></image>
       </view>

@@ -56,11 +56,12 @@ Page({
 
   //跳转到聊天
   toclues:function(e){
+    wx.setStorageSync("tootherId", e.currentTarget.id)
     wx.navigateTo({
       url: '../clues/clues'
     });
     console.log(e)
-    wx.setStorageSync("tootherId", e.currentTarget.id)
+   
   },
 
   /**
