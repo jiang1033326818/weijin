@@ -30,9 +30,11 @@ Page({
   },
 
   //图文电话咨询接口
-  imgphone: function() {
+  imgphone: function (zxid) {
+    var zxid = e.currentTarget.dataset.asktype
     let that = this;
     wx.request({
+     
       url: urls.mainurl + urls.advisorylist,
       method: 'GET',
       header: {
@@ -41,10 +43,10 @@ Page({
       data: {
         "pageNum": 0,
         "pageSize": 10,
-
+       chatType:that.data.zxid
       },
       success: function(e) {
-        console.log(e, 343)
+        console.log(e, "成功没成功")
         let a = []
         let b = []
         for (let i in e.data.data.dataList) {
@@ -169,9 +171,9 @@ Page({
       data: {
         // pageNum: 0,
         // pageSize: 10,
-       content: that.data.bincontent,
+        content: that.data.bincontent,
         bid: that.data.nowid,
-        chatType:activeIndex===0?"在线咨询":"电话咨询",
+        chatType:that.data.activeIndex===0?"在线咨询":"电话咨询",
         status: that.data.advicestatus,
        
 
@@ -204,6 +206,6 @@ Page({
   // 加载初始数据
   onLoad: function(e) {
     // this.myadvice(0)
-    this.imgphone();
+    this.imgphone(zxid);
   },
 });

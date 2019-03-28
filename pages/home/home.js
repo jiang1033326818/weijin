@@ -441,7 +441,7 @@ Page({
       data: {
         "pageNum": 0,
         "pageSize": 10,
-          contentType: chanpinid
+        contentType: chanpinid
       },
       success: function(res) {
         console.log(res,"这是什么")
