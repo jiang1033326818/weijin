@@ -17,6 +17,8 @@ view , page {
   font-family: Helvetica,Arial,"Helvetica Neue","Droid Sans","Microsoft YaHei",sans-serif;
 }
 
+
+
 .navbar {
   display: flex;
   position: fixed;
@@ -73,6 +75,7 @@ view , page {
 }
 .swiper-item{
   height: 1600rpx;
+  margin-top: 93rpx;
 }
 .allOfpeople{
   width: 100%;

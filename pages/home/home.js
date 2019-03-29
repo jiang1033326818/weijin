@@ -98,7 +98,7 @@ Page({
 
     ],
     navData2: [{
-      typeName: '热门知识',id:0,
+      typeName: '全部',id:'',
       },
   ]
     },
@@ -417,10 +417,13 @@ Page({
           "pageSize": 10,
         },
         success: function(e) {
-          console.log(e, "eee")
-          
+          console.log(e.data.data, "eee")
+          let navData3 = that.data.navData2
+          for (let i in e.data.data){
+            navData3.push(e.data.data[i])
+          }
           that.setData({
-            navData2: e.data.data 
+            navData2: navData3
           })            
         },
         fail: function(err) {
@@ -445,15 +448,10 @@ Page({
       },
       success: function(res) {
         console.log(res,"这是什么")
-        for (let i in res.data.data.dataList)
-          if (res.data.data.dataList[i] !== null) {
             that.setData({
               getknowledge: res.data.data.dataList
             })
-            // console.log(res, 11)
-          } else {
-            getknowledge: res.data.data.dataList[i] = null
-          }
+         
       },
       fail: function(err) {
         console.log(err)

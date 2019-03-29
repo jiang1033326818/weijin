@@ -225,9 +225,6 @@ Page({
                       wx.setStorageSync("phone", response.data.data.mobile)
                       wx.setStorageSync("expert", response.data.data.expert)
                       wx.setStorageSync("cid", response.data.data.cid)
-                      wx.switchTab({
-                        url: '../home/home'
-                      });
                       console.log(response, 74)
                     }
                   })
@@ -240,7 +237,11 @@ Page({
             fail: function(response) {
               console.log(response, '失败了');
             }
+            
           })
+          wx.switchTab({
+            url: '../home/home'
+          });
         } else {
           console.log('登录失败！' + res.errMsg)
         }
