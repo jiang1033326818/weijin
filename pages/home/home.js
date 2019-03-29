@@ -89,23 +89,15 @@ Page({
     navData: [{
         text: '热门'
       },
-      // {
-      //   text: '服务'
-      // },
       {
         text: '信用'
       },
 
     ],
     navData2: [{
-      typeName: '热门知识',id:0,
-      },
-  ]
-    },
+      typeName: '热门知识',id:0, },]},
     // 导航点击滑动
-
     bindChange: function(e) {
-
       var current = e.detail.current;
       wx.pageScrollTo({
         scrollTop: 0

@@ -20,6 +20,11 @@ Page({
      url: '../clues/clues'
    });
  },
+  aboutus:function(){
+    wx.navigateTo({
+      url:'../adviser/adviser'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -120,7 +125,11 @@ Page({
        url: '../login/login'
      })
   },
-
+  aboutus: function () {
+    wx.navigateTo({
+      url: '../adviser/adviser'
+    });
+  },
   toadviser:function(){
     let a = wx.getStorageSync("expert")
     if(a==="-1"||a==="null"){
@@ -145,9 +154,5 @@ Page({
       url: '../cooperation/cooperation'
     });
   },
-  aboutus:function(){
-    wx.navigateTo({
-      url: '../schedule/schedule'
-    });
-  }
+
 })
