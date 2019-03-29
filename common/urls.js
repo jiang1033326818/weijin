@@ -17,7 +17,7 @@ export default {
   knowid:'/know/list/',//知识库id
   knowtype:'/know/showType/',//知识库类别
   consulatanturl:'/consultant/listById/',//查询顾问详情
-  assessment:'/consultant/listAll/',//客户评价
+  assessment:'/consultant/listAll',//客户评价
   interesting:'/loan/mark/',//添加关注
   getmyadvice: '/loan/chatExpertPre', //我的咨询
   advisorylist: '/advisory/list/',//咨询展示接口
@@ -25,4 +25,5 @@ export default {
   judgecontent: "/loan/advisoryComment/",
   worktogether:"/user/teamwork/",//合伙人接口
   fastphone: "/loan/loanIntent/",//快捷电话
+  contryarea:"/consultant/area/",//地区接口
 }

@@ -21,34 +21,16 @@ Page({
     activeIndex: 0, //当前展示的Tab项索引
     sliderWidth: 96, //指示器的宽度,计算得到
     contentHeight: 0, //页面除去头部Tabbar后，内容区的总高度，计算得到
-    // typeList: [{
-    //   name: "杨经理",
-    //   label: '高级融资顾问',
-    //   value: 'head0',
-    //   from: "微金网",
-    //   belong: "擅长:房产服务",
-    //   people: "44646",
-    // }, {
-    //   name: "杨经理",
-    //   label: '高级融资顾问',
-    //   value: 'head2',
-    //   from: "微金网",
-    //   belong: "擅长:房产服务",
-    //   people: "44646",
-    // }, ],
     getloanalllist: []
-    // getzhuanjia:[],
+   
   },
   // 滑动事件
   upper: function(e) {
-    // console.log(e)
   },
 
   lower: function(e) {
-    // console.log(e)
   },
   scroll: function(e) {
-    // console.log(e)
   },
   tap: function(e) {
     for (var i = 0; i < order.length; ++i) {
@@ -114,8 +96,6 @@ Page({
   //咨询
   btnask: function (e) {
     getApp().chatit(e.currentTarget.dataset.id)
-    // wx.getStorageSync("mid")
-    // wx.setStorageSync("askid", data)
     wx.setStorageSync("tootherId", e.currentTarget.dataset.uid)
     wx.navigateTo({
       url: '../clues/clues'

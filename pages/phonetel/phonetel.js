@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    getplmessage:'',
     menu2:'',
     hidden: true,
     nocancel: false,
@@ -44,14 +45,7 @@ Page({
     phonenum:'',
     getgo:'',
   },
-  //服务类型
-//   servetype1:function(e){
-//     wx.getStorageSync("itemnum", e.actionSheetItems.key)
-//     console.log("itemnum"),
-//   this.setData({
-//     servetype:e.menu
-//  })
-//   },
+ 
     //接听手机
   phoneint: function (e) {
 console.log(e,"接听手机")
@@ -70,83 +64,6 @@ this.setData({
       actionSheetHidden: !this.data.actionSheetHidden
     })
   },
-  // bindMenu1: function (i) {
-  //   console.log(i)
-  //   this.setData({
-  //     menu: i._relatedInfo.anchorRelatedText,
-  //     menu2: i.currentTarget.dataset.itemnum2,
-     
-  //           actionSheetHidden: !this.data.actionSheetHidden,
-            
-               
-  //     actionSheetHidden: !this.data.actionSheetHidden
-  //   })
-  // },
-  // bindMenu2: function (i) {
-  //   console.log(i)
-  //   this.setData({
-  //     menu: i._relatedInfo.anchorRelatedText.itemnum,
-  //     menu2: i.currentTarget.dataset.itemnum2,
-  //     actionSheetHidden: !this.data.actionSheetHidden
-  //   })
-  // },
-  // bindMenu3: function (i) {
-  //   console.log(i)
-  //   this.setData({
-  //     menu: i.currentTarget.dataset.itemnum,
-  //     menu2: i.currentTarget.dataset.itemnum2,
-  //     actionSheetHidden: !this.data.actionSheetHidden
-  //   })
-  // },
-  // bindMenu4: function (i) {
-  //   console.log(i)
-  //   this.setData({
-  //     menu: i.currentTarget.dataset.itemnum,
-  //     menu2: i.currentTarget.dataset.itemnum2,
-  //     actionSheetHidden: !this.data.actionSheetHidden
-  //   })
-  // },
-  // bindMenu5: function (i) {
-  //   console.log(i)
-  //   this.setData({
-  //     menu: i.currentTarget.dataset.itemnum,
-  //     menu2: i.currentTarget.dataset.itemnum2,
-  //     actionSheetHidden: !this.data.actionSheetHidden
-  //   })
-  // },
-  // bindMenu6: function (i) {
-  //   console.log(i)
-  //   this.setData({
-  //     menu: i.currentTarget.dataset.itemnum,
-  //     menu2: i.currentTarget.dataset.itemnum2,
-  //     actionSheetHidden: !this.data.actionSheetHidden
-  //   })
-  // },
-  // bindMenu7: function (i) {
-  //   console.log(i)
-  //   this.setData({
-  //     menu: i.currentTarget.dataset.itemnum,
-  //     menu2:i.currentTarget.dataset.itemnum2,
-  //     actionSheetHidden: !this.data.actionSheetHidden
-  //   })
-  // },
-  // bindMenu8: function (i) {
-  //   console.log(i)
-  //   this.setData({
-  //     menu: i.currentTarget.dataset.itemnum,
-  //     menu2: i.currentTarget.dataset.itemnum2,
-  //     actionSheetHidden: !this.data.actionSheetHidden
-  //   })
-  // },
-  // bindMenu9: function (i) {
-  //   console.log(i)
-  //   this.setData({
-  //     menu: i.currentTarget.dataset.itemnum,
-  //     menu2: i.currentTarget.dataset.itemnum2,
-  //     actionSheetHidden: !this.data.actionSheetHidden
-  //   })
-  // },
-
   cancel: function () {
     this.setData({
       hidden: true
@@ -205,12 +122,36 @@ this.setData({
     })
     
   },
+//评论接收
+
+   
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that = this;
+    wx.request({
+      url: urls.mainurl + urls.assessment,
+      method: 'POST',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+       commentType:"0"
+      // type:"0"
+      },
+      success: function (e) {
+        console.log(e, "我找到评论了")
+        that.setData({
+          getplmessage: e.data.data
+        })
+      },
+      fail: function (err) {
+        console.log(err)
 
+      }
+    })
   },
 
   /**

@@ -89,9 +89,6 @@ Page({
     navData: [{
         text: '热门'
       },
-      // {
-      //   text: '服务'
-      // },
       {
         text: '信用'
       },
@@ -102,10 +99,9 @@ Page({
       },
   ]
     },
+
     // 导航点击滑动
-
     bindChange: function(e) {
-
       var current = e.detail.current;
       wx.pageScrollTo({
         scrollTop: 0

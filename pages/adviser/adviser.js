@@ -7,9 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    getarea:[],//获取地区名称
     address: "4353",
     customItem: '全部',
-    region: ['北京市', '北京市', '东城区'],
+    region:"1",
     array: ['房产服务',
       '车产低压服务',
       '信用卡',
@@ -23,18 +24,21 @@ Page({
       '按揭车服务',
       '保单服务'
     ],
+    index2:0,
     index: 0,
     date: '2019-01-01',
     checked: true,
     danwei: "",
+    image0:'',
+    image1:''
   },
 
 
 
   bindRegionChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    console.log('picker发送选择改变，携带值为', e)
     this.setData({
-      region: e.detail.value
+      index2:parseInt(e.detail.value)
     })
   },
 
@@ -207,6 +211,10 @@ Page({
       })
     }
   },
+
+  
+   
+  
   subme: function(e) {
     let that = this;
     if (that.data.checked == false) {
@@ -223,7 +231,7 @@ Page({
           "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
         },
         data: {
-          "area": that.data.region[2],
+          "area": that.data.getarea[that.data.index2].id,
           "hobby": that.data.array[that.data.index],
           "company": that.data.danwei,
           "employment": that.data.image0,
@@ -236,10 +244,19 @@ Page({
             icon: 'success',
             duration: 2000
           })
-
-          wx.navigateTo({
-            url: '../success/success'
-          });
+//表单校验
+          if (that.data.danwei==='' || that.data.image0==='' || that.data.image1 ===''){
+            wx.showToast({
+              title: '请将内容填写完整', //标题
+              icon: 'none',
+              duration: 1000,
+              mask: true,
+            })
+         }else{
+            wx.navigateTo({
+              url: '../success/success'
+            });
+         }
         }
       })
     }
@@ -256,13 +273,34 @@ Page({
         })
       }
     })
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
+      //获取地区接口
+    let that = this;
+    wx.request({
+      url: urls.mainurl + urls.contryarea,
+      method: 'GET',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
 
+      },
+      success: function (e) {
+
+        that.setData({
+          getarea: e.data.data
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    })
   },
 
   /**

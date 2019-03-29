@@ -39,14 +39,7 @@ Page({
       url: '../clues/clues'
     });
   },
-  //成为合伙人
-  // btn:function(e){
-  //   getApp().phoneit(e.currentTarget.dataset.id)
-  //   //  wx.makePhoneCall({
-  //   //    phoneNumber:"14"
-  //   //   //仅为示例，并非真实的电话号码
-  //   //  })
-  // },
+ 
   //回到顶部
   goTop: function (e) {  // 一键回到顶部
     if (wx.pageScrollTo) {
