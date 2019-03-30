@@ -31,7 +31,8 @@ Page({
     timeCount: 0, // 倒计时计数
     name: "快速登录",
     aaaa: false,
-    aunionId:''
+    aunionId:'',
+    pc:''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -163,11 +164,14 @@ Page({
 
             },
             success: function (response2) {
+
               console.log(4444, response2)
               let aunionId = JSON.parse(response2.data.data).unionid
+              var pc = new WXBizDataCrypt("wx0f95ffcd25a151de", JSON.parse(response2.data.data).session_key)
               console.log(555, aunionId)
               that.setData({
-                aunionId: aunionId
+                aunionId: aunionId,
+                pc:pc
               })
             },
             fail: function (response) {
@@ -201,6 +205,10 @@ Page({
     let that =this
     wx.getUserInfo({
       success: function (res) {
+        var data = that.data.pc.decryptData(res.encryptedData, res.iv)
+        // data.unionId就是咱们要的东西了
+        app.globalData.unionid = data.unionId
+        console.log('解密后 unionid: ', app.globalData.unionid)
         console.log(666, res)
         wx.request({
           url: urls.mainurl + urls.loginUrl,
@@ -223,7 +231,7 @@ Page({
             openid: "string",
             personImage: "string",
             province: "string",
-            unionid: that.data.aunionId,
+            unionid: app.globalData.unionid,
           }),
           success: function (response) {
             that.setData({
