@@ -60,28 +60,28 @@
 
 
   <view class='maplist'>
-    <view wx:for="{{typeList}}" class="row-flex list-item">
-      <view class='toplist'>
+    <view  class="row-flex list-item">
+      <view class='toplist' wx:for="{{getplmessage}}">
         <view class='toptitle'>
           <view class='toptitle1' style='font-size:30rpx'>
             <view class='circul'>
               <image src='http://zadai.net:8000/uploads/icon-user.png'>
               </image>
             </view>
-            {{item.name}}
-            <view class='rightmap'>{{item.result}}</view>
+            {{item.mobile}}
+            <view class='rightmap'>{{item.status}}</view>
           </view>
           <view class='toptitle2'>
-            {{item.label}}
+            <!-- {{item.label}} -->
           </view>
           <view class='clear'></view>
         </view>
 
         <view class='context'>
-          {{item.text}}
+          {{item.content}}
         </view>
         <view class='context2'>
-          服务顾问: {{item.from}}
+          服务顾问: {{item.cid}}
         </view>
       </view>
     </view>

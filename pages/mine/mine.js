@@ -15,7 +15,7 @@ Page({
   },
  //联系客服
  left1:function(e){
-   wx.setStorageSync("uid", "14")
+   wx.setStorageSync("tootherId", "14")
    wx.navigateTo({
      url: '../clues/clues'
    });

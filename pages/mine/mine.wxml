@@ -60,10 +60,10 @@
     <image src='http://zadai.net:8000/uploads/right.png'></image>
   </view>
 </view>
-<!-- <view class='item'  bindtap='aboutus'>
+<view class='item'  bindtap='aboutus'>
   <view class='left'>关于我们</view>
   <view class='right'>
     <image src='http://zadai.net:8000/uploads/right.png'></image>
   </view>
-</view> -->
+</view>
 </view> 

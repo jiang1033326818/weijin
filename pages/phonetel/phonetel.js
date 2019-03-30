@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    getplmessage:'',
+    getplmessage:[],
     menu2:'',
     hidden: true,
     nocancel: false,
@@ -15,31 +15,31 @@ Page({
     actionSheetItems: ['房产', '车产', '信用卡', '急速服务', '工资流水', '福利服务', '营业执照', '福利','微粒贷'],
     actionnum: {txt:'房产',key:0},
    righttype: ['上班族', '学生', '退休人员', '无业人员'],
-    typeList: [{
-      name: "155****6567",
-      result: '很满意',
-      text: '打字沟通觉得很烦费劲,慢不说还说不清楚,电话服务还是挺方便的,有啥不清楚电话里几句说完,快速解决问题,给个好评',
-      from: "微金网 石经理",
-    }, 
-      {
-        name: "180****4876",
-        result: '满意',
-        text: '这个客服服务态度很好,非常耐心的解答我的疑问,给她的专业态度和服务点个赞',
-        from: "微金网 姜经理",
-      }, 
-      {
-        name: "139****5639",
-        result: '很满意',
-        text: '微金的客服态度是非常好的，正面回答你的问题，不会问你一些无关的问题,一直到你没有疑问为止',
-        from: "微金网 张经理",
-      }, 
-      {
-        name: "155****6567",
-        result: '很满意',
-        text: '先感谢一下我的客服经过10多分钟的沟通,解决了我所有的疑惑,从客户的工作态度能看出来这个公司非常靠谱',
-        from: "微金网 王经理",
-      }, 
-    ],
+    // typeList: [{
+    //   name: "155****6567",
+    //   result: '很满意',
+    //   text: '打字沟通觉得很烦费劲,慢不说还说不清楚,电话服务还是挺方便的,有啥不清楚电话里几句说完,快速解决问题,给个好评',
+    //   from: "微金网 石经理",
+    // }, 
+    //   {
+    //     name: "180****4876",
+    //     result: '满意',
+    //     text: '这个客服服务态度很好,非常耐心的解答我的疑问,给她的专业态度和服务点个赞',
+    //     from: "微金网 姜经理",
+    //   }, 
+    //   {
+    //     name: "139****5639",
+    //     result: '很满意',
+    //     text: '微金的客服态度是非常好的，正面回答你的问题，不会问你一些无关的问题,一直到你没有疑问为止',
+    //     from: "微金网 张经理",
+    //   }, 
+    //   {
+    //     name: "155****6567",
+    //     result: '很满意',
+    //     text: '先感谢一下我的客服经过10多分钟的沟通,解决了我所有的疑惑,从客户的工作态度能看出来这个公司非常靠谱',
+    //     from: "微金网 王经理",
+    //   }, 
+    // ],
     menu: '',
     // servetype: '',
     phonenum:'',
@@ -138,13 +138,15 @@ this.setData({
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
       },
       data: {
-       commentType:"0"
+       commentType:"0",
+       "pageNum": 0,
+        "pageSize": 10,
       // type:"0"
       },
       success: function (e) {
         console.log(e, "我找到评论了")
         that.setData({
-          getplmessage: e.data.data
+          getplmessage: e.data.data.dataList
         })
       },
       fail: function (err) {

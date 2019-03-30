@@ -70,6 +70,7 @@
   border: 1px solid #dddddd;
   height: 80rpx;
   font-size: 30rpx;
+  padding-left: 15rpx;
 }
 .dizhi{
    width: 75%;
@@ -91,6 +92,7 @@ color: #169BD5;
  overflow:hidden;
 
  text-overflow:ellipsis;
+margin-left:10rpx;
 
 }
 .dizhi image{
