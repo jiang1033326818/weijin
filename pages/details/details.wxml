@@ -66,7 +66,7 @@
                 <image src='http://zadai.net:8000/uploads/icon-user.png'>
                 </image>
               </view>
-              {{item.name}}
+              {{item.nikeName}}
               <view class='rightmap'
                style='color:{{item.status==="很满意"?"red":item.status==="一般"?"blue":"black"}}'>{{item.status}}</view>
             </view>
