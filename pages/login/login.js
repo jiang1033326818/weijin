@@ -30,7 +30,8 @@ Page({
     urlParams: null,
     timeCount: 0, // 倒计时计数
     name: "快速登录",
-    aaaa: false
+    aaaa: false,
+    aunionId:''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -110,6 +111,8 @@ Page({
       this.inputChange(phone, 'phone', regs.PHONE);
     }
   },
+
+
   onLoad: function(params) {
     let that = this;
     that.setData({
@@ -147,7 +150,37 @@ Page({
     }
     // const _ = this;
     // 登录
+    wx.login({
+      success(res) {
 
+        if (res.code) {
+          //发起网络请求
+          console.log(333, res)
+          wx.request({
+            url: urls.mainurl + urls.getUnionid + res.code,
+            method: 'GET',
+            data: {
+
+            },
+            success: function (response2) {
+              console.log(4444, response2)
+              let aunionId = JSON.parse(response2.data.data).unionid
+              console.log(555, aunionId)
+              that.setData({
+                aunionId: aunionId
+              })
+            },
+            fail: function (response) {
+              console.log(response, '失败了');
+            }
+
+          })
+        
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
 
     // 有权限信息，说明已经登录
     // if (app.globalData.authorization) {
@@ -166,91 +199,54 @@ Page({
   // 登录
   login: function() {
     let that =this
-    wx.login({
-      success(res) {
-
-        if (res.code) {
-          //发起网络请求
-          console.log(333, res)
-          wx.request({
-            url: 'https://api.weixin.qq.com/sns/jscode2session',
-            method: 'GET',
-            data: {
-              appid: "wx0f95ffcd25a151de",
-              secret: "bdb031b55a2eac8ddef19cecb9eadedb",
-              js_code: res.code,
-              grant_type: "authorization_code",
-            },
-            success: function(response) {
-              console.log(4444, response)
-              var pc = new WXBizDataCrypt("wx0f95ffcd25a151de", response.data.session_key)
-              wx.getUserInfo({
-                success: function(res) {
-                  console.log(555, res.userInfo)
-                  //拿到getUserInfo（）取得的res.encryptedData, res.iv，调用decryptData（）解密              
-                  var data = pc.decryptData(res.encryptedData, res.iv)
-                  // data.unionId就是咱们要的东西了
-                  app.globalData.unionid = data.unionId
-                  console.log('解密后 unionid: ', app.globalData.unionid)
-                  wx.request({
-                    url: urls.mainurl + urls.loginUrl,
-                    method: 'POST',
-                    data: JSON.stringify({
-                      area: "string",
-                      avatarUrl: res.userInfo.avatarUrl,
-                      business: "string",
-                      city: res.userInfo.city,
-                      company: "string",
-                      companyImage: "string",
-                      country: res.userInfo.country,
-                      employment: "string",
-                      gender: res.userInfo.gender.toString(),
-                      hashCode: "string",
-                      image: res.userInfo.avatarUrl,
-                      language: "string",
-                      nikeName: res.userInfo.nickName,
-                      name: "string",
-                      openid: "string",
-                      personImage: "string",
-                      province: "string",
-                      unionid: app.globalData.unionid,
-                    }),
-                    success: function(response) {
-                      that.setData({
-                        response0: response
-                      })
-                      console.log(that.data)
-                      wx.setStorageSync("uid", response.data.data.id)
-                      wx.setStorageSync("sessionid", response.data.data.sessionid)
-                      wx.setStorageSync("phone", response.data.data.mobile)
-                      wx.setStorageSync("expert", response.data.data.expert)
-                      wx.setStorageSync("cid", response.data.data.cid)
-                      console.log(response, 74)
-                    }
-                  })
-                },
-                fail: function(res) {
-                  console.log(res)
-                }
-              })
-            },
-            fail: function(response) {
-              console.log(response, '失败了');
-            }
-            
-          })
-          wx.switchTab({
-            url: '../home/home'
-          });
-        } else {
-          console.log('登录失败！' + res.errMsg)
-        }
+    wx.getUserInfo({
+      success: function (res) {
+        console.log(666, res)
+        wx.request({
+          url: urls.mainurl + urls.loginUrl,
+          method: 'POST',
+          data: JSON.stringify({
+            area: "string",
+            avatarUrl: res.userInfo.avatarUrl,
+            business: "string",
+            city: res.userInfo.city,
+            company: "string",
+            companyImage: "string",
+            country: res.userInfo.country,
+            employment: "string",
+            gender: res.userInfo.gender.toString(),
+            hashCode: "string",
+            image: res.userInfo.avatarUrl,
+            language: "string",
+            nikeName: res.userInfo.nickName,
+            name: "string",
+            openid: "string",
+            personImage: "string",
+            province: "string",
+            unionid: that.data.aunionId,
+          }),
+          success: function (response) {
+            that.setData({
+              response0: response
+            })
+            console.log(response,777)
+            wx.setStorageSync("uid", response.data.data.id)
+            wx.setStorageSync("sessionid", response.data.data.sessionid)
+            wx.setStorageSync("phone", response.data.data.mobile)
+            wx.setStorageSync("expert", response.data.data.expert)
+            wx.setStorageSync("cid", response.data.data.cid)
+            console.log(response, 74)
+            wx.switchTab({
+              url: '../home/home'
+            });
+          }
+        })
+      },
+      fail: function (res) {
+        console.log(res)
       }
     })
-
-
-
-
+  
   },
   getUserInfo: function(e) {
     if (e.detail.userInfo) {

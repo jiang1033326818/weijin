@@ -1,6 +1,7 @@
 export default {
   mainurl: 'https://zadai.net', // 全局接口地址
   loginUrl: '/login', // 登录接口
+  getUnionid:'/getUnionid/', // 获取Unionid 
   localExpert: '/websocket/localExpert', // 聊天获取当前用户
   useradd: '/user/add', // 顾问申请
   londadd: '/loan/apply', // 服务申请,添加服务信息
