@@ -10,7 +10,7 @@
       </view>
       <view class='charcon'>
        <view class='chattop'>
-        <view class='chatname'>{{item.realName===null?'':item.realName}}</view>
+        <view class='chatname'>{{item.nikeName===null?'':item.nikeName}}</view>
         <view class='chattime'>{{item.lastDate===null?'':item.lastDate}}</view>
       </view>
       <view style='clear:both'></view>

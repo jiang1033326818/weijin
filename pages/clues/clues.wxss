@@ -82,7 +82,7 @@ height: 120rpx;
   
 .new_img {  
   width: 100rpx;  
-  height: 20rpx;  
+  height: 120rpx;  
   border-radius: 50%;  
 }  
   
@@ -92,7 +92,7 @@ height: 120rpx;
 .new_txt_my{
   border-radius: 7px;  
   background-color: #fff;  
-  margin-top: 10rpx;
+  margin-top: 90rpx;
   padding: 0rpx 30rpx 0rpx 30rpx;  
   float: right;
 }

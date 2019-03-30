@@ -34,7 +34,7 @@ Page({
   },
 //咨询按钮找到聊天界面
   bindtap1:function(e){
-    wx.setStorageSync("uid","14")
+    wx.setStorageSync("tootherId","14")
     wx.navigateTo({
       url: '../clues/clues'
     });

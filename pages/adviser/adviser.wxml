@@ -36,7 +36,7 @@
  <view class='item'>
   <view class='left'>入职时间</view>
   <view class='right'>
-   <picker  mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+   <picker  mode="date" value="{{date}}" start="2000-01-01" end="2019-12-31" bindchange="bindDateChange">
       <text>{{date}}</text>
     <image src='http://zadai.net:8000/uploads/right.png'></image>
         </picker>

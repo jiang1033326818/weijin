@@ -266,6 +266,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    //获取当前时间
+    // let date = new Date();
+    // let year = date.getFullYear;
+    // let month = date.getMonth + 1;
+    // let day = date.getDate;
+    // let a = date + '-' + month + "-" + day;
+    // console.log(year,"7878")
+
     wx.getUserInfo({
       success(res) {
         this.setData({
@@ -273,9 +281,9 @@ Page({
         })
       }
     })
+   
     
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
