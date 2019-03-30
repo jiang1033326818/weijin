@@ -81,7 +81,7 @@
           {{item.content}}
         </view>
         <view class='context2'>
-          服务顾问: {{item.cid}}
+          服务顾问: {{item.nikeName}}
         </view>
       </view>
     </view>

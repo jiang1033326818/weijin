@@ -30,12 +30,12 @@ Page({
     selectArea2: false,
     acity:'',
     managerlists:[],
-   
+    getarea1:'',
     citylist:[
-      {city:"北京"},
-      { city: "上海" },
-      { city: "深圳" },
-      { city: "天津" },
+      {area:"北京"},
+      { area: "上海" },
+      { area: "深圳" },
+      { area: "天津" },
     ]
   },
 
@@ -68,7 +68,8 @@ Page({
       })
     }
   },
-
+//picker
+  
   //点击切换
   mySelect: function (e) {
     console.log(e)
@@ -87,6 +88,7 @@ Page({
     })
     this.getloanall(this.data.firstPerson, e.target.dataset.me)
   },
+//获取地区
 
 
   // 滑动事件
@@ -207,6 +209,29 @@ Page({
   onReady:function(e){
     this.setData({
       firstPerson2: wx.getStorageSync("databelong")
+    })
+    //地区接口
+    //获取地区接口
+    let that = this;
+    wx.request({
+      url: urls.mainurl + urls.contryarea,
+      method: 'GET',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+
+      },
+      success: function (e) {
+      console.log(e,)
+
+        that.setData({
+          getarea1: e.data.data
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+      }
     })
   },
   //获取客服信息

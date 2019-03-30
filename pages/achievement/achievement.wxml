@@ -11,9 +11,9 @@
   </view>
 
 
-  <view class="person_box" wx:for="{{citylist}}">
+  <view class="person_box" wx:for="{{getarea1}}">
     <view class="phone_select" hidden="{{selectPerson}}">
-      <view class="select_one" bindtap="mySelect" data-me="{{item.city}}" wx:for="{{citylist}}">{{item.city}}</view>
+       <view class="select_one" bindtap="mySelect" data-me="{{item.area}}" wx:for="{{getarea1}}">{{item.area}}</view> 
 
     </view>
   </view>
