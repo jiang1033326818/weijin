@@ -19,7 +19,7 @@
 
           <view class='toplist' bindtap='toclues' data-pnum="{{item.cid}}">
             <view class='leftlist'>
-              <image src="http://zadai.net:8000/uploads/header/{{item.value}}.jpg" class="item-header"></image>
+              <image src="{{'http://zadai.net:8000/uploads/'+item.workImage}}" class="item-header"></image>
             </view>
             <view class='rightlist'>
               <text class='item-text' decode="{{true}}" space="{{true}}">{{item.realName===null?'':item.realName}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.level===null?"":item.level}}</text>
@@ -70,7 +70,7 @@
 
           <view class='toplist' bindtap='toclues' data-pnum="{{item.cid}}">
             <view class='leftlist'>
-              <image src="http://zadai.net:8000/uploads/header/{{item.value}}.jpg" class="item-header"></image>
+              <image src="{{'http://zadai.net:8000/uploads/'+item.workImage}}"  class="item-header"></image>
             </view>
             <view class='rightlist'>
               <text class='item-text' decode="{{true}}" space="{{true}}">{{item.realName===null?'':item.realName}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.level===null?"":item.level}}</text>
