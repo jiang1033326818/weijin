@@ -166,11 +166,11 @@ Page({
             success: function (response2) {
 
               console.log(4444, response2)
-              let aunionId = JSON.parse(response2.data.data).unionid
+            
               var pc = new WXBizDataCrypt("wx0f95ffcd25a151de", JSON.parse(response2.data.data).session_key)
-              console.log(555, aunionId)
+              
               that.setData({
-                aunionId: aunionId,
+               
                 pc:pc
               })
             },

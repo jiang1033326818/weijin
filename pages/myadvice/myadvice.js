@@ -43,7 +43,7 @@ Page({
       data: {
         "pageNum": 0,
         "pageSize": 10,
-       
+        contentType:e
         
       },
       success: function(e) {
@@ -117,6 +117,7 @@ Page({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
+    this.imgphone(e.currentTarget.id)
   },
 //满意程度选择
   radioChange(e) {
