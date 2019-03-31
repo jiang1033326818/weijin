@@ -476,7 +476,7 @@ Page({
   onReady: function() {
     this.getloanall(1);
     // this.getloanall();
-    this.knowledge(1);
+    this.knowledge('');
     this.knownav();
     //  this.knowtype();
     // this.knoweldgeid();

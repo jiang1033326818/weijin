@@ -80,56 +80,12 @@
         </scroll-view>
         <scroll-view class="icon-list">
           <view wx:for="{{keykey===0?typeList:typeList0}}" class="row-flex list-item">
-            <!-- <view class='toplist' bindtap='toapply' id='name{{item.id}}' >
-              <view class='toptitle'>
-                <view class='toptitle1' style='font-size:30rpx'>
-                  <image src='http://zadai.net:8000/uploads/oneicon.png'>
-                  </image>
-                  {{item.name}}
-                  <view class='toptitle2'>
-                    {{item.readyLoan===null?"0":item.readyLoan}}人咨询
-                  </view>
-                </view>
-
-                <view class='clear'></view>
-              </view>
-              <view class='listitem'>
-                <view class='itemmuch'>
-                  <view class='itemrate'>{{item.amount===null?"0":item.amount}}万</view>
-                  <view class='itemrate2'>服务金额</view>
-
-                </view>
-                <view class='itemmuch'>
-                  <view class='itemrate'>{{item.rate===null?"0":item.rate}}%</view>
-                  <view class='itemrate2'>服务利率</view>
-                </view>
-              </view>
-
-              <view class='maptitle0'>
-                <view class='maptitle pink'>
-                  {{item.tag[0]}}
-                </view>
-                <view class='maptitle green'>
-                  {{item.tag[1]}}
-                </view>
-                <view class='maptitle yellow'>
-                  {{item.tag[2]}}
-                </view>
-              </view>
-
-            </view> -->
-            
+          
               <view class='typelist_item' data-id='{{item.https}}' bindtap='tonew'>
               <!--热门图片-->
               <image src="{{item.image}}" class='img_item'></image>
                 <!-- {{item.name}} -->
               </view>
-
-            
-            
-
-
-
           </view>
         </scroll-view>
       </view>
