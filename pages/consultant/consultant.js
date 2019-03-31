@@ -22,7 +22,6 @@ Page({
     sliderWidth: 96, //指示器的宽度,计算得到
     contentHeight: 0, //页面除去头部Tabbar后，内容区的总高度，计算得到
     getloanalllist: []
-   
   },
   // 滑动事件
   upper: function(e) {

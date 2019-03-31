@@ -46,7 +46,7 @@
    <view wx:for="{{managerlists}}" class="wwwww row-flex list-item">
     <view class='toplist' data-manger="{{item.id}}" bindtap="toone">
       <view class='leftlist'>
-        <image src="{{item.image}}" class="item-header"></image>
+        <image src="{{'http://zadai.net:8000/uploads/'+item.workImage}}" class="item-header"></image>
       </view>
       <view class='rightlist'>
         <text class='item-text' decode="{{true}}" space="{{true}}">{{item.realName===null?'':item.realName}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.level===null?'':item.level}}</text>

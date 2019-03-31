@@ -234,7 +234,7 @@ Page({
           "area": that.data.getarea[that.data.index2].id,
           "hobby": that.data.array[that.data.index],
           "company": that.data.danwei,
-          "employment": that.data.image0,
+          "workImage": that.data.image0,
           "joinTime": that.data.date,
           "personImage": that.data.image1,
         },
