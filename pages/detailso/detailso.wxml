@@ -7,7 +7,7 @@
 
       <view class='circle'>
         <!-- <image src='http://zadai.net:8000/uploads/header/head0.jpg'></image> -->
-        <image src="{{useradviceid.workImage}}"></image>
+        <image src="{{'http://zadai.net:8000/uploads/'+useradviceid.workImage}}"></image>
       </view>
       <view class='headbs'>
         <view class='headb'>{{useradviceid.realName===null?'':useradviceid.realName}}</view>

@@ -5,7 +5,7 @@ import urls from '../../common/urls.js';
 var app = getApp();
 var socketOpen = false;
 var frameBuffer_Data, session, SocketTask;
-var url = 'ws://zadai.net:8000/ws/im?uid=';
+var url = 'wss://zadai.net/ws/im?uid=';
 // console.log(wx.getStorageSync("uid"))
 var upload_url = '请填写您的图片上传接口地址'
 Page({

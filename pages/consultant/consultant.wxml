@@ -15,7 +15,7 @@
             <view  class="row-flex list-item"  wx:for="{{getloanalllist}}"  >
               <view class='toplist' bindtap="btn"data-bntuser="{{item.id}}" >
                 <view class='leftlist'>
-                  <image class="item-header" src="{{item.workImage}}" ></image>
+                  <image class="item-header" src="{{'http://zadai.net:8000/uploads/'+item.workImage}}" ></image>
                   <!-- <image class='item-header' wx:for="{{managerlist}}">"{{item.image}}"</image> -->
                 </view>
                 <view class='rightlist'>
@@ -55,7 +55,7 @@
             <view  class="row-flex list-item"  wx:for="{{getloanalllist}}"  >
               <view class='toplist' bindtap="btn"data-bntuser="{{item.id}}" >
                 <view class='leftlist'>
-                  <image class="item-header" src="{{item.workImage}}" ></image>
+                  <image class="item-header" src="{{'http://zadai.net:8000/uploads/'+item.workImage}}" ></image>
                   <!-- <image class='item-header' wx:for="{{managerlist}}">"{{item.image}}"</image> -->
                 </view>
                 <view class='rightlist'>
@@ -95,7 +95,7 @@
             <view  class="row-flex list-item"  wx:for="{{getloanalllist}}"  >
               <view class='toplist' bindtap="btn"data-bntuser="{{item.id}}" >
                 <view class='leftlist'>
-                  <image class="item-header" src="{{item.workImage}}" ></image>
+                <image class="item-header" src="{{'http://zadai.net:8000/uploads/'+item.workImage}}" ></image>
                   <!-- <image class='item-header' wx:for="{{managerlist}}">"{{item.image}}"</image> -->
                 </view>
                 <view class='rightlist'>
@@ -135,7 +135,7 @@
             <view  class="row-flex list-item"  wx:for="{{getloanalllist}}"  >
               <view class='toplist' bindtap="btn"data-bntuser="{{item.id}}" >
                 <view class='leftlist'>
-                  <image class="item-header" src="{{item.workImage}}" ></image>
+                 <image class="item-header" src="{{'http://zadai.net:8000/uploads/'+item.workImage}}" ></image>
                   <!-- <image class='item-header' wx:for="{{managerlist}}">"{{item.image}}"</image> -->
                 </view>
                 <view class='rightlist'>
