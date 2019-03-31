@@ -164,12 +164,13 @@
   border: 1px solid #dddddd; 
   float: left;
   background: #f0f0f0;
+   overflow: hidden;
 }
 .toptitle image{
-  height: 50rpx;
-  width: 50rpx;
-  margin-top: 15rpx;
-  margin-left: 15rpx;
+  height: 80rpx;
+  width: 80rpx;
+  
+ 
 }
 .bottomthree{
   position: fixed;
