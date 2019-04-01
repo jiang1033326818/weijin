@@ -4,13 +4,14 @@ import request from '../../utils/request.js';
 import urls from '../../common/urls.js';
 const app = getApp();
 var interval = null //倒计时函数
-const tabs = [{
+ const tabs = [{
+   
+      name: "知识库"
+   },
+  {
     name: "产品中心"
   },
-  {
-    name: "知识库"
-  },
-];
+ ];
 Page({
   /**
    * 页面的初始数据
@@ -114,13 +115,20 @@ Page({
     },
     // 导航点击事件
     navTabClick: function(e) {
-      // console.log(this.data.height)
+      if (e.currentTarget.id==="1"){
+      wx:wx.navigateTo({
+        url: '../zzzzz2/zzzzz2'
+        // success: function(res) {},
+        // fail: function(res) {},
+        // complete: function(res) {},
+      })
+      }
       console.log(e.currentTarget.id)
 
-      this.setData({
-        sliderOffset: e.currentTarget.offsetLeft,
-        activeIndex: e.currentTarget.id
-      });
+      // this.setData({
+      //   sliderOffset: e.currentTarget.offsetLeft,
+      //   activeIndex: e.currentTarget.id
+      // });
     },
 
     switchNav(event) {

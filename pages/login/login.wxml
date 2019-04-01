@@ -10,7 +10,7 @@
         class="btn-class try-btn"
         open-type="getUserInfo"
         bindgetuserinfo="getUserInfo"
-      >试用 </button>
+      >立即开启 </button>
     </view>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>

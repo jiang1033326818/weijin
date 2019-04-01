@@ -71,25 +71,7 @@
   <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" class='swiper' style='height:{{height}}rpx' id='item0' scroll-y>
 
   
-    <swiper-item class='swiper-item'  data-index='{{activeIndex}}' id='item1'>
-      <view class='allOfpeople'>
-        <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
-          <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
-            <view class="nav-item0 {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">{{navItem.text}}</view>
-          </block>
-        </scroll-view>
-        <scroll-view class="icon-list">
-          <view wx:for="{{keykey===0?typeList:typeList0}}" class="row-flex list-item">
-          
-              <view class='typelist_item' data-id='{{item.https}}' bindtap='tonew'>
-              <!--热门图片-->
-              <image src="{{item.image}}" class='img_item'></image>
-                <!-- {{item.name}} -->
-              </view>
-          </view>
-        </scroll-view>
-      </view>
-    </swiper-item>
+    
 
 
 
@@ -124,7 +106,25 @@
         </scroll-view>
       </view>
     </swiper-item>
-
+<!-- <swiper-item class='swiper-item'  data-index='{{activeIndex}}' id='item1'>
+      <view class='allOfpeople'>
+        <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+          <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+            <view class="nav-item0 {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">{{navItem.text}}</view>
+          </block>
+        </scroll-view>
+        <scroll-view class="icon-list">
+          <view wx:for="{{keykey===0?typeList:typeList0}}" class="row-flex list-item">
+          
+              <view class='typelist_item' data-id='{{item.https}}' bindtap='tonew'>
+              <!--热门图片-->
+              <!-- <image src="{{item.image}}" class='img_item'></image>
+                <!-- {{item.name}} -->
+              <!-- </view>
+          </view>
+        </scroll-view>
+      </view>
+    </swiper-item> -->
   </swiper>
 
 
