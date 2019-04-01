@@ -11,7 +11,7 @@
     <swiper-item class='swiper-item' >
       <view class='allOfpeople'>
 
-        <view wx:for="{{activeIndex==='1'?getimgphone:gitimgchat}}" class="row-flex list-item">
+        <view wx:for="{{activeIndex==='0'?getimgphone:gitimgchat}}" class="row-flex list-item">
           <view class='topcon'>
             <view class='itemtime'>{{item.creationTime}}</view>
             <view class='pingjia'>{{item.pingjia}}</view>
