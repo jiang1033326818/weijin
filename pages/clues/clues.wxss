@@ -35,7 +35,7 @@ page {
 .my_right {  
   float: right;  
   margin-top: 30rpx;
-  position: relative;  
+  position: relativeab;  
   right: 40rpx; 
   margin-left: 50% 
 }  
@@ -199,3 +199,20 @@ height: 120rpx;
   height: 100rpx;
   border-radius: 50%
 }
+/* .tximg{
+  border: 1rpx solid black;
+  height: 80rpx;
+  width: 80rpx;
+ position:absolute;
+right:-110rpx;
+top:39rpx;
+} */
+/* .tximg1{
+  border: 1rpx solid black;
+  height: 80rpx;
+  width: 80rpx;
+ position:absolute;
+right:-110rpx;
+top:39px;
+
+} */
