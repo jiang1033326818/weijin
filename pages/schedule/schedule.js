@@ -13,7 +13,10 @@ Page({
 
   //跳转到聊天
   toclues:function(e){
+    console.log(e)
     wx.setStorageSync("tootherId", e.currentTarget.id)
+    wx.setStorageSync("userimg2", e.currentTarget.dataset.img)
+
     wx.navigateTo({
       url: '../clues/clues'
     });

@@ -54,9 +54,10 @@
     <text>没有稳定工作如何快速找到工作</text> -->
      <swiper autoplay="{{autoplay1}}" interval="{{interval1}}" duration="{{duration1}}" circular="true" vertical="true">
     <block wx:for="{{getlunbolist}}">
-      <swiper-item>
+      <swiper-item class='cccc'>
         <!-- <navigator url="{{item.link}}" hover-class="navigator-hover"> -->
           <!-- <image src="{{item.url}}" class="slide-image" width="355" height="150" /> -->
+          <view class='cccc'></view>
      <view>
       <image src='{{item.image}}'></image>
     <!-- </view> -->

@@ -106,6 +106,7 @@ Page({
   //咨询事件跳转页面
   bottombtn: function (e) {
     getApp().chatit(e.currentTarget.dataset.id,e.currentTarget.dataset.img)
+    console.log(e,444)
     // wx.getStorageSync("mid")
     // wx.setStorageSync("askid", data)
     wx.setStorageSync("tootherId", this.data.useradviceid.uid)

@@ -27,7 +27,7 @@
          <!-- <image class='tximg1'></image> -->
         <!-- //图片预览 -->
         <view class='my_img_bg'>
-        <image class='my_audio' src='{{item.is_my.img}}' data-imagesrc='{{item.is_my.img}}'data-imglist
+        <image class='my_audio' src='{{item.is_my.img}}'  mode='widthFix'  data-imagesrc='{{item.is_my.img}}'data-imglist
         ='{{item.is_my.img}}' bindtap='imgbh' mode='widthFix'></image></view>
         <!-- <view class='sanjiao my'></view> -->
         <image class='new_img' src='http://zadai.net:8000/uploads/test.jpg'></image>
@@ -46,14 +46,14 @@
             <block wx:if='{{item.is_two}}'>
               <text>{{item.is_two}}</text>
               <!-- 头像加载 -->
-               <image class='tximg2' src='{{userimage}}'></image>
+               <image class='tximg2'  src='{{userimg2}}'></image>
               <!-- <text wx:if='{{item.a.title}}' style='color:#0000EE' bindtap='link' id='{{item.a.link}}'>{{item.a.title}}</text> -->
             </block>
           </view>
           <view class='p_r' wx:if='{{item.is_twoimg}}' bindtap='my_audio_click' data-id='{{index}}'>
         <text class='new_txt'> </text>
         <view class='you_img_bg'>
-        <image class='my_audio2' src='{{item.is_twoimg}}'bindtap='youbind' data-youimage='{{item.is_twoimg}}' data-youimageurl='{{item.is_twoimg}}'></image></view>
+        <image class='my_audio2' src='{{item.is_twoimg}}' bindtap='youbind' mode='widthFix'    data-youimage='{{item.is_twoimg}}' data-youimageurl='{{item.is_twoimg}}'></image></view>
         <!-- <view class='sanjiao you'></view> -->
         <image class='new_img' src='http://zadai.net:8000/uploads/test.jpg'></image>
         <image class='tximg3' src='{{userimg2}}'></image>

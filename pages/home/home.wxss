@@ -4,6 +4,12 @@
   background: #F4F4F4;
   position: relative;
 }
+.cccc{
+  width: 750rpx;
+  height: 80rpx;
+  background: red;
+  color: #ffffff
+}
 .nav {
     height: 80rpx;
     width: 100%;
@@ -119,7 +125,7 @@
   background: #ffffff;
   display: flex;
   margin-top: 30rpx;
-   height: 100rpx; 
+  height: 100rpx; 
 }
 .bottommap image{
   height: 40rpx;

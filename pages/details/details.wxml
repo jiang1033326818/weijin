@@ -97,7 +97,7 @@
           data-num="{{useradviceid.mobile}}">电话咨询
         </view>
         <view  class='bottomthree3' bindtap='bottombtn'
-        data-id="{{useradviceid.id}}" data-askid="{{useradviceid.uid}}" data-img="{{'http://zadai.net:8000/uploads/'+item.workImage}}">
+        data-id="{{useradviceid.id}}" data-askid="{{useradviceid.uid}}" data-img="{{'http://zadai.net:8000/uploads/'+useradviceid.workImage}}">
             咨询
         </view>
     </view>
