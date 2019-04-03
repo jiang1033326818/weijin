@@ -37,7 +37,7 @@ Page({
     getknowledge: [],
     indextab: 0,
     getknownav: [],
-    getlunbolist:'',
+    getlunbolist:[],
     imgUrls: [{
       link: '/pages/index/index',
       url: 'http://zadai.net:8000/uploads/image001.jpg'
@@ -80,7 +80,7 @@ Page({
     autoplay1: true, //是否自动轮播
     interval1: 3000, //间隔时间
     duration1: 1000, //滑动时间
-    
+
     indicatorDots: true, //小点
     autoplay: true, //是否自动轮播
     interval: 3000, //间隔时间

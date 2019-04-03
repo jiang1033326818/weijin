@@ -47,25 +47,35 @@
     </view>
   </view>
 
-  <view class='bottommap'>
+  <view class='cccc'>
     <!-- <view>
       <image src='http://zadai.net:8000/uploads/toutiao.png'></image>
     </view>
     <text>没有稳定工作如何快速找到工作</text> -->
-     <swiper autoplay="{{autoplay1}}" interval="{{interval1}}" duration="{{duration1}}" circular="true" vertical="true">
+     <!-- <swiper autoplay="{{autoplay1}}" interval="{{interval1}}" duration="{{duration1}}" circular="true" vertical="true">
     <block wx:for="{{getlunbolist}}">
       <swiper-item class='cccc'>
         <!-- <navigator url="{{item.link}}" hover-class="navigator-hover"> -->
           <!-- <image src="{{item.url}}" class="slide-image" width="355" height="150" /> -->
-          <view class='cccc'></view>
-     <view>
-      <image src='{{item.image}}'></image>
+          <!-- <view class='cccc'></view>
+     <view> -->
+      
     <!-- </view> -->
-    <text>{{item.title}}</text>
-    </view>
+    <!-- <text>{{item.title}}</text>
+    </view> -->
         <!-- </navigator> -->
-       </swiper-item>
+       <!-- </swiper-item>
     </block>
+  </swiper> --> 
+   <swiper interval="{{interval}}" duration="{{duration}}" circular="true" vertical="true">
+    <block wx:for="{{getlunbolist}}">
+      <swiper-item class="smallitem">
+        <!-- <navigator url="{{item.link}}" hover-class="navigator-hover"> -->
+         <view class='smallnav'> <image  src='http://zadai.net:8000/uploads/toutiao.png'  />
+          <text >{{item.title}}</text></view>
+        <!-- </navigator> -->
+      </swiper-item>
+    </block> 
   </swiper>
   </view>
 
