@@ -36,14 +36,19 @@ page {
   float: right;  
   margin-top: 30rpx;
   position: relativeab;  
-  right: 40rpx; 
-  margin-left: 50% 
+  /* right: 40rpx;  */
+  /* margin-left: 50% ;
+  margin-right: 40rpx */
+  margin-left:30%;
+margin-right:160rpx;
+
 }  
+
 .my_audio{
  height: 120rpx;
   width: 150rpx;
   position: absolute;
-  right: 20rpx;
+  right: 2rpx;
   background: white;
   top: 20rpx;
   
@@ -53,9 +58,10 @@ height: 120rpx;
   width: 150rpx;
   
   position: absolute;
-  left: 20rpx;
+  /* left: 20rpx; */
   background: white;
   top: 20rpx;
+  left: 9rpx;
 }
 .my_img_bg{
  
@@ -70,14 +76,18 @@ height: 120rpx;
   width: 400rpx;
   position: relative;
   left: 0;
-  top: 20rpx;
-  margin-top: 80rpx;
+  /* top: 20rpx;
+  margin-top: 80rpx; */
+  top:122rpx;
+margin-top:-174rpx;
+
 }
 .you_left {  
   margin-top: 30rpx;
   float: left;  
   position: relative;  
-  left: 5rpx;  
+  /* left: 5rpx;   */
+  left: 116rpx;
 }  
   
 .new_img {  
@@ -129,6 +139,8 @@ height: 120rpx;
   background-color: #F4F4F6; 
   flex-direction: row;  
   height: 85rpx;
+  margin-bottom:10rpx;
+
 }  
 .voice_icon{
   width: 83rpx;
@@ -199,20 +211,39 @@ height: 120rpx;
   height: 100rpx;
   border-radius: 50%
 }
-/* .tximg{
-  border: 1rpx solid black;
-  height: 80rpx;
-  width: 80rpx;
- position:absolute;
-right:-110rpx;
-top:39rpx;
-} */
-/* .tximg1{
-  border: 1rpx solid black;
-  height: 80rpx;
-  width: 80rpx;
- position:absolute;
-right:-110rpx;
-top:39px;
+.tximg{
 
-} */
+  height: 80rpx;
+  width: 80rpx;
+ position:absolute;
+right:44rpx;
+margin-top:75rpx;
+
+}
+ .tximg1{
+ 
+  height: 80rpx;
+  width: 80rpx;
+ position:absolute;
+right:42rpx;
+margin-top:32px;
+
+} 
+.tximg2{
+  border: 1rpx solid black;
+  height: 80rpx;
+  width: 80rpx;
+ position:absolute;
+left: -116rpx;
+top:128rpx;
+
+} 
+.tximg3{
+  border: 1rpx solid black;
+  height: 80rpx;
+  width: 80rpx;
+ position:absolute;
+margin-top:5px;
+left:-115rpx;
+
+} 

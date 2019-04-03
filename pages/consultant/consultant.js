@@ -94,7 +94,7 @@ Page({
   },
   //咨询
   btnask: function (e) {
-    getApp().chatit(e.currentTarget.dataset.id)
+    getApp().chatit(e.currentTarget.dataset.id, e.currentTarget.dataset.img)
     wx.setStorageSync("tootherId", e.currentTarget.dataset.uid)
     wx.navigateTo({
       url: '../clues/clues'

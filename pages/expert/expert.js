@@ -12,7 +12,7 @@ Page({
       label: '房产服务',
       value: 'house',
     }, {
-      label: '车产低压服务',
+      label: '车产抵押服务',
       value: 'car'
     }, {
       label: '信用卡',

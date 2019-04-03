@@ -8,6 +8,8 @@ var frameBuffer_Data, session, SocketTask;
 var url = 'wss://zadai.net/ws/im?uid=';
 // console.log(wx.getStorageSync("uid"))
 var upload_url = '请填写您的图片上传接口地址'
+wx.getStorageSync("userimage")
+wx.getStorageSync("userimg2")
 Page({
   data: {
     user_input_text: '', //用户输入文字
@@ -40,8 +42,12 @@ Page({
    },
   // 页面加载
   onLoad: function() {
+    
     //首先获取聊天记录并加载
     let that = this
+  that.setData({
+    userimg: wx.getStorageSync("userimage")
+  })
     wx.request({
       url: urls.mainurl + urls.getHistoryMessage,
       method: 'GET',

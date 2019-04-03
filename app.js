@@ -60,7 +60,7 @@ App({
   },
 
   //记录聊天
-   chatit: function (id) {
+   chatit: function (id,img) {
      wx.request({
        url: urls.mainurl + urls.phoneandchat,
        method: 'GET',
@@ -73,13 +73,15 @@ App({
        },
        success: function (response) {
 
-
+         wx.setStorageSync("userimg2", img)
        },
        fail: function (err) {
          console.log(err)
 
        }
      })
+
+    
   }
 
 

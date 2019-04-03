@@ -130,7 +130,7 @@ Page({
 
   //咨询事件跳转页面
   bottombtn:function(e){
-    getApp().chatit(e.currentTarget.dataset.id)
+    getApp().chatit(e.currentTarget.dataset.id, e.currentTarget.dataset.img)
     wx.setStorageSync("tootherId", this.data.useradviceid.uid)
     wx.navigateTo({
      url: '../clues/clues'

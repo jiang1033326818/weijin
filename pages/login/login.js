@@ -244,7 +244,7 @@ Page({
             wx.setStorageSync("expert", response.data.data.expert)
             wx.setStorageSync("cid", response.data.data.cid)
             //获取用户头像
-            // wx.setStorageSync("userimage", response.data.data.image)
+             wx.setStorageSync("userimage", response.data.data.image)
             console.log(response, 74)
             wx.switchTab({
               url: '../home/home'

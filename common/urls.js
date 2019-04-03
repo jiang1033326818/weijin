@@ -27,4 +27,5 @@ export default {
   worktogether:"/user/teamwork/",//合伙人接口
   fastphone: "/loan/loanIntent/",//快捷电话
   contryarea:"/consultant/area/",//地区接口
+  lunbo:"/know/showLunbo/",//文字轮播
 }

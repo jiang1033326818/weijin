@@ -37,6 +37,7 @@ Page({
     getknowledge: [],
     indextab: 0,
     getknownav: [],
+    getlunbolist:'',
     imgUrls: [{
       link: '/pages/index/index',
       url: 'http://zadai.net:8000/uploads/image001.jpg'
@@ -75,7 +76,11 @@ Page({
       },
     
     ],
-
+    indicatorDots1: true, //小点
+    autoplay1: true, //是否自动轮播
+    interval1: 3000, //间隔时间
+    duration1: 1000, //滑动时间
+    
     indicatorDots: true, //小点
     autoplay: true, //是否自动轮播
     interval: 3000, //间隔时间
@@ -462,6 +467,30 @@ Page({
       }
     })
   },
+  //获取文字轮播数据
+  getlunbo:function(e){
+    let that = this;
+    wx.request({
+      url: urls.mainurl + urls.lunbo+"3",
+      method: 'GET',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+       
+      },
+      success: function (res) {
+        console.log(res, "这是轮播")
+        that.setData({
+         getlunbolist:res.data.data
+        })
+
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    })
+  },
   //跳转到详情
   toapply2: function(e) {
     console.log(e.currentTarget.dataset.id)
@@ -486,6 +515,7 @@ Page({
     // this.getloanall();
     this.knowledge('');
     this.knownav();
+    this.getlunbo();
     //  this.knowtype();
     // this.knoweldgeid();
   },

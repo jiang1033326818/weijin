@@ -43,7 +43,7 @@ Page({
       data: {
         "pageNum": 0,
         "pageSize": 10,
-        contentType:e
+        type:e
         
       },
       success: function(e) {
@@ -75,7 +75,7 @@ Page({
   toclues: function(e) {
     wx.setStorageSync("tootherId", e.currentTarget.dataset.pnum)
     wx.setStorageSync("name", e.currentTarget.name)
-    
+    wx.setStorageSync("userimg2",e.currentTarget.dataset.img)
     getApp().phoneit(e.currentTarget.dataset.pnum)
 
     wx.navigateTo({
@@ -200,5 +200,11 @@ Page({
   onLoad: function(e) {
     // this.myadvice(0)
     this.imgphone(0);
+  },
+  onShow: function () {
+    this.imgphone(0);
+  },
+ onReady: function () {
+   this.imgphone(0);
   },
 });
