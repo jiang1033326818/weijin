@@ -67,7 +67,7 @@
        <!-- </swiper-item>
     </block>
   </swiper> --> 
-   <swiper interval="{{interval}}" duration="{{duration}}" circular="true" vertical="true">
+   <swiper interval="{{interval}}" duration="{{duration}}" circular="true"  autoplay="{{autoplay}}" vertical="true">
     <block wx:for="{{getlunbolist}}">
       <swiper-item class="smallitem">
         <!-- <navigator url="{{item.link}}" hover-class="navigator-hover"> -->

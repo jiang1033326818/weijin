@@ -10,10 +10,10 @@
   color: #ffffff
 }
 .cccc image{
-  height:51rpx;
-margin-left:75rpx;
+  height:45rpx;
+margin-left:40rpx;
 margin-top:20rpx;
-width: 140rpx;
+width: 178rpx;
 
 }
 .smallnav{
@@ -158,10 +158,11 @@ width: 140rpx;
   display: flex;
   /* position: relative; */
    z-index: 1000;
-  top: 724rpx;
-  width: 100%;
+  /* top: 724rpx;
+  width: 100%; */
   background: white;
   height: 100rpx;
+  position: relative
 }
 
 .navbar__item {
@@ -477,8 +478,9 @@ width: 140rpx;
 }
 .smallnav text{
   position: absolute;
-  top: 20rpx;
+  top: 14rpx;
   left: 330rpx;
+  color: #111
 }
 .smallitem{
   height: 70rpx;
