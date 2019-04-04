@@ -20,7 +20,7 @@ Page({
     allContentList: [],
     num: 0,
     uid: '',
-    userInfo: {},
+    userInfo: {}, 
     userimg2:'',
     userimg:'',
   },
@@ -289,6 +289,8 @@ Page({
               if (onMessage_data) {
 
                 if (onMessage_data.text.slice(0, 9) == "/uploads/") {
+
+                  
                   that.data.allContentList.push({
                     is_ai: true,
                     is_twoimg: urls.mainurl + onMessage_data.text

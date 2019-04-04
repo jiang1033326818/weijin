@@ -2,9 +2,14 @@
   顾问申请
   2019-01-19
 -->
-<view class='adviser'>
+<view class='item'>
+  <view class='left'>姓名</view>
+  <view class='right'>
+    <input placeholder='请填写本人真实的姓名' value='{{xingming}}' bindblur='xingming'></input>
+  </view>
+</view>
 
- 
+<view class='adviser'>
  <view class='item'>
   <view class='left'>所在地区</view>
   <view class='right'>
@@ -14,7 +19,14 @@
         </picker>
   </view>
 </view>
- 
+
+ <!-- <view class='item'>
+  <view class='left'>公司名称</view>
+  <view class='right'>
+    <input placeholder='请填写单位名称' value='{{gongsi}}' bindblur='gongsi'></input>
+  </view>
+</view> -->
+
 
 <view class='item'>
   <view class='left'>单位名称</view>

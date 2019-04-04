@@ -23,9 +23,9 @@ Page({
     adviceid:'',
     advicestatus:'',
     items: [
-      { name: '0', value: '很满意', checked: 'true'},
-      { name: '1', value: '满意', },
-      { name: '2', value: '不满意' },
+      { name: '很满意', value: '很满意', checked: 'true'},
+      { name: '满意', value: '满意', },
+      { name: '不满意', value: '不满意' },
     ]
   },
 
@@ -122,9 +122,10 @@ Page({
 //满意程度选择
   radioChange(e) {
     console.log(e, e.detail.value)
-    this.setData({
+     this.setData({
       advicestatus: e.detail.value 
     })
+  
   },
 
   //获取评论内容
@@ -162,13 +163,11 @@ Page({
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
       },
       data: {
-        // pageNum: 0,
-        // pageSize: 10,
         content: that.data.bincontent,
         bid: that.data.nowid,
         chatType:that.data.activeIndex==="1"?"在线咨询":"电话咨询",
         status: that.data.advicestatus,
-       
+        commentType:1
 
       },
       success: function(e) {
