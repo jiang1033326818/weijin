@@ -183,11 +183,12 @@ Page({
       header: {
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
       },
-      url: url + wx.getStorageSync("tootherId"),
+      url: url + wx.getStorageSync("uid") + "&cuid=" + wx.getStorageSync("tootherId"),
       data: wx.getStorageSync("tootherId"),
       method: 'get',
       success: function(res) {
         console.log('WebSocket连接创建', res)
+        console.log('链接地址', url + wx.getStorageSync("uid") + "&cuid=" + wx.getStorageSync("tootherId"))
       },
       // fail: function(err) {
       //   wx.showToast({
