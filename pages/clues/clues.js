@@ -239,7 +239,7 @@ Page({
     })
   },
 
-
+//发送图片
   upimg: function() {
     var that = this;
     wx.chooseImage({
@@ -288,7 +288,7 @@ Page({
               console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
               var onMessage_data = JSON.parse(onMessage.data)
               if (onMessage_data) {
-
+                if (onMessage_data.toId == this.data.uid) {
                 if (onMessage_data.text.slice(0, 9) == "/uploads/") {
 
                   
@@ -311,6 +311,7 @@ Page({
                 that.bottom()
               } else {
                 console.log("接收失败")
+              }
               }
             })
 

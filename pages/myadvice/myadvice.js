@@ -44,7 +44,7 @@ Page({
       data: {
         "pageNum": 0,
         "pageSize": 10,
-        type:e
+        type:e==="0"?"1":"0"
         
       },
       success: function(e) {
@@ -199,12 +199,12 @@ Page({
   // 加载初始数据
   onLoad: function(e) {
     // this.myadvice(0)
-    this.imgphone(0);
+    this.imgphone("0");
   },
   onShow: function () {
-    this.imgphone(0);
+    this.imgphone("0");
   },
  onReady: function () {
-   this.imgphone(0);
+   this.imgphone("0");
   },
 });
