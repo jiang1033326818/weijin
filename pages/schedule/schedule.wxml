@@ -15,7 +15,7 @@
       </view>
       <view style='clear:both'></view>
       <view class='chatbottom'>
-        <view class='chatcontent'>{{item.lastMsg===null?'':item.lastMsg}}</view>
+        <view class='chatcontent'>{{item.lastMsg===null?'':item.lastMsg.length>100?"[图片]":item.lastMsg}}</view>
       </view>
       </view>
      
