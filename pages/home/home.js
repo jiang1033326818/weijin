@@ -8,9 +8,9 @@ var interval = null //倒计时函数
    
       name: "知识库"
    },
-  {
-    name: "   "
-  },
+  // {
+  //   name: "   "
+  // },
  ];
 Page({
   /**
