@@ -19,10 +19,10 @@ width: 178rpx;
 .smallnav{
   width: 100%;
 }
-.smallnav text{
+/* .smallnav text{
   font-sie:20rpx;
   color: black;
-}
+} */
 .nav {
     height: 80rpx;
     width: 100%;
@@ -480,7 +480,9 @@ width: 178rpx;
   position: absolute;
   top: 14rpx;
   left: 330rpx;
-  color: #111
+  color: #111;
+  font-size:32rpx;
+
 }
 .smallitem{
   height: 70rpx;

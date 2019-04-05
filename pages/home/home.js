@@ -9,7 +9,7 @@ var interval = null //倒计时函数
       name: "知识库"
    },
   {
-    name: "产品中心"
+    name: "   "
   },
  ];
 Page({
@@ -119,22 +119,22 @@ Page({
       });
     },
     // 导航点击事件
-    navTabClick: function(e) {
-      if (e.currentTarget.id==="1"){
-      wx:wx.navigateTo({
-        url: '../zzzzz2/zzzzz2'
-        // success: function(res) {},
-        // fail: function(res) {},
-        // complete: function(res) {},
-      })
-      }
-      console.log(e.currentTarget.id)
+    // navTabClick: function(e) {
+    //   if (e.currentTarget.id==="1"){
+    //   wx:wx.navigateTo({
+    //     url: '../zzzzz2/zzzzz2'
+    //     // success: function(res) {},
+    //     // fail: function(res) {},
+    //     // complete: function(res) {},
+    //   })
+    //   }
+    //   console.log(e.currentTarget.id)
 
-      // this.setData({
-      //   sliderOffset: e.currentTarget.offsetLeft,
-      //   activeIndex: e.currentTarget.id
-      // });
-    },
+    //   // this.setData({
+    //   //   sliderOffset: e.currentTarget.offsetLeft,
+    //   //   activeIndex: e.currentTarget.id
+    //   // });
+    // },
 
     switchNav(event) {
 

@@ -1,9 +1,10 @@
 import urls from '../../common/urls.js';
 const tabs = [{
-  name: "电话咨询"
+  name: "图文咨询"
   },
   {
-    name:"图文咨询"
+   
+     name: "电话咨询"
   },
 ];
 
