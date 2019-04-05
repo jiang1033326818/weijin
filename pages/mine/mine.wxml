@@ -16,7 +16,7 @@
       <view>{{userInfo.nickName}}</view>
     </view>
     <view class='mytop2'>
-      您好,尊敬给的会员
+      您好,尊敬的会员
      
     </view>
 

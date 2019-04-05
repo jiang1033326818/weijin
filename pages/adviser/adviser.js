@@ -261,7 +261,7 @@ Page({
           },
           success: function (response) {
         
-            if(response.code===0){
+            if(response.code==="0"){
               wx.setStorageSync("expert",1)
               wx.showToast({
                 title: response.message,
