@@ -46,7 +46,7 @@
    <view wx:for="{{managerlists}}" class="wwwww row-flex list-item">
     <view class='toplist' data-manger="{{item.id}}" bindtap="toone">
       <view class='leftlist'>
-        <image src="{{'http://zadai.net:8000/uploads/'+item.workImage}}" class="item-header"></image>
+        <image src="{{'http://zadai.net:8000'+item.workImage}}" class="item-header"></image>
       </view>
       <view class='rightlist'>
         <text class='item-text' decode="{{true}}" space="{{true}}">{{item.realName===null?'':item.realName}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.level===null?'':item.level}}</text>
@@ -68,7 +68,7 @@
       <view class='peoplebutton1' bindtap="callphone1" data-id="{{item.id}}" data-phonenum="{{item.mobile}}">
         电话咨询
       </view>
-      <view class='peoplebutton2' bindtap="askpeople" data-id="{{item.id}}" data-uid="{{item.uid}}" data-img="{{'http://zadai.net:8000/uploads/'+item.workImage}}">
+      <view class='peoplebutton2' bindtap="askpeople" data-id="{{item.id}}" data-uid="{{item.uid}}" data-img="{{'http://zadai.net:8000'+item.workImage}}">
         咨询
       </view>
     </view>
