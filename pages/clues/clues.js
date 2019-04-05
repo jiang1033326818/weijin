@@ -188,6 +188,7 @@ Page({
       method: 'get',
       success: function(res) {
         console.log('WebSocket连接创建', res)
+        console.log('链接地址', url + wx.getStorageSync("uid") + "&cuid=" + wx.getStorageSync("tootherId"))
       },
       // fail: function(err) {
       //   wx.showToast({

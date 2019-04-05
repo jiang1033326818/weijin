@@ -7,7 +7,7 @@
 
       <view class='circle'>
         <!-- <image src='http://zadai.net:8000/uploads/header/head0.jpg'></image> -->
-        <image src="{{'http://zadai.net:8000/uploads/'+useradviceid.workImage}}"></image>
+        <image src="{{'http://zadai.net:8000'+useradviceid.workImage}}"></image>
       </view>
       <view class='headbs'>
         <view class='headb'>{{useradviceid.realName===null?'':useradviceid.realName}}</view>
@@ -97,7 +97,7 @@
          data-id="{{useradviceid.id}}" data-num="{{useradviceid.mobile}}">电话咨询
         </view>
         <view  class='bottomthree3' bindtap='bottombtn'
-         data-id="{{useradviceid.id}}" data-askid="{{useradviceid.uid}}" data-img="{{'http://zadai.net:8000/uploads/'+useradviceid.workImage}}">
+         data-id="{{useradviceid.id}}" data-askid="{{useradviceid.uid}}" data-img="{{'http://zadai.net:8000'+useradviceid.workImage}}">
             咨询
         </view>
     </view>

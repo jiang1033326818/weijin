@@ -28,32 +28,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    let that=this;
+    let that = this;
     //获取联系人
     wx.request({
       url: urls.mainurl + urls.localExpert,
       method: 'GET',
       data: {
-        cid:wx.getStorageSync("cid")
+        cid: wx.getStorageSync("cid")
       },
 
       header: {
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
       },
       success: function (response) {
-        console.log(1111,response.data.data)
+        console.log(1111, response.data.data)
         that.setData({
           typeList: response.data.data
         })
       }
     })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  
   },
 //获取关于我们顾问列表
 
@@ -61,7 +61,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.onLoad()
   },
 
   /**
