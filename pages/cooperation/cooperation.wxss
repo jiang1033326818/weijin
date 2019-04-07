@@ -191,7 +191,7 @@ margin-top: 25rpx;
    /* border: 1px solid black; */
    background: #dddddd;
   width:95%;
-  margin-left: -4;
+  margin-left: -4rpx;
   position: relative;
   
  
@@ -221,5 +221,5 @@ line-height:33rpx;
   width: 96%;
   height: 390rpx;
   margin-top:20rpx; 
-  margin-left: -5;
+  margin-left: -5rpx;
 }
