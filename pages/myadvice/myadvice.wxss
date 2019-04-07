@@ -5,7 +5,7 @@ view , page {
 }
 
 .page {
-  height: 1600rpx;
+  /* height: 1600rpx; */
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -72,11 +72,11 @@ view , page {
 .swiper{
   width: 100%;
   /* height: 1600rpx; */
- height: 1108rpx;
+ /* height: 1108rpx; */
 }
 .swiper-item{
-  height: 1600rpx;
-  margin-top: 93rpx;
+  /* height: 1600rpx; */
+  margin-top: 76rpx;
 }
 .allOfpeople{
   width: 100%;
@@ -84,7 +84,7 @@ view , page {
 }
 .row-flex{
   width: 95%;
-  height: 410rpx;
+   height: 410rpx; 
   margin-left: 2.5%;
   margin-top: 10rpx;
   background: #ffffff;

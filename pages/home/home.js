@@ -20,7 +20,7 @@ Page({
     time: '获取验证码', //倒计时 
     clueNum: 0,
     taskNum: 0,
-    height: 1200,
+    height: 2000,
     customerNum: 0,
     powerTotal: 0,
     userInfo: {}, // 登录用户的信息
@@ -458,7 +458,8 @@ Page({
       success: function(res) {
         console.log(res,"这是什么")
             that.setData({
-              getknowledge: res.data.data.dataList
+              getknowledge: res.data.data.dataList,
+              height:res.data.data.dataList.length*300+140
             })
          
       },

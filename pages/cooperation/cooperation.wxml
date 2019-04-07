@@ -158,58 +158,53 @@
 
      <view class='applyb'>加入我们能得到什么</view>
 
-     <view class='youshicon'>
-        <view class='contitle'>培训支持</view>
-        <!-- <image src='http://zadai.net:8000/uploads/youshi/ad001.jpg'></image> -->
-        <image src='http://zadai.net:8000/uploads/px.png'></image>
-        <view class='concon'>
-        总部会定期针对合伙人人员的需求开展狼牙特训营、精英训练营、萌芽特训营进行产品、销售、售后、管理等相关培训，同时渠道经理会定期到合伙人公司给予落地扶持，快速提高合伙人团队的战斗力，帮助合伙人建立完善的企业文化，打造核心竞争力。
-        </view>
-     </view>
-       <view class='youshicon'>
-        <view class='contitle'>资源支持</view>
-        <!-- <image src='http://zadai.net:8000/uploads/youshi/ad001.jpg'></image> -->
-        <image src='http://zadai.net:8000/uploads/zycc.png'></image>
-        <view class='concon'>
-        千万级广告投放市场支持、海量销售线索免费提供、区域独家广告投放。
-        </view>
-     </view>
-
-      <view class='youshicon'>
-        <view class='contitle'>推广支持</view>
-        <!-- <image src='http://zadai.net:8000/uploads/youshi/ad001.jpg'></image> -->
-        <image src='http://zadai.net:8000/uploads/tgzc.png'></image>
-        <view class='concon'>
-        公众号助推、线下活动推广、官网推广、网络新闻推广、优秀案例包装。
-        </view>
-     </view>
-
-      <view class='youshicon'>
-        <view class='contitle'>物料支持</view>
-        <!-- <image src='http://zadai.net:8000/uploads/youshi/ad001.jpg'></image> -->
-        <image src='http://zadai.net:8000/uploads/wlzc.png'></image>
-        <view class='concon'>
-        总部定期或者不定期的会根据合伙人的情况给予物料支持，利于合伙人在当地开展业务。
-        </view>
-     </view>
-
-      <view class='youshicon'>
-        <view class='contitle'>技术支持</view>
-        <!-- <image src='http://zadai.net:8000/uploads/youshi/ad001.jpg'></image> -->
-        <image src='http://zadai.net:8000/uploads/jszc.png'></image>
-        <view class='concon'>
-        微金网提供7×12小时技术服务，保障问题高效、快速的解决，让客户没有后顾之忧。
-        </view>
-     </view>
-
-       <view class='youshicon'>
-        <view class='contitle'>微金商学院</view>
-        <image src='http://zadai.net:8000/uploads/youshi/ad001.jpg'></image>
-        <view class='concon'>
-        微金网商学院提供人才输出，机构合作，课程输出等服务，让合伙人能够快速发展起来
-        </view>
-     </view>
-
+   
+<view class='view_1'>
+<image src='http://zadai.net:8000/uploads/content001.jpg'></image>
+<text class='text_1'>培训支持</text>
+<text class='text_2'>总部定期针对合伙人的人员需求开展产品、销售、售后、管理等相关培训,给予合伙人人公司落地扶持,帮助合伙人建立完善的企业文化,打造核心竞争力。</text>
+</view>
+<view class='view_1'>
+<image src='http://zadai.net:8000/uploads/content002.jpg'></image>
+<text class='text_1'>资源支持</text>
+<text class='text_2'>稳定的资金渠道、丰富的产品类型以及千万级广告投放市场支持、海量销售线索提供、区域独家广告投放权。</text>
+</view>
+<view class='view_1'>
+<image src='http://zadai.net:8000/uploads/content003.jpg'></image>
+<text class='text_1'>媒体支持</text>
+<text class='text_2'>公众号助推、线下活动推广、官网推广、网络新闻推广、优秀案例包装。</text>
+</view>
+<view class='view_1'>
+<image src='http://zadai.net:8000/uploads/content004.jpg'></image>
+<text class='text_1'>物料支持</text>
+<text class='text_2'>总部定期或不定期根据合伙人业务开展情况给予合伙人提供物料支持,助力合伙人公司业绩腾飞。。</text>
+</view>
+<view class='view_1'>
+<image src='http://zadai.net:8000/uploads/content005.jpg'></image>
+<text class='text_1'>技术支持</text>
+<text class='text_2'>微金网总部对合伙人提供7X24小时技术服务支持,保障合伙人公司运营过程中所遇问题能够得到高效、快速的解决。</text>
+</view>
+<view class='view_1'>
+<image src='http://zadai.net:8000/uploads/content006.jpg'></image>
+<text class='text_1'>公众形象</text>
+<text class='text_2'>微金网总部结合合伙人自身需求及平台对外统一形象为合伙人量身定制符合自身的对外公众形象,打造合伙人自身IP。</text>
+</view>
+<view class='view_1'>
+<image src='http://zadai.net:8000/uploads/content007.jpg'></image>
+<text class='text_1'>潜在客户</text>
+<text class='text_2'>微金网平台结合自身深厚的行业背景及人工智能系统,辅助合伙人对所在区域及符合要求的潜在客户进行发掘,拓宽合伙人业务渠道。</text>
+</view>
+<view class='view_1'>
+<image src='http://zadai.net:8000/uploads/content008.jpg'></image>
+<text class='text_1'>公司管理</text>
+<text class='text_2'>微金网总部定期或不定期对合伙人公司管理层进行培训指导,及时发现公司管理中的问题并进行有效解决,减少合伙人公司日常管理中的失误。</text>
+</view>
+<view class='view_1'>
+<image src='http://zadai.net:8000/uploads/content009.jpg'></image>
+<text class='text_1'>政策指导</text>
+<text class='text_2'>微金网平台总部随时根据相应的国家政策、平台资方以及平台自身发展政策,对合伙人进行通报解读,保证合伙人实时掌握行业及平台最新变化,降低运营风险。</text>
+</view>
+<image class='tisheng' src='http://zadai.net:8000/uploads/tisheng.jpg'></image>
         <view style='clear:both'></view>
 
      

@@ -6,7 +6,7 @@
       </view>
     </block>
   </view>
-  <swiper class='swiper' current="{{activeIndex}}">
+  <swiper class='swiper' current="{{activeIndex}}" style='height:{{height}}rpx'>
 
     <swiper-item class='swiper-item' >
       <view class='allOfpeople'>
