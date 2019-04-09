@@ -44,11 +44,12 @@ width: 178rpx;
     text-align: center;
     margin-top:27rpx;
     margin-left:29rpx;
-background:#ddd;
+    border-radius: 7rpx;
+background:#f3f3f3;
 height:58rpx;
 line-height:57rpx;
 font-size:27rpx;
-
+color: #717171;
 
 
 }
@@ -93,6 +94,8 @@ font-size:27rpx;
   display: flex;
   padding:20rpx 3% ;
   background: #ffffff;
+  margin-bottom:20rpx;
+
 }
 .itemleft{
   width: 43%;
@@ -193,6 +196,8 @@ font-size:27rpx;
   color: #009DFF;
     transition: all 0.3s;
   border-bottom: 10rpx solid #009DFF;
+  border-top:3rpx solid #ddd;
+
   /* color: #494949; */
 }
 
@@ -341,14 +346,14 @@ font-size:27rpx;
 }
 .knowledge_rbl{
   font-size: 25rpx;
-  color: #999999;
+  color: #969696;
   float: left;
  margin-top:-15px;
 
 }
 .knowledge_rbr{
   font-size: 25rpx;
-  color: #999999;
+  color: #969696;
   float: right;
   margin-right: 25rpx;
  margin-top:-15px;
@@ -500,7 +505,7 @@ font-size:27rpx;
   position: absolute;
   top: 14rpx;
   left: 330rpx;
-  color: #111;
+  color: #323232;
   font-size:32rpx;
 
 }
@@ -518,6 +523,6 @@ font-size:27rpx;
 }
 .swiper-image{
   position: absolute;
-  top: 597rpx;
+  top: 608rpx;
   left:39rpx;
 }

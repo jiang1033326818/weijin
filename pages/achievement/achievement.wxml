@@ -42,7 +42,7 @@
   </view>
 
 
-  <view class='qqqqq'>
+  <view class='qqqqq' >
    <view wx:for="{{managerlists}}" class="wwwww row-flex list-item">
     <view class='toplist' data-manger="{{item.id}}" bindtap="toone">
       <view class='leftlist'>

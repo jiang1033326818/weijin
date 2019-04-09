@@ -47,7 +47,7 @@
     </view>
   </view>
 
-  <view class='cccc'>
+  <view class='cccc' style='background:white'>
     <!-- <view>
       <image src='http://zadai.net:8000/uploads/toutiao.png'></image>
     </view>
@@ -120,7 +120,7 @@
               </view>
 
               <view class='knowledge_r'>
-                <view class='knowledge_rt'>{{item.title}}</view>
+                <view class='knowledge_rt'>微金网: {{item.title}}</view>
 
                 <view class='knowledge_rb'>
                   <view class='knowledge_rbl'>{{item.typeName}} </view>
