@@ -1,7 +1,7 @@
 import request from '../../utils/request.js';
 import urls from '../../common/urls.js';
 const tabs = [{
-    name: "服务"
+    name: "抵押服务"
   },
   {
     name: "信用服务"
@@ -21,7 +21,8 @@ Page({
     activeIndex: 0, //当前展示的Tab项索引
     sliderWidth: 96, //指示器的宽度,计算得到
     contentHeight: 0, //页面除去头部Tabbar后，内容区的总高度，计算得到
-    getloanalllist: []
+    getloanalllist: [],
+    height:2000,
   },
   // 滑动事件
   upper: function(e) {
@@ -120,7 +121,8 @@ Page({
         // console.log("222"+response)
         console.log(e, "22")
         that.setData({
-          getloanalllist: e.data.data.dataList
+          getloanalllist: e.data.data.dataList,
+          height: e.data.data.dataList.length*400+100
         })
       },
       fail: function(err) {

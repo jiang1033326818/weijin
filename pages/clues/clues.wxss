@@ -70,6 +70,7 @@ margin-right:160rpx;
   right: 0;
   top: 30rpx;
   margin-top:80rpx; 
+  margin-bottom: 50rpx;
 }
 .you_img_bg{
   height: 150rpx;
@@ -80,6 +81,7 @@ margin-right:160rpx;
   margin-top: 80rpx; */
   top:122rpx;
 margin-top:-174rpx;
+ margin-bottom: 50rpx;
 
 }
 .you_left {  
@@ -112,6 +114,7 @@ margin-top:-174rpx;
   margin-top: 10rpx;
   padding: 0rpx 30rpx 0rpx 30rpx;  
   float: left;
+ 
 }
 .sanjiao {  
   top: 25rpx;  

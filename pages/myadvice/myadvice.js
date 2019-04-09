@@ -62,7 +62,7 @@ Page({
         that.setData({
           getimgphone: b,
           gitimgchat: a,
-           height: e.data.data.dataList.length*400+100
+           height: e.data.data.dataList.length*400+147
         })
 
 
@@ -130,7 +130,7 @@ Page({
     })
   
   },
-
+  
   //获取评论内容
   bind1: function(e) {
     console.log(e, 14)
@@ -197,6 +197,7 @@ Page({
     })
 
   },
+//textarea提示自取消
 
   // 加载初始数据
   onLoad: function(e) {

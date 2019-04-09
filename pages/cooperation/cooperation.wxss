@@ -207,13 +207,13 @@ margin-top: 25rpx;
 font-size: 35rpx;
 line-height: 20rpx;
 position: absolute;
-top:20rpx;
+top:27rpx;
 left: 260rpx;
 }
 .text_2{
 font-size: 25rpx;
 position: absolute;
-top:65rpx;
+top:68rpx;
 left:259rpx;
 line-height:33rpx;
 }

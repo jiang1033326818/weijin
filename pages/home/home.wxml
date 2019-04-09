@@ -68,15 +68,18 @@
     </block>
   </swiper> --> 
    <swiper interval="{{interval}}" duration="{{duration}}" circular="true"  autoplay="{{autoplay}}" vertical="true">
+   
     <block wx:for="{{getlunbolist}}">
       <swiper-item class="smallitem">
         <!-- <navigator url="{{item.link}}" hover-class="navigator-hover"> -->
-         <view class='smallnav'> <image  src='http://zadai.net:8000/uploads/toutiao.png'  />
-          <text >{{item.title}}</text></view>
+         <view class='smallnav'>
+          <text class="swiper-text">{{item.title}}</text></view>
         <!-- </navigator> -->
       </swiper-item>
     </block> 
   </swiper>
+   <image  class='swiper-image' src='http://zadai.net:8000/uploads/toutiao.png'>
+         </image>
   </view>
 
   <view class='maplist'>
@@ -105,7 +108,7 @@
         <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
           <!-- <block wx:for="{{navData2}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx"> -->
             <block wx:for="{{navData2}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
-            <view class="nav-item {{currentTab2 == idx ?'active':''}}" data-current="{{idx}} " bindtap="switchNav2" data-chanpin="{{navItem.id}}" >{{navItem.typeName}}</view>
+            <view class="nav-item {{currentTab2 == idx ?'active':''}}"  data-current="{{idx}} " bindtap="switchNav2" data-chanpin="{{navItem.id}}" >{{navItem.typeName}}</view>
           </block>
         </scroll-view>
         
@@ -113,15 +116,15 @@
           <view wx:for="{{getknowledge}}" class="row-flex list-item">
             <view class='toplist2' bindtap='toapply2'  data-id="{{item.id}}" >
               <view class='knowledge' >
-                <image src='{{"http://zadai.net:8000/uploads/"+item.image}}'></image>
+                <image src='{{"http://zadai.net:8000/uploads"+item.image}}'></image>
               </view>
 
               <view class='knowledge_r'>
                 <view class='knowledge_rt'>{{item.title}}</view>
 
                 <view class='knowledge_rb'>
-                  <view class='knowledge_rbl'>{{item.type}} </view>
-                  <view class='knowledge_rbr'>{{item.time}} </view>
+                  <view class='knowledge_rbl'>{{item.typeName}} </view>
+                  <view class='knowledge_rbr'>{{item.creationTime}} </view>
                 </view>
   
               </view>

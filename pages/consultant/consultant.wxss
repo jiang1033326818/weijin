@@ -86,9 +86,9 @@ view , page {
 }
 
 .toplist{
-  height: 220rpx;
+  /* height: 220rpx;  */
   padding-top: 15rpx;
-  border-bottom: 1px solid #f0f0f0;
+  /* border-bottom: 1px solid #f0f0f0; */
 }
 .leftlist{
   float: left;
@@ -108,22 +108,22 @@ view , page {
 }
 .pink{
   margin-top: 30rpx;
- background: #ffccff;
+ /* background: #ffccff; */
   width: 100rpx;
   text-align: center;
 }
 .pink text{
-font-size: 30rpx;
+font-size: 27rpx;
 color: #ff3366;
 }
 .blue{
-  margin-top: 30rpx;
- background: #ccffff;
+  margin-top: 20rpx;
+ /* background: #ccffff; */
   width: 250rpx;
   /* text-align: center; */
 }
 .blue text{
-font-size: 30rpx;
+font-size: 27rpx;
 color: #33cccc;
 }
 .people{
@@ -155,8 +155,8 @@ color: #33cccc;
   width:25%;
   height: 65rpx;
   margin-top: 20rpx;
-  background: #3399cc;
-  border: 2px solid #3399cc;
+  background: #1B68FB;
+  border: 2px solid #1B68FB;
   border-radius: 10rpx;
   color: #ffffff;
   font-size: 30rpx;
@@ -165,3 +165,8 @@ color: #33cccc;
   line-height: 65rpx;
 }
 
+.bottomlist{
+ 
+  height: 200rpx;
+  
+}

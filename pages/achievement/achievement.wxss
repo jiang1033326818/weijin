@@ -108,8 +108,8 @@ color: #33cccc;
   width:15%;
   height: 45rpx;
   margin-top: 36rpx;
-  background: #3399cc;
-  border: 2px solid #3399cc;
+  background: #1B68FB;
+  border: 2px solid #1B68FB;
   border-radius: 10rpx;
   color: #ffffff;
   font-size: 26rpx;
@@ -195,7 +195,7 @@ color: #33cccc;
 .qqqqq{
   width: 100%;
   margin-top: 100rpx;
-  margin-bottom: 100rpx;
+  /* margin-bottom: 100rpx; */
 }
 .bottomlist{
   height: 110rpx;
