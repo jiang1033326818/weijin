@@ -43,6 +43,14 @@ width: 178rpx;
     display: inline-block;
     text-align: center;
     margin-top:27rpx;
+    margin-left:29rpx;
+    border-radius: 7rpx;
+background:#f3f3f3;
+height:58rpx;
+line-height:57rpx;
+font-size:27rpx;
+color: #717171;
+
 
 }
 .nav-item.active{
@@ -86,6 +94,8 @@ width: 178rpx;
   display: flex;
   padding:20rpx 3% ;
   background: #ffffff;
+  margin-bottom:20rpx;
+
 }
 .itemleft{
   width: 43%;
@@ -186,6 +196,8 @@ width: 178rpx;
   color: #009DFF;
     transition: all 0.3s;
   border-bottom: 10rpx solid #009DFF;
+  border-top:3rpx solid #ddd;
+
   /* color: #494949; */
 }
 
@@ -306,12 +318,16 @@ width: 178rpx;
   width: 250rpx;
   height: 250rpx;
   float: left;
-  border: 1px solid #dddddd;
-  border-radius: 5rpx;
+  border-radius: 10rpx;
+  margin-top:13rpx;
+
 }
 .knowledge image{
   width: 250rpx;
-  height: 250rpx;
+  height: 218rpx;
+  /* border: 1rpx solid black; */
+  border-radius:12rpx;
+
 }
 .knowledge_r{
   float: left;
@@ -322,20 +338,26 @@ width: 178rpx;
   font-size: 30rpx;
   height: 200rpx;
   width: 100%;
+  margin-top:25rpx;
+
 }
 .knowledge_rb{
   height: 50rpx;
 }
 .knowledge_rbl{
   font-size: 25rpx;
-  color: #999999;
-  float: left
+  color: #969696;
+  float: left;
+ margin-top:-15px;
+
 }
 .knowledge_rbr{
   font-size: 25rpx;
-  color: #999999;
+  color: #969696;
   float: right;
   margin-right: 25rpx;
+ margin-top:-15px;
+
 }
 
 .bindphone{
@@ -483,7 +505,7 @@ width: 178rpx;
   position: absolute;
   top: 14rpx;
   left: 330rpx;
-  color: #111;
+  color: #323232;
   font-size:32rpx;
 
 }
@@ -491,4 +513,16 @@ width: 178rpx;
   height: 70rpx;
   width:100%;
   overflow: hidden;
+}
+.icon-list{
+  border-top:1rpx solid #ddd; 
+  margin-top: 1rpx;
+}
+.swiper-text{
+  position: relative;
+}
+.swiper-image{
+  position: absolute;
+  top: 608rpx;
+  left:39rpx;
 }

@@ -68,7 +68,7 @@
               </view>
               {{item.nikeName}}
               <view class='rightmap'
-               style='color:{{item.status==="1"?"red":item.status==="2"?"blue":"black"}}'>{{item.status==="1"?"很满意":item.status==="2"?"满意":"一般"}}</view>
+               style='color:{{item.status==="1"?"#FE6F61":item.status==="2"?"#1B65FA":"black"}}'>{{item.status==="1"?"很满意":item.status==="2"?"满意":"一般"}}</view>
             </view>
             <view class='toptitle2'>
               <!-- {{item.content}} -->
@@ -91,7 +91,7 @@
         <view class='bottomthree1' bindtap='allstar' data-message="{{useradviceid.message}}">
           <image src='{{star===0?subscribe:subscribe2}}'></image>
 
-          <view style='color:{{star===0?"#666666":"#FFB900"}};font-size:25rpx'>{{star===0?message:message2}}</view>
+          <view style='color:{{star===0?"#666666":"#FE6F61"}};font-size:25rpx'>{{star===0?message:message2}}</view>
         </view>
         <view  class='bottomthree2' bindtap='callphone'   data-id="{{useradviceid.id}}"
           data-num="{{useradviceid.mobile}}">电话咨询

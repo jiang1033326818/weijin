@@ -6,14 +6,14 @@
       </view>
     </block>
   </view>
-  <swiper class='swiper' current="{{activeIndex}}" >
+  <swiper class='swiper' current="{{activeIndex}}" style='height:{{height}}rpx'>
     
 
       <swiper-item style='margin-top:80rpx'  class='swiper-item'>
         <view class='allOfpeople'>
           <scroll-view class="icon-list">
             <view  class="row-flex list-item"  wx:for="{{getloanalllist}}"  >
-              <view class='toplist' bindtap="btn"data-bntuser="{{item.id}}" >
+              <view class='toplist' bindtap="btn"data-bntuser="{{item.id}}"  >
                 <view class='leftlist'>
                   <image class="item-header" src="{{'http://zadai.net:8000'+item.workImage}}" ></image>
                   <!-- <image class='item-header' wx:for="{{managerlist}}">"{{item.image}}"</image> -->
@@ -31,15 +31,15 @@
 
               </view>
               <view class='bottomlist'>
-                  <view class='people'>
+                  <view class='people1'>
                     <text>{{item.fwrs===null?0:item.fwrs}}人咨询过</text>
                   </view>
 
-                  <view class='peoplebutton1' bindtap="btnphone" 
+                  <view class='peoplebutton3' bindtap="btnphone" 
                   data-id="{{item.id}}"  data-phonenum="{{item.mobile}}">
                   电话咨询
                   </view>
-                   <view class='peoplebutton2' bindtap="btnask"
+                   <view class='peoplebutton4' bindtap="btnask"
                    data-id="{{item.id}}"   data-uid='{{item.uid}}' data-img="{{'http://zadai.net:8000'+item.workImage}}" >
                   咨询
                   </view>
@@ -61,10 +61,10 @@
                 <view class='rightlist'>
                   <text class='item-text' decode="{{true}}" space="{{true}}">{{item.realName}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.level}}</text>
 
-                  <view class='pink'>
+                  <view class='pink1'>
                     <text>{{item.workCompany}}</text>
                   </view>
-                   <view class='blue'>
+                   <view class='blue1'>
                     <text>{{item.hobby}}</text>
                   </view>
                 </view>

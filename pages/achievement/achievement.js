@@ -17,6 +17,7 @@ const tabs = [
 ];
 Page({
   data: {
+    height:2000,
     tabs: tabs,     //展示的数据
     slideOffset: 0,//指示器每次移动的距离
     activeIndex: 0,//当前展示的Tab项索引
@@ -184,7 +185,8 @@ Page({
       success: function (response) {
         console.log(response,8888)
         that.setData({
-          managerlists: response.data.data.dataList
+          managerlists: response.data.data.dataList,
+          height: response.data.data.dataList.length*300+100
         })
       
       },

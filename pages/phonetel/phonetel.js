@@ -12,7 +12,7 @@ Page({
     nocancel: false,
     index:0,
     actionSheetHidden: true,
-    actionSheetItems: ['房产', '车产', '信用卡', '急速服务', '工资流水', '福利服务', '营业执照', '福利','微粒贷'],
+    actionSheetItems: ['房产服务', '车产服务', '信用服务', '信用卡服务'],
     actionnum: {txt:'房产',key:0},
    righttype: ['上班族', '学生', '退休人员', '无业人员'],
     // typeList: [{

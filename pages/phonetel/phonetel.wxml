@@ -44,7 +44,7 @@
       </view>
     </view>
 
-    <button class="btn-class login-btn" bindtap="gogogo">
+    <button class="btn-class login-btn" style='background:#1B65FA' bindtap="gogogo">
       提交
     </button>
 
@@ -71,7 +71,7 @@
             {{item.mobile}}
             <!-- <view class='rightmap'>{{item.status}}</view> -->
                <view class='rightmap'
-               style='color:{{item.status==="1"?"red":item.status==="2"?"blue":"black"}}'>{{item.status==="1"?"很满意":item.status==="2"?"满意":"一般"}}</view>
+               style='color:{{item.status==="1"?"#FE6F61":item.status==="2"?"#1B65FA":"black"}}'>{{item.status==="1"?"很满意":item.status==="2"?"满意":"一般"}}</view>
           </view>
           <view class='toptitle2'>
             <!-- {{item.label}} -->

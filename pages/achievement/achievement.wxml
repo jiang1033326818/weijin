@@ -42,7 +42,7 @@
   </view>
 
 
-  <view class='qqqqq'>
+  <view class='qqqqq' >
    <view wx:for="{{managerlists}}" class="wwwww row-flex list-item">
     <view class='toplist' data-manger="{{item.id}}" bindtap="toone">
       <view class='leftlist'>
@@ -65,11 +65,11 @@
         <text>{{item.fwrs===null?0:item.fwrs}}人咨询过</text>
       </view>
 
-      <view class='peoplebutton1' bindtap="callphone1" data-id="{{item.id}}" data-phonenum="{{item.mobile}}">
+      <!-- <view class='peoplebutton1' bindtap="callphone1" data-id="{{item.id}}" data-phonenum="{{item.mobile}}">
         电话咨询
-      </view>
+      </view> -->
       <view class='peoplebutton2' bindtap="askpeople" data-id="{{item.id}}" data-uid="{{item.uid}}" data-img="{{'http://zadai.net:8000'+item.workImage}}">
-        咨询
+       立即咨询
       </view>
     </view>
 

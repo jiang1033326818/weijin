@@ -17,9 +17,9 @@
             <view class='pingjia'>{{item.pingjia}}</view>
           </view>
 
-          <view class='toplist' bindtap='toclues' data-pnum="{{item.uid}}" data-img="{{'http://zadai.net:8000/uploads/'+item.workImage}}">
+          <view class='toplist' bindtap='toclues' data-pnum="{{item.uid}}" data-img="{{'http://zadai.net:8000/'+item.workImage}}">
             <view class='leftlist'>
-              <image src="{{'http://zadai.net:8000/uploads/'+item.workImage}}" class="item-header"></image>
+              <image src="{{'http://zadai.net:8000/'+item.workImage}}" class="item-header"></image>
             </view>
             <view class='rightlist'>
               <text class='item-text' decode="{{true}}" space="{{true}}">{{item.realName===null?'':item.realName}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.level===null?"":item.level}}</text>
@@ -44,7 +44,7 @@
             <view class='peoplebutton2' bindtap='btnclick' data-getcontent="{{item.id}}">
               立即评价
             </view>
-            <modal title="标题" confirm-text="确认" success="suc" cancel-text="取消" hidden="{{onOff}}" bindconfirm="modalConfirm" bindcancel="modalCancel">
+            <modal  class="modal" title="标题" confirm-text="确认" success="suc" cancel-text="取消" hidden="{{onOff}}" bindconfirm="modalConfirm" bindcancel="modalCancel">
               <!-- 满意程度 -->
               <radio-group class="radio-group" bindchange="radioChange"  >
                 <label class="radio" wx:for="{{items}}">
@@ -52,14 +52,16 @@
                 </label>
 
               </radio-group>
-              <textarea bindinput='bind1' class='bingtext' placeholder='请输入您的评价'  data-contentid="{{item.id}}"></textarea>
+              <textarea cols="50" rows="5" bindinput='bind1' class='bingtext'  data-contentid="{{item.id}}"></textarea>
+        
+
             </modal>
-          </view>
+          </view> 
         </view>
 
       </view>
     </swiper-item>
-<swiper-item class='swiper-item'  >
+<swiper-item class='swiper-item' >
       <view class='allOfpeople'>
 
         <view wx:for="{{activeIndex==='1'?getimgphone:gitimgchat}}" class="row-flex list-item">
@@ -68,9 +70,9 @@
             <view class='pingjia'>{{item.pingjia}}</view>
           </view>
 
-          <view class='toplist' bindtap='toclues' data-pnum="{{item.uid}}" data-img="{{'http://zadai.net:8000/uploads/'+item.workImage}}">
+          <view class='toplist' bindtap='toclues' data-pnum="{{item.uid}}" data-img="{{'http://zadai.net:8000/'+item.workImage}}">
             <view class='leftlist'>
-              <image src="{{'http://zadai.net:8000/uploads/'+item.workImage}}"  class="item-header"></image>
+              <image src="{{'http://zadai.net:8000/'+item.workImage}}"  class="item-header"></image>
             </view>
             <view class='rightlist'>
               <text class='item-text' decode="{{true}}" space="{{true}}">{{item.realName===null?'':item.realName}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.level===null?"":item.level}}</text>
@@ -103,7 +105,8 @@
                 </label>
 
               </radio-group>
-              <textarea bindinput='bind1' class='bingtext' placeholder='请输入您的评价' data-contentid="{{item.id}}"></textarea>
+            <textarea cols="50" rows="5" bindinput='bind1' class='bingtext'  data-contentid="{{item.id}}"></textarea>
+        
             </modal>
           </view>
         </view>
