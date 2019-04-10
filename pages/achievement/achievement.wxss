@@ -41,6 +41,8 @@ border-radius:50%;
 overflow: hidden;
 height:160rpx;
 width:160rpx;
+margin-top:15rpx;
+
 
 }
 .item-header{
@@ -54,7 +56,9 @@ width:160rpx;
 }
 .item-text{
   font-weight: bold;
-  font-size: 30rpx
+  font-size: 30rpx;
+  line-height:68rpx;
+
 }
 .pink{
   margin-top: 30rpx;
@@ -65,28 +69,33 @@ width:160rpx;
   height: 45rpx;
 }
 .pink text{
-font-size: 30rpx;
-color: #ff3366;
+font-size: 27rpx;
+color: #f3918f;
 }
 .blue{
-  margin-top: 30rpx;
+  margin-top: 8rpx;
  /* background: #ccffff; */
   width: 250rpx;
   /* text-align: center; */
   height: 45rpx;
 }
 .blue text{
-font-size: 30rpx;
-color: #33cccc; 
+font-size: 27rpx;
+color: #8daff3; 
 }
 .people{
-  margin-top: 30rpx;
+ 
   float: left;
-  margin-left: 28%;
+ 
   width:22%;
+  position: relative;
 }
 .people text{
-  line-height: 65rpx
+  line-height: 65rpx;
+  position: absolute;
+ top:-219rpx;
+right:-505rpx;
+
 }
 .peoplebutton1{
   float: left;
@@ -103,19 +112,23 @@ color: #33cccc;
   line-height: 47rpx;
 }
 .peoplebutton2{
-  float: left;
-  margin-left: 3%;
-  width:15%;
-  height: 45rpx;
-  margin-top: 36rpx;
-  background: #1B68FB;
-  border: 2px solid #1B68FB;
-  border-radius: 10rpx;
-  color: #ffffff;
-  font-size: 26rpx;
-  font-weight: bold;
-  text-align: center;
-  line-height: 47rpx;
+/* margin-left:20%; */
+width:25%;
+height:65rpx;
+/* margin-top:20rpx; */
+border:2px solid #1B68FB;
+border-radius:10rpx;
+background:#1B68FB;
+font-size:28rpx;
+font-weight:bold;
+text-align:center;
+line-height:65rpx;
+float:left;
+color: white;
+position: absolute;
+top:-103rpx;
+left:490rpx;
+
 }
 
 
@@ -198,5 +211,6 @@ color: #33cccc;
   /* margin-bottom: 100rpx; */
 }
 .bottomlist{
-  height: 110rpx;
+  /* height: 110rpx; */
+  position: relative;
 }

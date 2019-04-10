@@ -113,24 +113,24 @@ view , page {
   font-size: 30rpx
 }
 .pink{
-  margin-top: 30rpx;
- background: #ffccff;
+  margin-top: 50rpx;
+ /* background: #ffccff; */
   width: 100rpx;
   text-align: center;
 }
 .pink text{
 font-size: 30rpx;
-color: #ff3366;
+color: #f3918f;
 }
 .blue{
-  margin-top: 30rpx;
+   margin-top: 15rpx; 
  /* background: #ccffff; */
   width: 250rpx;
   /* text-align: center; */
 }
 .blue text{
 font-size: 30rpx;
-color: #33cccc;
+color: #8daff3;
 }
 .people{
   margin-top: 30rpx;
@@ -161,10 +161,10 @@ color: #33cccc;
   width:25%;
   height: 65rpx;
   margin-top: 20rpx;
-  /* background: #1B68FB; */
+  background: #1B68FB; 
   border: 2px solid #1B68FB;
   border-radius: 10rpx;
-  color: #1B68FB;
+  color: white;
   font-size: 28rpx;
   font-weight: bold;
   text-align: center;
@@ -178,9 +178,11 @@ color: #33cccc;
   padding: 0 3%;
 }
 .itemtime{
-  font-size: 25rpx;
+  font-size: 26rpx;
   /* width: 70%; */
   float: left;
+  margin-top:5rpx;
+
 }
 .pingjia{
   color: #009DFF;

@@ -11,6 +11,7 @@ const tabs = [{
 Page({
   data: {
     height:2000,
+
     onOff: true,
     tabs: tabs, //展示的数据
     slideOffset: 0, //指示器每次移动的距离
@@ -62,7 +63,8 @@ Page({
         that.setData({
           getimgphone: b,
           gitimgchat: a,
-           height: e.data.data.dataList.length*400+147
+           height: e.data.data.dataList.length*400+147,
+        
         })
 
 
