@@ -7,7 +7,7 @@ var interval = null //倒计时函数
  const tabs = [{
    
       name: "知识库"
-   },
+   }, 
   // {
   //   name: "   "
   // },
