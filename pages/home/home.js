@@ -7,7 +7,7 @@ var interval = null //倒计时函数
  const tabs = [{
    
       name: "知识库"
-   },
+   }, 
   // {
   //   name: "   "
   // },
@@ -497,7 +497,7 @@ Page({
     console.log(e.currentTarget.dataset.id)
     wx.setStorageSync('knowid0', e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '../knowdetails/knowdetails'
+      url: '../zzzzz2/zzzzz2'
     });
   },
   /**
