@@ -147,8 +147,8 @@ Page({
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
       },
       data: {
-        "pageNum": 0,
-        "pageSize": 10,
+        // "pageNum": 0,
+        // "pageSize": 10,
       },
       success: function(e) {
         console.log(e,"成功")

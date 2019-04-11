@@ -112,7 +112,7 @@ margin-left:10rpx;
   line-height: 80rpx;
   font-size: 30rpx;
   margin-left: 20%;
-  margin-top: 30rpx;
+  margin-top: -13rpx;
 }
 
 
@@ -183,4 +183,43 @@ margin-top: 25rpx;
 }
 .concon{
   font-size: 25rpx;
+}
+
+ 
+.view_1{
+  margin-top:20rpx;
+   /* border: 1px solid black; */
+   background: #dddddd;
+  width:95%;
+  margin-left: -4rpx;
+  position: relative;
+  
+ 
+  margin-bottom:-12rpx; 
+}
+.view_1 image{
+   width:220rpx;
+  height: 220rpx;
+  margin-top:15rpx; 
+  padding-left:16rpx; 
+}
+.text_1{
+font-size: 35rpx;
+line-height: 20rpx;
+position: absolute;
+top:27rpx;
+left: 260rpx;
+}
+.text_2{
+font-size: 25rpx;
+position: absolute;
+top:68rpx;
+left:259rpx;
+line-height:33rpx;
+}
+.tisheng{
+  width: 96%;
+  height: 390rpx;
+  margin-top:20rpx; 
+  margin-left: -5rpx;
 }

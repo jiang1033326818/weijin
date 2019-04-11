@@ -7,10 +7,10 @@ var interval = null //倒计时函数
  const tabs = [{
    
       name: "知识库"
-   },
-  {
-    name: "产品中心"
-  },
+   }, 
+  // {
+  //   name: "   "
+  // },
  ];
 Page({
   /**
@@ -20,7 +20,7 @@ Page({
     time: '获取验证码', //倒计时 
     clueNum: 0,
     taskNum: 0,
-    height: 1200,
+    height: 2000,
     customerNum: 0,
     powerTotal: 0,
     userInfo: {}, // 登录用户的信息
@@ -119,22 +119,22 @@ Page({
       });
     },
     // 导航点击事件
-    navTabClick: function(e) {
-      if (e.currentTarget.id==="1"){
-      wx:wx.navigateTo({
-        url: '../zzzzz2/zzzzz2'
-        // success: function(res) {},
-        // fail: function(res) {},
-        // complete: function(res) {},
-      })
-      }
-      console.log(e.currentTarget.id)
+    // navTabClick: function(e) {
+    //   if (e.currentTarget.id==="1"){
+    //   wx:wx.navigateTo({
+    //     url: '../zzzzz2/zzzzz2'
+    //     // success: function(res) {},
+    //     // fail: function(res) {},
+    //     // complete: function(res) {},
+    //   })
+    //   }
+    //   console.log(e.currentTarget.id)
 
-      // this.setData({
-      //   sliderOffset: e.currentTarget.offsetLeft,
-      //   activeIndex: e.currentTarget.id
-      // });
-    },
+    //   // this.setData({
+    //   //   sliderOffset: e.currentTarget.offsetLeft,
+    //   //   activeIndex: e.currentTarget.id
+    //   // });
+    // },
 
     switchNav(event) {
 
@@ -458,7 +458,8 @@ Page({
       success: function(res) {
         console.log(res,"这是什么")
             that.setData({
-              getknowledge: res.data.data.dataList
+              getknowledge: res.data.data.dataList,
+              height:res.data.data.dataList.length*300+140
             })
          
       },

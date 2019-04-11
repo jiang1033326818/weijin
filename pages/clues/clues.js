@@ -20,7 +20,7 @@ Page({
     allContentList: [],
     num: 0,
     uid: '',
-    userInfo: {},
+    userInfo: {}, 
     userimg2:'',
     userimg:'',
   },
@@ -183,11 +183,12 @@ Page({
       header: {
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
       },
-      url: url + wx.getStorageSync("tootherId"),
+      url: url + wx.getStorageSync("uid") + "&cuid=" + wx.getStorageSync("tootherId"),
       data: wx.getStorageSync("tootherId"),
       method: 'get',
       success: function(res) {
         console.log('WebSocket连接创建', res)
+        console.log('链接地址', url + wx.getStorageSync("uid") + "&cuid=" + wx.getStorageSync("tootherId"))
       },
       // fail: function(err) {
       //   wx.showToast({
@@ -238,7 +239,7 @@ Page({
     })
   },
 
-
+//发送图片
   upimg: function() {
     var that = this;
     wx.chooseImage({
@@ -287,8 +288,10 @@ Page({
               console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
               var onMessage_data = JSON.parse(onMessage.data)
               if (onMessage_data) {
-
+                if (onMessage_data.toId == this.data.uid) {
                 if (onMessage_data.text.slice(0, 9) == "/uploads/") {
+
+                  
                   that.data.allContentList.push({
                     is_ai: true,
                     is_twoimg: urls.mainurl + onMessage_data.text
@@ -308,6 +311,7 @@ Page({
                 that.bottom()
               } else {
                 console.log("接收失败")
+              }
               }
             })
 

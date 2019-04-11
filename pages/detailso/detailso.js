@@ -125,8 +125,8 @@ Page({
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
       },
       data: {
-        "pageNum": 0,
-        "pageSize": 10,
+        // "pageNum": 0,
+        // "pageSize": 10,
       },
       success: function (e) {
         console.log(e, "成功")
@@ -146,7 +146,7 @@ Page({
   guesttalk: function () {
     let that = this;
     wx.request({
-      url: urls.mainurl + urls.assessment,
+      url: urls.mainurl + urls.assessment ,
       method: 'POST',
       header: {
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")

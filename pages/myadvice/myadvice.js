@@ -1,14 +1,17 @@
 import urls from '../../common/urls.js';
 const tabs = [{
-  name: "电话咨询"
+  name: "图文咨询"
   },
   {
-    name:"图文咨询"
+   
+     name: "电话咨询"
   },
 ];
 
 Page({
   data: {
+    height:2000,
+
     onOff: true,
     tabs: tabs, //展示的数据
     slideOffset: 0, //指示器每次移动的距离
@@ -23,9 +26,9 @@ Page({
     adviceid:'',
     advicestatus:'',
     items: [
-      { name: '0', value: '很满意', checked: 'true'},
-      { name: '1', value: '满意', },
-      { name: '2', value: '不满意' },
+      { name: '很满意', value: '很满意', checked: 'true'},
+      { name: '满意', value: '满意', },
+      { name: '不满意', value: '不满意' },
     ]
   },
 
@@ -43,7 +46,7 @@ Page({
       data: {
         "pageNum": 0,
         "pageSize": 10,
-        type:e
+        type:e==="0"?"1":"0"
         
       },
       success: function(e) {
@@ -59,7 +62,9 @@ Page({
         }
         that.setData({
           getimgphone: b,
-          gitimgchat: a
+          gitimgchat: a,
+           height: e.data.data.dataList.length*400+147,
+        
         })
 
 
@@ -122,11 +127,12 @@ Page({
 //满意程度选择
   radioChange(e) {
     console.log(e, e.detail.value)
-    this.setData({
+     this.setData({
       advicestatus: e.detail.value 
     })
+  
   },
-
+  
   //获取评论内容
   bind1: function(e) {
     console.log(e, 14)
@@ -162,13 +168,11 @@ Page({
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
       },
       data: {
-        // pageNum: 0,
-        // pageSize: 10,
         content: that.data.bincontent,
         bid: that.data.nowid,
         chatType:that.data.activeIndex==="1"?"在线咨询":"电话咨询",
         status: that.data.advicestatus,
-       
+        commentType:1
 
       },
       success: function(e) {
@@ -195,16 +199,17 @@ Page({
     })
 
   },
+//textarea提示自取消
 
   // 加载初始数据
   onLoad: function(e) {
     // this.myadvice(0)
-    this.imgphone(0);
+    this.imgphone("0");
   },
   onShow: function () {
-    this.imgphone(0);
+    this.imgphone("0");
   },
  onReady: function () {
-   this.imgphone(0);
+   this.imgphone("0");
   },
 });

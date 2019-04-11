@@ -70,6 +70,7 @@ margin-right:160rpx;
   right: 0;
   top: 30rpx;
   margin-top:80rpx; 
+  margin-bottom: 50rpx;
 }
 .you_img_bg{
   height: 150rpx;
@@ -80,6 +81,7 @@ margin-right:160rpx;
   margin-top: 80rpx; */
   top:122rpx;
 margin-top:-174rpx;
+ margin-bottom: 50rpx;
 
 }
 .you_left {  
@@ -112,6 +114,7 @@ margin-top:-174rpx;
   margin-top: 10rpx;
   padding: 0rpx 30rpx 0rpx 30rpx;  
   float: left;
+ 
 }
 .sanjiao {  
   top: 25rpx;  
@@ -138,8 +141,8 @@ margin-top:-174rpx;
   bottom: 0px;
   background-color: #F4F4F6; 
   flex-direction: row;  
-  height: 85rpx;
-  margin-bottom:10rpx;
+  height: 88rpx;
+  margin-bottom:25rpx;
 
 }  
 .voice_icon{
@@ -168,12 +171,12 @@ margin-top:-174rpx;
 }    
 .sendmessage input {  
   width: 75%;  
-  height: 60rpx;   
+  height: 75rpx;   
   background-color: white; 
   line-height: 60rpx;  
   font-size: 28rpx;  
   border-radius: 10rpx;
-  margin-top: 10rpx;
+  margin-top: 6rpx;
   margin-left: 20rpx;
   border: 1px solid #d0d0d0;  
   padding-left: 20rpx;  
@@ -181,11 +184,11 @@ margin-top:-174rpx;
 .sendmessage button {  
   border: 1px solid white;  
   width: 18%;  
-  height: 65rpx;  
+  height: 76rpx;  
   background: #00CC00;
   color: white;
   line-height: 65rpx;  
-  margin-top: 10rpx;
+  margin-top: 8rpx;
   font-size: 28rpx;  
 }  
   
@@ -230,7 +233,7 @@ margin-top:32px;
 
 } 
 .tximg2{
-  border: 1rpx solid black;
+ 
   height: 80rpx;
   width: 80rpx;
  position:absolute;

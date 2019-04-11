@@ -12,7 +12,7 @@ Page({
     customItem: '全部',
     region:"1",
     array: ['房产服务',
-      '车产低压服务',
+      '车产抵押服务',
       '信用卡',
       '极速服务',
       '工资流水服务',
@@ -30,7 +30,8 @@ Page({
     checked: true,
     danwei: "",
     image0:'',
-    image1:''
+    image1:'',
+    xingming:''
   },
 
 
@@ -62,7 +63,11 @@ Page({
     })
   },
 
-
+  xingming: function (e) {
+    this.setData({
+      xingming: e.detail.value
+    })
+  },
 
 
   chooseImage: function() {
@@ -86,6 +91,9 @@ Page({
 
         wx.uploadFile({
           url: urls.mainurl + urls.uploadimg, // 仅为示例，非真实的接口地址
+          header: {
+            "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+          },
           filePath: res.tempFilePaths[0],
           name: 'file',
           formData: {
@@ -226,44 +234,52 @@ Page({
         duration: 2000
       })
     } else {
-      wx.request({
-        url: urls.mainurl + urls.useradd,
-        method: 'POST',
-        header: {
-          "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
-        },
-        data: {
-          "area": that.data.getarea[that.data.index2].id,
-          "hobby": that.data.array[that.data.index],
-          "company": that.data.danwei,
-          "workImage": that.data.image0,
-          "joinTime": that.data.date,
-          "personImage": that.data.image1,
-        },
-        success: function(response) {
-          wx.showToast({
-            title: response.data,
-            icon: 'success',
-            duration: 2000
-          })
-//表单校验
-          if (that.data.danwei==='' || that.data.image0==='' || that.data.image1 ===''){
-            wx.showToast({
-              title: '请将内容填写完整', //标题
-              icon: 'none',
-              duration: 1000,
-              mask: true,
-            })
-         }else{
-            wx.navigateTo({
-              url: '../success/success'
-            });
-         }
-        }
-      })
-    }
+      console.log(that.data)
+      if (that.data.danwei === '' || that.data.image0 === '' || that.data.image1 === '' || that.data.xingming === '') {
+        wx.showToast({
+          title: '请将内容填写完整', //标题
+          icon: 'none',
+          duration: 1000,
+          mask: true,
+        })
+      } else {
+        wx.request({
+          url: urls.mainurl + urls.useradd,
+          method: 'POST',
+          header: {
+            "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+          },
+          data: {
+            "city": that.data.getarea[that.data.index2].id,
+            "hobby": that.data.array[that.data.index],
+            "company": that.data.danwei,
+            "workImage": that.data.image0,
+            // "joinTime": that.data.date,
+            "personImage": that.data.image1,
+            "enable": false,
+            expert: 0,
+            "realName": that.data.xingming
 
-  },
+          },
+          success: function (response) {
+        
+            if(response.code==="0"){
+              wx.setStorageSync("expert",1)
+              wx.showToast({
+                title: response.message,
+                icon: 'success',
+                duration: 2000
+              })
+              wx.navigateTo({
+                url: '../success/success'
+              });
+
+            }
+            
+      }
+    })
+      }}},
+  
   /**
    * 生命周期函数--监听页面加载
    */
