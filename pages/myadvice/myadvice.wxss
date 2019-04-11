@@ -119,8 +119,10 @@ view , page {
   text-align: center;
 }
 .pink text{
-font-size: 30rpx;
-color: #f3918f;
+
+font-size:27rpx;
+color:#f3918f;
+
 }
 .blue{
    margin-top: 15rpx; 
@@ -129,7 +131,7 @@ color: #f3918f;
   /* text-align: center; */
 }
 .blue text{
-font-size: 30rpx;
+font-size: 27rpx;
 color: #8daff3;
 }
 .people{
@@ -201,3 +203,6 @@ color: #8daff3;
   border: 1rpx solid black;
   margin-top: 20rpx;
 } */
+.modal{
+  height: 500rpx;
+}

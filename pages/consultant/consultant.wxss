@@ -106,36 +106,36 @@ view , page {
   font-weight: bold;
   font-size: 30rpx
 }
-.pink1{
+.pink{
   margin-top: 30rpx;
  /* background: #ffccff; */
   width: 100rpx;
   text-align: center;
 }
-.pink1 text{
+.pink text{
 font-size: 27rpx;
 color: #f3918f;
 }
-.blue1{
+.blue{
   margin-top: 20rpx;
  /* background: #ccffff; */
   width: 250rpx;
   /* text-align: center; */
 }
-.blue1 text{
+.blue text{
 font-size: 27rpx;
 color: #8daff3; 
 }
-.people1{
+.people{
   margin-top: 30rpx;
   float: left;
   margin-left: 3%;
   width:33%;
 }
-.people1 text{
+.people text{
   line-height: 65rpx
 }
-.peoplebutton3{
+.peoplebutton1{
   float: left;
   margin-left: 3%;
   width:25%;
@@ -149,7 +149,7 @@ color: #8daff3;
   text-align: center;
   line-height: 65rpx;
 }
-.peoplebutton4{
+.peoplebutton2{
   float: left;
   margin-left: 3%;
   width:25%;
@@ -168,5 +168,7 @@ color: #8daff3;
 .bottomlist{
  
   height: 200rpx;
+  clear:both;
+
   
 }
