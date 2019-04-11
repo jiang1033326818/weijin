@@ -67,11 +67,12 @@ Page({
 
   chooseImage: function() {
     var that = this;
-    console.log('aaaaaaaaaaaaaaaaaaaa')
+
 
     wx.chooseImage({
       // count: this.data.count[this.data.countIndex],
       success: function(res) {
+        console.log(res, 'aaaaaaaaaaaaaaaaaaaa')
         //缓存下 
         wx.showToast({
           title: '正在上传...',
@@ -128,7 +129,7 @@ Page({
     wx.chooseImage({
       // count: this.data.count[this.data.countIndex],
       success: function(res) {
-        console.log('ssssssssssssssssssssssssss')
+        console.log(res,'ssssssssssssssssssssssssss')
         //缓存下 
         wx.showToast({
           title: '正在上传...',
@@ -148,6 +149,7 @@ Page({
             //user: 'test'
           },
           success(response) {
+
             that.setData({
               image1: '/uploads/' + JSON.parse(response.data).data,
             })
