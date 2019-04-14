@@ -37,7 +37,17 @@ Page({
     getknowledge: [],
     indextab: 0,
     getknownav: [],
-    getlunbolist:[],
+    getlunbolist:[
+      {
+        title:"hahhah"
+      },
+      {
+        title: "hahhah"
+      },
+      {
+        title: "hahhah"
+      }
+    ],
     imgUrls: [{
       link: '/pages/index/index',
       url: 'http://zadai.net:8000/uploads/image001.jpg'
@@ -482,9 +492,9 @@ Page({
       },
       success: function (res) {
         console.log(res, "这是轮播")
-        that.setData({
-         getlunbolist:res.data.data
-        })
+        // that.setData({
+        //  getlunbolist:res.data.data
+        // })
 
       },
       fail: function (err) {
