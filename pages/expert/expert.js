@@ -15,7 +15,7 @@ Page({
       label: '车产服务',
       value: 'car'
     }, {
-      label: '信用卡',
+      label: '卡',
       value: 'credit'
     }, {
       label: '极速服务',
