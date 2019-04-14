@@ -39,13 +39,13 @@ Page({
     getknownav: [],
     getlunbolist:[
       {
-        title:"hahhah"
+        title:"优势互补 突出发展特色金融"
       },
       {
-        title: "hahhah"
+        title: "海南各地各校均要聘用咨询顾问"
       },
       {
-        title: "hahhah"
+        title: "科比将重返湖人，当球队顾问！？"
       }
     ],
     imgUrls: [{
@@ -248,7 +248,8 @@ Page({
     },
 
     getVerificationCode() {
-      if (this.data.phone == '' || this.data.phone.length < 11) {
+      console.log(this.data.phone,9900)
+      if (this.data.phone == '' || this.data.phone.length !== 11) {
         wx.showToast({
           title: '请填写正确的手机号',
           icon: 'none',
