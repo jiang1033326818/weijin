@@ -506,9 +506,11 @@ margin-top:9rpx;
 .smallnav text{
   position: absolute;
   top: 14rpx;
-  left: 330rpx;
+  left: 40rpx;
   color: #323232;
   font-size:32rpx;
+  width: 60%;
+  overflow: hidden;
 
 }
 .smallitem{
@@ -526,5 +528,5 @@ margin-top:9rpx;
 .swiper-image{
   position: absolute;
   top: -1rpx;
-  left:39rpx;
+  left:505rpx;
 }
