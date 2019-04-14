@@ -11,6 +11,7 @@ const tabs = [{
 Page({
   data: {
     height:2000,
+    height1:2000,
 
     onOff: true,
     tabs: tabs, //展示的数据
@@ -104,7 +105,7 @@ Page({
       })
     } else {
       this.setData({
-        height: this.data.typeList2.length * 410 + 50
+        height1: this.data.typeList2.length * 410 + 50
       })
     }
     wx.pageScrollTo({
@@ -172,7 +173,7 @@ Page({
       data: {
         content: that.data.bincontent,
         bid: that.data.nowid,
-        chatType:that.data.activeIndex==="1"?"在线咨询":"电话咨询",
+        chatType:that.data.activeIndex==="0"?"在线咨询":"电话咨询",
         status: that.data.advicestatus,
         commentType:1
 

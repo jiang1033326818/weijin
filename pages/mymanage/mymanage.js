@@ -1,17 +1,11 @@
 import request from '../../utils/request.js';
 import urls from '../../common/urls.js';
 const tabs = [{
-    name: "服务"
-  },
-  {
-    name: "信用服务"
-  },
-  {
-    name: "极速服务"
-  },
-  {
-    name: "信用卡"
-  },
+  name: "本地专家"
+},
+{
+  name: "微金专家"
+},
 ];
 
 Page({
@@ -22,17 +16,17 @@ Page({
     sliderWidth: 96, //指示器的宽度,计算得到
     contentHeight: 0, //页面除去头部Tabbar后，内容区的总高度，计算得到
     getloanalllist: [],
-    height:2000,
+    height: 2000,
   },
   // 滑动事件
-  upper: function(e) {
+  upper: function (e) {
   },
 
-  lower: function(e) {
+  lower: function (e) {
   },
-  scroll: function(e) {
+  scroll: function (e) {
   },
-  tap: function(e) {
+  tap: function (e) {
     for (var i = 0; i < order.length; ++i) {
       if (order[i] === this.data.toView) {
         this.setData({
@@ -43,12 +37,12 @@ Page({
     }
   },
   // 导航点击滑动
-  tapMove: function(e) {
+  tapMove: function (e) {
     this.setData({
       scrollTop: this.data.scrollTop + 10
     })
   },
-  bindChange: function(e) {
+  bindChange: function (e) {
     console.log(this.data.scrollTop)
     var current = e.detail.current;
     wx.pageScrollTo({
@@ -61,29 +55,29 @@ Page({
     });
   },
   // 导航点击事件
-  navTabClick: function(e) {
-    console.log(e)
-    this.getloanall(e._relatedInfo.anchorRelatedText)
+  navTabClick: function (e) {
+    console.log(e,"哈哈啊哈哈")
+    this.getloanall(e.currentTarget.id)
     this.setData({
       activeIndex: e.currentTarget.id
     })
   },
 
   //页面跳转
-  toone: function(e) {
+  toone: function (e) {
     wx.setStorageSync("mid", e.currentTarget.dataset.bntuser),
-    wx.navigateTo({
-      url: '../detailso/detailso'
-    });
+      wx.navigateTo({
+        url: '../detailso/detailso'
+      });
   },
 
   //点击查看详情
- btn: function (e) {
-   wx.setStorageSync("mid", e.currentTarget.dataset.bntuser),
-    wx.navigateTo({
-      url: '../detailso/detailso'
-    });
-   console.log(e)
+  btn: function (e) {
+    wx.setStorageSync("mid", e.currentTarget.dataset.bntuser),
+      wx.navigateTo({
+        url: '../detailso/detailso'
+      });
+    console.log(e)
   },
   //电话咨询
   btnphone: function (e) {
@@ -102,10 +96,10 @@ Page({
     });
   },
   //获取专家列表
-  getloanall: function(type) {
+  getloanall: function (type) {
     let that = this;
     wx.request({
-      url: urls.mainurl + urls.getloanlist, 
+      url: urls.mainurl + urls.zixun,
       method: 'POST',
       header: {
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
@@ -113,27 +107,26 @@ Page({
       data: {
         "pageNum": 0,
         "pageSize": 10,
-        type:type,
-        expert: "1",
-        
+        expert: type,
+
       },
-      success: function(e) {
+      success: function (e) {
         // console.log("222"+response)
         console.log(e, "22")
         that.setData({
-          getloanalllist: e.data.data.dataList,
-          height: e.data.data.dataList.length*400+53
+          getloanalllist: e.data.data,
+          height: e.data.data.length * 400 + 12
         })
       },
-      fail: function(err) {
+      fail: function (err) {
         console.log(err)
 
       }
     })
   },
 
-  onLoad: function(e) {
-    this.getloanall('服务');
+  onLoad: function (e) {
+    this.getloanall("0");
 
   },
 

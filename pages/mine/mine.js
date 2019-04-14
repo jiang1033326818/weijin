@@ -146,7 +146,7 @@ Page({
    toconsu: function () {
     console.log(444)
     wx.navigateTo({
-      url: '../consultant/consultant'
+      url: '../mymanage/mymanage'
     });
   },
   tocooperation:function(){

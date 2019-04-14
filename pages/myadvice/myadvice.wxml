@@ -20,7 +20,7 @@
   </view>
   <swiper class='swiper' current="{{activeIndex}}" style='height:{{height}}rpx'>
 
-    <swiper-item class='swiper-item' >
+    <swiper-item class='swiper-item'  style='height:{{height1}}rpx'>
       <view class='allOfpeople'>
 
         <view wx:for="{{activeIndex==='0'?getimgphone:gitimgchat}}" class="row-flex list-item">
