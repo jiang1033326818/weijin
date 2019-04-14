@@ -4,7 +4,11 @@ Page({
   /**
    * 页面的初始数据
    */
-  
+
+  data: {
+    https: "https://zadai.net/alost.html?id=" + wx.getStorageSync("knowid0")
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -25,7 +29,7 @@ Page({
    */
   onShow: function () {
    this.setData({
-       https: "http://zadai.net/alost.html?id=" + wx.getStorageSync("knowid0")
+       https: "https://zadai.net/alost.html?id=" + wx.getStorageSync("knowid0")
    })
   },
 

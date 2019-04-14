@@ -56,7 +56,7 @@ Page({
       url: 'http://zadai.net:8000/uploads/image002.jpg'
     }, {
       link: '/pages/index/index',
-      url: 'http://zadai.net:8000/uploads/image003.jpg'
+      url: 'http://zadai.net:8000/uploads/image003.png'
     }],
     typeList: [{
         image: 'http://zadai.net:8000/uploads/xyk.png',
