@@ -5,7 +5,6 @@ import urls from '../../common/urls.js';
 const app = getApp();
 var interval = null //倒计时函数
  const tabs = [{
-   
       name: "知识库"
    }, 
   // {
