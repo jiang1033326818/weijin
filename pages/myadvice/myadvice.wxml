@@ -1,16 +1,5 @@
 <view class="page">
-   <modal  class="modal" title="标题" confirm-text="确认" success="suc" cancel-text="取消" hidden="{{onOff}}" bindconfirm="modalConfirm" bindcancel="modalCancel">
-              <!-- 满意程度 -->
-              <radio-group class="radio-group" bindchange="radioChange"  >
-                <label class="radio" wx:for="{{items}}">
-                  <radio value="{{item.name}}" checked="{{item.checked}}" /> {{item.value}}
-                </label>
-
-              </radio-group>
-              <textarea cols="50" rows="5" bindinput='bind1' class='bingtext'  data-contentid="{{item.id}}"></textarea>
-        
-
-            </modal>
+  
   <view class="navbar">
     <block wx:for="{{tabs}}" wx:key="tabs">
       <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
@@ -98,17 +87,7 @@
             <view class='peoplebutton2' bindtap='btnclick' data-getcontent="{{item.id}}">
               立即评价
             </view>
-            <modal title="标题" confirm-text="确认" success="suc" cancel-text="取消" hidden="{{onOff}}" bindconfirm="modalConfirm" bindcancel="modalCancel">
-              <!-- 满意程度 -->
-              <radio-group class="radio-group" bindchange="radioChange">
-                <label class="radio" wx:for="{{items}}">
-                  <radio value="{{item.name}}" checked="{{item.checked}}" /> {{item.value}}
-                </label>
-
-              </radio-group>
-            <textarea bindconfirm="textaaa" cols="50" rows="5" value='{{ta}}' bindinput='bind1' class='bingtext'  data-contentid="{{item.id}}"></textarea>
-        
-            </modal>
+         
           </view>
         </view>
 
@@ -117,11 +96,30 @@
 
 
   </swiper>
-  <!-- <modal show="{{showModal}}" height='60%' bindcancel="modalCancel" bindconfirm='modalConfirm'>
-  <view class='modal-content'>
  
-  </view>
-</modal> -->
 
+ <modal  class="modal" title="标题" confirm-text="确认" success="suc" cancel-text="取消" hidden="{{onOff}}" bindconfirm="modalConfirm" bindcancel="modalCancel">
+              <!-- 满意程度 -->
+              <radio-group class="radio-group" bindchange="radioChange"  >
+                <label class="radio" wx:for="{{items}}">
+                  <radio value="{{item.name}}" checked="{{item.checked}}" /> {{item.value}}
+                </label>
 
+              </radio-group>
+              <textarea cols="50" rows="5" bindinput='bind1' class='bingtext'  data-contentid="{{item.id}}"></textarea>
+        
+
+            </modal>
+
+               <modal class="modal" title="标题" confirm-text="确认" success="suc" cancel-text="取消" hidden="{{onOff}}" bindconfirm="modalConfirm2" bindcancel="modalCancel2">
+              <!-- 满意程度 -->
+              <radio-group class="radio-group" bindchange="radioChange">
+                <label class="radio" wx:for="{{items}}">
+                  <radio value="{{item.name}}" checked="{{item.checked}}" /> {{item.value}}
+                </label>
+
+              </radio-group>
+            <textarea bindconfirm="textaaa" cols="50" rows="5" value='{{ta}}' bindinput='bind2' class='bingtext'  data-contentid="{{item.id}}"></textarea>
+        
+            </modal>
 </view>

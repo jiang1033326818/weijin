@@ -143,6 +143,13 @@ Page({
     })
     
   },
+  bind2: function (e) {
+    console.log(e, 14)
+    this.setData({
+      bincontent: e.detail.value
+    })
+
+  },
 
   //评论+//评价接口
   btnclick: function(e) {
@@ -155,6 +162,52 @@ Page({
 
 
   //确认
+  modalConfirm: function() {
+    let that=this;
+    console.log("queren")
+    console.log(that .data,"哈哈哈")
+    that.setData({
+      onOff: true,
+    })
+    console.log(that.data)
+    wx.request({
+      url: urls.mainurl + urls.judgecontent,
+      method: 'POST',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+        content: that.data.bincontent,
+        bid: that.data.nowid,
+        chatType:that.data.activeIndex==="0"?"在线咨询":"电话咨询",
+        status: that.data.advicestatus,
+        commentType:1
+
+      },
+      success: function(e) {
+        console.log(e, 343)
+        that.setData({
+          getjudge: e.data
+        })
+        wx.showToast({
+          title: '评论成功', //标题
+          icon: 'success', //图标，支持"success"、"loading"
+          duration: 1000, //提示的延迟时间，单位毫秒，默认：1500
+          mask: false, //是否显示透明蒙层，防止触摸穿透，默认：false
+        })
+      },
+      fail: function(err) {
+        console.log(err)
+
+      }
+    })
+  },
+  modalCancel: function() {
+    this.setData({
+      onOff: true,
+    })
+
+  },
   modalConfirm: function() {
     let that=this;
     console.log("queren")
@@ -202,6 +255,103 @@ Page({
     })
 
   },
+
+  //电话确认2
+  modalConfirm2: function () {
+    let that = this;
+    console.log("queren")
+    console.log(that.data, "哈哈哈")
+    that.setData({
+      onOff: true,
+    })
+    console.log(that.data)
+    wx.request({
+      url: urls.mainurl + urls.judgecontent,
+      method: 'POST',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+        content: that.data.bincontent,
+        bid: that.data.nowid,
+        chatType: that.data.activeIndex === "0" ? "在线咨询" : "电话咨询",
+        status: that.data.advicestatus,
+        commentType: 1
+
+      },
+      success: function (e) {
+        console.log(e, 343)
+        that.setData({
+          getjudge: e.data
+        })
+        wx.showToast({
+          title: '评论成功', //标题
+          icon: 'success', //图标，支持"success"、"loading"
+          duration: 1000, //提示的延迟时间，单位毫秒，默认：1500
+          mask: false, //是否显示透明蒙层，防止触摸穿透，默认：false
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+
+      }
+    })
+  },
+  modalCancel2: function () {
+    this.setData({
+      onOff: true,
+    })
+
+  },
+  modalConfirm2: function () {
+    let that = this;
+    console.log("queren")
+    console.log(that.data, "哈哈哈")
+    that.setData({
+      onOff: true,
+    })
+
+    console.log(that.data)
+    wx.request({
+      url: urls.mainurl + urls.judgecontent,
+      method: 'POST',
+      header: {
+        "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
+      },
+      data: {
+        content: that.data.bincontent,
+        bid: that.data.nowid,
+        chatType: that.data.activeIndex === "0" ? "在线咨询" : "电话咨询",
+        status: that.data.advicestatus,
+        commentType: 1
+
+      },
+      success: function (e) {
+        console.log(e, 343)
+        that.setData({
+          getjudge: e.data
+        })
+        wx.showToast({
+          title: '评论成功', //标题
+          icon: 'success', //图标，支持"success"、"loading"
+          duration: 1000, //提示的延迟时间，单位毫秒，默认：1500
+          mask: false, //是否显示透明蒙层，防止触摸穿透，默认：false
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+
+      }
+    })
+  },
+  modalCancel2: function () {
+    this.setData({
+      onOff: true,
+    })
+
+  },
+
+
 //textarea提示自取消
   textaaa:function(e){
 console.log(e,"啊手机的速度加快")
