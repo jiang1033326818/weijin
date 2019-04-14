@@ -53,7 +53,7 @@
             <!-- <view class='peoplebutton1'>
                   电话咨询
                   </view> -->
-            <view class='peoplebutton2' bindtap='btnclick' data-getcontent="{{item.id}}">
+            <view class='peoplebutton2' bindtap='btnclick' data-getcontent="{{item.cid}}">
               立即评价
             </view>
          
@@ -95,7 +95,7 @@
             <!-- <view class='peoplebutton1'>
                   电话咨询
                   </view> -->
-            <view class='peoplebutton2' bindtap='btnclick' data-getcontent="{{item.id}}">
+            <view class='peoplebutton2' bindtap='btnclick' data-getcontent="{{item.cid}}">
               立即评价
             </view>
             <modal title="标题" confirm-text="确认" success="suc" cancel-text="取消" hidden="{{onOff}}" bindconfirm="modalConfirm" bindcancel="modalCancel">

@@ -6,10 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // name: "杨经理",
-    // name2: "微金网",
-    // type: "房产",
-    // type2: "高级顾问",
     belong: '新房按揭服务,二手房按揭服务,房屋服务,经营性服务',
     activeIndex: 0, //当前展示的Tab项索引
     star: 0,
@@ -17,37 +13,64 @@ Page({
     //顾问详情
     useradviceid: '',
     getguesttalk: [],
+
     tabs: [{
       name: "全部",
-      value: 1231
+      value: ''
     },
     {
       name: "很满意",
-      value: 1231
+      value: ''
     },
     {
       name: "满意",
-      value: 1231
+      value: ''
     },
     {
       name: "不满意",
-      value: 1231
+      value: ''
     },
     ],
     subscribe: "http://zadai.net:8000/uploads/star.png",
     subscribe2: "http://zadai.net:8000/uploads/starlight.png",
     message: "关注",
     message2: "已关注",
-
+    intesestings: ''
+    //   typeList: [{
+    //       name: "155****6567",
+    //       result: '很满意',
+    //       text: '打字沟通觉得很烦费劲,慢不说还说不清楚,电话服务还是挺方便的,有啥不清楚电话里几句说完,快速解决问题,给个好评',
+    //       from: "2018年12月2日",
+    //     },
+    //     {
+    //       name: "155****6567",
+    //       result: '很满意',
+    //       text: '打字沟通觉得很烦费劲,慢不说还说不清楚,电话服务还是挺方便的,有啥不清楚电话里几句说完,快速解决问题,给个好评',
+    //       from: "2018年12月2日",
+    //     },
+    //     {
+    //       name: "155****6567",
+    //       result: '很满意',
+    //       text: '打字沟通觉得很烦费劲,慢不说还说不清楚,电话服务还是挺方便的,有啥不清楚电话里几句说完,快速解决问题,给个好评',
+    //       from: "2018年12月2日",
+    //     },
+    //     {
+    //       name: "155****6567",
+    //       result: '很满意',
+    //       text: '打字沟通觉得很烦费劲,慢不说还说不清楚,电话服务还是挺方便的,有啥不清楚电话里几句说完,快速解决问题,给个好评',
+    //       from: "2018年12月2日",
+    //     },
+    //   ],
   },
 
   // 导航点击事件
   navTabClick: function (e) {
-    //console.log(e.currentTarget.id)
+    console.log(e)
     this.setData({
       //sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
+    this.guesttalk(this.data.tabs[parseInt(e.currentTarget.id)].name)
   },
 
   //关注事件
@@ -57,10 +80,12 @@ Page({
         //sliderOffset: e.currentTarget.offsetLeft,
         star: 1
       });
+
     } else {
       this.setData({
         //sliderOffset: e.currentTarget.offsetLeft,
-        star: 0
+        star: 0,
+        // intesestings:e.data.message
       });
     }
 
@@ -76,6 +101,7 @@ Page({
       },
       success: function (e) {
         console.log(e, "999成功")
+
         wx.showToast({
           title: e.data.data.message,  //标题
           icon: 'success',  //图标，支持"success"、"loading"
@@ -95,8 +121,8 @@ Page({
 
   // 打电话事件
   callphone: function (e) {
-    getApp().phoneit(e.currentTarget.dataset.id)
 
+    getApp().phoneit(e.currentTarget.dataset.id)
     wx.makePhoneCall({
       phoneNumber: e.currentTarget.dataset.num
       //仅为示例，并非真实的电话号码
@@ -105,10 +131,7 @@ Page({
 
   //咨询事件跳转页面
   bottombtn: function (e) {
-    getApp().chatit(e.currentTarget.dataset.id,e.currentTarget.dataset.img)
-    console.log(e,444)
-    // wx.getStorageSync("mid")
-    // wx.setStorageSync("askid", data)
+    getApp().chatit(e.currentTarget.dataset.id, e.currentTarget.dataset.img)
     wx.setStorageSync("tootherId", this.data.useradviceid.uid)
     wx.navigateTo({
       url: '../clues/clues'
@@ -131,8 +154,6 @@ Page({
       success: function (e) {
         console.log(e, "成功")
         that.setData({
-          // id: currentTarget.dataset.manger,
-          // id:wx.getStorageSync("mid"),
           useradviceid: e.data.data,
           star: e.data.data.attention === false ? 0 : 1
         })
@@ -143,10 +164,10 @@ Page({
     })
   },
   //客户评价接口
-  guesttalk: function () {
+  guesttalk: function (status) {
     let that = this;
     wx.request({
-      url: urls.mainurl + urls.assessment ,
+      url: urls.mainurl + urls.assessment,
       method: 'POST',
       header: {
         "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
@@ -154,14 +175,13 @@ Page({
       data: {
         "pageNum": 0,
         "pageSize": 50,
+        status: status === '全部' ? '' : status,
+        bid: wx.getStorageSync("mid"),
       },
       success: function (e) {
         console.log(e, "77")
         that.setData({
-          // id: currentTarget.dataset.manger,
-          // id:wx.getStorageSync("mid"),
           getguesttalk: e.data.data.dataList
-            
         })
       },
       fail: function (err) {
@@ -174,7 +194,15 @@ Page({
    */
   onLoad: function () {
     this.useradvice();
-    this.guesttalk();
+    this.guesttalk('');
+
+    //  mes= wx.showToast({
+    //     success: function () {
+    //     }, //接口调用成功的回调函数
+    //     fail: function () { },  //接口调用失败的回调函数
+    //     complete: function () { } //接口调用结束的回调函数
+    //   })
+
   },
 
   /**

@@ -16,19 +16,19 @@ Page({
 
     tabs: [{
         name: "全部",
-        value: 1231
+        value: ''
       },
       {
         name: "很满意",
-        value: 1231
+        value: ''
       },
       {
         name: "满意",
-        value: 1231
+        value: ''
       },
       {
         name: "不满意",
-        value: 1231
+        value: ''
       },
     ],
     subscribe: "http://zadai.net:8000/uploads/star.png",
@@ -65,11 +65,12 @@ Page({
 
   // 导航点击事件
   navTabClick: function(e) {
-    //console.log(e.currentTarget.id)
+    console.log(e)
     this.setData({
       //sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
+    this.guesttalk(this.data.tabs[parseInt(e.currentTarget.id)].name)
   },
 
   //关注事件
@@ -163,7 +164,7 @@ Page({
     })
   },
   //客户评价接口
-  guesttalk: function () {
+  guesttalk: function (status) {
     let that = this;
     wx.request({
       url: urls.mainurl + urls.assessment,
@@ -174,6 +175,8 @@ Page({
       data: {
         "pageNum": 0,
         "pageSize": 50,
+        status: status === '全部' ? '' : status,
+        bid: wx.getStorageSync("mid"),
       },
       success: function (e) {
         console.log(e, "77")
@@ -191,7 +194,7 @@ Page({
    */
   onLoad: function() {
     this.useradvice();
-    this.guesttalk();
+    this.guesttalk('');
     
     //  mes= wx.showToast({
     //     success: function () {

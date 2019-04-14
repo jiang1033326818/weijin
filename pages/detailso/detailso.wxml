@@ -68,7 +68,7 @@
               </view>
               {{item.nikeName}}
                 <view class='rightmap'
-               style='color:{{item.status==="1"?"red":item.status==="2"?"blue":"black"}}'>{{item.status==="1"?"很满意":item.status==="2"?"满意":"一般"}}</view>
+                   style='color:{{item.status==="很满意"?"#FE6F61":item.status==="满意"?"#1B65FA":"black"}}'>{{item.status}}</view>
             </view>
             <view class='toptitle2'>
               <!-- {{item.content}} -->
