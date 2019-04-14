@@ -29,7 +29,7 @@ Page({
    */
   onShow: function () {
    this.setData({
-       https: "http://zadai.net/alost.html?id=" + wx.getStorageSync("knowid0")
+       https: "https://zadai.net/alost.html?id=" + wx.getStorageSync("knowid0")
    })
   },
 
