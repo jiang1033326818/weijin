@@ -69,7 +69,7 @@
   </swiper> --> 
    <swiper interval="{{interval}}" duration="{{duration}}" circular="true"  autoplay="{{autoplay}}" vertical="true">
    
-    <block wx:for="{{getlunbolist}}">
+    <block wx:for="{{getknowledge}}">
       <swiper-item class="smallitem">
         <!-- <navigator url="{{item.link}}" hover-class="navigator-hover"> -->
          <view class='smallnav'>
@@ -81,7 +81,7 @@
    <image  class='swiper-image' src='http://zadai.net:8000/uploads/toutiao.png'>
          </image>
   </view>
-
+ 
   <view class='maplist'>
     <view class="navbar">
       <block wx:for="{{tabs}}" wx:key="tabs">

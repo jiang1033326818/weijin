@@ -65,7 +65,7 @@ Page({
         that.setData({
           getimgphone: b,
           gitimgchat: a,
-           height: e.data.data.dataList.length*400+147,
+           height: e.data.data.dataList.length*400+85,
         
         })
 
