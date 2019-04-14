@@ -212,7 +212,9 @@ console.log(e,"啊手机的速度加快")
     this.imgphone("0");
   },
   onShow: function () {
+    this.onLoad();
     this.imgphone("0");
+    
   },
  onReady: function () {
    this.imgphone("0");

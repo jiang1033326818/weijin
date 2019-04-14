@@ -193,9 +193,11 @@ color: #8daff3;
   /* width: 30%; */
 }
 .bingtext{
-  /* border: 1rpx solid black; */
-  margin-top:30rpx;
-  font-size: 25rpx;
+ margin-top:33rpx;
+font-size:25rpx;
+border:1rpx solid #ddd;
+width:98%;
+
 }
 /* .pj{
   width: 100%;
