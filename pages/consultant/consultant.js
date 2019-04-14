@@ -112,7 +112,7 @@ Page({
       }, //getloanlist
       data: {
         "pageNum": 0,
-        "pageSize": 10,
+        "pageSize": 50,
         type:type,
         expert: "1",
         

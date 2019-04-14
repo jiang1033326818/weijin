@@ -177,7 +177,7 @@ Page({
       },
       data: {
         "pageNum": 0,
-        "pageSize": 10,
+        "pageSize": 50,
          city:city,
         type:type,
         expert:"0",

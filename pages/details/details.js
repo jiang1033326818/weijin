@@ -148,7 +148,7 @@ Page({
       },
       data: {
         // "pageNum": 0,
-        // "pageSize": 10,
+        // "pageSize": 50,
       },
       success: function(e) {
         console.log(e,"成功")
@@ -173,7 +173,7 @@ Page({
       },
       data: {
         "pageNum": 0,
-        "pageSize": 10,
+        "pageSize": 50,
       },
       success: function (e) {
         console.log(e, "77")

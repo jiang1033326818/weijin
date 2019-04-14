@@ -113,7 +113,7 @@ this.setData({
       }, 
       data: {
         "pageNum": 0,
-        "pageSize": 10,
+        "pageSize": 50,
         "remark": that.data.workremarks,
         "name":that.data.workname,
         "mobile": that.data.workphone,

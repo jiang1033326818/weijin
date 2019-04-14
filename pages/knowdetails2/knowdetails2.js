@@ -22,7 +22,7 @@ Page({
       },
       data: {
         // "pageNum": 0,
-        // "pageSize": 10,
+        // "pageSize": 50,
       },
       success: function (res) {
         console.log(res, 33)

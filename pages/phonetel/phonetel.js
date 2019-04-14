@@ -140,7 +140,7 @@ this.setData({
       data: {
        commentType:"0",
        "pageNum": 0,
-        "pageSize": 10,
+        "pageSize": 50,
       // type:"0"
       },
       success: function (e) {

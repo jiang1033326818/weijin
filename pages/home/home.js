@@ -385,7 +385,7 @@ Page({
         },
         data: {
           "pageNum": 0,
-          "pageSize": 10,
+          "pageSize": 50,
 
         },
         success: function(response) {
@@ -423,7 +423,7 @@ Page({
         },
         data: {
           "pageNum": 0,
-          "pageSize": 10,
+          "pageSize": 50,
         },
         success: function(e) {
           console.log(e.data.data, "eee")
@@ -452,7 +452,7 @@ Page({
       },
       data: {
         "pageNum": 0,
-        "pageSize": 10,
+        "pageSize": 50,
         contentType: chanpinid
       },
       success: function(res) {

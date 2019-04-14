@@ -47,7 +47,7 @@ Page({
       },
       data: {
         "pageNum": 0,
-        "pageSize": 10,
+        "pageSize": 50,
         type:e==="0"?"1":"0"
         
       },
