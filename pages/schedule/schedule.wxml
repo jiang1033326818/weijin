@@ -19,7 +19,7 @@
       </view>
       </view>
      
-      <view class='chatred'  style='display:{{item.wdxx===null?"none":"block"}}' >{{item.wdxx}}</view>
+      <view class='chatred'  style='display:{{item.wdxx===0?"none":"block"}}'>{{item.wdxx}}</view>
     </view>
   </view>
 </view>
