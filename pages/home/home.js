@@ -37,17 +37,7 @@ Page({
     getknowledge: [],
     indextab: 0,
     getknownav: [],
-    getlunbolist:[
-      {
-        title:"hahhah"
-      },
-      {
-        title: "hahhah"
-      },
-      {
-        title: "hahhah"
-      }
-    ],
+    getlunbolist:[],
     imgUrls: [{
       link: '/pages/index/index',
       url: 'http://zadai.net:8000/uploads/image001.jpg'

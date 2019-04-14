@@ -30,7 +30,7 @@
 }
 .right{
   padding-right: 30rpx;
-  color: #ddd;
+  color: #000;
 }
 .right image{
   height: 35rpx;

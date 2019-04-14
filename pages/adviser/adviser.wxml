@@ -68,7 +68,7 @@
        </view> 
        <br/>
        <view bindtap="chooseImage" class='btn1' > 
-        <image class="zp"  src='../../images/zp.png'>
+        <image class="zp"   style='display:{{display}}' src='../../images/zp.png'>
         </image>
        </view> 
       </view> 
@@ -96,7 +96,7 @@
        </view> 
        <br/>
         <view bindtap="chooseImage2" class='btn1' > 
-        <image class="zp"  src='../../images/zp2.png'>
+        <image class="zp"  style='display:{{display2}}' src='../../images/zp2.png'>
         </image>
        </view> 
       </view> 

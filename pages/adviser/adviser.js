@@ -10,6 +10,8 @@ Page({
     getarea:[],//获取地区名称
     address: "4353",
     customItem: '全部',
+    display:"block",
+    display2:"block",
     region:"1",
     array: ['房产服务',
       '车产服务',
@@ -79,14 +81,20 @@ Page({
       success: function(res) {
         console.log(res, 'aaaaaaaaaaaaaaaaaaaa')
         //缓存下 
+    
         wx.showToast({
           title: '正在上传...',
           icon: 'loading',
           mask: true,
-          duration: 2000,
+          duration: 1000,
           success: function(ress) {
             console.log('成功加载动画');
+            that.setData({
+display:"none"
+            })
           }
+         
+        
         })
 
         wx.uploadFile({
@@ -100,6 +108,7 @@ Page({
             //user: 'test'
           },
           success(response) {
+            console.log(response,"bbbbbb")
             that.setData({
               image0: '/uploads/' + JSON.parse(response.data).data,
             })
@@ -143,9 +152,12 @@ Page({
           title: '正在上传...',
           icon: 'loading',
           mask: true,
-          duration: 2000,
+          duration: 1000,
           success: function(ress) {
             console.log('成功加载动画');
+            that.setData({
+              display2:"none"
+            })
           }
         })
 
@@ -157,6 +169,7 @@ Page({
             //user: 'test'
           },
           success(response) {
+            console.log(response,"cccc")
 
             that.setData({
               image1: '/uploads/' + JSON.parse(response.data).data,
@@ -244,32 +257,29 @@ Page({
         })
       } else {
         wx.request({
-          url: urls.mainurl + urls.useradd,
+          url: urls.mainurl + urls.useradd, 
           method: 'POST',
           header: {
             "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid")
           },
           data: {
             "city": that.data.getarea[that.data.index2].id,
-            "hobby": that.data.array[that.data.index],
+            "type": that.data.array[that.data.index],
             "company": that.data.danwei,
             "workImage": that.data.image0,
             // "joinTime": that.data.date,
             "personImage": that.data.image1,
             "enable": false,
             expert: 0,
-            "realName": that.data.xingming
-
+            "realName": that.data.xingming,
+            "hobby": that.data.array[that.data.index]
           },
           success: function (response) {
-        
-            if(response.code==="0"){
+            console.log(response,"laa")
+            if(response.data.code===0){
               wx.setStorageSync("expert",1)
-              wx.showToast({
-                title: response.message,
-                icon: 'success',
-                duration: 2000
-              })
+             
+            
               wx.navigateTo({
                 url: '../success/success'
               });
