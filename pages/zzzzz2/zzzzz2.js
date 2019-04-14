@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    https:"http://h5.mayi100.vip//goods/gdetail.html?pid=1080600&loan_id=676bf20a3900548aa8150651f6a681e5&1551006494="
+    https:"https://zadai.net/alost.html?id=10"
   },
 
   /**
