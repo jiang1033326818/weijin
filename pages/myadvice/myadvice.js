@@ -65,7 +65,7 @@ Page({
         that.setData({
           getimgphone: b,
           gitimgchat: a,
-           height: e.data.data.dataList.length*410+100,
+           height: e.data.data.dataList.length*300+100,
         
         })
 
@@ -101,11 +101,11 @@ Page({
     var current = e.detail.current;
     if (e.currentTarget.dataset.index === 1) {
       this.setData({
-        height: this.data.typeList.length * 410 + 100
+        height: this.data.typeList.length * 300 + 100
       })
     } else {
       this.setData({
-        height1: this.data.typeList2.length * 410 + 100
+        height1: this.data.typeList2.length * 300 + 100
       })
     }
     wx.pageScrollTo({

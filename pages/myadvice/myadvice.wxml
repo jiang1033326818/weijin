@@ -33,20 +33,12 @@
               </view>
             </view>
 
-          </view>
-          <view class='bottomlist'>
-            <!-- <view class='people'>
-                    <text>{{item.people}}人咨询过</text>
-                  </view> -->
 
-            <!-- <view class='peoplebutton1'>
-                  电话咨询
-                  </view> -->
-            <view class='peoplebutton2' bindtap='btnclick' data-getcontent="{{item.cid}}">
+<view class='peoplebutton2' bindtap='btnclick' data-getcontent="{{item.cid}}">
               立即评价
             </view>
+          </view>
          
-          </view> 
         </view>
 
       </view>
@@ -75,20 +67,12 @@
               </view>
             </view>
 
-          </view>
-          <view class='bottomlist'>
-            <!-- <view class='people'>
-                    <text>{{item.people}}人咨询过</text>
-                  </view> -->
-
-            <!-- <view class='peoplebutton1'>
-                  电话咨询
-                  </view> -->
-            <view class='peoplebutton2' bindtap='btnclick' data-getcontent="{{item.cid}}">
+             <view class='peoplebutton2' bindtap='btnclick' data-getcontent="{{item.cid}}">
               立即评价
             </view>
-         
+
           </view>
+       
         </view>
 
       </view>
