@@ -495,9 +495,12 @@ Page({
       },
       success: function (res) {
         console.log(res, "这是轮播")
-        // that.setData({
-        //  getlunbolist:res.data.data
-        // })
+       
+          that.setData({
+            getlunbolist: res.data.data
+          })
+        
+       
 
       },
       fail: function (err) {
