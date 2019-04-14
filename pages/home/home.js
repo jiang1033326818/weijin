@@ -37,7 +37,19 @@ Page({
     getknowledge: [],
     indextab: 0,
     getknownav: [],
-    getlunbolist:[],
+
+    getlunbolist:[
+      {
+        title:"优势互补 突出发展特色金融"
+      },
+      {
+        title: "海南各地各校均要聘用咨询顾问"
+      },
+      {
+        title: "科比将重返湖人，当球队顾问！？"
+      }
+    ],
+
     imgUrls: [{
       link: '/pages/index/index',
       url: 'http://zadai.net:8000/uploads/image001.jpg'
@@ -238,7 +250,8 @@ Page({
     },
 
     getVerificationCode() {
-      if (this.data.phone == '' || this.data.phone.length < 11) {
+      console.log(this.data.phone,9900)
+      if (this.data.phone == '' || this.data.phone.length !== 11) {
         wx.showToast({
           title: '请填写正确的手机号',
           icon: 'none',
