@@ -65,7 +65,7 @@ Page({
         that.setData({
           getimgphone: b,
           gitimgchat: a,
-           height: e.data.data.dataList.length*400+85,
+           height: e.data.data.dataList.length*410+100,
         
         })
 
@@ -101,11 +101,11 @@ Page({
     var current = e.detail.current;
     if (e.currentTarget.dataset.index === 1) {
       this.setData({
-        height: this.data.typeList.length * 410 + 50
+        height: this.data.typeList.length * 410 + 100
       })
     } else {
       this.setData({
-        height1: this.data.typeList2.length * 410 + 50
+        height1: this.data.typeList2.length * 410 + 100
       })
     }
     wx.pageScrollTo({
@@ -359,14 +359,12 @@ console.log(e,"啊手机的速度加快")
   // 加载初始数据
   onLoad: function(e) {
     // this.myadvice(0)
-    this.imgphone("0");
+    this.imgphone(this.data.activeIndex);
   },
   onShow: function () {
-    this.onLoad();
-    this.imgphone("0");
-    
+    this.onLoad()
   },
  onReady: function () {
-   this.imgphone("0");
+  
   },
 });
