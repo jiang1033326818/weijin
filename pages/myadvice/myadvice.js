@@ -25,7 +25,7 @@ Page({
     nowid:'',
     bincontent:'',
     adviceid:'',
-    advicestatus:'',
+    advicestatus:'很满意',
     items: [
       { name: '很满意', value: '很满意', checked: 'true'},
       { name: '满意', value: '满意', },
