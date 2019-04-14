@@ -28,4 +28,5 @@ export default {
   fastphone: "/loan/loanIntent/",//快捷电话
   contryarea:"/consultant/area/",//地区接口
   lunbo:"/know/showLunbo/",//文字轮播
+  zixun:"/loan/getMarkLoan",
 }

@@ -497,7 +497,7 @@ Page({
     console.log(e.currentTarget.dataset.id)
     wx.setStorageSync('knowid0', e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '../knowdetails/knowdetails'
+      url: '../zzzzz2/zzzzz2'
     });
   },
   /**
@@ -560,4 +560,4 @@ Page({
   /**
    * 用户点击右上角分享
    */
-})
+})  

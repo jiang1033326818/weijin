@@ -10,6 +10,7 @@
   justify-content: space-between;
   align-items: center;
   background: #ffffff;
+  text-align: right;
 }
 .item0{
   width: 100%;
@@ -38,7 +39,7 @@
 }
 .right text{
   margin-right: 10rpx;
-  font-size: 30rpx;
+  font-size: 26rpx;
   line-height: 15rpx;
 }
 .right input{

@@ -17,7 +17,7 @@ const tabs = [
 ];
 Page({
   data: {
-    height:2000,
+    height:1500,
     tabs: tabs,     //展示的数据
     slideOffset: 0,//指示器每次移动的距离
     activeIndex: 0,//当前展示的Tab项索引
@@ -167,7 +167,7 @@ Page({
 
   //获取专家列表
 
-  getloanall: function () {
+  getloanall: function (city,type) {
     let that = this;
     wx.request({
       url: urls.mainurl + urls.getloanlist, 
@@ -178,8 +178,8 @@ Page({
       data: {
         "pageNum": 0,
         "pageSize": 10,
-        // city:city,
-        // type:type,
+         city:city,
+        type:type,
         expert:"0",
       },
       success: function (response) {
@@ -201,7 +201,7 @@ Page({
 
   onLoad: function (e) {
     //  console.log(this.data)
-    this.getloanall("全国",wx.getStorageSync("databelong"))
+    this.getloanall("",wx.getStorageSync("databelong"))
     this.setData({
       firstPerson2: wx.getStorageSync("databelong")
     })

@@ -11,6 +11,7 @@ const tabs = [{
 Page({
   data: {
     height:2000,
+    height1:2000,
 
     onOff: true,
     tabs: tabs, //展示的数据
@@ -29,7 +30,8 @@ Page({
       { name: '很满意', value: '很满意', checked: 'true'},
       { name: '满意', value: '满意', },
       { name: '不满意', value: '不满意' },
-    ]
+    ],
+    ta:'',
   },
 
   //图文电话咨询接口
@@ -103,7 +105,7 @@ Page({
       })
     } else {
       this.setData({
-        height: this.data.typeList2.length * 410 + 50
+        height1: this.data.typeList2.length * 410 + 50
       })
     }
     wx.pageScrollTo({
@@ -156,6 +158,7 @@ Page({
   modalConfirm: function() {
     let that=this;
     console.log("queren")
+    console.log(that .data,"哈哈哈")
     that.setData({
       onOff: true,
     })
@@ -170,7 +173,7 @@ Page({
       data: {
         content: that.data.bincontent,
         bid: that.data.nowid,
-        chatType:that.data.activeIndex==="1"?"在线咨询":"电话咨询",
+        chatType:that.data.activeIndex==="0"?"在线咨询":"电话咨询",
         status: that.data.advicestatus,
         commentType:1
 
@@ -200,7 +203,9 @@ Page({
 
   },
 //textarea提示自取消
-
+  textaaa:function(e){
+console.log(e,"啊手机的速度加快")
+  },
   // 加载初始数据
   onLoad: function(e) {
     // this.myadvice(0)

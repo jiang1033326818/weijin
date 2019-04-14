@@ -4,35 +4,33 @@ Page({
   /**
    * 页面的初始数据
    */
+
   data: {
-    https:"https://zadai.net/alost.html?id=10"
+    https: "https://zadai.net/alost.html?id=" + wx.getStorageSync("knowid0")
   },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-      this.setData({
-        https:wx.getStorageSync("https")
-      })
+  onLoad: function () {
+   
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.setData({
-      https: wx.getStorageSync("https")
-    })
+    console.log(this.data.https)
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      https: wx.getStorageSync("https")
-    })
+   this.setData({
+       https: "http://zadai.net/alost.html?id=" + wx.getStorageSync("knowid0")
+   })
   },
 
   /**
