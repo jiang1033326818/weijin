@@ -11,7 +11,7 @@
 
   <view class='apply'>
     <view class='applyb'>微金网合伙人申请</view>
-    <view class='applys'>申请后请耐心等待,工作人员会在24小时内联系您</view>
+    
 
     <view class='applyform'>
       <view class='applyform0'>
@@ -45,6 +45,7 @@
       </view>
 
       <view class='applybutton' bindtap='workbtn'>合伙人申请</view>
+      <view class='applys'>申请后请耐心等待,工作人员会在24小时内联系您</view>
     </view>
   </view>
 
@@ -116,7 +117,7 @@
 
 
   <view class='hangyeyoushi'>
-     <view class='applyb'>行业优势</view>
+     <view class='applyb'>微金优势</view>
 
      <view class='youshicon'>
         <view class='contitle'>运营优势</view>

@@ -506,10 +506,10 @@ margin-top:9rpx;
 .smallnav text{
   position: absolute;
   top: 14rpx;
-  left: 40rpx;
+  left: 389rpx;
   color: #323232;
   font-size:32rpx;
-  width: 60%;
+  width: 44%;
   overflow: hidden;
 
 }
@@ -528,5 +528,5 @@ margin-top:9rpx;
 .swiper-image{
   position: absolute;
   top: -1rpx;
-  left:505rpx;
+  left:-10rpx;
 }
