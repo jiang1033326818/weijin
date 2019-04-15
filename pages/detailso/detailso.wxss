@@ -29,7 +29,7 @@
 .cardtop image{
   width: 100rpx;
   height: 150rpx;
-  margin-top: -20rpx;
+  margin-top: -2rpx;
 }
 
 .headbs{
