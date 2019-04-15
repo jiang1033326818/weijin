@@ -60,8 +60,9 @@ margin-right:160rpx;
   position: absolute;
   /* left: 20rpx; */
   background: white;
-  top: 20rpx;
+  top: 70rpx;
   left: 9rpx;
+  margin-bottom: 40rpx;
 }
 .my_img_bg{
  
