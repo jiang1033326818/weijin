@@ -12,7 +12,7 @@ const tabs = [
     name: "极速服务"
   },
   {
-    name: "信用卡"
+    name: "卡"
   },
 ];
 Page({

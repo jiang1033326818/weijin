@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46585cc2-222d-4961-aa1a-198cea89796c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/achievement/achievement.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/achievement/achievement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/consultant/consultant.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/consultant/consultant.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/cooperation/cooperation.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/cooperation/cooperation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/details/details.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/details.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/detailso/detailso.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/detailso/detailso.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/knowdetails/knowdetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/knowdetails/knowdetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/knowdetails2/knowdetails2.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/knowdetails2/knowdetails2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/myadvice/myadvice.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/myadvice/myadvice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/mymanage/mymanage.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mymanage/mymanage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/phonetel/phonetel.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/phonetel/phonetel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/achievement/achievement.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/achievement/achievement.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/adviser/adviser.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/adviser/adviser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/cooperation/cooperation.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/cooperation/cooperation.wxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,11 +18,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/home/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="387" column="25" lean-forward="true" selection-start-line="387" selection-start-column="25" selection-end-line="387" selection-end-column="25" />
+            <state relative-caret-position="189">
+              <caret line="385" lean-forward="true" selection-start-line="385" selection-end-line="385" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/cooperation/cooperation.wxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="65" column="9" lean-forward="true" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -47,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/login/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
+            <state relative-caret-position="3762">
               <caret line="212" column="20" selection-start-line="212" selection-start-column="20" selection-end-line="212" selection-end-column="20" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -73,6 +74,7 @@
       <find>../../images/</find>
       <find>time</find>
       <find>&quot;pageSize&quot;: 10,</find>
+      <find>信用卡</find>
     </findStrings>
     <replaceStrings>
       <replace>http://zadai.net:8000/uploads</replace>
@@ -85,6 +87,7 @@
       <replace />
       <replace>http://zadai.net:8000/uploads/</replace>
       <replace>&quot;pageSize&quot;: 50,</replace>
+      <replace>卡</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -99,11 +102,11 @@
         <option value="$PROJECT_DIR$/pages/details/details.wxml" />
         <option value="$PROJECT_DIR$/pages/Consultant/achievement.wxml" />
         <option value="$PROJECT_DIR$/pages/schedule/schedule.js" />
-        <option value="$PROJECT_DIR$/pages/cooperation/cooperation.wxml" />
         <option value="$PROJECT_DIR$/pages/achievement/achievement.wxml" />
         <option value="$PROJECT_DIR$/common/urls.js" />
         <option value="$PROJECT_DIR$/pages/login/login.wxml" />
         <option value="$PROJECT_DIR$/pages/home/home.js" />
+        <option value="$PROJECT_DIR$/pages/cooperation/cooperation.wxml" />
       </list>
     </option>
   </component>
@@ -135,7 +138,7 @@
               <item name="weijin" type="b2602c69:ProjectViewProjectNode" />
               <item name="weijin" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="cooperation" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -199,11 +202,12 @@
       <workItem from="1553432992479" duration="359000" />
       <workItem from="1553938198781" duration="2565000" />
       <workItem from="1555228137590" duration="657000" />
+      <workItem from="1555338551885" duration="703000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10520000" />
+    <option name="totallyTimeSpent" value="11223000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -238,18 +242,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/cooperation/cooperation.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3564">
-          <caret line="198" column="20" selection-start-line="198" selection-start-column="20" selection-end-line="198" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/home/home.wxml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/adviser/adviser.js">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/home/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="385" lean-forward="true" selection-start-line="385" selection-end-line="385" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/login/login.wxml">
       <provider selected="true" editor-type-id="text-editor">
@@ -260,7 +264,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/login/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
+        <state relative-caret-position="3762">
           <caret line="212" column="20" selection-start-line="212" selection-start-column="20" selection-end-line="212" selection-end-column="20" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -268,10 +272,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/home/home.js">
+    <entry file="file://$PROJECT_DIR$/pages/cooperation/cooperation.wxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="387" column="25" lean-forward="true" selection-start-line="387" selection-start-column="25" selection-end-line="387" selection-end-column="25" />
+        <state relative-caret-position="459">
+          <caret line="65" column="9" lean-forward="true" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
         </state>
       </provider>
     </entry>

@@ -21,7 +21,7 @@
     <view class="phone_select" hidden="{{selectPerson2}}">
       <view class="select_one" bindtap="mySelect2" data-me="房产服务">房产服务</view>
       <view class="select_one" bindtap="mySelect2" data-me="车产抵押服务">车产抵押服务</view>
-      <view class="select_one" bindtap="mySelect2" data-me="信用卡">信用卡</view>
+      <view class="select_one" bindtap="mySelect2" data-me="卡">卡</view>
       <view class="select_one" bindtap="mySelect2" data-me="极速服务">极速服务</view>
       <view class="select_one" bindtap="mySelect2" data-me="工资流水服务">工资流水服务</view>
 
