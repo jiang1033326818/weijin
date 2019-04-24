@@ -12,7 +12,6 @@ Page({
   data: {
     height:2000,
     height1:2000,
-
     onOff: true,
     tabs: tabs, //展示的数据
     slideOffset: 0, //指示器每次移动的距离

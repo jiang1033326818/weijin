@@ -213,6 +213,10 @@ Page({
         wx.request({
           url: urls.mainurl + urls.loginUrl,
           method: 'POST',
+          header: {
+            "Cookie": 'JSESSIONID=' + wx.getStorageSync("sessionid"),
+            "Content-type":"application/json; charset=utf-8"
+          },
           data: JSON.stringify({
             area: "string",
             avatarUrl: res.userInfo.avatarUrl,

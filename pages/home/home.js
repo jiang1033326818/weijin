@@ -39,7 +39,7 @@ Page({
 
     getlunbolist:[
       {
-        title:"优势互补 突出发展特色金融"
+        title:"优势互补 突出发展特色"
       },
       {
         title: "海南各地各校均要聘用咨询顾问"
