@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "线索管理",
-  "usingComponents": {
-    "editable-select": "/components/editableSelect/editable-select"
-  }
-}

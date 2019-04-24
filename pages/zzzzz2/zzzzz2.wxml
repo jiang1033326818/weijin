@@ -1,4 +1,0 @@
-<!--pages/zzzzz2/zzzzz2.wxml-->
-<view>
-  <web-view src="{{https}}"></web-view>
-</view>
