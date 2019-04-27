@@ -1,7 +1,7 @@
 import request from '../../utils/request.js';
 import urls from '../../common/urls.js';
 const tabs = [{
-    name: "服务"
+    name: "抵押服务"
   },
   {
     name: "信用服务"
@@ -10,8 +10,9 @@ const tabs = [{
     name: "极速服务"
   },
   {
-    name: "卡"
+    name: "信用卡"
   },
+ 
 ];
 
 Page({
@@ -133,7 +134,7 @@ Page({
   },
 
   onLoad: function(e) {
-    this.getloanall('服务');
+    this.getloanall('抵押服务');
 
   },
 

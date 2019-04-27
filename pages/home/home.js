@@ -519,9 +519,44 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onShow: function() {
-
+    this.getLocation()
 
   },
+  getLocation: function () {
+    var page = this
+    wx.getLocation({
+      type: 'wgs84',   //默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标 
+      success: function (res) {
+        // success  
+        var longitude = res.longitude
+        var latitude = res.latitude
+        page.loadCity(longitude, latitude)
+      }
+    })
+  },
+  loadCity: function (longitude, latitude) {
+    var page = this
+    wx.request({
+      url: 'https://api.map.baidu.com/geocoder/v2/?ak=pI73xUAyYasCF9D36YCB2gHBFAkdNrCn&location=' + latitude + ',' + longitude + '&output=json',
+      data: {},
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        // success  
+        console.log(res);
+        var city = res.data.result.addressComponent.city;
+        page.setData({ currentCity: city });
+        wx.setStorageSync("city",city)
+      },
+      fail: function () {
+        page.setData({ currentCity: "获取定位失败" });
+      },
+
+    })
+  },
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

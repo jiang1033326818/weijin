@@ -15,7 +15,7 @@
   height:45rpx;
 margin-left:40rpx;
 margin-top:20rpx;
-width: 118rpx;
+width: 176rpx;
 
 }
 .smallnav{
@@ -310,22 +310,22 @@ color: #717171;
 /* 知识库部分css */
 .toplist2{
   width: 100%;
-  height: 250rpx;
+  height: 200rpx;
   border-bottom: 1px solid #cccccc;
-  padding: 25rpx  3%;
+  padding: 15rpx  3%;
   background: #ffffff;
 }
 .knowledge{
   width: 250rpx;
-  height: 250rpx;
+  height: 180rpx;
   float: left;
   border-radius: 10rpx;
   margin-top:13rpx;
 
 }
 .knowledge image{
-  width:240rpx;
-height:198rpx;
+  width:220rpx;
+height:160rpx;
 border-radius:12rpx;
 margin-top:9rpx;
 
@@ -338,13 +338,13 @@ margin-top:9rpx;
 }
 .knowledge_rt{
   font-size: 30rpx;
-  height: 200rpx;
+  height: 160rpx;
   width: 100%;
   margin-top:25rpx;
 
 }
 .knowledge_rb{
-  height: 50rpx;
+  height: 32rpx;
 }
 .knowledge_rbl{
   font-size: 25rpx;
@@ -506,12 +506,14 @@ margin-top:9rpx;
 .smallnav text{
   position: absolute;
   top: 14rpx;
-  left: 389rpx;
+  left: 267rpx;
   color: #323232;
   font-size:32rpx;
-  width: 44%;
-  overflow: hidden;
-
+  width: 60%;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+  height: 45rpx;
 }
 .smallitem{
   height: 70rpx;

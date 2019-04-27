@@ -86,7 +86,7 @@ margin-top:-174rpx;
 
 }
 .you_left {  
-  margin-top: 30rpx;
+  margin-top: 2rpx;
   float: left;  
   position: relative;  
   /* left: 5rpx;   */

@@ -70,7 +70,7 @@
    <swiper interval="{{interval}}" duration="{{duration}}" circular="true"  autoplay="{{autoplay}}" vertical="true">
    
     <block wx:for="{{getknowledge}}">
-      <swiper-item class="smallitem">
+      <swiper-item class="smallitem" bindtap="toapply2"  data-id="{{item.id}}">
         <!-- <navigator url="{{item.link}}" hover-class="navigator-hover"> -->
          <view class='smallnav'>
           <text class="swiper-text">{{item.title}}</text></view>
@@ -120,7 +120,7 @@
               </view>
 
               <view class='knowledge_r'>
-                <view class='knowledge_rt'>微金网: {{item.title}}</view>
+                <view class='knowledge_rt'>{{item.title}}</view>
 
                 <view class='knowledge_rb'>
                   <view class='knowledge_rbl'>{{item.typeName}} </view>

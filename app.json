@@ -1,9 +1,11 @@
 {
   "pages": [
+        "pages/cooperation/cooperation",
     "pages/login/login",
     "pages/achievement/achievement",
     "pages/expert/expert",
-    "pages/cooperation/cooperation",
+
+    "pages/cooperation2/cooperation2",
     "pages/myadvice/myadvice",
     "pages/home/home",
     "pages/mine/mine",
@@ -24,6 +26,11 @@
     "pages/knowdetails2/knowdetails2",
     "pages/mymanage/mymanage"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
